@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useSound } from "@/lib/useSound";
 import { useSiteEffects } from "@/lib/useSiteEffects";
 import Chrome from "./Chrome";
@@ -11,6 +11,7 @@ import Products from "./Products";
 import Services from "./Services";
 import Tech from "./Tech";
 import TechOverlay from "./TechOverlay";
+import ServiceOverlay from "./ServiceOverlay";
 import Contact from "./Contact";
 import Footer from "./Footer";
 
@@ -34,6 +35,25 @@ export default function Site() {
     document.documentElement.style.overflow = "";
   }, []);
 
+  const [activeService, setActiveService] = useState(0);
+
+  const openService = useCallback((e: React.MouseEvent, index: number) => {
+    setActiveService(index);
+    const ov = document.getElementById("serviceoverlay");
+    if (!ov) return;
+    ov.style.setProperty("--cx", e.clientX + "px");
+    ov.style.setProperty("--cy", e.clientY + "px");
+    ov.scrollTop = 0;
+    ov.classList.add("open");
+    document.documentElement.style.overflow = "hidden";
+  }, []);
+
+  const closeService = useCallback(() => {
+    const ov = document.getElementById("serviceoverlay");
+    if (ov) ov.classList.remove("open");
+    document.documentElement.style.overflow = "";
+  }, []);
+
   return (
     <div
       id="pagebg"
@@ -49,9 +69,10 @@ export default function Site() {
       <Hero />
       <MarqueeBand />
       <Products />
-      <Services />
+      <Services openService={openService} />
       <Tech openTech={openTech} />
       <TechOverlay closeTech={closeTech} />
+      <ServiceOverlay active={activeService} closeService={closeService} />
       <Contact />
       <Footer />
     </div>

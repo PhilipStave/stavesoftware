@@ -1,7 +1,13 @@
+"use client";
+
 import { tjenester } from "@/lib/data";
 import { mute } from "./mute";
 
-export default function Services() {
+export default function Services({
+  openService,
+}: {
+  openService: (e: React.MouseEvent, index: number) => void;
+}) {
   return (
     <section
       id="tjenester"
@@ -79,12 +85,13 @@ export default function Services() {
           </span>
         </div>
         <div style={{ borderBottom: "1px solid rgba(242,239,233,.14)" }}>
-          {tjenester.map((t) => (
+          {tjenester.map((t, i) => (
             <div
               key={t.nr}
               data-reveal=""
               data-hover=""
               className="srow"
+              onClick={(e) => openService(e, i)}
               style={{
                 display: "grid",
                 gridTemplateColumns: "90px 1fr 1.3fr 60px",

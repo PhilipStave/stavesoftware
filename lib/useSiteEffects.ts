@@ -170,8 +170,10 @@ export function useSiteEffects({
     window.addEventListener("mousemove", mm);
     const esc = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        const ov = document.getElementById("techoverlay");
-        if (ov) ov.classList.remove("open");
+        ["techoverlay", "serviceoverlay"].forEach((id) => {
+          const ov = document.getElementById(id);
+          if (ov) ov.classList.remove("open");
+        });
         document.documentElement.style.overflow = "";
       }
     };
