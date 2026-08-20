@@ -15,6 +15,7 @@ export default function Contact() {
     >
       <video
         src="/uploads/Kontakt_seksjonen_Dark_moody_p.mp4"
+        poster="/uploads/poster-kontakt.jpg"
         autoPlay
         muted
         loop

@@ -98,6 +98,7 @@ export default function Products() {
                 <video
                   id="oystrvid"
                   src="/uploads/Oystr_kortet_Photorealistic_ae.mp4"
+                  poster="/uploads/poster-oystr.jpg"
                   muted
                   loop
                   playsInline
@@ -255,6 +256,7 @@ export default function Products() {
                 <video
                   id="altivvid"
                   src="/uploads/altiv-kort.mp4"
+                  poster="/uploads/poster-altiv.jpg"
                   muted
                   loop
                   playsInline

@@ -10,6 +10,7 @@ export default function Services() {
     >
       <video
         src="/uploads/hva-vi-kan-bygge-bakgrunn.mp4"
+        poster="/uploads/poster-tjenester.jpg"
         autoPlay
         muted
         loop

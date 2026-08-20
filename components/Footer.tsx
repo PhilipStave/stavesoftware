@@ -11,6 +11,7 @@ export default function Footer() {
     >
       <video
         src="/uploads/Footer_video_bak_den_store.mp4"
+        poster="/uploads/poster-footer.jpg"
         autoPlay
         muted
         loop

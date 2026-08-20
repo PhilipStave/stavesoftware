@@ -17,6 +17,7 @@ export default function Tech({ openTech }: { openTech: (e: React.MouseEvent) => 
     >
       <video
         src="/uploads/Teknologi_seksjonen_bakgru.mp4"
+        poster="/uploads/poster-teknologi.jpg"
         autoPlay
         muted
         loop

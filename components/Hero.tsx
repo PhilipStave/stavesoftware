@@ -12,7 +12,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        poster="/uploads/hero-poster.png"
+        poster="/uploads/hero-poster.jpg"
         ref={mute}
         style={{
           position: "absolute",
