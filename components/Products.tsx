@@ -114,6 +114,7 @@ export default function Products() {
                 ></video>
               </a>
               <div
+                className="ptxt"
                 style={{
                   padding: "50px 44px",
                   display: "flex",
@@ -189,6 +190,7 @@ export default function Products() {
               }}
             >
               <div
+                className="ptxt"
                 style={{
                   padding: "50px 44px",
                   display: "flex",

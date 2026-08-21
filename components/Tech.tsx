@@ -42,6 +42,7 @@ export default function Tech({ openTech }: { openTech: (e: React.MouseEvent) => 
         }}
       ></div>
       <div
+        className="tcwrap"
         style={{
           position: "relative",
           maxWidth: 1360,
@@ -182,7 +183,11 @@ export default function Tech({ openTech }: { openTech: (e: React.MouseEvent) => 
           ))}
         </div>
       </div>
-      <div data-reveal="" style={{ position: "relative", textAlign: "center", padding: "70px 48px 0" }}>
+      <div
+        data-reveal=""
+        className="tbtnwrap"
+        style={{ position: "relative", textAlign: "center", padding: "70px 48px 0" }}
+      >
         <button
           data-hover=""
           data-magnet=""

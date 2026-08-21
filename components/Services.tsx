@@ -41,6 +41,7 @@ export default function Services({
         }}
       ></div>
       <div
+        className="scwrap"
         style={{
           position: "relative",
           maxWidth: 1360,

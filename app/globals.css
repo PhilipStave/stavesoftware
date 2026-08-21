@@ -56,6 +56,11 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
 .hov-outline:hover { border-color: #8fb8e0 !important; color: #ffffff !important; }
 .hov-link:hover { color: #ffffff !important; }
 
+/* Mobilnettlesere: la heroen følge synlig viewport (adresselinjen) */
+@supports (height: 100svh) {
+  #topp { height: 100svh !important; }
+}
+
 @media (max-width: 900px) {
   #navlinks a.nl, #soundbtn, #dotnav { display: none !important; }
   #herostats { grid-template-columns: 1fr !important; gap: 0 !important; }
@@ -68,4 +73,24 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
   .srow { grid-template-columns: 44px 1fr !important; row-gap: 10px !important; }
   .srow p { grid-column: 1 / -1; }
   .srow-arrow { display: none; }
+}
+
+/* Telefon: strammere paddinger og stablede rader */
+@media (max-width: 640px) {
+  nav { padding: 16px 20px !important; }
+  #preloader { padding: 24px !important; }
+  #heroinner { padding: 90px 20px 32px !important; }
+  .scwrap { padding: 90px 20px !important; }
+  #teknologi { padding: 90px 0 !important; }
+  .tcwrap { padding: 0 20px 36px !important; }
+  .tbtnwrap { padding: 50px 20px 0 !important; }
+  #kontakt { padding: 110px 20px !important; }
+  .ovbar { padding: 14px 20px !important; }
+  .ovwrap { padding: 26px 20px 90px !important; }
+  .trow { grid-template-columns: 1fr !important; gap: 6px !important; padding: 16px 6px !important; }
+  #oystrvid, #altivvid { min-height: 300px !important; }
+  .ptxt { padding: 32px 24px !important; }
+  .ptxt h3 { font-size: 40px !important; }
+  .srow { padding: 28px 6px !important; }
+  .fwrap { padding: 28px 20px 0 !important; }
 }

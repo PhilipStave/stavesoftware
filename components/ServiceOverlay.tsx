@@ -57,6 +57,7 @@ export default function ServiceOverlay({
         }}
       ></div>
       <div
+        className="ovbar"
         style={{
           position: "sticky",
           top: 0,
@@ -105,6 +106,7 @@ export default function ServiceOverlay({
         </button>
       </div>
       <div
+        className="ovwrap"
         style={{
           maxWidth: 1180,
           margin: "0 auto",

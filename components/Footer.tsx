@@ -35,6 +35,7 @@ export default function Footer() {
         }}
       ></div>
       <div
+        className="fwrap"
         style={{
           position: "relative",
           maxWidth: 1360,
@@ -84,7 +85,7 @@ export default function Footer() {
           textTransform: "uppercase",
           color: "rgba(242,239,233,.22)",
           marginTop: 30,
-          transform: "translateY(18%)",
+          paddingBottom: "0.08em",
           userSelect: "none",
         }}
       >
