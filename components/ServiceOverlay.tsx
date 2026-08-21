@@ -23,6 +23,29 @@ export default function ServiceOverlay({
         overflowY: "auto",
       }}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={t.media}
+        alt=""
+        style={{
+          position: "fixed",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          opacity: 0.22,
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          pointerEvents: "none",
+          background:
+            "linear-gradient(180deg, rgba(13,20,32,.55) 0%, rgba(13,20,32,.35) 45%, rgba(13,20,32,.8) 100%)",
+        }}
+      ></div>
       <div
         style={{
           position: "fixed",

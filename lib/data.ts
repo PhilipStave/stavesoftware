@@ -4,6 +4,7 @@ export type Tjeneste = {
   tittel: string;
   tekst: string;
   lead: string;
+  media: string;
   punkter: { navn: string; tekst: string }[];
   caseNavn?: string;
   caseTekst?: string;
@@ -45,6 +46,7 @@ export const tjenester: Tjeneste[] = [
       "Native apper for iOS med kart, offline-funksjonalitet og sanntidsdata. Som Oystr — bygget for å virke der dekningen svikter.",
     lead:
       "Native iOS-apper bygget i Swift og SwiftUI — raske, offline-first og laget for norske forhold.",
+    media: "/uploads/tjeneste-mobilapper.jpg",
     punkter: [
       {
         navn: "Kart & offline",
@@ -73,6 +75,7 @@ export const tjenester: Tjeneste[] = [
       "Komplette systemer i nettleseren, fra pipeline til statistikk. Som Altiv — ingen installasjon, klart på minutter.",
     lead:
       "Komplette systemer i nettleseren — fra første innlogging til betaling, statistikk og drift.",
+    media: "/uploads/tjeneste-web-saas.jpg",
     punkter: [
       {
         navn: "Produkt, ikke prosjekt",
@@ -100,6 +103,7 @@ export const tjenester: Tjeneste[] = [
       "Offentlige datakilder, AIS, vær og kart smeltet sammen til produkter som gir mening ute i felt.",
     lead:
       "Offentlige datakilder er gull — hvis noen gjør dem forståelige. Det er det vi gjør.",
+    media: "/uploads/tjeneste-kart-data.jpg",
     punkter: [
       {
         navn: "Åpne kilder",
@@ -128,6 +132,7 @@ export const tjenester: Tjeneste[] = [
       "Hele pakken fra navn og identitet til ferdig grensesnitt. Produkter som ser like bra ut som de virker.",
     lead:
       "Hele pakken fra navn og identitet til ferdig grensesnitt — produkter som ser like bra ut som de virker.",
+    media: "/uploads/tjeneste-design.jpg",
     punkter: [
       {
         navn: "Identitet",
