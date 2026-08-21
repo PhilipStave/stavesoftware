@@ -2,15 +2,14 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-// Syntetisert lydbilde (ingen lydfiler): ambient pad + båtmotor-forbikjøring
-// med stereo-panorering og måkeskrik når Oystr-kortet er synlig og lyd er på.
-// Audio-grafen er portert 1:1 fra prototypen.
+// Lydbilde: syntetisert ambient pad (fra prototypen) + ekte opptak (CC0,
+// freesound.org) av motorbåt-forbikjøring og måker når Oystr-kortet er
+// synlig og lyd er på. Båten spilles som tilfeldige utsnitt med
+// stereo-panorering; måkene som en dempet løkke.
 type SoundRig = {
   ac: AudioContext;
   master: GainNode;
-  engineGain: GainNode;
-  gullBurst: () => void;
-  startPass: () => void;
+  boatOut: GainNode;
 };
 
 export function useSound() {
@@ -19,26 +18,85 @@ export function useSound() {
   const soundOn = useRef(false);
   const oystrVisible = useRef(false);
   const gullOn = useRef(false);
-  const gullT = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const boatBuf = useRef<AudioBuffer | null>(null);
+  const gullBuf = useRef<AudioBuffer | null>(null);
+  const gullNodes = useRef<{ src: AudioBufferSourceNode; gain: GainNode } | null>(null);
   const passT = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  const startGulls = useCallback(() => {
+    const r = rig.current;
+    if (!r || !gullBuf.current) return;
+    if (!gullNodes.current) {
+      const src = r.ac.createBufferSource();
+      src.buffer = gullBuf.current;
+      src.loop = true;
+      const gain = r.ac.createGain();
+      gain.gain.value = 0;
+      src.connect(gain);
+      gain.connect(r.ac.destination);
+      src.start();
+      gullNodes.current = { src, gain };
+    }
+    gullNodes.current.gain.gain.setTargetAtTime(0.2, r.ac.currentTime, 0.8);
+  }, []);
+
+  const stopGulls = useCallback(() => {
+    const r = rig.current;
+    if (r && gullNodes.current)
+      gullNodes.current.gain.gain.setTargetAtTime(0, r.ac.currentTime, 0.5);
+  }, []);
+
+  // Én forbikjøring: tilfeldig utsnitt av opptaket, panorert forbi
+  const pass = useCallback(function passFn() {
+    const r = rig.current;
+    if (r && gullOn.current && boatBuf.current) {
+      const buf = boatBuf.current;
+      const dur = Math.min(22, buf.duration);
+      const off = Math.random() * Math.max(0, buf.duration - dur - 1);
+      const t = r.ac.currentTime;
+      const src = r.ac.createBufferSource();
+      src.buffer = buf;
+      const g = r.ac.createGain();
+      g.gain.setValueAtTime(0, t);
+      g.gain.linearRampToValueAtTime(0.5, t + 3);
+      g.gain.setValueAtTime(0.5, t + dur - 4);
+      g.gain.linearRampToValueAtTime(0, t + dur);
+      const dir = Math.random() < 0.5 ? 1 : -1;
+      let out: AudioNode = g;
+      if (r.ac.createStereoPanner) {
+        const p = r.ac.createStereoPanner();
+        p.pan.setValueAtTime(-0.7 * dir, t);
+        p.pan.linearRampToValueAtTime(0.7 * dir, t + dur);
+        g.connect(p);
+        out = p;
+      }
+      src.connect(g);
+      out.connect(r.boatOut);
+      src.start(t, off, dur);
+      src.stop(t + dur + 0.1);
+      passT.current = setTimeout(passFn, (dur + 6 + Math.random() * 8) * 1000);
+    } else {
+      passT.current = setTimeout(passFn, 4000);
+    }
+  }, []);
 
   const updateScene = useCallback(() => {
     const on = soundOn.current && oystrVisible.current;
     const was = gullOn.current;
     gullOn.current = on;
     const r = rig.current;
-    if (r) {
-      if (on && !was) {
-        r.gullBurst();
-        clearTimeout(passT.current);
-        r.startPass();
-      } else if (!on) {
-        clearTimeout(passT.current);
-        r.engineGain.gain.cancelScheduledValues(r.ac.currentTime);
-        r.engineGain.gain.setTargetAtTime(0, r.ac.currentTime, 0.5);
-      }
+    if (!r) return;
+    if (on && !was) {
+      r.boatOut.gain.setValueAtTime(1, r.ac.currentTime);
+      startGulls();
+      clearTimeout(passT.current);
+      pass();
+    } else if (!on && was) {
+      clearTimeout(passT.current);
+      stopGulls();
+      r.boatOut.gain.setTargetAtTime(0, r.ac.currentTime, 0.5);
     }
-  }, []);
+  }, [pass, startGulls, stopGulls]);
 
   const setOystrVisible = useCallback(
     (visible: boolean) => {
@@ -52,6 +110,7 @@ export function useSound() {
     type LegacyWindow = Window & { webkitAudioContext?: typeof AudioContext };
     const Ctx = window.AudioContext || (window as LegacyWindow).webkitAudioContext!;
     const ac = new Ctx();
+    // Ambient pad — som i prototypen
     const master = ac.createGain();
     master.gain.value = 0;
     master.connect(ac.destination);
@@ -77,147 +136,26 @@ export function useSound() {
     lfo.connect(lfoG);
     lfoG.connect(master.gain);
     lfo.start();
-    // Rask båt i det fjerne: motorknatring + vannsprut, panorerer forbi
-    const mkNoise = (secs: number) => {
-      const len = ac.sampleRate * secs;
-      const buf = ac.createBuffer(1, len, ac.sampleRate);
-      const d = buf.getChannelData(0);
-      for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
-      const src = ac.createBufferSource();
-      src.buffer = buf;
-      src.loop = true;
-      src.start();
-      return src;
-    };
-    const eg = ac.createGain();
-    eg.gain.value = 0;
-    const pan: StereoPannerNode | GainNode = ac.createStereoPanner
-      ? ac.createStereoPanner()
-      : ac.createGain();
-    eg.connect(pan);
-    pan.connect(ac.destination);
-    // Motor: knatrende puls (propell) — sagtann gjennom bandpass, AM 13 Hz
-    const eng1 = ac.createOscillator();
-    eng1.type = "sawtooth";
-    eng1.frequency.value = 105;
-    const eng2 = ac.createOscillator();
-    eng2.type = "square";
-    eng2.frequency.value = 52.5;
-    const engBp = ac.createBiquadFilter();
-    engBp.type = "bandpass";
-    engBp.frequency.value = 420;
-    engBp.Q.value = 0.8;
-    const engAmp = ac.createGain();
-    engAmp.gain.value = 0.5;
-    const chop = ac.createOscillator();
-    chop.type = "square";
-    chop.frequency.value = 13;
-    const chopG = ac.createGain();
-    chopG.gain.value = 0.3;
-    chop.connect(chopG);
-    chopG.connect(engAmp.gain);
-    const engMix = ac.createGain();
-    engMix.gain.value = 0.55;
-    eng1.connect(engBp);
-    eng2.connect(engBp);
-    engBp.connect(engAmp);
-    engAmp.connect(engMix);
-    engMix.connect(eg);
-    eng1.start();
-    eng2.start();
-    chop.start();
-    // Vannsprut: hvit støy, høypass, svak bølging
-    const spray = mkNoise(2);
-    const sprayHp = ac.createBiquadFilter();
-    sprayHp.type = "highpass";
-    sprayHp.frequency.value = 1600;
-    const sprayG = ac.createGain();
-    sprayG.gain.value = 0.12;
-    const swell = ac.createOscillator();
-    swell.frequency.value = 0.35;
-    const swellG = ac.createGain();
-    swellG.gain.value = 0.05;
-    swell.connect(swellG);
-    swellG.connect(sprayG.gain);
-    swell.start();
-    spray.connect(sprayHp);
-    sprayHp.connect(sprayG);
-    sprayG.connect(eg);
-    // Forbikjøring: pan -1 → 1 og volum-svell, gjentas
-    const pass = () => {
-      if (gullOn.current) {
-        const t = ac.currentTime;
-        const dur = 11;
-        if ("pan" in pan) {
-          pan.pan.setValueAtTime(-0.9, t);
-          pan.pan.linearRampToValueAtTime(0.9, t + dur);
-        }
-        eg.gain.cancelScheduledValues(t);
-        eg.gain.setValueAtTime(Math.max(0.06, eg.gain.value), t);
-        eg.gain.linearRampToValueAtTime(0.85, t + dur * 0.45);
-        eg.gain.linearRampToValueAtTime(0.12, t + dur);
-        // dopplerantydning: pitch litt opp mot midten, ned etter
-        eng1.frequency.setValueAtTime(112, t);
-        eng1.frequency.linearRampToValueAtTime(96, t + dur);
-        eng2.frequency.setValueAtTime(56, t);
-        eng2.frequency.linearRampToValueAtTime(48, t + dur);
-      }
-      passT.current = setTimeout(pass, 13000);
-    };
-    // Måke: «ki-ki-kiiiaaah» — korte høye støt + langt fallende skrik
-    const cry = (t0: number, base: number, long: boolean) => {
-      const o = ac.createOscillator();
-      o.type = "sawtooth";
-      const dur = long ? 0.55 : 0.14;
-      o.frequency.setValueAtTime(base, t0);
-      if (long) {
-        o.frequency.linearRampToValueAtTime(base * 1.1, t0 + 0.08);
-        o.frequency.exponentialRampToValueAtTime(base * 0.5, t0 + dur);
-      } else {
-        o.frequency.exponentialRampToValueAtTime(base * 0.78, t0 + dur);
-      }
-      const vib = ac.createOscillator();
-      vib.frequency.value = long ? 22 : 34;
-      const vibG = ac.createGain();
-      vibG.gain.value = long ? 90 : 40;
-      vib.connect(vibG);
-      vibG.connect(o.frequency);
-      const bp = ac.createBiquadFilter();
-      bp.type = "bandpass";
-      bp.frequency.value = base * 1.4;
-      bp.Q.value = 2.2;
-      const hp = ac.createBiquadFilter();
-      hp.type = "highpass";
-      hp.frequency.value = 700;
-      const g = ac.createGain();
-      g.gain.setValueAtTime(0, t0);
-      g.gain.linearRampToValueAtTime(long ? 0.3 : 0.22, t0 + 0.03);
-      g.gain.setValueAtTime(long ? 0.3 : 0.22, t0 + dur * 0.55);
-      g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
-      o.connect(bp);
-      bp.connect(hp);
-      hp.connect(g);
-      g.connect(ac.destination);
-      o.start(t0);
-      o.stop(t0 + dur + 0.05);
-      vib.start(t0);
-      vib.stop(t0 + dur + 0.05);
-    };
-    const gullBurst = () => {
-      const t = ac.currentTime + 0.05;
-      const base = 1500 + Math.random() * 250;
-      cry(t, base, false);
-      cry(t + 0.18, base * 0.96, false);
-      cry(t + 0.36, base, true);
-      if (Math.random() < 0.5) cry(t + 1.15, base * 0.92, true);
-    };
-    const gull = () => {
-      if (gullOn.current) gullBurst();
-      gullT.current = setTimeout(gull, 3500 + Math.random() * 4000);
-    };
-    gull();
-    rig.current = { ac, master, engineGain: eg, gullBurst, startPass: pass };
-  }, []);
+    const boatOut = ac.createGain();
+    boatOut.gain.value = 1;
+    boatOut.connect(ac.destination);
+    rig.current = { ac, master, boatOut };
+    // Last opptakene (kun når lyd faktisk skrus på)
+    const load = (url: string, target: { current: AudioBuffer | null }) =>
+      fetch(url)
+        .then((res) => res.arrayBuffer())
+        .then((buf) => ac.decodeAudioData(buf))
+        .then((decoded) => {
+          target.current = decoded;
+          if (gullOn.current) {
+            startGulls();
+            if (passT.current === undefined) pass();
+          }
+        })
+        .catch(() => {});
+    load("/uploads/seagulls.mp3", gullBuf);
+    load("/uploads/boat-pass.mp3", boatBuf);
+  }, [pass, startGulls]);
 
   const toggleSound = useCallback(() => {
     if (!soundOn.current) {
@@ -239,12 +177,12 @@ export function useSound() {
 
   useEffect(() => {
     return () => {
-      clearTimeout(gullT.current);
       clearTimeout(passT.current);
       if (rig.current) {
         rig.current.ac.close();
         rig.current = null;
       }
+      gullNodes.current = null;
     };
   }, []);
 
