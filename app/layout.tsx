@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
-import { Archivo, Space_Grotesk } from "next/font/google";
+import { Archivo, Instrument_Serif, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const archivo = Archivo({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-archivo",
+  display: "swap",
+});
+
+// Altiv-logoens ordmerke (fra altiv.no)
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-instrument",
   display: "swap",
 });
 
@@ -62,7 +70,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="nb" className={`${archivo.variable} ${spaceGrotesk.variable}`}>
+    <html
+      lang="nb"
+      className={`${archivo.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable}`}
+    >
       <body>
         {children}
         <script

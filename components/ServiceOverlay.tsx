@@ -1,6 +1,7 @@
 "use client";
 
 import { tjenester } from "@/lib/data";
+import { AltivLogo, OystrLogo } from "./BrandLogos";
 
 // Fullskjerms tjenestepanel — samme sirkel-wipe og stagger som teknologi-arkivet.
 export default function ServiceOverlay({
@@ -210,17 +211,11 @@ export default function ServiceOverlay({
             >
               (Se det i praksis)
             </span>
-            <span
-              style={{
-                fontFamily: "var(--font-archivo), sans-serif",
-                fontWeight: 900,
-                fontSize: 24,
-                textTransform: "uppercase",
-                letterSpacing: "-.01em",
-              }}
-            >
-              {t.caseNavn}
-            </span>
+            {t.caseNavn === "Oystr" ? (
+              <OystrLogo size={22} color="#f2efe9" />
+            ) : (
+              <AltivLogo size={22} color="#f2efe9" />
+            )}
             <span style={{ color: "rgba(242,239,233,.65)", fontSize: 15 }}>{t.caseTekst}</span>
             <a
               href={t.caseUrl}

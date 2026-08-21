@@ -1,4 +1,5 @@
 import { mute } from "./mute";
+import { AltivLogo, OystrLogo } from "./BrandLogos";
 
 export default function Products() {
   return (
@@ -133,17 +134,8 @@ export default function Products() {
                 >
                   01 / iOS-app · Kart &amp; navigasjon
                 </div>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-archivo), sans-serif",
-                    fontWeight: 900,
-                    fontSize: 50,
-                    letterSpacing: "-.02em",
-                    margin: "0 0 18px",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Oystr
+                <h3 style={{ margin: "0 0 18px" }}>
+                  <OystrLogo size={44} />
                 </h3>
                 <p style={{ color: "#3d4550", lineHeight: 1.7, fontSize: 16, margin: "0 0 12px" }}>
                   Sjøkart og navigasjon for hele norskekysten, bygget for fritidsbåt. Sjøveisruting
@@ -209,17 +201,8 @@ export default function Products() {
                 >
                   02 / SaaS · CRM for B2B
                 </div>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-archivo), sans-serif",
-                    fontWeight: 900,
-                    fontSize: 50,
-                    letterSpacing: "-.02em",
-                    margin: "0 0 18px",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Altiv
+                <h3 style={{ margin: "0 0 18px" }}>
+                  <AltivLogo size={44} />
                 </h3>
                 <p style={{ color: "#3d4550", lineHeight: 1.7, fontSize: 16, margin: "0 0 12px" }}>
                   Norsk CRM for salgsoppfølging i B2B. Pipeline på tvers av avdelinger, automatisk
