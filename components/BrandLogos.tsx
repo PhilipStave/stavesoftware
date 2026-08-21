@@ -6,7 +6,19 @@ const OYSTR_PATH =
 
 export function OystrLogo({ size = 44, color = "#10161f" }: { size?: number; color?: string }) {
   return (
-    <span style={{ display: "inline-flex", alignItems: "center", gap: size * 0.28, color }}>
+    <span style={{ display: "inline-flex", alignItems: "center", gap: size * 0.3, color }}>
+      <span
+        style={{
+          fontFamily: "var(--font-michroma), sans-serif",
+          fontWeight: 400,
+          fontSize: size * 0.82,
+          letterSpacing: ".04em",
+          lineHeight: 1,
+          textTransform: "uppercase",
+        }}
+      >
+        OYSTR
+      </span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 822 509"
@@ -16,17 +28,6 @@ export function OystrLogo({ size = 44, color = "#10161f" }: { size?: number; col
       >
         <path d={OYSTR_PATH} fillRule="evenodd" />
       </svg>
-      <span
-        style={{
-          fontFamily: "var(--font-archivo), sans-serif",
-          fontWeight: 800,
-          fontSize: size,
-          letterSpacing: "-.02em",
-          lineHeight: 1,
-        }}
-      >
-        Oystr
-      </span>
     </span>
   );
 }

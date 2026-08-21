@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
-import { Archivo, Instrument_Serif, Space_Grotesk } from "next/font/google";
+import { Archivo, Instrument_Serif, Michroma, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const archivo = Archivo({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-archivo",
+  display: "swap",
+});
+
+// Oystr-logoens ordmerke (bred, teknisk display-font)
+const michroma = Michroma({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-michroma",
   display: "swap",
 });
 
@@ -72,7 +80,7 @@ export default function RootLayout({
   return (
     <html
       lang="nb"
-      className={`${archivo.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable}`}
+      className={`${archivo.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${michroma.variable}`}
     >
       <body>
         {children}
