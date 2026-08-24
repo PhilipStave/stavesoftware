@@ -14,11 +14,16 @@ updates:
         patterns: ["*"]
         update-types: [minor, patch]
     ignore:
-      # Major-oppgraderinger av utviklerverktøy (typescript, eslint, @types)
-      # krever migrering og bør gjøres bevisst — ikke som ukentlig PR.
-      # Runtime-avhengigheter (next, react) varsles fortsatt ved major.
-      - dependency-name: "*"
-        dependency-type: development
+      # Major-oppgraderinger av utviklerverktøy krever migrering og bør gjøres
+      # bevisst — ikke som ukentlig PR. Sikkerhetsfikser og små oppdateringer
+      # kommer fortsatt, og major på next/react varsles som før.
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
+      - dependency-name: eslint
+        update-types: ["version-update:semver-major"]
+      - dependency-name: eslint-config-next
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/*"
         update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
