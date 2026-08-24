@@ -30,11 +30,20 @@ export async function generateMetadata({
       url,
       locale: "nb_NO",
       publishedTime: a.publisert,
+      images: [
+        {
+          url: '/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'Stave Software AS — Vi bygger digitale produkter folk faktisk bruker',
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: a.tittel,
       description: a.metaBeskrivelse,
+      images: ["/og-image.jpg"],
     },
   };
 }

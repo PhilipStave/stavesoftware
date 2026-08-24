@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       "Vi skriver om apputvikling, SaaS, kart og data — hva ting koster, hvordan vi bygger, og hva vi lærer underveis.",
     url: "https://stavesoftware.no/blogg",
     locale: "nb_NO",
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Stave Software AS — Vi bygger digitale produkter folk faktisk bruker',
+      },
+    ],
   },
 };
 

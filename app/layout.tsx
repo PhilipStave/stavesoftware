@@ -49,12 +49,21 @@ export const metadata: Metadata = {
       "Norsk programvarestudio bak sjøkart-appen Oystr og CRM-systemet Altiv. Fra idé til lansert produkt.",
     url: "https://stavesoftware.no/",
     locale: "nb_NO",
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Stave Software AS — Vi bygger digitale produkter folk faktisk bruker',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Stave Software AS",
     description:
       "Norsk programvarestudio bak Oystr og Altiv. Vi bygger mobilapper, webapplikasjoner og SaaS.",
+    images: ["/og-image.jpg"],
   },
 };
 
