@@ -1,5 +1,5 @@
 # Automatiske oppdateringer av avhengigheter og GitHub Actions.
-# Dependabot lager PR-er som CI-en over sjekker automatisk.
+# Dependabot lager PR-er som CI-en sjekker automatisk før de vurderes.
 version: 2
 updates:
   - package-ecosystem: npm
@@ -9,10 +9,17 @@ updates:
       day: monday
     open-pull-requests-limit: 5
     groups:
-      # Samle smaapatcher i én PR i stedet for én per pakke
+      # Samle små oppdateringer i én PR i stedet for én per pakke
       patch-og-minor:
         patterns: ["*"]
         update-types: [minor, patch]
+    ignore:
+      # Major-oppgraderinger av utviklerverktøy (typescript, eslint, @types)
+      # krever migrering og bør gjøres bevisst — ikke som ukentlig PR.
+      # Runtime-avhengigheter (next, react) varsles fortsatt ved major.
+      - dependency-name: "*"
+        dependency-type: development
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: /
