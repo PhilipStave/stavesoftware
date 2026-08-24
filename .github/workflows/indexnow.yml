@@ -1,0 +1,26 @@
+name: IndexNow
+
+# Varsler Bing om oppdaterte sider etter hver publisering til main.
+# Kan også kjøres manuelt fra Actions-fanen.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Vercel bygger og publiserer parallelt med denne jobben — vent til den
+      # nye versjonen faktisk er ute før vi ber Bing komme og se.
+      - name: Vent på Vercel-deploy
+        run: sleep 120
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Send inn URL-er til IndexNow
+        run: npm run indexnow
