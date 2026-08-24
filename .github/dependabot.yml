@@ -1,0 +1,20 @@
+# Automatiske oppdateringer av avhengigheter og GitHub Actions.
+# Dependabot lager PR-er som CI-en over sjekker automatisk.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      # Samle smaapatcher i én PR i stedet for én per pakke
+      patch-og-minor:
+        patterns: ["*"]
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
