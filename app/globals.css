@@ -93,4 +93,9 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
   .ptxt h3 { font-size: 40px !important; }
   .srow { padding: 28px 6px !important; }
   .fwrap { padding: 28px 20px 0 !important; }
+  /* Bloggsidene */
+  .bnav { padding: 14px 20px !important; }
+  .bnav-back { display: none !important; }
+  .bwrap { padding-top: 120px !important; padding-left: 20px !important; padding-right: 20px !important; }
+  .bfoot { padding: 28px 20px !important; }
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { mute } from "./mute";
 
 export default function Footer() {
@@ -49,7 +50,10 @@ export default function Footer() {
           gap: 16,
         }}
       >
-        <div style={{ display: "flex", gap: 28, fontSize: 14 }}>
+        <div style={{ display: "flex", gap: 28, fontSize: 14, flexWrap: "wrap" }}>
+          <Link href="/blogg" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
+            Blogg
+          </Link>
           <a
             href="https://www.oystr.no"
             target="_blank"

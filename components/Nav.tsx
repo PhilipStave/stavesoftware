@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Nav({
   soundLabel,
   toggleSound,
@@ -73,6 +75,15 @@ export default function Nav({
         >
           Teknologi
         </a>
+        <Link
+          href="/blogg"
+          className="nl hov-nl"
+          data-scramble=""
+          data-hover=""
+          style={{ color: "rgba(242,239,233,.7)" }}
+        >
+          Blogg
+        </Link>
         <button
           id="soundbtn"
           data-hover=""
