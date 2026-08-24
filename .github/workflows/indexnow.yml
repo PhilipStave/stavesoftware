@@ -11,7 +11,7 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # Vercel bygger og publiserer parallelt med denne jobben — vent til den
       # nye versjonen faktisk er ute før vi ber Bing komme og se.
