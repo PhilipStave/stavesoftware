@@ -29,7 +29,7 @@ export const emnekoe: Emne[] = [
     vinkel:
       "Hvorfor vi legger tilgangsreglene i PostgreSQL i stedet for i applikasjonskoden i Altiv. Hva som går galt når man filtrerer i koden, og hva det koster å gjøre det riktig fra start.",
     kategori: "Web & SaaS",
-    brukt: false,
+    brukt: true,
   },
   {
     tittel: "Native eller nettleser: når lønner hva seg",

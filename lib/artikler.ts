@@ -402,6 +402,97 @@ export const artikler: Artikkel[] = [
       },
     ],
   },
+  {
+    slug: "row-level-security-i-praksis",
+    tittel: "Row Level Security: derfor hører sikkerheten hjemme i databasen",
+    ingress:
+      "Det holder å glemme filteret én gang. Da lekker data mellom kunder. Her er hvordan vi flyttet tilgangsreglene ned i PostgreSQL i Altiv — og hvilke feller som ligger der.",
+    metaBeskrivelse:
+      "Slik bruker vi Row Level Security i PostgreSQL for å skille kundedata i Altiv, hvorfor filtrering i applikasjonskoden er skjørt, og hvilke feller som finnes.",
+    publisert: "2026-08-24",
+    lesetid: 7,
+    kategori: "Web & SaaS",
+    innhold: [
+      {
+        type: "avsnitt",
+        tekst:
+          "Tenk deg et system der femti bedrifter deler samme database. Hver av dem ser sin egen pipeline, sine egne kunder, sine egne tall. Så skriver noen et nytt endepunkt en fredag ettermiddag, henter ut en liste, og glemmer den ene betingelsen som begrenser spørringen til riktig bedrift.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Ingenting krasjer. Ingen feilmelding. Testene passerer, for i testdataene finnes det bare én bedrift. Feilen oppdages først den dagen en kunde ser et navn i systemet sitt som ikke hører hjemme der — og da er det for sent å si at det var et uhell.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Dette er grunnen til at vi ikke lot applikasjonskoden være ansvarlig for datainndelingen i Altiv.",
+      },
+      { type: "mellomtittel", tekst: "Problemet med å huske" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Den vanlige tilnærmingen er å legge et filter i hver spørring: hent bare rader der bedrifts-IDen stemmer med den innloggede brukerens. Det fungerer utmerket — så lenge alle husker det, hver gang, for alltid.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Og det er nettopp der modellen svikter. Sikkerheten avhenger av at ingen noensinne glemmer noe. Antallet steder som kan gå galt vokser med hvert endepunkt, hver rapport, hver eksportfunksjon og hvert bakgrunnsjobb noen skriver et halvår senere. En sikkerhetsmodell som krever perfekt hukommelse fra alle som noen gang skal ta på kodebasen, er ikke en sikkerhetsmodell.",
+      },
+      { type: "mellomtittel", tekst: "Hva som skjer når regelen flyttes ned" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Row Level Security snur ansvaret. I stedet for at koden må huske å begrense, er det databasen som nekter. Du skrur det på per tabell og definerer en regel som beskriver hvilke rader den innloggede får se — og fra det øyeblikket returnerer PostgreSQL bare de radene, uansett hvilken spørring som kommer inn.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Forskjellen er hva som skjer ved en feil. Glemmer du filteret i applikasjonskoden med RLS på, får du tilbake ingenting eller for lite. Det er en feil du oppdager umiddelbart, fordi noe mangler i grensesnittet. Uten RLS får du tilbake for mye — og det er en feil ingen oppdager, fordi alt ser ut til å virke.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det er hele poenget: å gjøre den farlige feilen umulig og den ufarlige feilen synlig.",
+      },
+      { type: "mellomtittel", tekst: "Fellene" },
+      {
+        type: "avsnitt",
+        tekst:
+          "RLS er ikke gratis magi, og det er tre ting som overrasker folk som tar det i bruk for første gang.",
+      },
+      {
+        type: "punktliste",
+        punkter: [
+          "Reglene gjelder per tabell, og bare de du har skrudd dem på for. En ny tabell er som utgangspunkt uten beskyttelse. Det må inn i rutinen, ellers oppstår hullet nettopp der ingen tenkte over det.",
+          "Nøkler med utvidede rettigheter går rundt hele mekanismen. Servernøkkelen som brukes til administrative oppgaver ignorerer RLS med vilje — det er slik den skal virke. Havner den nøkkelen et sted den ikke skal, er alt du bygde borte på et øyeblikk.",
+          "Reglene koster ytelse hvis du er uforsiktig. Betingelsen evalueres mot radene, så kolonnene den bruker må være indeksert. Uten det merker du det ikke i utvikling, men du merker det når en kunde har titusen rader.",
+        ],
+      },
+      {
+        type: "faktaboks",
+        tittel: "Det RLS ikke løser",
+        tekst:
+          "Regelen svarer på om en bruker får se en rad — ikke om brukeren burde vært innlogget i det hele tatt, om passordet er sterkt nok, eller om noen har fått tilgang de ikke skulle hatt. RLS er det siste forsvaret, ikke det eneste. Vi bruker det sammen med vanlig innloggingskontroll, ikke i stedet for.",
+      },
+      { type: "mellomtittel", tekst: "Prisen, og hvorfor vi betalte den" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Å sette opp dette tar lengre tid enn å skrive et filter i koden. Du må tenke gjennom datamodellen ordentlig før du begynner, fordi reglene bygger på at det finnes en tydelig kobling mellom hver rad og hvem som eier den. Det tvinger fram avklaringer tidlig som ellers hadde blitt utsatt.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Til gjengjeld er det gjort. I Altiv trenger vi ikke vurdere sikkerheten på nytt hver gang vi legger til en funksjon, for grensen ligger et sted funksjonen ikke kan røre. Det er den typen arbeid som ikke synes i grensesnittet, aldri blir nevnt i en salgspresentasjon, og som er helt avgjørende den dagen noen spør hva som skjer hvis en utvikler gjør en feil.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Og det er ikke noe du reparerer i etterkant. Skal flere kunder dele et system, hører denne avgjørelsen hjemme før den første tabellen opprettes — ikke etter den første lekkasjen.",
+      },
+    ],
+  },
 ];
 
 export function finnArtikkel(slug: string): Artikkel | undefined {
