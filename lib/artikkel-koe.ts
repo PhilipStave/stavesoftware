@@ -22,7 +22,7 @@ export const emnekoe: Emne[] = [
     vinkel:
       "Gjennomgang av Kartverket, Kystverket og Meteorologisk institutt som datakilder — hva de tilbyr, hvilket format det kommer i, og hva som faktisk kreves for å gjøre det om til et produkt. Konkret fra arbeidet med Oystr.",
     kategori: "Kart & data",
-    brukt: false,
+    brukt: true,
   },
   {
     tittel: "Row Level Security: derfor hører sikkerheten hjemme i databasen",

@@ -316,6 +316,92 @@ export const artikler: Artikkel[] = [
       },
     ],
   },
+  {
+    slug: "apne-offentlige-data-i-norge",
+    tittel: "Åpne offentlige data i Norge: hva finnes, og hva kan du bygge med det",
+    ingress:
+      "Kartverket, Kystverket og Meteorologisk institutt gir fra seg data det har tatt tiår å samle inn. Her er hva som ligger der — og hva jobben faktisk består i når du skal gjøre det om til et produkt.",
+    metaBeskrivelse:
+      "Kartverket, Kystverket og MET gir fri tilgang til kart-, sjø- og værdata. Vi går gjennom hva som finnes, hvordan lisensene fungerer, og hva arbeidet består i.",
+    publisert: "2026-08-24",
+    lesetid: 6,
+    kategori: "Kart & data",
+    innhold: [
+      {
+        type: "avsnitt",
+        tekst:
+          "Norge har en av verdens mest åpne datapolitikker, og forbløffende få vet det. Sjøkartene som dekker hele kysten, høydemodellen som beskriver hvert fjell, værvarslene som oppdateres time for time — alt sammen er samlet inn for offentlige midler gjennom flere tiår, og alt sammen kan du bruke gratis. Også i et produkt du tar betalt for.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det høres ut som halve jobben er gjort. Da vi bygde Oystr, viste dataene seg å være det enkleste å skaffe og det vanskeligste å bruke.",
+      },
+      { type: "mellomtittel", tekst: "Hva som faktisk ligger der" },
+      {
+        type: "avsnitt",
+        tekst:
+          "For alt som har med kyst og natur å gjøre, er det i praksis tre kilder som betyr noe. De overlapper på kantene, men de løser hver sin oppgave.",
+      },
+      {
+        type: "punktliste",
+        punkter: [
+          "Kartverket forvalter det nasjonale kartgrunnlaget — landkart, sjøkart, dybdedata og høydemodeller. Dette er stammen i ethvert kartprodukt, og detaljnivået er langt høyere enn det de fleste kommersielle karttjenestene tilbyr for norske forhold.",
+          "Kystverket dekker det som gjør sjøen farbar: navigasjonsinstallasjoner som lykter og staker, farleder, og AIS-data om skipstrafikk. Det er dette laget som skiller et sjøkart fra et bilde av havbunnen.",
+          "Meteorologisk institutt tilbyr værvarsler gjennom et åpent grensesnitt som er blant de bedre offentlige API-ene som finnes — velbygget, godt dokumentert og gratis, mot at du identifiserer deg og oppfører deg pent med forespørslene.",
+        ],
+      },
+      { type: "mellomtittel", tekst: "Gratis er den billigste delen" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Dataene koster ingenting. Å gjøre dem brukbare koster alt. Offentlige datasett er laget for fagmiljøer og systemer, ikke for en telefonskjerm som holdes i sollys mens båten beveger seg — og oversettelsen mellom de to verdenene er hele arbeidet.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Formatene er det første møtet. Kartdata kommer i standarder som er bygget for presisjon og fullstendighet, ikke for at en app skal kunne lese dem raskt. De må konverteres, forenkles og pakkes om til noe en telefon kan tegne mange ganger i sekundet. Den jobben gjøres én gang per datakilde, og så må den gjøres igjen hver gang kilden endrer seg.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Så kommer den redaksjonelle jobben, som er den undervurderte. Rådataene inneholder alt: hver dybdekote, hver stake, hver sektorgrense. Viser du alt samtidig, får du et uleselig rot. Noen må bestemme hva som er relevant på hvilket zoomnivå, hva som skal rope etter oppmerksomhet og hva som bare skal ligge der. Det er ikke en teknisk avgjørelse, og den kan ikke tas foran en skjerm — den må tas ute i båt.",
+      },
+      { type: "mellomtittel", tekst: "Et API er ikke nok når appen skal virke uten nett" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Her er en konsekvens som overrasker mange: har du bestemt at produktet skal virke uten dekning, kan du ikke bare hente data fra en tjeneste når du trenger dem. Alt må pakkes og sendes med enheten på forhånd.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det gjør datamengden til et designproblem i seg selv. Hvor mye av kysten skal ligge klart? Hvor detaljert? Hvor ofte skal det oppdateres, og hva skjer med brukeren som ikke har oppdatert på et halvår? For Oystr er dette avveininger vi fortsatt justerer på — de har ikke ett riktig svar, bare et sett med konsekvenser du velger mellom.",
+      },
+      {
+        type: "faktaboks",
+        tittel: "Lisensen er fri, men ikke uten plikter",
+        tekst:
+          "Det meste av dette ligger under Norsk lisens for offentlige data, som tillater kommersiell bruk mot at du oppgir kilden. Det er en billig pris, men den skal betales — og for karttjenester er det verdt å lese vilkårene nøye, siden noen datasett har egne betingelser. Vi oppgir Kartverket, Kystverket og Meteorologisk institutt i Oystr, både fordi vi skal og fordi det er et kvalitetsstempel.",
+      },
+      { type: "mellomtittel", tekst: "Hva du kan bygge med det" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det interessante er ikke dataene i seg selv, men kombinasjonene. Kart alene finnes overalt. Kart pluss dybde pluss vannstand pluss vær pluss skipstrafikk, tolket for en bestemt bruker i en bestemt situasjon — det er et produkt. Verdien ligger i sammenstillingen og i utvalget, ikke i tilgangen.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Og fordi tilgangen er fri for alle, er det heller ikke der konkurransefortrinnet ditt ligger. Det ligger i at du har brukt tid på å forstå hva brukeren faktisk trenger å se i det øyeblikket hen ser på skjermen.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Sitter du på en idé som bygger på offentlige data og lurer på hvor stor jobben er, har vi sannsynligvis gjort noe lignende. Ta gjerne kontakt.",
+      },
+    ],
+  },
 ];
 
 export function finnArtikkel(slug: string): Artikkel | undefined {
