@@ -18,6 +18,27 @@ export type Emne = {
 
 export const emnekoe: Emne[] = [
   {
+    tittel: "Derfor tar vi eierandel i stedet for timepris",
+    vinkel:
+      "Ærlig gjennomgang av modellen vår: hvorfor vi valgte den, hva den gjør med insentivene, hva risikoen er for begge parter, og hvem den ikke passer for.",
+    kategori: "Modellen",
+    brukt: false,
+  },
+  {
+    tittel: "De første femti salgssamtalene",
+    vinkel:
+      "Hva du faktisk lærer av å ringe folk tidlig, hvorfor det former produktet mer enn det selger det, og hvordan du strukturerer det uten å drukne i notater.",
+    kategori: "Salg",
+    brukt: false,
+  },
+  {
+    tittel: "Hva en gründer bør si nei til det første året",
+    vinkel:
+      "Funksjoner, kunder, partnerskap og muligheter som ser fristende ut, men som stjeler tiden. Med eksempler fra det vi selv sa ja til og angret på.",
+    kategori: "Modellen",
+    brukt: false,
+  },
+  {
     tittel: "Åpne offentlige data i Norge: hva finnes, og hva kan du bygge med det",
     vinkel:
       "Gjennomgang av Kartverket, Kystverket og Meteorologisk institutt som datakilder — hva de tilbyr, hvilket format det kommer i, og hva som faktisk kreves for å gjøre det om til et produkt. Konkret fra arbeidet med Oystr.",

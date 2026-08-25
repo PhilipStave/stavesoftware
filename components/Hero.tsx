@@ -88,11 +88,11 @@ export default function Hero() {
             <span style={{ animationDelay: ".25s" }}>Vi</span>
           </span>{" "}
           <span className="wordmask">
-            <span style={{ animationDelay: ".33s" }}>bygger</span>
+            <span style={{ animationDelay: ".33s" }}>tar</span>
           </span>
           <br />
           <span className="wordmask">
-            <span style={{ animationDelay: ".41s" }}>digitale</span>
+            <span style={{ animationDelay: ".41s" }}>ikke</span>
           </span>{" "}
           <span className="wordmask">
             <span
@@ -102,18 +102,18 @@ export default function Hero() {
                 WebkitTextStroke: "1.5px #f2efe9",
               }}
             >
-              produkter
+              betalt
             </span>
           </span>
           <br />
           <span className="wordmask">
-            <span style={{ animationDelay: ".57s" }}>folk</span>
+            <span style={{ animationDelay: ".57s" }}>for</span>
           </span>{" "}
           <span className="wordmask">
-            <span style={{ animationDelay: ".65s" }}>faktisk</span>
+            <span style={{ animationDelay: ".65s" }}>å</span>
           </span>{" "}
           <span className="wordmask">
-            <span style={{ animationDelay: ".73s", color: "#8fb8e0" }}>bruker.</span>
+            <span style={{ animationDelay: ".73s", color: "#8fb8e0" }}>bygge.</span>
           </span>
         </h1>
         <div
@@ -137,8 +137,8 @@ export default function Hero() {
               margin: 0,
             }}
           >
-            Fra idé til lansert produkt. Vi står bak sjøkart-appen Oystr og CRM-systemet Altiv — og
-            vi er allerede i gang med det neste.
+            Vi hjelper startups med alt de trenger — salg, produkt og teknologi. I stedet for
+            faktura tar vi en eierandel, så vi tjener først når du gjør det.
           </p>
           <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
             <a
@@ -159,7 +159,7 @@ export default function Hero() {
                 whiteSpace: "nowrap",
               }}
             >
-              Se hva vi har laget
+              Se hva vi har bygget
             </a>
             <a
               href="#kontakt"
@@ -224,11 +224,11 @@ export default function Hero() {
             }}
           >
             <span
-              data-count="100"
-              data-suffix="%"
+              data-count="0"
+              data-suffix=" kr"
               style={{ fontFamily: "var(--font-archivo), sans-serif", fontWeight: 800, fontSize: 30 }}
             >
-              0%
+              0 kr
             </span>
             <span
               style={{
@@ -238,7 +238,7 @@ export default function Hero() {
                 color: "rgba(242,239,233,.6)",
               }}
             >
-              Norskutviklet
+              I timepris, alltid
             </span>
           </div>
           <div

@@ -41,27 +41,56 @@ export const tekRad2: TekItem[] = tek2.concat(tek2);
 export const tjenester: Tjeneste[] = [
   {
     nr: "/01",
-    tittel: "Mobilapper",
+    tittel: "Salg",
     tekst:
-      "Native apper for iOS med kart, offline-funksjonalitet og sanntidsdata. Som Oystr — bygget for å virke der dekningen svikter.",
+      "Vi bygger salgsapparatet: hvem du skal snakke med, hva du skal si, og systemet som holder styr på det. Vi har gjort det for oss selv først.",
     lead:
-      "Native iOS-apper bygget i Swift og SwiftUI — raske, offline-first og laget for norske forhold.",
+      "De fleste startups dør ikke fordi produktet var dårlig, men fordi ingen fikk høre om det. Salg er derfor det første vi tar tak i.",
+    media: "/uploads/tjeneste-web-saas.jpg",
+    punkter: [
+      {
+        navn: "Hvem du skal ringe",
+        tekst:
+          "Vi finner ut hvem som faktisk har problemet du løser, hvem som har budsjett, og hvem som bare kommer til å stjele tiden din.",
+      },
+      {
+        navn: "Hva du skal si",
+        tekst:
+          "Pitch, innvendinger og oppfølging. De første femti samtalene former produktet like mye som de selger det.",
+      },
+      {
+        navn: "Systemet under",
+        tekst:
+          "Pipeline, logging og oppfølginger som ikke faller mellom stolene. Vi bygde Altiv fordi vi trengte det selv.",
+      },
+    ],
+    caseNavn: "Altiv",
+    caseTekst: "Vårt eget CRM for salgsoppfølging i B2B.",
+    caseUrl: "https://altiv.no",
+  },
+  {
+    nr: "/02",
+    tittel: "Produkt & teknologi",
+    tekst:
+      "Fra idé til lansert produkt. Apper, web og SaaS — vi bygger det, og vi drifter det etterpå. Ingen leverandør å kjefte på.",
+    lead:
+      "Vi er utviklerne dine. Ikke et byrå som leverer og forsvinner, men folk som drifter det de bygde, i årevis.",
     media: "/uploads/tjeneste-mobilapper.jpg",
     punkter: [
       {
-        navn: "Kart & offline",
+        navn: "Bygget for å vare",
         tekst:
-          "Nedlastbare kart og data som virker uten dekning — som sjøkartene i Oystr, bygget for å virke der dekningen svikter.",
+          "Kjedelig, veldokumentert teknologi fremfor det nyeste. Vi skal leve med koden lenge, og det skal du også.",
       },
       {
-        navn: "Sanntidsdata",
+        navn: "Native og web",
         tekst:
-          "AIS, vær, vannstand og posisjon — hentet, tolket og vist akkurat når det trengs.",
+          "iOS i Swift når det trengs, nettleser når det holder. Vi har gjort begge deler og har ingen agenda om hvilken du velger.",
       },
       {
-        navn: "Hele App Store-løpet",
+        navn: "Drift inkludert",
         tekst:
-          "Fra TestFlight og lansering til oppdateringer og drift — vi eier hele livssyklusen.",
+          "Hosting, oppdateringer, sikkerhetsfikser og det som knekker klokka to om natten. Det følger med.",
       },
     ],
     caseNavn: "Oystr",
@@ -69,83 +98,54 @@ export const tjenester: Tjeneste[] = [
     caseUrl: "https://www.oystr.no",
   },
   {
-    nr: "/02",
-    tittel: "Web & SaaS",
-    tekst:
-      "Komplette systemer i nettleseren, fra pipeline til statistikk. Som Altiv — ingen installasjon, klart på minutter.",
-    lead:
-      "Komplette systemer i nettleseren — fra første innlogging til betaling, statistikk og drift.",
-    media: "/uploads/tjeneste-web-saas.jpg",
-    punkter: [
-      {
-        navn: "Produkt, ikke prosjekt",
-        tekst:
-          "Vi bygger som om vi skal drifte det selv — fordi vi gjør det. Ingen installasjon, klart på minutter.",
-      },
-      {
-        navn: "Abonnement & betaling",
-        tekst: "Stripe, prøveperioder og fakturaer ferdig koblet fra dag én.",
-      },
-      {
-        navn: "Sikkerhet i bunn",
-        tekst:
-          "PostgreSQL med Row Level Security — hver bedrift ser kun sine egne data.",
-      },
-    ],
-    caseNavn: "Altiv",
-    caseTekst: "Norsk CRM for salgsoppfølging i B2B.",
-    caseUrl: "https://altiv.no",
-  },
-  {
     nr: "/03",
-    tittel: "Kart & data",
-    tekst:
-      "Offentlige datakilder, AIS, vær og kart smeltet sammen til produkter som gir mening ute i felt.",
-    lead:
-      "Offentlige datakilder er gull — hvis noen gjør dem forståelige. Det er det vi gjør.",
-    media: "/uploads/tjeneste-kart-data.jpg",
-    punkter: [
-      {
-        navn: "Åpne kilder",
-        tekst:
-          "Kartverket, Kystverket og Meteorologisk institutt — smeltet sammen til ett bilde.",
-      },
-      {
-        navn: "Tolket, ikke bare vist",
-        tekst:
-          "Sjøveisruting rundt land og grunner, varsler og vannstand som gir mening ute i felt.",
-      },
-      {
-        navn: "Raskt på mobil",
-        tekst:
-          "Store datasett på små flater — optimalisert for å være lynraskt der det brukes.",
-      },
-    ],
-    caseNavn: "Oystr",
-    caseTekst: "Kartdata fra Kartverket og Kystverket, vær fra MET.",
-    caseUrl: "https://www.oystr.no",
-  },
-  {
-    nr: "/04",
     tittel: "Design & merkevare",
     tekst:
-      "Hele pakken fra navn og identitet til ferdig grensesnitt. Produkter som ser like bra ut som de virker.",
+      "Navn, identitet og grensesnitt. Produkter som ser like bra ut som de virker — fordi førsteinntrykket avgjør om noen prøver i det hele tatt.",
     lead:
-      "Hele pakken fra navn og identitet til ferdig grensesnitt — produkter som ser like bra ut som de virker.",
+      "Hele pakken fra navn og identitet til ferdig grensesnitt, tegnet og bygget av de samme folkene.",
     media: "/uploads/tjeneste-design.jpg",
     punkter: [
       {
         navn: "Identitet",
-        tekst: "Navn, logo og visuell profil som står seg — som STAVE., Oystr og Altiv.",
+        tekst:
+          "Navn, logo og visuell profil som står seg — og som ikke må gjøres om når dere vokser.",
       },
       {
         navn: "Grensesnitt",
-        tekst: "Design og kode fra samme hånd — det som tegnes, er det som bygges.",
+        tekst:
+          "Det som tegnes er det som bygges. Ingen overlevering der halve kvaliteten forsvinner.",
       },
       {
         navn: "Innhold",
         tekst:
-          "Tekst, illustrasjon og video — AI-assistert der det er smart, håndlaget der det synes.",
+          "Tekst, illustrasjon og video. Nettsiden du leser nå er et eksempel på hva vi mener med ferdig.",
+      },
+    ],
+  },
+  {
+    nr: "/04",
+    tittel: "Alt det andre",
+    tekst:
+      "Domener, drift, betaling, e-post, søkemotorer og regnearkene ingen vil ta. Du skal bygge selskapet, ikke sette opp DNS.",
+    lead:
+      "Den usynlige halvdelen av å drive et selskap. Vi tar den, slik at du kan bruke tiden på det bare du kan gjøre.",
+    media: "/uploads/tjeneste-kart-data.jpg",
+    punkter: [
+      {
+        navn: "Infrastrukturen",
+        tekst:
+          "Domener, e-post, hosting, sertifikater og overvåking. Kjedelig, nødvendig, og fort gjort feil.",
+      },
+      {
+        navn: "Betaling og abonnement",
+        tekst:
+          "Stripe, prøveperioder, fakturaer og oppsigelser. Å ta betalt er et produktproblem, ikke bare et teknisk et.",
+      },
+      {
+        navn: "Synlighet",
+        tekst:
+          "Søkemotorer, analyse og det som skal til for at folk finner dere uten at dere kjøper annonser.",
       },
     ],
   },

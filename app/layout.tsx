@@ -34,19 +34,19 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://stavesoftware.no"),
-  title: "Stave Software AS — Vi bygger digitale produkter folk faktisk bruker",
+  title: "Stave Software AS — Vi bygger startups mot eierandel, ikke faktura",
   description:
-    "Norsk programvarestudio bak sjøkart-appen Oystr og CRM-systemet Altiv. Vi bygger mobilapper, webapplikasjoner og SaaS — fra idé til lansert produkt.",
+    "Vi hjelper startups med salg, produkt og teknologi — uten å fakturere. I stedet tar vi en eierandel, så vi tjener først når du gjør det.",
   keywords:
-    "programvareutvikling, apputvikling Norge, SaaS-utvikling, skreddersydd programvare, Oystr, Altiv, CRM, sjøkart-app",
+    "startup Norge, hjelp til startup, salg og teknologi, utvikling mot eierandel, venture studio Norge, Oystr, Altiv",
   robots: "index, follow",
   alternates: { canonical: "https://stavesoftware.no/" },
   openGraph: {
     type: "website",
     siteName: "Stave Software AS",
-    title: "Stave Software AS — Vi bygger digitale produkter folk faktisk bruker",
+    title: "Stave Software AS — Vi bygger startups mot eierandel, ikke faktura",
     description:
-      "Norsk programvarestudio bak sjøkart-appen Oystr og CRM-systemet Altiv. Fra idé til lansert produkt.",
+      "Vi hjelper startups med salg, produkt og teknologi — uten å fakturere. I stedet tar vi en eierandel, så vi tjener først når du gjør det.",
     url: "https://stavesoftware.no/",
     locale: "nb_NO",
     images: [
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Stave Software AS — Vi bygger digitale produkter folk faktisk bruker',
+        alt: 'Stave Software AS — Vi tar ikke betalt for å bygge',
       },
     ],
   },
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Stave Software AS",
     description:
-      "Norsk programvarestudio bak Oystr og Altiv. Vi bygger mobilapper, webapplikasjoner og SaaS.",
+      "Vi hjelper startups med salg, produkt og teknologi mot eierandel — ikke mot faktura.",
     images: ["/og-image.jpg"],
   },
 };
@@ -74,13 +74,14 @@ const jsonLd = {
   url: "https://stavesoftware.no",
   email: "post@stavesoftware.no",
   description:
-    "Norsk programvarestudio bak sjøkart-appen Oystr og CRM-systemet Altiv.",
+    "Norsk studio som hjelper startups med salg, produkt og teknologi mot eierandel i stedet for honorar.",
   address: { "@type": "PostalAddress", addressCountry: "NO" },
   makesOffer: [
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Apputvikling" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Webapplikasjoner og SaaS" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Salg og forretningsutvikling for startups" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Produkt- og teknologiutvikling" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Design og merkevare" } },
   ],
-  knowsAbout: ["Programvareutvikling", "iOS-apper", "SaaS", "CRM"],
+  knowsAbout: ["Programvareutvikling", "Salg og forretningsutvikling", "Startups", "iOS-apper", "SaaS", "CRM"],
 };
 
 export default function RootLayout({

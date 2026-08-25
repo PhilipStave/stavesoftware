@@ -72,7 +72,7 @@ export default function Services({
               textTransform: "uppercase",
             }}
           >
-            Hva vi kan bygge<span className="twcaret" style={{ color: "#8fb8e0" }}>_</span>
+            Hva du får<span className="twcaret" style={{ color: "#8fb8e0" }}>_</span>
           </h2>
           <span
             style={{
@@ -82,7 +82,7 @@ export default function Services({
               textTransform: "uppercase",
             }}
           >
-            (Tjenester)
+            (Uten faktura)
           </span>
         </div>
         <div style={{ borderBottom: "1px solid rgba(242,239,233,.14)" }}>

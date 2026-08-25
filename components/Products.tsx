@@ -34,7 +34,7 @@ export default function Products() {
                 marginBottom: 24,
               }}
             >
-              (Egne produkter i drift)
+              (Bevis, ikke løfter)
             </div>
             <h2
               className="tw"
@@ -48,7 +48,7 @@ export default function Products() {
                 lineHeight: 0.98,
               }}
             >
-              Hva vi har laget<span className="twcaret" style={{ color: "#2f5d8a" }}>_</span>
+              Hva vi har bygget<span className="twcaret" style={{ color: "#2f5d8a" }}>_</span>
             </h2>
             <p
               style={{
@@ -59,7 +59,8 @@ export default function Products() {
                 maxWidth: 380,
               }}
             >
-              Scroll videre — produktene kommer til deg. Bygget, lansert og driftet av oss.
+              Vi ber deg gi fra deg en eierandel. Da bør du vite hva vi kan. Dette har vi bygget,
+              lansert og driftet helt selv.
             </p>
             <div
               style={{

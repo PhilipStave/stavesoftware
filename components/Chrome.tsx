@@ -131,7 +131,7 @@ export default function Chrome() {
         <a href="#produkter" data-hover="" data-sect="produkter" title="Produkter">
           <span className="dot"></span>
         </a>
-        <a href="#tjenester" data-hover="" data-sect="tjenester" title="Hva vi bygger">
+        <a href="#tjenester" data-hover="" data-sect="tjenester" title="Hva du får">
           <span className="dot"></span>
         </a>
         <a href="#teknologi" data-hover="" data-sect="teknologi" title="Teknologi">

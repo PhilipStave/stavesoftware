@@ -6,14 +6,14 @@ import { artiklerSortert } from "@/lib/artikler";
 export const metadata: Metadata = {
   title: "Blogg — Stave Software AS",
   description:
-    "Vi skriver om apputvikling, SaaS, kart og data — hva ting koster, hvordan vi bygger, og hva vi lærer underveis.",
+    "Vi skriver om det vi kan: salg, produkt og teknologi. Hva ting koster, hvordan vi bygger, og hva vi ville gjort annerledes.",
   alternates: { canonical: "https://stavesoftware.no/blogg" },
   openGraph: {
     type: "website",
     siteName: "Stave Software AS",
     title: "Blogg — Stave Software AS",
     description:
-      "Vi skriver om apputvikling, SaaS, kart og data — hva ting koster, hvordan vi bygger, og hva vi lærer underveis.",
+      "Vi skriver om det vi kan: salg, produkt og teknologi. Hva ting koster, hvordan vi bygger, og hva vi ville gjort annerledes.",
     url: "https://stavesoftware.no/blogg",
     locale: "nb_NO",
     images: [
@@ -85,8 +85,8 @@ export default function BloggOversikt() {
             margin: 0,
           }}
         >
-          Vi skriver om apputvikling, SaaS, kart og data — hva ting faktisk koster, hvordan vi
-          bygger, og hva vi ville gjort annerledes.
+          Vi skriver om det vi kan: salg, produkt og teknologi. Hva ting faktisk koster, hvordan
+          vi bygger, og hva vi ville gjort annerledes.
         </p>
       </div>
 

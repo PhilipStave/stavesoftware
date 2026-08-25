@@ -63,10 +63,10 @@ export default function Contact() {
             lineHeight: 0.98,
           }}
         >
-          Gode produkter
+          Vi tjener ingenting
           <br />
           <span style={{ color: "transparent", WebkitTextStroke: "1.5px #f2efe9" }}>
-            tar tid å bygge.
+            før du gjør det.
           </span>
         </h2>
         <p
@@ -79,8 +79,8 @@ export default function Contact() {
             lineHeight: 1.65,
           }}
         >
-          Vi bruker den tiden på våre egne produkter — og på å gjøre dem skikkelig bra. Lurer du på
-          noe, er det bare å si hei.
+          Har du et selskap i startgropa og trenger hjelp med alt? Fortell oss hva du bygger, så
+          finner vi ut om vi passer sammen.
         </p>
         <a
           data-reveal=""
@@ -104,8 +104,7 @@ export default function Contact() {
           data-reveal=""
           style={{ color: "rgba(242,239,233,.5)", fontSize: 14, margin: "28px 0 0" }}
         >
-          Utvikler eller designer som vil bygge produkter som betyr noe? Vi vil gjerne høre fra deg
-          også.
+          Vi sier nei til de fleste, og ja til noen få vi tror på. Det koster ingenting å spørre.
         </p>
       </div>
     </section>

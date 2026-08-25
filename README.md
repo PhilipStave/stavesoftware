@@ -1,9 +1,9 @@
 # Stave Software AS — nettside
 
-Én-sides nettside for [Stave Software](https://stavesoftware.no), et norsk
-programvarestudio. Siden viser fram egenproduktene [Oystr](https://www.oystr.no)
-(sjøkart og navigasjon for iOS) og [Altiv](https://altiv.no) (CRM for B2B),
-hva studioet kan bygge, teknologistacken og kontaktinformasjon.
+Én-sides nettside for [Stave Software](https://stavesoftware.no), et norsk studio
+som hjelper startups med salg, produkt og teknologi — mot eierandel i stedet for
+honorar. Siden presenterer modellen, hva studioet tilbyr, og egenproduktene
+[Oystr](https://www.oystr.no) og [Altiv](https://altiv.no) som bevis på håndverket.
 
 **Live:** https://stavesoftware.no
 

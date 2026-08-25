@@ -64,7 +64,7 @@ export default function Nav({
           data-hover=""
           style={{ color: "rgba(242,239,233,.7)" }}
         >
-          Hva vi bygger
+          Hva du får
         </a>
         <a
           href="#teknologi"
