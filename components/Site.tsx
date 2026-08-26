@@ -9,6 +9,7 @@ import Hero from "./Hero";
 import MarqueeBand from "./MarqueeBand";
 import Products from "./Products";
 import Services from "./Services";
+import Modellen from "./Modellen";
 import Tech from "./Tech";
 import TechOverlay from "./TechOverlay";
 import ServiceOverlay from "./ServiceOverlay";
@@ -70,6 +71,7 @@ export default function Site() {
       <MarqueeBand />
       <Products />
       <Services openService={openService} />
+      <Modellen />
       <Tech openTech={openTech} />
       <TechOverlay closeTech={closeTech} />
       <ServiceOverlay active={activeService} closeService={closeService} />

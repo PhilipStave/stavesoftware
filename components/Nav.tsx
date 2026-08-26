@@ -75,6 +75,15 @@ export default function Nav({
         >
           Teknologi
         </a>
+        <a
+          href="#modellen"
+          className="nl hov-nl"
+          data-scramble=""
+          data-hover=""
+          style={{ color: "rgba(242,239,233,.7)" }}
+        >
+          Modellen
+        </a>
         <Link
           href="/blogg"
           className="nl hov-nl"

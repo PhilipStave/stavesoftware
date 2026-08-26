@@ -307,7 +307,7 @@ export function useSiteEffects({
       const grain = document.getElementById("grain");
       if (grain) grain.style.opacity = h.scrollTop > vh * 0.85 ? ".55" : "0";
       let active = "topp";
-      ["topp", "produkter", "tjenester", "teknologi", "kontakt"].forEach(
+      ["topp", "produkter", "tjenester", "modellen", "teknologi", "kontakt"].forEach(
         (id) => {
           const s = document.getElementById(id);
           if (s && s.getBoundingClientRect().top <= vh * 0.5) active = id;
