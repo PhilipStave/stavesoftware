@@ -11,6 +11,28 @@ export default function Modellen() {
         borderTop: "1px solid rgba(242,239,233,.08)",
       }}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/uploads/modellen-bakgrunn.jpg"
+        alt=""
+        data-plx="-0.05"
+        style={{
+          position: "absolute",
+          inset: "-6%",
+          width: "112%",
+          height: "112%",
+          objectFit: "cover",
+          opacity: 0.3,
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(180deg, #0a0f16 0%, rgba(10,15,22,.55) 50%, #0a0f16 100%)",
+        }}
+      ></div>
       <div
         className="mwrap"
         style={{
