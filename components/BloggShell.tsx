@@ -190,7 +190,7 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
           </a>
         </div>
         <span style={{ color: "rgba(242,239,233,.4)", fontSize: 13 }}>
-          © 2026 Stave Software AS · Norge
+          © 2026 Stave Software AS · Org.nr 938 341 788 · Oslo
         </span>
       </footer>
     </div>

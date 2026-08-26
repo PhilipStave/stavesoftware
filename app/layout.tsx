@@ -71,11 +71,18 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Stave Software AS",
+  legalName: "STAVE SOFTWARE AS",
+  identifier: "938341788",
+  foundingDate: "2026-08-19",
   url: "https://stavesoftware.no",
   email: "post@stavesoftware.no",
   description:
     "Norsk studio som hjelper startups med salg, produkt og teknologi mot eierandel i stedet for honorar.",
-  address: { "@type": "PostalAddress", addressCountry: "NO" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Oslo",
+    addressCountry: "NO",
+  },
   makesOffer: [
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Salg og forretningsutvikling for startups" } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Produkt- og teknologiutvikling" } },
