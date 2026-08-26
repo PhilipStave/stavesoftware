@@ -113,12 +113,12 @@ export const artikler: Artikkel[] = [
       {
         type: "avsnitt",
         tekst:
-          "Vi bygger våre egne produkter. Det betyr at vi drifter det vi lager, i årevis, og lever med hver eneste snarvei vi tar. Det gjør noe med hvordan vi bygger for andre også: vi velger kjedelig og holdbart fremfor imponerende og skjørt, fordi vi vet hvem som får telefonen når noe knekker.",
+          "Vi har bygget og driftet våre egne produkter i årevis, og levd med hver eneste snarvei vi tok. Det former hvordan vi bygger for andre: kjedelig og holdbart fremfor imponerende og skjørt, fordi vi vet hvem som får telefonen når noe knekker. Og siden vi tar eierandel i stedet for honorar, er det vår egen framtid som står på spill hvis vi bygger noe skjørt.",
       },
       {
         type: "avsnitt",
         tekst:
-          "Lurer du på hva ideen din realistisk koster, er det bare å ta kontakt. Vi svarer ærlig — også når svaret er at du bør bygge noe mindre enn du hadde tenkt.",
+          "Vi fakturerer ikke selv — vi går inn som partner mot en eierandel. Men tallene over er verdt å kjenne uansett hvem du bygger med, og lurer du på hva ideen din faktisk krever, er det bare å ta kontakt.",
       },
     ],
   },
