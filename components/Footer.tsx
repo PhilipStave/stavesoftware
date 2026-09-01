@@ -54,6 +54,12 @@ export default function Footer() {
           <Link href="/blogg" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
             Blogg
           </Link>
+          <Link href="/vilkar" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
+            Vilkår
+          </Link>
+          <Link href="/personvern" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
+            Personvern
+          </Link>
           <a
             href="https://www.oystr.no"
             target="_blank"

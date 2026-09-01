@@ -166,9 +166,15 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
           boxSizing: "border-box",
         }}
       >
-        <div style={{ display: "flex", gap: 28, fontSize: 14 }}>
+        <div style={{ display: "flex", gap: 28, fontSize: 14, flexWrap: "wrap" }}>
           <Link href="/" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
             stavesoftware.no
+          </Link>
+          <Link href="/vilkar" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
+            Vilkår
+          </Link>
+          <Link href="/personvern" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
+            Personvern
           </Link>
           <a
             href="https://www.oystr.no"
