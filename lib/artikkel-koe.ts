@@ -22,7 +22,7 @@ export const emnekoe: Emne[] = [
     vinkel:
       "Ærlig gjennomgang av modellen vår: hvorfor vi valgte den, hva den gjør med insentivene, hva risikoen er for begge parter, og hvem den ikke passer for.",
     kategori: "Modellen",
-    brukt: false,
+    brukt: true,
   },
   {
     tittel: "De første femti salgssamtalene",

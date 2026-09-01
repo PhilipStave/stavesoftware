@@ -493,6 +493,101 @@ export const artikler: Artikkel[] = [
       },
     ],
   },
+  {
+    slug: "derfor-tar-vi-eierandel",
+    tittel: "Derfor tar vi eierandel i stedet for timepris",
+    ingress:
+      "Vi sender ikke faktura. Vi går inn i selskapet og tjener først når du gjør det. Her er hvorfor vi endte der, hva det koster begge parter — og hvem det er en dårlig idé for.",
+    metaBeskrivelse:
+      "Vi fakturerer ikke timer, men går inn som partner mot eierandel. Her er hvorfor vi valgte det, hva risikoen er for begge parter, og hvem det ikke passer for.",
+    publisert: "2026-09-01",
+    lesetid: 6,
+    kategori: "Modellen",
+    innhold: [
+      {
+        type: "avsnitt",
+        tekst:
+          "Innvendingen kommer som regel med en gang: «Hvorfor skulle jeg gi bort en bit av selskapet mitt når jeg kan betale for jobben?» Det er et godt spørsmål, og svaret er ikke at eierandel alltid er bedre. Svaret er at timepris og godt produktarbeid drar i hver sin retning oftere enn bransjen liker å innrømme.",
+      },
+      { type: "mellomtittel", tekst: "Timeprisen betaler for feil ting" },
+      {
+        type: "avsnitt",
+        tekst:
+          "En leverandør som fakturerer timer, tjener mer jo lengre det tar og jo mer som bygges. Det betyr ikke at noen drøyer med vilje — de aller fleste i denne bransjen er ærlige folk. Men et insentiv trenger ikke være bevisst for å virke. Det virker i de små avgjørelsene, i hvor hardt du argumenterer mot en funksjon du egentlig mener er unødvendig.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Og det er nettopp der en tidligfasebedrift trenger mest motstand. Det mest verdifulle vi gjorde da vi bygde Altiv, var å skrive ned hva systemet ikke skulle inneholde: ingen markedsføringsautomatisering, ingen kundeservicemodul, ingen tilpasningsmuligheter som gjør at to bedrifter ender med to helt ulike produkter. Den listen var ren subtraksjon. Den gjorde produktet bedre og prosjektet mindre — altså det motsatte av det en fakturamodell belønner.",
+      },
+      { type: "mellomtittel", tekst: "Arbeidet som ikke ser bra ut på en faktura" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Da vi la tilgangsreglene i Altiv ned i databasen med Row Level Security i stedet for å filtrere i koden, kostet det tid før vi hadde noe å vise fram. Ingenting av det synes i grensesnittet. Sett opp som en linje i et estimat, ved siden av en funksjon kunden kan se og klikke på, taper den linjen hver gang. Eier du utfallet selv, er det ikke engang en diskusjon: du vil ikke ha den telefonen om to år.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Oystr har et enda tydeligere eksempel. Hvor mye et sjøkart skal vise på hvert zoomnivå — hvilke dybdetall som er relevante, når en grunne skal rope etter oppmerksomhet og når den bare skal ligge der — kan ikke avgjøres foran en skjerm. Det må gjøres ute i båt, i ekte lys, i ekte fart, og justeres til kartet føles riktig. Vi vet ikke hvor mange runder det tar før vi har tatt dem. Hvordan skulle vi estimert den jobben ærlig, og hvem hadde godkjent regningen for runde fire?",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Som eier stiller ikke spørsmålet seg. Det eneste som betyr noe er om kartet er godt nok, for det er kvaliteten på kartet som avgjør om noe av dette er verdt noe.",
+      },
+      { type: "mellomtittel", tekst: "Hva det koster oss" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Vi jobber i månedsvis før noe som helst kommer inn, og vi kan ende med å ha jobbet gratis. Selskapet kan gå tom, markedet kan vise seg å ikke finnes, gründeren kan miste motet. Da sitter vi igjen med en eierandel i noe som ikke er verdt noe. Det er ikke en teoretisk risiko, det er den vanligste utgangen for et tidligfaseselskap.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det gjør oss kresne på en måte vi ikke ville vært med faktura i hånden. Vi kan bare være med i et lite antall selskaper om gangen, fordi hvert av dem får ekte tid og ikke en andel av en timeliste. Så vi sier nei langt oftere enn ja, og vi sier det tidlig.",
+      },
+      { type: "mellomtittel", tekst: "Hva det koster deg" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Her skal vi være ærlige, for alternativet er å selge noe. En faktura er endelig. En eierandel er ikke. Går det virkelig bra, vil vi over tid ha kostet deg mer enn en regning ville gjort — det er hele mekanismen, og det er derfor vi tør å jobbe uten betaling i starten. Den som fremstiller eierandel som «gratis utvikling», har ikke lest sin egen modell.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det andre du betaler med, er at du får en medeier med meninger. Vår vurdering er ikke lenger et råd du kan overse uten videre — den kommer fra noen som bærer konsekvensen sammen med deg. For de fleste gründere er det den mest verdifulle delen av avtalen. For noen er det uutholdelig, og det er greit å vite om seg selv på forhånd.",
+      },
+      {
+        type: "faktaboks",
+        tittel: "Når du bør velge en vanlig leverandør i stedet",
+        tekst:
+          "Vet du nøyaktig hva som skal bygges og trenger bare hender, er timepris riktig — da betaler du for utførelse, ikke for vurderinger. Har du en avgrenset oppgave med en frist, det samme. Og driver du et selskap som allerede tjener penger, er det som regel både billigere og enklere å kjøpe jobben enn å gi fra deg eierskap. Modellen vår er laget for det tidlige, uavklarte stadiet der ingen ennå vet nøyaktig hva som skal bygges.",
+      },
+      { type: "mellomtittel", tekst: "Den ubehagelige samtalen" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det vanskeligste med modellen er ikke arbeidet. Det er å bli enige om størrelsen på eierandelen på et tidspunkt da ingen av oss vet hva selskapet er verdt. Der finnes ingen fasit, bare to parter som må snakke om noe ubehagelig mens de fortsatt liker hverandre.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Vi tar heller den samtalen i uke én enn å oppdage i måned åtte at forventningene aldri var like. Det samme gjelder spørsmålet ingen liker å stille tidlig: hva skjer hvis vi blir uenige, eller hvis en av oss vil ut? Et partnerskap som ikke tåler å snakke om sin egen slutt, er ikke et partnerskap ennå.",
+      },
+      { type: "mellomtittel", tekst: "Hva vi ser etter" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Vi ser ikke etter den beste idéen. Ideer er billige, og de fleste av dem endrer seg uansett i møte med den første ekte brukeren. Vi ser etter noen som kjenner et problem bedre enn oss, som orker å høre nei, og som kommer til å holde ut lenger enn det er behagelig. Resten kan vi bidra med: produkt, teknologi, design, salg og drift.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Du trenger ingen kravspesifikasjon for å ta praten. Fortell oss hva du bygger og hvem det er for, så sier vi ærlig om vi er riktig partner — også når svaret er nei.",
+      },
+    ],
+  },
 ];
 
 export function finnArtikkel(slug: string): Artikkel | undefined {
