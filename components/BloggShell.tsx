@@ -127,12 +127,12 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
           }}
         >
           <img
-            src="/logo/crest-monogram.png"
+            src="/logo/crest-symbol.png"
             alt=""
             aria-hidden="true"
-            width={460}
-            height={450}
-            style={{ width: 21, height: "auto", display: "block" }}
+            width={869}
+            height={662}
+            style={{ height: 26, width: "auto", display: "block" }}
           />
           <span>
             CREST HOLDING<span style={{ color: "#8fb8e0" }}>®</span>
