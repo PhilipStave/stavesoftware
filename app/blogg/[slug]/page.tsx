@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import BloggShell from "@/components/BloggShell";
 import ArtikkelInnhold from "@/components/ArtikkelInnhold";
 import { artikler, artiklerSortert, finnArtikkel } from "@/lib/artikler";
+import { selskap } from "@/lib/selskap";
 
 export function generateStaticParams() {
   return artikler.map((a) => ({ slug: a.slug }));
@@ -19,12 +20,12 @@ export async function generateMetadata({
   if (!a) return {};
   const url = `https://stavesoftware.no/blogg/${a.slug}`;
   return {
-    title: `${a.tittel} — Stave Software AS`,
+    title: `${a.tittel} — ${selskap.fulltNavn}`,
     description: a.metaBeskrivelse,
     alternates: { canonical: url },
     openGraph: {
       type: "article",
-      siteName: "Stave Software AS",
+      siteName: selskap.fulltNavn,
       title: a.tittel,
       description: a.metaBeskrivelse,
       url,
@@ -35,7 +36,7 @@ export async function generateMetadata({
           url: '/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: 'Stave Software AS — Vi bygger digitale produkter folk faktisk bruker',
+          alt: `${selskap.fulltNavn} — Vi bygger digitale produkter folk faktisk bruker`,
         },
       ],
     },
@@ -74,10 +75,10 @@ export default async function ArtikkelSide({
     dateModified: a.publisert,
     inLanguage: "nb-NO",
     mainEntityOfPage: `https://stavesoftware.no/blogg/${a.slug}`,
-    author: { "@type": "Organization", name: "Stave Software AS", url: "https://stavesoftware.no" },
+    author: { "@type": "Organization", name: selskap.fulltNavn, url: "https://stavesoftware.no" },
     publisher: {
       "@type": "Organization",
-      name: "Stave Software AS",
+      name: selskap.fulltNavn,
       url: "https://stavesoftware.no",
     },
   };

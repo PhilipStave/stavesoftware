@@ -28,6 +28,9 @@ export default function Nav({
         href="#topp"
         data-hover=""
         style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 11,
           fontFamily: "var(--font-archivo), sans-serif",
           fontWeight: 900,
           fontSize: 16,
@@ -35,7 +38,17 @@ export default function Nav({
           color: "#f2efe9",
         }}
       >
-        STAVE SOFTWARE<span style={{ color: "#8fb8e0" }}>®</span>
+        <img
+          src="/logo/crest-monogram.png"
+          alt=""
+          aria-hidden="true"
+          width={460}
+          height={450}
+          style={{ width: 21, height: "auto", display: "block" }}
+        />
+        <span>
+          CREST HOLDING<span style={{ color: "#8fb8e0" }}>®</span>
+        </span>
       </a>
       <div
         id="navlinks"

@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import BloggShell from "@/components/BloggShell";
 import { artiklerSortert } from "@/lib/artikler";
+import { selskap } from "@/lib/selskap";
 
 export const metadata: Metadata = {
-  title: "Blogg — Stave Software AS",
+  title: `Blogg — ${selskap.fulltNavn}`,
   description:
     "Vi skriver om det vi kan: salg, produkt og teknologi. Hva ting koster, hvordan vi bygger, og hva vi ville gjort annerledes.",
   alternates: { canonical: "https://stavesoftware.no/blogg" },
   openGraph: {
     type: "website",
-    siteName: "Stave Software AS",
-    title: "Blogg — Stave Software AS",
+    siteName: selskap.fulltNavn,
+    title: `Blogg — ${selskap.fulltNavn}`,
     description:
       "Vi skriver om det vi kan: salg, produkt og teknologi. Hva ting koster, hvordan vi bygger, og hva vi ville gjort annerledes.",
     url: "https://stavesoftware.no/blogg",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Stave Software AS — Vi bygger digitale produkter folk faktisk bruker',
+        alt: `${selskap.fulltNavn} — Vi bygger digitale produkter folk faktisk bruker`,
       },
     ],
   },

@@ -6,7 +6,7 @@
 // Poenget med å ha en ENDELIG liste er at innholdet skal være planlagt, ikke
 // masseprodusert: når køen er tom, stopper publiseringen og du får beskjed om
 // å fylle på. Legg gjerne til egne emner — det viktigste kriteriet er at
-// artikkelen må kunne inneholde noe bare Stave Software kan skrive, hentet fra
+// artikkelen må kunne inneholde noe bare Crest Holding kan skrive, hentet fra
 // reell erfaring med Oystr og Altiv.
 
 export type Emne = {
@@ -139,7 +139,7 @@ export const emnekoe: Emne[] = [
   {
     tittel: "Å bygge merkevare som et lite studio",
     vinkel:
-      "Hvordan vi tenker om navn, identitet og uttrykk når vi er få — og hvorfor produktene våre har egne merkevarer i stedet for å hete Stave 1 og Stave 2.",
+      "Hvordan vi tenker om navn, identitet og uttrykk når vi er få — og hvorfor produktene våre har egne merkevarer i stedet for å hete Crest 1 og Crest 2.",
     kategori: "Design & merkevare",
     brukt: false,
   },

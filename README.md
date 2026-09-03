@@ -1,6 +1,6 @@
-# Stave Software AS — nettside
+# Crest Holding AS — nettside
 
-Én-sides nettside for [Stave Software](https://stavesoftware.no), et norsk studio
+Én-sides nettside for [Crest Holding](https://stavesoftware.no), et norsk studio
 som hjelper startups med salg, produkt og teknologi — mot eierandel i stedet for
 honorar. Siden presenterer modellen, hva studioet tilbyr, og egenproduktene
 [Oystr](https://www.oystr.no) og [Altiv](https://altiv.no) som bevis på håndverket.
@@ -72,4 +72,4 @@ genereres av Next.js og ligger i `app/`.
 
 ---
 
-© 2026 Stave Software AS
+© 2026 Crest Holding AS

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, Instrument_Serif, Michroma, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { selskap, NAVN_REGISTRERT } from "@/lib/selskap";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -34,7 +35,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://stavesoftware.no"),
-  title: "Stave Software AS — Vi bygger startups mot eierandel, ikke faktura",
+  title: `${selskap.fulltNavn} — Vi bygger startups mot eierandel, ikke faktura`,
   description:
     "Vi hjelper startups med salg, produkt og teknologi — uten å fakturere. I stedet tar vi en eierandel, så vi tjener først når du gjør det.",
   keywords:
@@ -43,8 +44,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://stavesoftware.no/" },
   openGraph: {
     type: "website",
-    siteName: "Stave Software AS",
-    title: "Stave Software AS — Vi bygger startups mot eierandel, ikke faktura",
+    siteName: selskap.fulltNavn,
+    title: `${selskap.fulltNavn} — Vi bygger startups mot eierandel, ikke faktura`,
     description:
       "Vi hjelper startups med salg, produkt og teknologi — uten å fakturere. I stedet tar vi en eierandel, så vi tjener først når du gjør det.",
     url: "https://stavesoftware.no/",
@@ -54,13 +55,13 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Stave Software AS — Vi tar ikke betalt for å bygge',
+        alt: `${selskap.fulltNavn} — Vi tar ikke betalt for å bygge`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Stave Software AS",
+    title: selskap.fulltNavn,
     description:
       "Vi hjelper startups med salg, produkt og teknologi mot eierandel — ikke mot faktura.",
     images: ["/og-image.jpg"],
@@ -70,9 +71,13 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Stave Software AS",
-  legalName: "STAVE SOFTWARE AS",
-  identifier: "938341788",
+  name: selskap.fulltNavn,
+  // Foretaksregisteret er fasit for legalName. Til navneendringen er registrert
+  // er det gamle navnet fortsatt det registrerte; da meldes det nye som
+  // alternateName. Snus NAVN_REGISTRERT, snur begge feltene med.
+  legalName: NAVN_REGISTRERT ? selskap.juridiskNavn : selskap.tidligereNavn,
+  alternateName: NAVN_REGISTRERT ? selskap.tidligereNavn : selskap.fulltNavn,
+  identifier: selskap.orgnrKompakt,
   foundingDate: "2026-08-19",
   url: "https://stavesoftware.no",
   email: "post@stavesoftware.no",

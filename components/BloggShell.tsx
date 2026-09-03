@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
+import { selskapslinje } from "@/lib/selskap";
 
 const GRAIN_BG =
   "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%22240%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22/><feColorMatrix type=%22saturate%22 values=%220%22/><feComponentTransfer><feFuncA type=%22linear%22 slope=%220.14%22/></feComponentTransfer></filter><rect width=%22240%22 height=%22240%22 filter=%22url(%23n)%22/></svg>')";
@@ -115,6 +116,9 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
           href="/"
           data-hover=""
           style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 11,
             fontFamily: "var(--font-archivo), sans-serif",
             fontWeight: 900,
             fontSize: 16,
@@ -122,7 +126,17 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
             color: "#f2efe9",
           }}
         >
-          STAVE SOFTWARE<span style={{ color: "#8fb8e0" }}>®</span>
+          <img
+            src="/logo/crest-monogram.png"
+            alt=""
+            aria-hidden="true"
+            width={460}
+            height={450}
+            style={{ width: 21, height: "auto", display: "block" }}
+          />
+          <span>
+            CREST HOLDING<span style={{ color: "#8fb8e0" }}>®</span>
+          </span>
         </Link>
         <div style={{ display: "flex", gap: 30, alignItems: "center", fontSize: 13, letterSpacing: ".1em", textTransform: "uppercase" }}>
           <Link href="/" data-hover="" className="hov-nl bnav-back" style={{ color: "rgba(242,239,233,.7)" }}>
@@ -168,7 +182,7 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
       >
         <div style={{ display: "flex", gap: 28, fontSize: 14, flexWrap: "wrap" }}>
           <Link href="/" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
-            stavesoftware.no
+            Crest Holding
           </Link>
           <Link href="/vilkar" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
             Vilkår
@@ -196,7 +210,7 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
           </a>
         </div>
         <span style={{ color: "rgba(242,239,233,.4)", fontSize: 13 }}>
-          © 2026 Stave Software AS · Org.nr 938 341 788 · Oslo
+          {selskapslinje}
         </span>
       </footer>
     </div>

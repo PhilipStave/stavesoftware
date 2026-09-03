@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import JuridiskSide from "@/components/JuridiskSide";
 import { vilkar, vilkarIngress, JURIDISK_OPPDATERT } from "@/lib/juridisk";
+import { selskap } from "@/lib/selskap";
 
 const beskrivelse =
   "Vilkår for bruk av stavesoftware.no: hvem som står bak siden, hva du kan gjøre med innholdet, og hva som ikke er et bindende tilbud.";
 
 export const metadata: Metadata = {
-  title: "Vilkår — Stave Software AS",
+  title: `Vilkår — ${selskap.fulltNavn}`,
   description: beskrivelse,
   alternates: { canonical: "https://stavesoftware.no/vilkar" },
   openGraph: {
     type: "website",
-    siteName: "Stave Software AS",
-    title: "Vilkår — Stave Software AS",
+    siteName: selskap.fulltNavn,
+    title: `Vilkår — ${selskap.fulltNavn}`,
     description: beskrivelse,
     url: "https://stavesoftware.no/vilkar",
     locale: "nb_NO",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Stave Software AS",
+        alt: selskap.fulltNavn,
       },
     ],
   },

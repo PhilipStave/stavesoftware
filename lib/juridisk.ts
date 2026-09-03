@@ -5,8 +5,9 @@
 // gjør. Legges det til analyse, skjemaer, informasjonskapsler eller en ny
 // databehandler, må teksten oppdateres FØR endringen settes i drift.
 import type { Blokk } from "./artikler";
+import { selskap, selskapsangivelse } from "./selskap";
 
-export const JURIDISK_OPPDATERT = "2026-09-01";
+export const JURIDISK_OPPDATERT = "2026-09-03";
 
 export const personvernIngress =
   "stavesoftware.no samler ikke inn opplysninger om deg. Det finnes ingen skjemaer, ingen innlogging, ingen informasjonskapsler, ingen analyseverktøy og ingen sporing. Det eneste som skjer automatisk, er at webserveren fører en teknisk logg over forespørsler — slik alle webservere gjør. Personopplysninger oppstår først når du selv velger å sende oss en e-post.";
@@ -15,8 +16,7 @@ export const personvern: Blokk[] = [
   { type: "mellomtittel", tekst: "Hvem er behandlingsansvarlig" },
   {
     type: "avsnitt",
-    tekst:
-      "Stave Software AS, org.nr. 938 341 788, Oslo, registrert i Foretaksregisteret, er behandlingsansvarlig for personopplysningene som beskrives her. Spørsmål om personvern, eller henvendelser om rettighetene dine, sendes til post@stavesoftware.no. Vi har ikke personvernombud, og er ikke pålagt å ha det.",
+    tekst: `Behandlingsansvarlig for personopplysningene som beskrives her er ${selskapsangivelse()} Spørsmål om personvern, eller henvendelser om rettighetene dine, sendes til post@stavesoftware.no. Vi har ikke personvernombud, og er ikke pålagt å ha det.`,
   },
 
   { type: "mellomtittel", tekst: "Hva nettsiden ikke gjør" },
@@ -79,8 +79,7 @@ export const personvern: Blokk[] = [
   { type: "mellomtittel", tekst: "Når du sender oss e-post" },
   {
     type: "avsnitt",
-    tekst:
-      "Kontaktlenkene på siden åpner ditt eget e-postprogram med adressen post@stavesoftware.no. Nettsiden sender ingenting selv, og vi ser ingenting før du faktisk trykker send.",
+    tekst: `Kontaktlenkene på siden åpner ditt eget e-postprogram med adressen post@stavesoftware.no. Nettsiden sender ingenting selv, og vi ser ingenting før du faktisk trykker send. Adressen og domenet er uendret etter at selskapet vedtok å bytte navn til ${selskap.fulltNavn}; det er samme selskap som mottar og svarer.`,
   },
   {
     type: "avsnitt",
@@ -186,20 +185,17 @@ export const personvern: Blokk[] = [
   },
 ];
 
-export const vilkarIngress =
-  "Dette er vilkårene for bruk av stavesoftware.no. Nettstedet er en presentasjon av Stave Software AS og en blogg — det selger ingenting, har ingen innlogging og krever ingen registrering. Vilkårene sier derfor tre ting: hvem som står bak siden, hva du kan gjøre med innholdet her, og hva du ikke kan lese ut av det. De er korte med vilje.";
+export const vilkarIngress = `Dette er vilkårene for bruk av stavesoftware.no. Nettstedet er en presentasjon av ${selskap.fulltNavn} og en blogg — det selger ingenting, har ingen innlogging og krever ingen registrering. Vilkårene sier derfor tre ting: hvem som står bak siden, hva du kan gjøre med innholdet her, og hva du ikke kan lese ut av det. De er korte med vilje.`;
 
 export const vilkar: Blokk[] = [
   { type: "mellomtittel", tekst: "Hvem står bak nettstedet" },
   {
     type: "avsnitt",
-    tekst:
-      "Nettstedet stavesoftware.no drives av Stave Software AS, org.nr. 938 341 788, registrert i Foretaksregisteret, med forretningssted i Oslo. All kontakt går til post@stavesoftware.no.",
+    tekst: `Nettstedet stavesoftware.no drives av ${selskapsangivelse()} All kontakt går til post@stavesoftware.no.`,
   },
   {
     type: "avsnitt",
-    tekst:
-      "Stave Software AS hjelper tidligfaseselskaper med salg, produkt, teknologi og drift, og tar eierandel i stedet for honorar. Nettstedet er en presentasjon av dette arbeidet. Her finnes ingen brukerkontoer, ingen betaling og ingen tjeneste du logger inn på — bare innhold du kan lese.",
+    tekst: `${selskap.navn} hjelper tidligfaseselskaper med salg, produkt, teknologi og drift, og tar eierandel i stedet for honorar. Nettstedet er en presentasjon av dette arbeidet. Her finnes ingen brukerkontoer, ingen betaling og ingen tjeneste du logger inn på — bare innhold du kan lese.`,
   },
 
   { type: "mellomtittel", tekst: "Når vilkårene gjelder" },
@@ -217,8 +213,7 @@ export const vilkar: Blokk[] = [
   { type: "mellomtittel", tekst: "Opphavsrett til innholdet" },
   {
     type: "avsnitt",
-    tekst:
-      "Tekst, bilder, illustrasjoner, video, lyd, design, grafiske elementer og kode på stavesoftware.no tilhører Stave Software AS eller våre lisensgivere, og er vernet av åndsverkloven. Det samme gjelder navnene og kjennetegnene Stave Software og Altiv. Oystr-navnet og -logoen brukes med tillatelse fra rettighetshaver.",
+    tekst: `Tekst, bilder, illustrasjoner, video, lyd, design, grafiske elementer og kode på stavesoftware.no tilhører ${selskap.fulltNavn} eller våre lisensgivere, og er vernet av åndsverkloven. Det samme gjelder navnene og kjennetegnene ${selskap.navn} og Altiv. Oystr-navnet og -logoen brukes med tillatelse fra rettighetshaver.`,
   },
   {
     type: "avsnitt",
@@ -272,8 +267,7 @@ export const vilkar: Blokk[] = [
   },
   {
     type: "avsnitt",
-    tekst:
-      "Innholdet på siden er heller ikke investeringsrådgivning, ikke et tilbud om å kjøpe eller selge finansielle instrumenter, og ikke en oppfordring til å investere i Stave Software AS eller i selskaper vi jobber med. Vi yter ingen investeringstjenester og gir ingen anbefalinger om kjøp eller salg av aksjer. Vi jobber mot eierandel etter individuell avtale — det er noe annet.",
+    tekst: `Innholdet på siden er heller ikke investeringsrådgivning, ikke et tilbud om å kjøpe eller selge finansielle instrumenter, og ikke en oppfordring til å investere i ${selskap.fulltNavn} eller i selskaper vi jobber med. Vi yter ingen investeringstjenester og gir ingen anbefalinger om kjøp eller salg av aksjer. Vi jobber mot eierandel etter individuell avtale — det er noe annet.`,
   },
 
   { type: "mellomtittel", tekst: "Idéer og materiale du sender oss" },
@@ -348,7 +342,6 @@ export const vilkar: Blokk[] = [
   { type: "mellomtittel", tekst: "Kontakt" },
   {
     type: "avsnitt",
-    tekst:
-      "Spørsmål om vilkårene, om innhold på siden eller om bruk av materiale sendes til post@stavesoftware.no. Stave Software AS, org.nr. 938 341 788, registrert i Foretaksregisteret, Oslo.",
+    tekst: `Spørsmål om vilkårene, om innhold på siden eller om bruk av materiale sendes til post@stavesoftware.no. ${selskapsangivelse()}`,
   },
 ];

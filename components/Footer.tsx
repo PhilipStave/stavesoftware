@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { mute } from "./mute";
+import { selskapslinje } from "@/lib/selskap";
 
 export default function Footer() {
   return (
@@ -80,9 +81,27 @@ export default function Footer() {
           </a>
         </div>
         <span style={{ color: "rgba(242,239,233,.4)", fontSize: 13 }}>
-          © 2026 Stave Software AS · Org.nr 938 341 788 · Oslo
+          {selskapslinje}
         </span>
       </div>
+      {/* Løvemerket over ordet, slik selve logoen er bygget opp. Merket tåler
+          litt mer tyngde enn ordet under, ellers forsvinner manken. */}
+      <img
+        src="/logo/crest-symbol.png"
+        alt=""
+        aria-hidden="true"
+        width={869}
+        height={662}
+        style={{
+          position: "relative",
+          display: "block",
+          margin: "44px auto 0",
+          width: "clamp(78px, 9vw, 132px)",
+          height: "auto",
+          opacity: 0.3,
+          userSelect: "none",
+        }}
+      />
       <div
         style={{
           position: "relative",
@@ -94,12 +113,12 @@ export default function Footer() {
           textAlign: "center",
           textTransform: "uppercase",
           color: "rgba(242,239,233,.22)",
-          marginTop: 30,
+          marginTop: 16,
           paddingBottom: "0.08em",
           userSelect: "none",
         }}
       >
-        Stave
+        Crest
       </div>
     </footer>
   );

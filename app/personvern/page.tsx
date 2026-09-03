@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import JuridiskSide from "@/components/JuridiskSide";
 import { personvern, personvernIngress, JURIDISK_OPPDATERT } from "@/lib/juridisk";
+import { selskap } from "@/lib/selskap";
 
 const beskrivelse =
   "stavesoftware.no har ingen informasjonskapsler, ingen analyseverktøy og ingen skjemaer. Her står nøyaktig hva som behandles, av hvem, og hvilke rettigheter du har.";
 
 export const metadata: Metadata = {
-  title: "Personvern — Stave Software AS",
+  title: `Personvern — ${selskap.fulltNavn}`,
   description: beskrivelse,
   alternates: { canonical: "https://stavesoftware.no/personvern" },
   openGraph: {
     type: "website",
-    siteName: "Stave Software AS",
-    title: "Personvern — Stave Software AS",
+    siteName: selskap.fulltNavn,
+    title: `Personvern — ${selskap.fulltNavn}`,
     description: beskrivelse,
     url: "https://stavesoftware.no/personvern",
     locale: "nb_NO",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Stave Software AS",
+        alt: selskap.fulltNavn,
       },
     ],
   },

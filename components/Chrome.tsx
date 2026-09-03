@@ -32,34 +32,43 @@ export default function Chrome() {
           <span>Programvarestudio</span>
           <span>Norge</span>
         </div>
+        {/* Logoen er det som lastes inn: et svakt spøkelseslag ligger i ro,
+            mens #prefill avdekkes nedenfra i takt med prosenten. Samme
+            clipPath-mekanikk som ordmerket hadde — useSiteEffects rører bare
+            id-en, ikke innholdet. */}
         <div
           id="preword"
           style={{
             position: "relative",
-            fontFamily: "var(--font-archivo), sans-serif",
-            fontWeight: 900,
-            fontSize: "clamp(60px, 14vw, 240px)",
-            letterSpacing: "-.03em",
-            lineHeight: 1,
-            textTransform: "uppercase",
-            textAlign: "center",
+            width: "clamp(210px, 32vw, 440px)",
+            lineHeight: 0,
             alignSelf: "center",
           }}
         >
-          <div style={{ color: "transparent", WebkitTextStroke: "2px rgba(242,239,233,.28)" }}>
-            STAVE.
-          </div>
+          <img
+            src="/logo/crest-lockup.png"
+            alt="Crest Holding"
+            width={1019}
+            height={771}
+            style={{ width: "100%", height: "auto", display: "block", opacity: 0.2 }}
+          />
           <div
             id="prefill"
             style={{
               position: "absolute",
               inset: 0,
-              color: "#f2efe9",
               clipPath: "inset(100% 0 0 0)",
               transition: "clip-path .25s cubic-bezier(.4,0,.2,1)",
             }}
           >
-            STAVE<span style={{ color: "#8fb8e0" }}>.</span>
+            <img
+              src="/logo/crest-lockup.png"
+              alt=""
+              aria-hidden="true"
+              width={1019}
+              height={771}
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
