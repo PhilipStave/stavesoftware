@@ -588,6 +588,132 @@ export const artikler: Artikkel[] = [
       },
     ],
   },
+  {
+    slug: "navnet-gjelder-ikke-for-det-er-registrert",
+    tittel: "Navnet gjelder ikke før det er registrert",
+    ingress:
+      "Vi vedtok 3. september å endre foretaksnavn fra Stave Software AS til Crest Holding AS. Samme selskap, samme organisasjonsnummer, ingenting solgt. Foretaksregisteret har ikke registrert det ennå — og den forskjellen er hele poenget med denne artikkelen.",
+    metaBeskrivelse:
+      "Vi endrer foretaksnavn fra Stave Software AS til Crest Holding AS, org.nr. 938 341 788. Hva et navnebytte krever, hva som har rettsvirkning, og hva som ikke endrer seg.",
+    publisert: "2026-09-03",
+    lesetid: 6,
+    kategori: "Modellen",
+    innhold: [
+      {
+        type: "avsnitt",
+        tekst:
+          "Vedtaket tok noen minutter. Alle 300 aksjene var representert, og det var enstemmig. Det er den enkle delen. Den som overses, kommer etterpå: et vedtak om nytt foretaksnavn er ikke det samme som et nytt foretaksnavn.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "3. september 2026 vedtok en ekstraordinær generalforsamling å endre foretaksnavnet vårt fra Stave Software AS til Crest Holding AS. Det er samme juridiske enhet, med samme organisasjonsnummer: 938 341 788. Ingenting er solgt, fusjonert eller startet på nytt. Oystr og Altiv heter det samme og eies av det samme selskapet som før.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Foretaksregisteret har ikke registrert det nye navnet ennå. Slår du opp 938 341 788 i Brønnøysund i dag, får du fortsatt STAVE SOFTWARE AS, og det er riktig svar fra registeret. Vi skriver dette mens vi står midt i det, fordi mellomperioden er den delen ingen forklarer.",
+      },
+      { type: "mellomtittel", tekst: "Et vedtak er en beslutning, ikke en rettighet" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Et foretaksnavn får rettsvirkning først når det er registrert. Generalforsamlingen bestemmer at navnet skal endres; registreringen er det som gjør navnet til selskapets. Et vedtak i egen generalforsamling er nok til at dere er enige. Det er ikke nok til at navnet er deres.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Den praktiske konsekvensen er verdt å ta med seg hvis du står i det samme: i vinduet mellom vedtak og registrering er organisasjonsnummeret det eneste som identifiserer selskapet uten forbehold. Skal noe signeres i mellomtiden, er det nummeret som teller, ikke hvilket av de to navnene som står øverst. Vi bruker det nye navnet i løpende tekst, og på de juridiske sidene står begge, med en forklaring på hvorfor. Det er ikke en pen løsning, men det er den ærlige.",
+      },
+      {
+        type: "faktaboks",
+        tittel: "Det et navnebytte ikke rører ved",
+        tekst:
+          "Avtaler, forpliktelser, rettigheter og ansvar følger den juridiske enheten, ikke navnet. De gjelder som før, og ingenting må signeres på nytt. Organisasjonsnummeret er uendret. Det er verdt å si til motparter som spør, for et navnebytte i et lite selskap leses ofte som at noe helt annet har skjedd.",
+      },
+      { type: "mellomtittel", tekst: "Hvorfor vi byttet" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Erik Mo er kommet inn som medeier og styremedlem. Philip Stave er styreleder. Det er den utløsende grunnen: «Stave» er et etternavn, og et selskap med flere eiere bør ikke ha én persons navn på døra. Navnet var presist den dagen det ble satt, og så sluttet det å være det.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det virker som en liten sak helt til man tenker på hvor mange steder et foretaksnavn står. Det står i hver avtale, på hver faktura og i hver e-postsignatur, og det sier noe om eierskapet hver gang det blir lest.",
+      },
+      { type: "mellomtittel", tekst: "Derfor står det Holding i navnet" },
+      {
+        type: "avsnitt",
+        tekst:
+          "I samme møte endret vi vedtektenes § 3. Virksomheten er nå «utvikling og salg av programvare og relaterte tjenester, samt å eie aksjer og andeler i andre selskaper». Første ledd sto der fra før. Det andre er nytt, og det er grunnen til at det står Holding i navnet.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Holdingselskaper har et rykte, og det er stort sett fortjent: de eier aksjer og gjør ellers ingenting. Ingen ansatte, ingen produkter, ingen kunder. Hos oss går det andre veien. Vi gjør arbeidet først, og eierandelen er det vi får igjen for det. Ordet er misvisende på ett punkt og presist på et annet — vi sitter ikke stille, men det vi sitter igjen med er andeler i selskaper som andre driver videre selv.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Her er det noe å hente for andre enn oss. Formålsparagrafen skal beskrive hva selskapet faktisk driver med. Tar du eierandel i stedet for honorar, eier selskapet ditt aksjer i andre selskaper enten det står i vedtektene eller ikke. Det er verdt å lese sin egen § 3 mot måten man faktisk tar betalt på. Vår beskrev halve virksomheten.",
+      },
+      { type: "mellomtittel", tekst: "Rekkefølgen" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Selve prosessen er kort, og rekkefølgen tåler ikke å byttes om.",
+      },
+      {
+        type: "punktliste",
+        punkter: [
+          "Sjekk at navnet er ledig og holder juridisk, før du bestemmer deg. Et aksjeselskap må ha AS i navnet, og navnet må skille seg tilstrekkelig fra andre registrerte. Søk i varemerkeregisteret også — det er ikke det samme registeret som Foretaksregisteret.",
+          "Vedta det i generalforsamling. Navnet står i vedtektene, så dette er en vedtektsendring og krever kvalifisert flertall, normalt to tredeler av både avgitte stemmer og representert kapital. Skal formålsparagrafen endres også, gjør det i samme møte.",
+          "Skriv protokoll og signer den. Meldingen til registeret bygger på den, og den må vise hva som ble vedtatt og at møtet var lovlig satt.",
+          "Meld endringen i Samordnet registermelding, med vedtekter og protokoll vedlagt. Det er den ene meldingen som oppdaterer både Enhetsregisteret og Foretaksregisteret.",
+          "Vent på registreringen før du regner navnet som ditt. Fram til den er bekreftet, er det gamle navnet fortsatt det formelle.",
+          "Rydd utenfor selskapet til slutt: bank, regnskapsfører, forsikring, kunder og leverandører, utviklerkontoer, og alle andre steder navnet ligger lagret.",
+        ],
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det siste punktet er det som tar tid, og det eneste som ikke har en frist. Et foretaksnavn ligger flere steder enn du husker, og en del av dem er utenfor din kontroll: oppslagstjenester som speiler Brønnøysund i sitt eget tempo, lenker du ikke vet om, og alt som allerede er signert eller sendt. Det siste kan ikke rettes i det hele tatt.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Den eneste strategien vi har funnet som fungerer, er å la det gamle navnet stå synlig en periode i stedet for å skjule det. Den som søker opp Stave Software skal finne noe som forklarer hva som skjedde, ikke en side som later som navnet aldri fantes. Det koster litt stolthet og sparer mye forvirring.",
+      },
+      { type: "mellomtittel", tekst: "Domenet er en egen beslutning" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Vi holder fortsatt på stavesoftware.no, og e-posten er fortsatt post@stavesoftware.no. Det er ikke bestemt om noe av det skal flyttes, og vi lover ingenting.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Grunnen til at det ikke er en selvfølge, er at et domene ikke bare er et navn. Det er lenker fra andre nettsteder, en søkehistorikk som tar tid å bygge opp igjen, og e-postadresser som ligger i andres kontaktlister og nedover i gamle tråder. Flytter du, må du sette opp videresending du kommer til å drifte i årevis, og du mister likevel noe. Blir du, har du et domene som ikke matcher navnet, og det må forklares hver gang.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Begge deler er forsvarlig. Det som ikke er forsvarlig, er å ta den avgjørelsen i samme uke som alt annet, fordi det føles ryddig å bli ferdig med hele greia på én gang. Vi lot den ligge.",
+      },
+      { type: "mellomtittel", tekst: "Det som er uendret" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Produktene er de samme. Oystr er Oystr, Altiv er Altiv, og de eies av samme selskap som før. Modellen er også den samme: vi hjelper tidligfaseselskaper med salg, produkt, teknologi og drift, og tar eierandel i stedet for å sende faktura. Hvorfor vi gjør det slik, hva det koster begge parter, og hvem det er en dårlig idé for, har vi skrevet om tidligere.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det nye er at modellen nå står i vedtektene, og at navnet ikke lenger er én persons etternavn. Fram til Foretaksregisteret sier noe annet, heter vi begge deler.",
+      },
+    ],
+  },
 ];
 
 export function finnArtikkel(slug: string): Artikkel | undefined {
