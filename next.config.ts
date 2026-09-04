@@ -16,6 +16,18 @@ const nextConfig: NextConfig = {
         destination: "https://crestholding.no/:path*",
         permanent: true,
       },
+      // www til apex. Vercel kan gjøre dette selv, men da må domenet legges
+      // inn som en videresending i stedet for som et produksjonsdomene — og
+      // dialogen der tilbyr som standard å snu det motsatt vei, slik at apex
+      // sendes til www. Det ville brutt canonical-taggene og sitemapen, som
+      // alle peker på apex. Her er retningen eksplisitt og kan ikke klikkes
+      // feil.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www\\.crestholding\\.no" }],
+        destination: "https://crestholding.no/:path*",
+        permanent: true,
+      },
     ];
   },
 
