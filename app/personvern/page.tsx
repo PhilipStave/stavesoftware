@@ -4,18 +4,18 @@ import { personvern, personvernIngress, JURIDISK_OPPDATERT } from "@/lib/juridis
 import { selskap } from "@/lib/selskap";
 
 const beskrivelse =
-  "stavesoftware.no har ingen informasjonskapsler, ingen analyseverktøy og ingen skjemaer. Her står nøyaktig hva som behandles, av hvem, og hvilke rettigheter du har.";
+  `${selskap.domene} har ingen informasjonskapsler, ingen analyseverktøy og ingen skjemaer. Her står nøyaktig hva som behandles, av hvem, og hvilke rettigheter du har.`;
 
 export const metadata: Metadata = {
   title: `Personvern — ${selskap.fulltNavn}`,
   description: beskrivelse,
-  alternates: { canonical: "https://stavesoftware.no/personvern" },
+  alternates: { canonical: `${selskap.url}/personvern` },
   openGraph: {
     type: "website",
     siteName: selskap.fulltNavn,
     title: `Personvern — ${selskap.fulltNavn}`,
     description: beskrivelse,
-    url: "https://stavesoftware.no/personvern",
+    url: `${selskap.url}/personvern`,
     locale: "nb_NO",
     images: [
       {

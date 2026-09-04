@@ -18,7 +18,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const a = finnArtikkel(slug);
   if (!a) return {};
-  const url = `https://stavesoftware.no/blogg/${a.slug}`;
+  const url = `${selskap.url}/blogg/${a.slug}`;
   return {
     title: `${a.tittel} — ${selskap.fulltNavn}`,
     description: a.metaBeskrivelse,
@@ -74,12 +74,12 @@ export default async function ArtikkelSide({
     datePublished: a.publisert,
     dateModified: a.publisert,
     inLanguage: "nb-NO",
-    mainEntityOfPage: `https://stavesoftware.no/blogg/${a.slug}`,
-    author: { "@type": "Organization", name: selskap.fulltNavn, url: "https://stavesoftware.no" },
+    mainEntityOfPage: `${selskap.url}/blogg/${a.slug}`,
+    author: { "@type": "Organization", name: selskap.fulltNavn, url: selskap.url },
     publisher: {
       "@type": "Organization",
       name: selskap.fulltNavn,
-      url: "https://stavesoftware.no",
+      url: selskap.url,
     },
   };
 

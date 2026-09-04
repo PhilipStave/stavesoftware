@@ -1,5 +1,6 @@
 import { mute } from "./mute";
 
+import { selskap } from "@/lib/selskap";
 export default function Contact() {
   return (
     <section
@@ -87,7 +88,7 @@ export default function Contact() {
           data-hover=""
           data-magnet=""
           className="hov-fill"
-          href="mailto:post@stavesoftware.no"
+          href={`mailto:${selskap.epost}`}
           style={{
             display: "inline-block",
             padding: "20px 50px",
@@ -98,7 +99,7 @@ export default function Contact() {
             borderRadius: 999,
           }}
         >
-          post@stavesoftware.no
+          {selskap.epost}
         </a>
         <p
           data-reveal=""

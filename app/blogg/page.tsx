@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   title: `Blogg — ${selskap.fulltNavn}`,
   description:
     "Vi skriver om det vi kan: salg, produkt og teknologi. Hva ting koster, hvordan vi bygger, og hva vi ville gjort annerledes.",
-  alternates: { canonical: "https://stavesoftware.no/blogg" },
+  alternates: { canonical: `${selskap.url}/blogg` },
   openGraph: {
     type: "website",
     siteName: selskap.fulltNavn,
     title: `Blogg — ${selskap.fulltNavn}`,
     description:
       "Vi skriver om det vi kan: salg, produkt og teknologi. Hva ting koster, hvordan vi bygger, og hva vi ville gjort annerledes.",
-    url: "https://stavesoftware.no/blogg",
+    url: `${selskap.url}/blogg`,
     locale: "nb_NO",
     images: [
       {

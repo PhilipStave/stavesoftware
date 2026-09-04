@@ -49,21 +49,21 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://stavesoftware.no"),
+  metadataBase: new URL(selskap.url),
   title: `${selskap.fulltNavn} — Vi bygger startups mot eierandel, ikke faktura`,
   description:
     "Vi hjelper startups med salg, produkt og teknologi — uten å fakturere. I stedet tar vi en eierandel, så vi tjener først når du gjør det.",
   keywords:
     "startup Norge, hjelp til startup, salg og teknologi, utvikling mot eierandel, venture studio Norge, Oystr, Altiv",
   robots: "index, follow",
-  alternates: { canonical: "https://stavesoftware.no/" },
+  alternates: { canonical: `${selskap.url}/` },
   openGraph: {
     type: "website",
     siteName: selskap.fulltNavn,
     title: `${selskap.fulltNavn} — Vi bygger startups mot eierandel, ikke faktura`,
     description:
       "Vi hjelper startups med salg, produkt og teknologi — uten å fakturere. I stedet tar vi en eierandel, så vi tjener først når du gjør det.",
-    url: "https://stavesoftware.no/",
+    url: `${selskap.url}/`,
     locale: "nb_NO",
     images: [
       {
@@ -94,8 +94,8 @@ const jsonLd = {
   alternateName: NAVN_REGISTRERT ? selskap.tidligereNavn : selskap.fulltNavn,
   identifier: selskap.orgnrKompakt,
   foundingDate: "2026-08-19",
-  url: "https://stavesoftware.no",
-  email: "post@stavesoftware.no",
+  url: selskap.url,
+  email: selskap.epost,
   description:
     "Norsk studio som hjelper startups med salg, produkt og teknologi mot eierandel i stedet for honorar.",
   address: {

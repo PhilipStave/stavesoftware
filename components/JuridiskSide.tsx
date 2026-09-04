@@ -2,6 +2,7 @@ import Link from "next/link";
 import BloggShell from "./BloggShell";
 import ArtikkelInnhold from "./ArtikkelInnhold";
 import type { Blokk } from "@/lib/artikler";
+import { selskap } from "@/lib/selskap";
 
 // Delt ramme for vilkår og personvernerklæring. Gjenbruker bloggens skall og
 // blokk-renderer, slik at de juridiske sidene arver designet uten egen styling.
@@ -93,12 +94,12 @@ export default function JuridiskSide({
             Personvern
           </Link>
           <a
-            href="mailto:post@stavesoftware.no"
+            href={`mailto:${selskap.epost}`}
             data-hover=""
             className="hov-link"
             style={{ color: "rgba(242,239,233,.6)" }}
           >
-            post@stavesoftware.no
+            {selskap.epost}
           </a>
         </div>
       </article>

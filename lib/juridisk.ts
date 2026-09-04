@@ -10,13 +10,13 @@ import { selskap, selskapsangivelse } from "./selskap";
 export const JURIDISK_OPPDATERT = "2026-09-03";
 
 export const personvernIngress =
-  "stavesoftware.no samler ikke inn opplysninger om deg. Det finnes ingen skjemaer, ingen innlogging, ingen informasjonskapsler, ingen analyseverktøy og ingen sporing. Det eneste som skjer automatisk, er at webserveren fører en teknisk logg over forespørsler — slik alle webservere gjør. Personopplysninger oppstår først når du selv velger å sende oss en e-post.";
+  `${selskap.domene} samler ikke inn opplysninger om deg. Det finnes ingen skjemaer, ingen innlogging, ingen informasjonskapsler, ingen analyseverktøy og ingen sporing. Det eneste som skjer automatisk, er at webserveren fører en teknisk logg over forespørsler — slik alle webservere gjør. Personopplysninger oppstår først når du selv velger å sende oss en e-post.`;
 
 export const personvern: Blokk[] = [
   { type: "mellomtittel", tekst: "Hvem er behandlingsansvarlig" },
   {
     type: "avsnitt",
-    tekst: `Behandlingsansvarlig for personopplysningene som beskrives her er ${selskapsangivelse()} Spørsmål om personvern, eller henvendelser om rettighetene dine, sendes til post@stavesoftware.no. Vi har ikke personvernombud, og er ikke pålagt å ha det.`,
+    tekst: `Behandlingsansvarlig for personopplysningene som beskrives her er ${selskapsangivelse()} Spørsmål om personvern, eller henvendelser om rettighetene dine, sendes til ${selskap.epost}. Vi har ikke personvernombud, og er ikke pålagt å ha det.`,
   },
 
   { type: "mellomtittel", tekst: "Hva nettsiden ikke gjør" },
@@ -79,7 +79,7 @@ export const personvern: Blokk[] = [
   { type: "mellomtittel", tekst: "Når du sender oss e-post" },
   {
     type: "avsnitt",
-    tekst: `Kontaktlenkene på siden åpner ditt eget e-postprogram med adressen post@stavesoftware.no. Nettsiden sender ingenting selv, og vi ser ingenting før du faktisk trykker send. Adressen og domenet er uendret etter at selskapet vedtok å bytte navn til ${selskap.fulltNavn}; det er samme selskap som mottar og svarer.`,
+    tekst: `Kontaktlenkene på siden åpner ditt eget e-postprogram med adressen ${selskap.epost}. Nettsiden sender ingenting selv, og vi ser ingenting før du faktisk trykker send. Adressen og domenet er uendret etter at selskapet vedtok å bytte navn til ${selskap.fulltNavn}; det er samme selskap som mottar og svarer.`,
   },
   {
     type: "avsnitt",
@@ -94,7 +94,7 @@ export const personvern: Blokk[] = [
   {
     type: "avsnitt",
     tekst:
-      "E-post til post@stavesoftware.no mottas av Resend Inc., som er vår databehandler for e-post, og som bruker Amazon Web Services som underleverandør for selve e-postinfrastrukturen. Derfra videresendes meldingen til en postkasse hos Microsoft, der vi leser og besvarer den. Ingen av dem bruker innholdet til egne formål.",
+      `E-post til ${selskap.epost} mottas av Resend Inc., som er vår databehandler for e-post, og som bruker Amazon Web Services som underleverandør for selve e-postinfrastrukturen. Derfra videresendes meldingen til en postkasse hos Microsoft, der vi leser og besvarer den. Ingen av dem bruker innholdet til egne formål.`,
   },
   {
     type: "avsnitt",
@@ -129,14 +129,14 @@ export const personvern: Blokk[] = [
     type: "punktliste",
     punkter: [
       "Vercel Inc. — drift og hosting av nettsiden, inkludert serverlogger. Siden serveres i dag fra Vercels datasenter i Stockholm.",
-      "Resend Inc. — mottak av e-post til post@stavesoftware.no, med Amazon Web Services som underleverandør. E-posten mottas i Irland.",
+      `Resend Inc. — mottak av e-post til ${selskap.epost}, med Amazon Web Services som underleverandør. E-posten mottas i Irland.`,
       "Microsoft — postkassen der e-posten leses og besvares.",
     ],
   },
   {
     type: "avsnitt",
     tekst:
-      "Alle tre er amerikanske selskaper. Driften skjer i stor grad på servere i EU, men opplysninger kan bli tilgjengelige fra USA. Overføringen skjer på grunnlag av databehandleravtale med EUs standard personvernbestemmelser (SCC), supplert av EU–US Data Privacy Framework der leverandøren er sertifisert. Vil du se dokumentasjonen på overføringsgrunnlaget, ber du oss om det på post@stavesoftware.no.",
+      `Alle tre er amerikanske selskaper. Driften skjer i stor grad på servere i EU, men opplysninger kan bli tilgjengelige fra USA. Overføringen skjer på grunnlag av databehandleravtale med EUs standard personvernbestemmelser (SCC), supplert av EU–US Data Privacy Framework der leverandøren er sertifisert. Vil du se dokumentasjonen på overføringsgrunnlaget, ber du oss om det på ${selskap.epost}.`,
   },
   {
     type: "avsnitt",
@@ -167,7 +167,7 @@ export const personvern: Blokk[] = [
   {
     type: "avsnitt",
     tekst:
-      "Send henvendelsen til post@stavesoftware.no. Vi svarer uten ugrunnet opphold, og senest innen én måned. I sjeldne, sammensatte saker kan fristen forlenges — da sier vi fra innen måneden er gått. Det koster ingenting.",
+      `Send henvendelsen til ${selskap.epost}. Vi svarer uten ugrunnet opphold, og senest innen én måned. I sjeldne, sammensatte saker kan fristen forlenges — da sier vi fra innen måneden er gått. Det koster ingenting.`,
   },
 
   { type: "mellomtittel", tekst: "Klage til Datatilsynet" },
@@ -181,17 +181,17 @@ export const personvern: Blokk[] = [
   {
     type: "avsnitt",
     tekst:
-      "Endrer vi hvordan nettsiden fungerer — legger til analyse, et kontaktskjema eller en ny leverandør — oppdaterer vi denne teksten før endringen settes i drift. Gjeldende versjon ligger alltid på stavesoftware.no/personvern.",
+      `Endrer vi hvordan nettsiden fungerer — legger til analyse, et kontaktskjema eller en ny leverandør — oppdaterer vi denne teksten før endringen settes i drift. Gjeldende versjon ligger alltid på ${selskap.domene}/personvern.`,
   },
 ];
 
-export const vilkarIngress = `Dette er vilkårene for bruk av stavesoftware.no. Nettstedet er en presentasjon av ${selskap.fulltNavn} og en blogg — det selger ingenting, har ingen innlogging og krever ingen registrering. Vilkårene sier derfor tre ting: hvem som står bak siden, hva du kan gjøre med innholdet her, og hva du ikke kan lese ut av det. De er korte med vilje.`;
+export const vilkarIngress = `Dette er vilkårene for bruk av ${selskap.domene}. Nettstedet er en presentasjon av ${selskap.fulltNavn} og en blogg — det selger ingenting, har ingen innlogging og krever ingen registrering. Vilkårene sier derfor tre ting: hvem som står bak siden, hva du kan gjøre med innholdet her, og hva du ikke kan lese ut av det. De er korte med vilje.`;
 
 export const vilkar: Blokk[] = [
   { type: "mellomtittel", tekst: "Hvem står bak nettstedet" },
   {
     type: "avsnitt",
-    tekst: `Nettstedet stavesoftware.no drives av ${selskapsangivelse()} All kontakt går til post@stavesoftware.no.`,
+    tekst: `Nettstedet ${selskap.domene} drives av ${selskapsangivelse()} All kontakt går til ${selskap.epost}.`,
   },
   {
     type: "avsnitt",
@@ -202,7 +202,7 @@ export const vilkar: Blokk[] = [
   {
     type: "avsnitt",
     tekst:
-      "Vilkårene gjelder for alle som besøker stavesoftware.no, inkludert bloggen. Bruker du siden, gjelder de for deg. Er du uenig i dem, er den praktiske løsningen å la være å bruke siden.",
+      `Vilkårene gjelder for alle som besøker ${selskap.domene}, inkludert bloggen. Bruker du siden, gjelder de for deg. Er du uenig i dem, er den praktiske løsningen å la være å bruke siden.`,
   },
   {
     type: "avsnitt",
@@ -213,7 +213,7 @@ export const vilkar: Blokk[] = [
   { type: "mellomtittel", tekst: "Opphavsrett til innholdet" },
   {
     type: "avsnitt",
-    tekst: `Tekst, bilder, illustrasjoner, video, lyd, design, grafiske elementer og kode på stavesoftware.no tilhører ${selskap.fulltNavn} eller våre lisensgivere, og er vernet av åndsverkloven. Det samme gjelder navnene og kjennetegnene ${selskap.navn} og Altiv. Oystr-navnet og -logoen brukes med tillatelse fra rettighetshaver.`,
+    tekst: `Tekst, bilder, illustrasjoner, video, lyd, design, grafiske elementer og kode på ${selskap.domene} tilhører ${selskap.fulltNavn} eller våre lisensgivere, og er vernet av åndsverkloven. Det samme gjelder navnene og kjennetegnene ${selskap.navn} og Altiv. Oystr-navnet og -logoen brukes med tillatelse fra rettighetshaver.`,
   },
   {
     type: "avsnitt",
@@ -317,14 +317,14 @@ export const vilkar: Blokk[] = [
   {
     type: "avsnitt",
     tekst:
-      "Nettstedet setter ingen informasjonskapsler og bruker ingen analyse-, statistikk- eller sporingsverktøy. Skrifter og medier lastes fra vår egen server. Det vi likevel behandler av personopplysninger — serverlogger hos hostingleverandøren, og e-post du selv sender oss — er beskrevet i personvernerklæringen på stavesoftware.no/personvern. Den er et eget dokument, og den gjelder foran disse vilkårene i spørsmål om personopplysninger.",
+      `Nettstedet setter ingen informasjonskapsler og bruker ingen analyse-, statistikk- eller sporingsverktøy. Skrifter og medier lastes fra vår egen server. Det vi likevel behandler av personopplysninger — serverlogger hos hostingleverandøren, og e-post du selv sender oss — er beskrevet i personvernerklæringen på ${selskap.domene}/personvern. Den er et eget dokument, og den gjelder foran disse vilkårene i spørsmål om personopplysninger.`,
   },
 
   { type: "mellomtittel", tekst: "Endringer i vilkårene" },
   {
     type: "avsnitt",
     tekst:
-      "Vi kan oppdatere disse vilkårene, for eksempel når siden endrer seg eller regelverket gjør det. Gjeldende versjon ligger alltid på stavesoftware.no/vilkar med dato for siste oppdatering øverst. Bruker du siden etter at en endring er publisert, gjelder den nye versjonen.",
+      `Vi kan oppdatere disse vilkårene, for eksempel når siden endrer seg eller regelverket gjør det. Gjeldende versjon ligger alltid på ${selskap.domene}/vilkar med dato for siste oppdatering øverst. Bruker du siden etter at en endring er publisert, gjelder den nye versjonen.`,
   },
 
   { type: "mellomtittel", tekst: "Lovvalg og verneting" },
@@ -342,6 +342,6 @@ export const vilkar: Blokk[] = [
   { type: "mellomtittel", tekst: "Kontakt" },
   {
     type: "avsnitt",
-    tekst: `Spørsmål om vilkårene, om innhold på siden eller om bruk av materiale sendes til post@stavesoftware.no. ${selskapsangivelse()}`,
+    tekst: `Spørsmål om vilkårene, om innhold på siden eller om bruk av materiale sendes til ${selskap.epost}. ${selskapsangivelse()}`,
   },
 ];

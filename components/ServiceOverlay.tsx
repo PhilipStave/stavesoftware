@@ -3,6 +3,7 @@
 import { tjenester } from "@/lib/data";
 import { AltivLogo, OystrLogo } from "./BrandLogos";
 
+import { selskap } from "@/lib/selskap";
 // Fullskjerms tjenestepanel — samme sirkel-wipe og stagger som teknologi-arkivet.
 export default function ServiceOverlay({
   active,
@@ -249,7 +250,7 @@ export default function ServiceOverlay({
           }}
         >
           <a
-            href="mailto:post@stavesoftware.no"
+            href={`mailto:${selskap.epost}`}
             data-hover=""
             className="hov-fill"
             style={{

@@ -31,9 +31,22 @@ export const selskap = {
   orgnrKompakt: "938341788",
   sted: "Oslo",
   land: "NO",
-  epost: "post@stavesoftware.no",
+
+  // NETTSTEDET. Byttes til crestholding.no FØRST når det domenet faktisk
+  // serverer siden — altså etter at det er lagt til i Vercel og navnetjenerne
+  // peker dit. Bytter man tidligere, forteller canonical-taggene og sitemapen
+  // Google at hver side hører hjemme på et domene som ikke svarer.
   domene: "stavesoftware.no",
   url: "https://stavesoftware.no",
+
+  // E-POSTEN er en egen bryter, og skal byttes uavhengig av nettstedet:
+  // først når post@crestholding.no faktisk mottar. Byttes den for tidlig,
+  // slutter kontaktlenkene å virke uten at noen får beskjed.
+  epost: "post@stavesoftware.no",
+
+  // Det nye domenet, registrert 4. september 2026. Ikke i drift ennå.
+  nyttDomene: "crestholding.no",
+
   navnendringVedtatt: "2026-09-03",
 } as const;
 

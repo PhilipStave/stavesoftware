@@ -689,7 +689,7 @@ export const artikler: Artikkel[] = [
       {
         type: "avsnitt",
         tekst:
-          "Vi holder fortsatt på stavesoftware.no, og e-posten er fortsatt post@stavesoftware.no. Det er ikke bestemt om noe av det skal flyttes, og vi lover ingenting.",
+          "Vi sikret crestholding.no dagen etter at navnet var vedtatt. Det er billig forsikring, og har lite med tidspunktet for en flytting å gjøre — et domene som er ledig i dag, er ikke nødvendigvis ledig når du er klar. Selve siden ligger fortsatt på stavesoftware.no, og e-posten er fortsatt den gamle.",
       },
       {
         type: "avsnitt",
@@ -699,7 +699,7 @@ export const artikler: Artikkel[] = [
       {
         type: "avsnitt",
         tekst:
-          "Begge deler er forsvarlig. Det som ikke er forsvarlig, er å ta den avgjørelsen i samme uke som alt annet, fordi det føles ryddig å bli ferdig med hele greia på én gang. Vi lot den ligge.",
+          "Derfor skiller vi to ting som lett blandes sammen: å eie domenet, og å flytte til det. Det første haster og koster lite. Det andre kan vente til det er gjort riktig — for flytter du sidene før domenet faktisk svarer, forteller du søkemotorene at hver side hører hjemme et sted som ikke finnes. Rekkefølgen er å sette opp domenet først, flytte adressene etterpå, og la det gamle domenet svare med en varig videresending så lenge det finnes lenker til det. E-post er en tredje beslutning igjen, og den bør ikke røres før den nye postkassen beviselig mottar.",
       },
       { type: "mellomtittel", tekst: "Det som er uendret" },
       {

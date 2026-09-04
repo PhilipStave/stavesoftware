@@ -4,18 +4,18 @@ import { vilkar, vilkarIngress, JURIDISK_OPPDATERT } from "@/lib/juridisk";
 import { selskap } from "@/lib/selskap";
 
 const beskrivelse =
-  "Vilkår for bruk av stavesoftware.no: hvem som står bak siden, hva du kan gjøre med innholdet, og hva som ikke er et bindende tilbud.";
+  `Vilkår for bruk av ${selskap.domene}: hvem som står bak siden, hva du kan gjøre med innholdet, og hva som ikke er et bindende tilbud.`;
 
 export const metadata: Metadata = {
   title: `Vilkår — ${selskap.fulltNavn}`,
   description: beskrivelse,
-  alternates: { canonical: "https://stavesoftware.no/vilkar" },
+  alternates: { canonical: `${selskap.url}/vilkar` },
   openGraph: {
     type: "website",
     siteName: selskap.fulltNavn,
     title: `Vilkår — ${selskap.fulltNavn}`,
     description: beskrivelse,
-    url: "https://stavesoftware.no/vilkar",
+    url: `${selskap.url}/vilkar`,
     locale: "nb_NO",
     images: [
       {
