@@ -5,7 +5,7 @@ const KEY = "4eb8f8c4ac15dc3a105dcc3d3cd06e72";
 // MERK: dette er det ENE stedet domenet må endres for hånd. Resten av
 // prosjektet leser det fra lib/selskap.ts, men denne fila er ren JavaScript
 // og kan ikke importere TypeScript. Endres samtidig som selskap.domene.
-const HOST = "stavesoftware.no";
+const HOST = "crestholding.no";
 const ORIGIN = `https://${HOST}`;
 
 // Hent alle URL-er fra den publiserte sitemapen, så nye sider blir med av seg selv

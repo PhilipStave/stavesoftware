@@ -32,20 +32,22 @@ export const selskap = {
   sted: "Oslo",
   land: "NO",
 
-  // NETTSTEDET. Byttes til crestholding.no FØRST når det domenet faktisk
-  // serverer siden — altså etter at det er lagt til i Vercel og navnetjenerne
-  // peker dit. Bytter man tidligere, forteller canonical-taggene og sitemapen
-  // Google at hver side hører hjemme på et domene som ikke svarer.
-  domene: "stavesoftware.no",
-  url: "https://stavesoftware.no",
+  // NETTSTEDET. Flyttet hit 4. september 2026, etter at domenet faktisk
+  // svarte — delegering publisert i .no-sonen, DNSSEC-kjeden intakt og
+  // sertifikatet utstedt. Rekkefølgen er ikke likegyldig: flippes dette før
+  // domenet svarer, forteller canonical-taggene og sitemapen søkemotorene at
+  // hver side hører hjemme et sted som ikke finnes.
+  domene: "crestholding.no",
+  url: "https://crestholding.no",
 
   // E-POSTEN er en egen bryter, og skal byttes uavhengig av nettstedet:
   // først når post@crestholding.no faktisk mottar. Byttes den for tidlig,
   // slutter kontaktlenkene å virke uten at noen får beskjed.
   epost: "post@stavesoftware.no",
 
-  // Det nye domenet, registrert 4. september 2026. Ikke i drift ennå.
-  nyttDomene: "crestholding.no",
+  // Det tidligere domenet. Beholdes så lenge det videresender og finnes
+  // lenker til det.
+  tidligereDomene: "stavesoftware.no",
 
   navnendringVedtatt: "2026-09-03",
 } as const;

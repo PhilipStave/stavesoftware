@@ -689,7 +689,7 @@ export const artikler: Artikkel[] = [
       {
         type: "avsnitt",
         tekst:
-          "Vi sikret crestholding.no dagen etter at navnet var vedtatt. Det er billig forsikring, og har lite med tidspunktet for en flytting å gjøre — et domene som er ledig i dag, er ikke nødvendigvis ledig når du er klar. Selve siden ligger fortsatt på stavesoftware.no, og e-posten er fortsatt den gamle.",
+          "Vi sikret crestholding.no dagen etter at navnet var vedtatt. Det er billig forsikring, og har lite med tidspunktet for en flytting å gjøre — et domene som er ledig i dag, er ikke nødvendigvis ledig når du er klar. Siden ligger nå på crestholding.no, mens det gamle domenet videresender. E-posten er fortsatt den gamle, og den flyttes for seg — først når den nye postkassen beviselig mottar.",
       },
       {
         type: "avsnitt",
