@@ -1,6 +1,24 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Varig videresending fra det gamle domenet. Uten denne serverer begge
+  // domenene samme innhold med status 200, og da må søkemotorene gjette —
+  // canonical-taggen er et hint, en 308 er et svar. Stien tas med videre, så
+  // gamle dyplenker lander på riktig side og ikke på forsiden.
+  //
+  // Domenet beholdes så lenge det finnes lenker til det, altså på ubestemt
+  // tid. Dette er ikke en midlertidig ordning.
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "(www\\.)?stavesoftware\\.no" }],
+        destination: "https://crestholding.no/:path*",
+        permanent: true,
+      },
+    ];
+  },
+
   async headers() {
     return [
       {
