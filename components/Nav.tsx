@@ -35,7 +35,7 @@ export default function Nav({
           alignItems: "baseline",
           gap: 10,
           fontFamily: "var(--font-garamond), Georgia, serif",
-          fontWeight: 600,
+          fontWeight: 700,
           fontSize: 19,
           letterSpacing: ".2em",
           whiteSpace: "nowrap",

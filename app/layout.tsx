@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, EB_Garamond, Instrument_Serif, Michroma, Space_Grotesk } from "next/font/google";
+import { Archivo, Cormorant_Garamond, Instrument_Serif, Michroma, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { selskap, NAVN_REGISTRERT } from "@/lib/selskap";
 
@@ -26,12 +26,17 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
-// Crest Holding-logoens eget ordmerke. Garamond-anatomi: N-en har tykk
-// diagonal og tynne stammer, G-en et rett seriffert spor — samme familie som
-// bokstavene i logofilen, i motsetning til didone-monogrammet.
-const ebGaramond = EB_Garamond({
+// Crest Holding-logoens eget ordmerke. Valgt ved måling, ikke øyemål: jeg
+// segmenterte bokstavene i logofila og regnet ut bredde delt på versalhøyde
+// for hver av dem (H 1,11 · O 1,05 · E 0,82 · S 0,70 — det romerske modulerte
+// breddesystemet), og målte de samme forholdstallene i atten serifer.
+// Cormorant Garamond traff nærmest, og har i tillegg de doble nebbterminalene
+// på C og det spilte R-benet som logoen viser. Vekt 700 fordi logoens
+// grunnstrek er tung — 21 % av versalhøyden — og fordi Cormorants hårstreker
+// ellers blir for tynne i menystørrelse.
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["500", "600"],
+  weight: ["600", "700"],
   variable: "--font-garamond",
   display: "swap",
 });
@@ -112,7 +117,7 @@ export default function RootLayout({
   return (
     <html
       lang="nb"
-      className={`${archivo.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${michroma.variable} ${ebGaramond.variable}`}
+      className={`${archivo.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${michroma.variable} ${cormorant.variable}`}
     >
       <body>
         {children}
