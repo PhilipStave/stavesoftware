@@ -115,14 +115,17 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
         <Link
           href="/"
           data-hover=""
+          className="logo-lockup"
           style={{
+            // Samme lockup som forsiden — se Nav.tsx for hvorfor grunnlinje.
             display: "flex",
-            alignItems: "center",
-            gap: 11,
-            fontFamily: "var(--font-archivo), sans-serif",
-            fontWeight: 900,
-            fontSize: 16,
-            letterSpacing: ".14em",
+            alignItems: "baseline",
+            gap: 10,
+            fontFamily: "var(--font-garamond), Georgia, serif",
+            fontWeight: 600,
+            fontSize: 19,
+            letterSpacing: ".2em",
+            whiteSpace: "nowrap",
             color: "#f2efe9",
           }}
         >
@@ -132,10 +135,13 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
             aria-hidden="true"
             width={869}
             height={662}
-            style={{ height: 26, width: "auto", display: "block" }}
+            style={{ height: 17, width: "auto", display: "block" }}
           />
           <span>
-            CREST HOLDING<span style={{ color: "#8fb8e0" }}>®</span>
+            CREST HOLDING
+            <span style={{ color: "#8fb8e0", fontSize: "0.58em", verticalAlign: "0.42em", letterSpacing: 0 }}>
+              ®
+            </span>
           </span>
         </Link>
         <div style={{ display: "flex", gap: 30, alignItems: "center", fontSize: 13, letterSpacing: ".1em", textTransform: "uppercase" }}>

@@ -90,6 +90,10 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
 
 /* Telefon: strammere paddinger og stablede rader */
 @media (max-width: 640px) {
+  /* Logo-lockupen: serif med vid sperring blir for bred på telefon, og
+     ordmerket brakk over to linjer rett inn i kontaktknappen. */
+  .logo-lockup { font-size: 13px !important; letter-spacing: .13em !important; gap: 7px !important; }
+  .logo-lockup img { height: 13px !important; }
   nav { padding: 16px 20px !important; }
   #preloader { padding: 24px !important; }
   #heroinner { padding: 90px 20px 32px !important; }

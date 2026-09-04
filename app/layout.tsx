@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Instrument_Serif, Michroma, Space_Grotesk } from "next/font/google";
+import { Archivo, EB_Garamond, Instrument_Serif, Michroma, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { selskap, NAVN_REGISTRERT } from "@/lib/selskap";
 
@@ -23,6 +23,16 @@ const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-instrument",
+  display: "swap",
+});
+
+// Crest Holding-logoens eget ordmerke. Garamond-anatomi: N-en har tykk
+// diagonal og tynne stammer, G-en et rett seriffert spor — samme familie som
+// bokstavene i logofilen, i motsetning til didone-monogrammet.
+const ebGaramond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-garamond",
   display: "swap",
 });
 
@@ -102,7 +112,7 @@ export default function RootLayout({
   return (
     <html
       lang="nb"
-      className={`${archivo.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${michroma.variable}`}
+      className={`${archivo.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${michroma.variable} ${ebGaramond.variable}`}
     >
       <body>
         {children}
