@@ -95,6 +95,17 @@ const jsonLd = {
   identifier: selskap.orgnrKompakt,
   foundingDate: "2026-08-19",
   url: selskap.url,
+  // Logoen Google viser i søkeresultater og kunnskapspanelet. Den må være
+  // absolutt, indekserbar og minst 112 piksler — derfor en egen kvadratisk
+  // fil med løven på merkevarens navy, ikke den gjennomsiktige varianten:
+  // et utskåret merke i krem forsvinner mot Googles hvite flater.
+  logo: {
+    "@type": "ImageObject",
+    url: `${selskap.url}/logo/crest-logo-512.png`,
+    width: 512,
+    height: 512,
+  },
+  image: `${selskap.url}/logo/crest-logo-512.png`,
   email: selskap.epost,
   description:
     "Norsk studio som hjelper startups med salg, produkt og teknologi mot eierandel i stedet for honorar.",
