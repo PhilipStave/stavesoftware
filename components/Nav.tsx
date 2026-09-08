@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Nav({
   soundLabel,
@@ -9,6 +10,17 @@ export default function Nav({
   soundLabel: string;
   toggleSound: () => void;
 }) {
+  // Menyen er gjennomsiktig over heroen og får bakgrunn først når man har
+  // blad forbi den. Terskelen leses av i en passiv scroll-lytter, ikke i
+  // rAF-løkken i useSiteEffects — den hører til siden, denne til menyen.
+  const [festet, setFestet] = useState(false);
+  useEffect(() => {
+    const les = () => setFestet(window.scrollY > 80);
+    les();
+    window.addEventListener("scroll", les, { passive: true });
+    return () => window.removeEventListener("scroll", les);
+  }, []);
+
   return (
     <nav
       style={{
@@ -21,14 +33,13 @@ export default function Nav({
         alignItems: "center",
         justifyContent: "space-between",
         padding: "20px 48px",
-        // Menyen ligger fast over heroen, som er et mørkt bånd. En gradient
-        // ut i ingenting virket da alt var mørkt, men på en lys side ville
-        // blekket blitt usynlig mot filmen. Derfor en solid lys linje med
-        // hårfin kant — lesbar over både video og papir.
-        background: "rgba(var(--ground-rgb),.92)",
-        backdropFilter: "saturate(1.6) blur(14px)",
-        WebkitBackdropFilter: "saturate(1.6) blur(14px)",
-        borderBottom: "1px solid var(--line)",
+        // Usynlig i toppen, der heroens video står for seg selv. Bakgrunnen
+        // kommer først når man har blad forbi den — se useEffect under.
+        background: festet ? "rgba(var(--ground-rgb),.88)" : "transparent",
+        backdropFilter: festet ? "blur(14px)" : "none",
+        WebkitBackdropFilter: festet ? "blur(14px)" : "none",
+        borderBottom: festet ? "1px solid var(--line)" : "1px solid transparent",
+        transition: "background .45s ease, border-color .45s ease, backdrop-filter .45s ease",
       }}
     >
       <a

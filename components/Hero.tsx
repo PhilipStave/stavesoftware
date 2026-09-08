@@ -89,12 +89,12 @@ export default function Hero() {
             <span style={{ animationDelay: ".25s" }}>Vi</span>
           </span>{" "}
           <span className="wordmask">
-            <span style={{ animationDelay: ".33s" }}>tar</span>
+            <span style={{ animationDelay: ".33s" }}>bygger</span>
+          </span>{" "}
+          <span className="wordmask">
+            <span style={{ animationDelay: ".41s" }}>den,</span>
           </span>
           <br />
-          <span className="wordmask">
-            <span style={{ animationDelay: ".41s" }}>ikke</span>
-          </span>{" "}
           <span className="wordmask">
             <span
               style={{
@@ -103,18 +103,18 @@ export default function Hero() {
                 WebkitTextStroke: "1.5px var(--ink)",
               }}
             >
-              betalt
+              drifter
             </span>
+          </span>{" "}
+          <span className="wordmask">
+            <span style={{ animationDelay: ".57s" }}>den</span>
           </span>
           <br />
           <span className="wordmask">
-            <span style={{ animationDelay: ".57s" }}>for</span>
+            <span style={{ animationDelay: ".65s" }}>og</span>
           </span>{" "}
           <span className="wordmask">
-            <span style={{ animationDelay: ".65s" }}>å</span>
-          </span>{" "}
-          <span className="wordmask">
-            <span style={{ animationDelay: ".73s", color: "var(--accent)" }}>bygge.</span>
+            <span style={{ animationDelay: ".73s", color: "var(--accent)" }}>svarer.</span>
           </span>
         </h1>
         <div
@@ -138,8 +138,9 @@ export default function Hero() {
               margin: 0,
             }}
           >
-            Vi hjelper startups med alt de trenger — salg, produkt og teknologi. I stedet for
-            faktura tar vi en eierandel, så vi tjener først når du gjør det.
+            Vi lager nettsiden eller appen, drifter den, og du får én fast person som gjør
+            endringene du trenger — når du trenger dem. Tolv måneder om gangen. Etterpå er
+            den din.
           </p>
           <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
             <a

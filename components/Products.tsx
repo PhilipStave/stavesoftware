@@ -78,7 +78,7 @@ export default function Products() {
           <article style={{ flex: "0 0 auto", width: "66vw", minWidth: 620, perspective: 1200 }}>
             <div
               data-tilt3d=""
-              className="pcard"
+              className="pcard oncard"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1.15fr 1fr",
@@ -170,7 +170,7 @@ export default function Products() {
           <article style={{ flex: "0 0 auto", width: "66vw", minWidth: 620, perspective: 1200 }}>
             <div
               data-tilt3d=""
-              className="pcard"
+              className="pcard oncard"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1.15fr",

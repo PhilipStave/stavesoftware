@@ -5,29 +5,33 @@
    uten egne regler. Legg aldri inn en literal farge i en komponent: da slutter
    den å følge båndet den står i. */
 :root {
-  --ground: #faf9f7;        /* papiret man leser på */
-  --ground-rgb: 250,249,247;
-  --surface: #ffffff;        /* hevet flate */
-  --sunk: #f0efec;           /* senket flate, felter og rader */
-  --ink: #141c24;            /* teksten */
-  --ink-rgb: 20,28,36;
-  --accent: #2c6390;         /* lenker og markering, lesbar på lyst */
-  --accent-rgb: 44,99,144;
-  --hi: #0b1219;             /* hover, sterkeste kontrast */
-  --line: rgba(20,28,36,.14);
-}
-.band {
-  --ground: #0a0f16;
+  --ground: #0a0f16;         /* bunnen */
   --ground-rgb: 10,15,22;
-  --surface: #10161f;
-  --sunk: #0d1420;
-  --ink: #f2efe9;
+  --surface: #f2efe9;        /* hevet flate: produktkortene */
+  --sunk: #0d1420;           /* senket flate, felter og rader */
+  --ink: #f2efe9;            /* teksten */
   --ink-rgb: 242,239,233;
   --accent: #8fb8e0;
   --accent-rgb: 143,184,224;
-  --hi: #ffffff;
+  --hi: #ffffff;             /* hover, sterkeste kontrast */
   --line: rgba(242,239,233,.14);
+}
+/* Seksjonene over video arvet et eget sett den gangen siden var lys. Nå er
+   hele siden mørk, så .band setter de samme verdiene som :root — klassen står
+   igjen fordi den koster ingenting og gjør et nytt fargebytte til én blokk. */
+.band {
   background: var(--ground);
+  color: var(--ink);
+}
+/* Produktkortene er lyse flater midt i det mørke. Innholdet i dem må derfor
+   snu blekket, ellers blir krem på krem. */
+.oncard {
+  --ink: #141c24;
+  --ink-rgb: 20,28,36;
+  --accent: #2c6390;
+  --accent-rgb: 44,99,144;
+  --hi: #0b1219;
+  --line: rgba(20,28,36,.14);
   color: var(--ink);
 }
 
