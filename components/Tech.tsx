@@ -6,12 +6,13 @@ import { mute } from "./mute";
 export default function Tech({ openTech }: { openTech: (e: React.MouseEvent) => void }) {
   return (
     <section
+      className="band"
       id="teknologi"
       data-skew=""
       style={{
         position: "relative",
         padding: "120px 0 130px",
-        borderTop: "1px solid rgba(242,239,233,.08)",
+        borderTop: "1px solid rgba(var(--ink-rgb),.08)",
         overflow: "hidden",
       }}
     >
@@ -38,7 +39,7 @@ export default function Tech({ openTech }: { openTech: (e: React.MouseEvent) => 
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(180deg, #0a0f16 0%, rgba(10,15,22,.55) 50%, #0a0f16 100%)",
+            "linear-gradient(180deg, var(--ground) 0%, rgba(var(--ground-rgb),.55) 50%, var(--ground) 100%)",
         }}
       ></div>
       <div
@@ -72,13 +73,13 @@ export default function Tech({ openTech }: { openTech: (e: React.MouseEvent) => 
               textTransform: "uppercase",
             }}
           >
-            Teknologien bak<span className="twcaret" style={{ color: "#8fb8e0" }}>_</span>
+            Teknologien bak<span className="twcaret" style={{ color: "var(--accent)" }}>_</span>
           </h2>
           <span
             style={{
               fontSize: 12,
               letterSpacing: ".26em",
-              color: "rgba(242,239,233,.55)",
+              color: "rgba(var(--ink-rgb),.55)",
               textTransform: "uppercase",
             }}
           >
@@ -91,8 +92,8 @@ export default function Tech({ openTech }: { openTech: (e: React.MouseEvent) => 
         style={{
           position: "relative",
           overflow: "hidden",
-          borderTop: "1px solid rgba(242,239,233,.12)",
-          borderBottom: "1px solid rgba(242,239,233,.12)",
+          borderTop: "1px solid rgba(var(--ink-rgb),.12)",
+          borderBottom: "1px solid rgba(var(--ink-rgb),.12)",
           padding: "26px 0",
         }}
       >
@@ -125,7 +126,7 @@ export default function Tech({ openTech }: { openTech: (e: React.MouseEvent) => 
                   fontSize: 12,
                   letterSpacing: ".2em",
                   textTransform: "uppercase",
-                  color: "rgba(242,239,233,.5)",
+                  color: "rgba(var(--ink-rgb),.5)",
                 }}
               >
                 {tk.rolle}
@@ -139,7 +140,7 @@ export default function Tech({ openTech }: { openTech: (e: React.MouseEvent) => 
         style={{
           position: "relative",
           overflow: "hidden",
-          borderBottom: "1px solid rgba(242,239,233,.12)",
+          borderBottom: "1px solid rgba(var(--ink-rgb),.12)",
           padding: "26px 0",
         }}
       >
@@ -164,7 +165,7 @@ export default function Tech({ openTech }: { openTech: (e: React.MouseEvent) => 
                   fontSize: 34,
                   letterSpacing: "-.01em",
                   color: "transparent",
-                  WebkitTextStroke: "1px rgba(242,239,233,.75)",
+                  WebkitTextStroke: "1px rgba(var(--ink-rgb),.75)",
                 }}
               >
                 {tk.navn}
@@ -174,7 +175,7 @@ export default function Tech({ openTech }: { openTech: (e: React.MouseEvent) => 
                   fontSize: 12,
                   letterSpacing: ".2em",
                   textTransform: "uppercase",
-                  color: "rgba(242,239,233,.5)",
+                  color: "rgba(var(--ink-rgb),.5)",
                 }}
               >
                 {tk.rolle}
@@ -199,9 +200,9 @@ export default function Tech({ openTech }: { openTech: (e: React.MouseEvent) => 
             gap: 14,
             padding: "20px 48px",
             background: "transparent",
-            border: "1px solid rgba(242,239,233,.35)",
+            border: "1px solid rgba(var(--ink-rgb),.35)",
             borderRadius: 999,
-            color: "#f2efe9",
+            color: "var(--ink)",
             fontFamily: "var(--font-archivo), sans-serif",
             fontWeight: 700,
             fontSize: 16,
@@ -209,7 +210,7 @@ export default function Tech({ openTech }: { openTech: (e: React.MouseEvent) => 
             textTransform: "uppercase",
           }}
         >
-          Utforsk hele stacken <span style={{ color: "#8fb8e0" }}>↗</span>
+          Utforsk hele stacken <span style={{ color: "var(--accent)" }}>↗</span>
         </button>
       </div>
     </section>

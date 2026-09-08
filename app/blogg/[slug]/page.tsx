@@ -101,7 +101,7 @@ export default async function ArtikkelSide({
           style={{
             display: "inline-block",
             marginBottom: 30,
-            color: "rgba(242,239,233,.55)",
+            color: "rgba(var(--ink-rgb),.55)",
             fontSize: 13,
             letterSpacing: ".16em",
             textTransform: "uppercase",
@@ -121,11 +121,11 @@ export default async function ArtikkelSide({
             textTransform: "uppercase",
           }}
         >
-          <span style={{ color: "#8fb8e0" }}>{a.kategori}</span>
-          <span style={{ color: "rgba(242,239,233,.45)" }}>
+          <span style={{ color: "var(--accent)" }}>{a.kategori}</span>
+          <span style={{ color: "rgba(var(--ink-rgb),.45)" }}>
             {datoFormat.format(new Date(a.publisert))}
           </span>
-          <span style={{ color: "rgba(242,239,233,.45)" }}>{a.lesetid} min lesing</span>
+          <span style={{ color: "rgba(var(--ink-rgb),.45)" }}>{a.lesetid} min lesing</span>
         </div>
         <h1
           style={{
@@ -136,19 +136,19 @@ export default async function ArtikkelSide({
             lineHeight: 1.02,
             margin: "0 0 26px",
             textTransform: "uppercase",
-            color: "#f2efe9",
+            color: "var(--ink)",
           }}
         >
           {a.tittel}
         </h1>
         <p
           style={{
-            color: "rgba(242,239,233,.75)",
+            color: "rgba(var(--ink-rgb),.75)",
             fontSize: 20,
             lineHeight: 1.65,
             margin: "0 0 50px",
             paddingBottom: 40,
-            borderBottom: "1px solid rgba(242,239,233,.14)",
+            borderBottom: "1px solid rgba(var(--ink-rgb),.14)",
           }}
         >
           {a.ingress}
@@ -161,13 +161,13 @@ export default async function ArtikkelSide({
           style={{
             marginTop: 70,
             paddingTop: 44,
-            borderTop: "1px solid rgba(242,239,233,.14)",
+            borderTop: "1px solid rgba(var(--ink-rgb),.14)",
             textAlign: "center",
           }}
         >
           <p
             style={{
-              color: "rgba(242,239,233,.7)",
+              color: "rgba(var(--ink-rgb),.7)",
               fontSize: 17,
               lineHeight: 1.65,
               margin: "0 0 26px",
@@ -182,8 +182,8 @@ export default async function ArtikkelSide({
             style={{
               display: "inline-block",
               padding: "18px 44px",
-              background: "#f2efe9",
-              color: "#0a0f16",
+              background: "var(--ink)",
+              color: "var(--ground)",
               fontWeight: 600,
               fontSize: 16,
               borderRadius: 999,
@@ -210,13 +210,13 @@ export default async function ArtikkelSide({
               fontSize: 12,
               letterSpacing: ".26em",
               textTransform: "uppercase",
-              color: "rgba(242,239,233,.55)",
+              color: "rgba(var(--ink-rgb),.55)",
               marginBottom: 26,
             }}
           >
             (Les også)
           </div>
-          <div style={{ borderTop: "1px solid rgba(242,239,233,.14)" }}>
+          <div style={{ borderTop: "1px solid rgba(var(--ink-rgb),.14)" }}>
             {andre.map((x) => (
               <Link
                 key={x.slug}
@@ -237,7 +237,7 @@ export default async function ArtikkelSide({
                     fontSize: 12,
                     letterSpacing: ".2em",
                     textTransform: "uppercase",
-                    color: "#8fb8e0",
+                    color: "var(--accent)",
                     marginBottom: 10,
                   }}
                 >
@@ -250,7 +250,7 @@ export default async function ArtikkelSide({
                     fontSize: "clamp(20px, 2.4vw, 28px)",
                     letterSpacing: "-.01em",
                     textTransform: "uppercase",
-                    color: "#f2efe9",
+                    color: "var(--ink)",
                   }}
                 >
                   {x.tittel}

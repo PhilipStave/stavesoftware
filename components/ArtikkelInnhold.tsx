@@ -19,7 +19,7 @@ export default function ArtikkelInnhold({ innhold }: { innhold: Blokk[] }) {
                 lineHeight: 1.1,
                 textTransform: "uppercase",
                 margin: "64px 0 22px",
-                color: "#f2efe9",
+                color: "var(--ink)",
               }}
             >
               {b.tekst}
@@ -40,7 +40,7 @@ export default function ArtikkelInnhold({ innhold }: { innhold: Blokk[] }) {
                     position: "relative",
                     paddingLeft: 30,
                     marginBottom: 18,
-                    color: "rgba(242,239,233,.78)",
+                    color: "rgba(var(--ink-rgb),.78)",
                     fontSize: 17,
                     lineHeight: 1.75,
                   }}
@@ -52,7 +52,7 @@ export default function ArtikkelInnhold({ innhold }: { innhold: Blokk[] }) {
                       top: "0.72em",
                       width: 12,
                       height: 1,
-                      background: "#8fb8e0",
+                      background: "var(--accent)",
                     }}
                   ></span>
                   {p}
@@ -67,8 +67,8 @@ export default function ArtikkelInnhold({ innhold }: { innhold: Blokk[] }) {
               key={i}
               data-reveal=""
               style={{
-                borderLeft: "2px solid #8fb8e0",
-                background: "rgba(143,184,224,.06)",
+                borderLeft: "2px solid var(--accent)",
+                background: "rgba(var(--accent-rgb),.06)",
                 padding: "26px 30px",
                 margin: "36px 0",
                 borderRadius: "0 6px 6px 0",
@@ -79,7 +79,7 @@ export default function ArtikkelInnhold({ innhold }: { innhold: Blokk[] }) {
                   fontSize: 12,
                   letterSpacing: ".26em",
                   textTransform: "uppercase",
-                  color: "#8fb8e0",
+                  color: "var(--accent)",
                   marginBottom: 12,
                 }}
               >
@@ -88,7 +88,7 @@ export default function ArtikkelInnhold({ innhold }: { innhold: Blokk[] }) {
               <p
                 style={{
                   margin: 0,
-                  color: "rgba(242,239,233,.8)",
+                  color: "rgba(var(--ink-rgb),.8)",
                   fontSize: 16,
                   lineHeight: 1.7,
                 }}
@@ -103,7 +103,7 @@ export default function ArtikkelInnhold({ innhold }: { innhold: Blokk[] }) {
             key={i}
             data-reveal=""
             style={{
-              color: "rgba(242,239,233,.78)",
+              color: "rgba(var(--ink-rgb),.78)",
               fontSize: 17,
               lineHeight: 1.8,
               margin: "0 0 24px",

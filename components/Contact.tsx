@@ -4,6 +4,7 @@ import { selskap } from "@/lib/selskap";
 export default function Contact() {
   return (
     <section
+      className="band"
       id="kontakt"
       data-skew=""
       style={{
@@ -11,7 +12,7 @@ export default function Contact() {
         overflow: "hidden",
         textAlign: "center",
         padding: "150px 48px",
-        borderTop: "1px solid rgba(242,239,233,.08)",
+        borderTop: "1px solid rgba(var(--ink-rgb),.08)",
       }}
     >
       <video
@@ -36,7 +37,7 @@ export default function Contact() {
         style={{
           position: "absolute",
           inset: 0,
-          background: "radial-gradient(ellipse at 50% 50%, rgba(10,15,22,.55), #0a0f16 78%)",
+          background: "radial-gradient(ellipse at 50% 50%, rgba(var(--ground-rgb),.55), var(--ground) 78%)",
         }}
       ></div>
       <div style={{ position: "relative" }}>
@@ -46,7 +47,7 @@ export default function Contact() {
             fontSize: 12,
             letterSpacing: ".3em",
             textTransform: "uppercase",
-            color: "rgba(242,239,233,.6)",
+            color: "rgba(var(--ink-rgb),.6)",
             marginBottom: 30,
           }}
         >
@@ -66,14 +67,14 @@ export default function Contact() {
         >
           Vi tjener ingenting
           <br />
-          <span style={{ color: "transparent", WebkitTextStroke: "1.5px #f2efe9" }}>
+          <span style={{ color: "transparent", WebkitTextStroke: "1.5px var(--ink)" }}>
             før du gjør det.
           </span>
         </h2>
         <p
           data-reveal=""
           style={{
-            color: "rgba(242,239,233,.75)",
+            color: "rgba(var(--ink-rgb),.75)",
             fontSize: 18,
             maxWidth: 480,
             margin: "0 auto 44px",
@@ -92,8 +93,8 @@ export default function Contact() {
           style={{
             display: "inline-block",
             padding: "20px 50px",
-            background: "#f2efe9",
-            color: "#0a0f16",
+            background: "var(--ink)",
+            color: "var(--ground)",
             fontWeight: 600,
             fontSize: 17,
             borderRadius: 999,
@@ -103,7 +104,7 @@ export default function Contact() {
         </a>
         <p
           data-reveal=""
-          style={{ color: "rgba(242,239,233,.5)", fontSize: 14, margin: "28px 0 0" }}
+          style={{ color: "rgba(var(--ink-rgb),.5)", fontSize: 14, margin: "28px 0 0" }}
         >
           Vi sier nei til de fleste, og ja til noen få vi tror på. Det koster ingenting å spørre.
         </p>

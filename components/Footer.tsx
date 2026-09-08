@@ -5,9 +5,10 @@ import { selskapslinje } from "@/lib/selskap";
 export default function Footer() {
   return (
     <footer
+      className="band"
       style={{
         position: "relative",
-        borderTop: "1px solid rgba(242,239,233,.1)",
+        borderTop: "1px solid rgba(var(--ink-rgb),.1)",
         overflow: "hidden",
       }}
     >
@@ -33,7 +34,7 @@ export default function Footer() {
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(180deg, #0a0f16 0%, rgba(10,15,22,.35) 60%, rgba(10,15,22,.55) 100%)",
+            "linear-gradient(180deg, var(--ground) 0%, rgba(var(--ground-rgb),.35) 60%, rgba(var(--ground-rgb),.55) 100%)",
         }}
       ></div>
       <div
@@ -52,13 +53,13 @@ export default function Footer() {
         }}
       >
         <div style={{ display: "flex", gap: 28, fontSize: 14, flexWrap: "wrap" }}>
-          <Link href="/blogg" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
+          <Link href="/blogg" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
             Blogg
           </Link>
-          <Link href="/vilkar" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
+          <Link href="/vilkar" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
             Vilkår
           </Link>
-          <Link href="/personvern" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
+          <Link href="/personvern" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
             Personvern
           </Link>
           <a
@@ -66,7 +67,7 @@ export default function Footer() {
             target="_blank"
             data-hover=""
             className="hov-link"
-            style={{ color: "rgba(242,239,233,.6)" }}
+            style={{ color: "rgba(var(--ink-rgb),.6)" }}
           >
             oystr.no ↗
           </a>
@@ -75,12 +76,12 @@ export default function Footer() {
             target="_blank"
             data-hover=""
             className="hov-link"
-            style={{ color: "rgba(242,239,233,.6)" }}
+            style={{ color: "rgba(var(--ink-rgb),.6)" }}
           >
             altiv.no ↗
           </a>
         </div>
-        <span style={{ color: "rgba(242,239,233,.4)", fontSize: 13 }}>
+        <span style={{ color: "rgba(var(--ink-rgb),.4)", fontSize: 13 }}>
           {selskapslinje}
         </span>
       </div>
@@ -112,7 +113,7 @@ export default function Footer() {
           lineHeight: 0.8,
           textAlign: "center",
           textTransform: "uppercase",
-          color: "rgba(242,239,233,.22)",
+          color: "rgba(var(--ink-rgb),.22)",
           marginTop: 16,
           paddingBottom: "0.08em",
           userSelect: "none",

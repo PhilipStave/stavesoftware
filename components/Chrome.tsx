@@ -4,121 +4,6 @@ const GRAIN_BG =
 export default function Chrome() {
   return (
     <>
-      <div
-        id="preloader"
-        style={{
-          position: "fixed",
-          inset: 0,
-          zIndex: 10000,
-          background: "#0a0f16",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: 48,
-          boxSizing: "border-box",
-          transition: "transform 1s cubic-bezier(.76,0,.24,1)",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            fontSize: 12,
-            letterSpacing: ".3em",
-            textTransform: "uppercase",
-            color: "rgba(242,239,233,.5)",
-          }}
-        >
-          <span>Programvarestudio</span>
-          <span>Norge</span>
-        </div>
-        {/* Logoen er det som lastes inn: et svakt spøkelseslag ligger i ro,
-            mens #prefill avdekkes nedenfra i takt med prosenten. Samme
-            clipPath-mekanikk som ordmerket hadde — useSiteEffects rører bare
-            id-en, ikke innholdet. */}
-        <div
-          id="preword"
-          style={{
-            position: "relative",
-            width: "clamp(210px, 32vw, 440px)",
-            lineHeight: 0,
-            alignSelf: "center",
-          }}
-        >
-          <img
-            src="/logo/crest-lockup.png"
-            alt="Crest Holding"
-            width={1019}
-            height={771}
-            style={{ width: "100%", height: "auto", display: "block", opacity: 0.2 }}
-          />
-          <div
-            id="prefill"
-            style={{
-              position: "absolute",
-              inset: 0,
-              clipPath: "inset(100% 0 0 0)",
-              transition: "clip-path .25s cubic-bezier(.4,0,.2,1)",
-            }}
-          >
-            <img
-              src="/logo/crest-lockup.png"
-              alt=""
-              aria-hidden="true"
-              width={1019}
-              height={771}
-              style={{ width: "100%", height: "auto", display: "block" }}
-            />
-          </div>
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-          <div
-            style={{
-              height: 1,
-              background: "rgba(242,239,233,.15)",
-              position: "relative",
-              overflow: "hidden",
-            }}
-          >
-            <div
-              id="preline"
-              style={{
-                position: "absolute",
-                left: 0,
-                top: 0,
-                bottom: 0,
-                width: "0%",
-                background: "linear-gradient(90deg, #8fb8e0, #f2efe9)",
-                transition: "width .25s cubic-bezier(.4,0,.2,1)",
-              }}
-            ></div>
-          </div>
-          <div
-            style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}
-          >
-            <span
-              style={{
-                fontSize: 12,
-                letterSpacing: ".3em",
-                textTransform: "uppercase",
-                color: "rgba(242,239,233,.5)",
-              }}
-            >
-              Laster opplevelsen
-            </span>
-            <span
-              id="preload-num"
-              style={{
-                fontFamily: "var(--font-archivo), sans-serif",
-                fontWeight: 900,
-                fontSize: 56,
-              }}
-            >
-              0%
-            </span>
-          </div>
-        </div>
-      </div>
       <div id="cursor"></div>
       <div id="cursor-ring"></div>
       <div
@@ -175,7 +60,7 @@ export default function Chrome() {
           left: 0,
           height: 2,
           width: "0%",
-          background: "linear-gradient(90deg, #8fb8e0, #f2efe9)",
+          background: "linear-gradient(90deg, var(--accent), var(--ink))",
           zIndex: 100,
         }}
       ></div>

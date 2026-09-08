@@ -52,7 +52,7 @@ export default function BloggOversikt() {
             fontSize: 12,
             letterSpacing: ".3em",
             textTransform: "uppercase",
-            color: "#8fb8e0",
+            color: "var(--accent)",
             marginBottom: 20,
           }}
         >
@@ -68,18 +68,18 @@ export default function BloggOversikt() {
             lineHeight: 0.96,
             margin: "0 0 26px",
             textTransform: "uppercase",
-            color: "#f2efe9",
+            color: "var(--ink)",
           }}
         >
           Det vi lærer{" "}
-          <span style={{ color: "transparent", WebkitTextStroke: "1.5px #f2efe9" }}>
+          <span style={{ color: "transparent", WebkitTextStroke: "1.5px var(--ink)" }}>
             underveis.
           </span>
         </h1>
         <p
           data-reveal=""
           style={{
-            color: "rgba(242,239,233,.7)",
+            color: "rgba(var(--ink-rgb),.7)",
             fontSize: 18,
             lineHeight: 1.7,
             maxWidth: 560,
@@ -100,7 +100,7 @@ export default function BloggOversikt() {
           boxSizing: "border-box",
         }}
       >
-        <div style={{ borderTop: "1px solid rgba(242,239,233,.14)" }}>
+        <div style={{ borderTop: "1px solid rgba(var(--ink-rgb),.14)" }}>
           {artiklerSortert.map((a) => (
             <Link
               key={a.slug}
@@ -127,11 +127,11 @@ export default function BloggOversikt() {
                   textTransform: "uppercase",
                 }}
               >
-                <span style={{ color: "#8fb8e0" }}>{a.kategori}</span>
-                <span style={{ color: "rgba(242,239,233,.45)" }}>
+                <span style={{ color: "var(--accent)" }}>{a.kategori}</span>
+                <span style={{ color: "rgba(var(--ink-rgb),.45)" }}>
                   {datoFormat.format(new Date(a.publisert))}
                 </span>
-                <span style={{ color: "rgba(242,239,233,.45)" }}>{a.lesetid} min lesing</span>
+                <span style={{ color: "rgba(var(--ink-rgb),.45)" }}>{a.lesetid} min lesing</span>
               </div>
               <h2
                 style={{
@@ -142,14 +142,14 @@ export default function BloggOversikt() {
                   lineHeight: 1.08,
                   textTransform: "uppercase",
                   margin: "0 0 14px",
-                  color: "#f2efe9",
+                  color: "var(--ink)",
                 }}
               >
                 {a.tittel}
               </h2>
               <p
                 style={{
-                  color: "rgba(242,239,233,.65)",
+                  color: "rgba(var(--ink-rgb),.65)",
                   fontSize: 16,
                   lineHeight: 1.7,
                   margin: 0,
@@ -162,7 +162,7 @@ export default function BloggOversikt() {
                 style={{
                   display: "inline-block",
                   marginTop: 18,
-                  color: "#8fb8e0",
+                  color: "var(--accent)",
                   fontSize: 15,
                   fontWeight: 600,
                 }}

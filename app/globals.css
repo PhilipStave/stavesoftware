@@ -1,18 +1,49 @@
+/* Fargesystem.
+   Siden er lys. Seksjonene som ligger over video — hero, teknologi, kontakt og
+   bunnen — beholder det mørke uttrykket, og får klassen .band. Den redefinerer
+   de samme tokenene lokalt, slik at all CSS under virker i begge kontekster
+   uten egne regler. Legg aldri inn en literal farge i en komponent: da slutter
+   den å følge båndet den står i. */
+:root {
+  --ground: #faf9f7;        /* papiret man leser på */
+  --ground-rgb: 250,249,247;
+  --surface: #ffffff;        /* hevet flate */
+  --sunk: #f0efec;           /* senket flate, felter og rader */
+  --ink: #141c24;            /* teksten */
+  --ink-rgb: 20,28,36;
+  --accent: #2c6390;         /* lenker og markering, lesbar på lyst */
+  --accent-rgb: 44,99,144;
+  --hi: #0b1219;             /* hover, sterkeste kontrast */
+  --line: rgba(20,28,36,.14);
+}
+.band {
+  --ground: #0a0f16;
+  --ground-rgb: 10,15,22;
+  --surface: #10161f;
+  --sunk: #0d1420;
+  --ink: #f2efe9;
+  --ink-rgb: 242,239,233;
+  --accent: #8fb8e0;
+  --accent-rgb: 143,184,224;
+  --hi: #ffffff;
+  --line: rgba(242,239,233,.14);
+  background: var(--ground);
+  color: var(--ink);
+}
+
 html { scroll-behavior: smooth; }
-body { margin: 0; background: #0a0f16; color: #f2efe9; font-family: var(--font-grotesk), 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; cursor: none; }
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--font-grotesk), 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; cursor: none; }
 a, button { cursor: none; }
 button { font-family: inherit; }
-::selection { background: #f2efe9; color: #0a0f16; }
-a { color: #8fb8e0; text-decoration: none; }
-a:hover { color: #b8d4ee; }
+::selection { background: var(--ink); color: var(--ground); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--hi); }
 @keyframes wordUp { from { transform: translateY(110%); } to { transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes marqueeR { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 @keyframes grainShift { 0%,100% { transform: translate(0,0); } 20% { transform: translate(-2%,1%); } 40% { transform: translate(1%,-2%); } 60% { transform: translate(-1%,2%); } 80% { transform: translate(2%,-1%); } }
 @keyframes caret { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
-@keyframes prePop { 0% { transform: scale(1); } 35% { transform: scale(1.055); } 100% { transform: scale(1); } }
-@keyframes preGlitch { 0%,100% { transform: translate(0,0); } 20% { transform: translate(-3px,2px); } 40% { transform: translate(4px,-2px); } 60% { transform: translate(-2px,-3px); } 80% { transform: translate(2px,3px); } }
 [data-reveal] { opacity: 0; transform: translateY(50px); transition: opacity 1.1s cubic-bezier(.16,1,.3,1), transform 1.1s cubic-bezier(.16,1,.3,1); }
 [data-reveal].in { opacity: 1; transform: none; }
 .wordmask { display: inline-block; overflow: hidden; vertical-align: bottom; }
@@ -23,8 +54,8 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
 [data-zoom] { overflow: hidden; }
 [data-zoom] img, [data-zoom] video { transition: transform 1.4s cubic-bezier(.16,1,.3,1); }
 [data-zoom]:hover img, [data-zoom]:hover video { transform: scale(1.06); }
-.srow { border-top: 1px solid rgba(242,239,233,.14); transition: background .5s, padding-left .5s; }
-.srow:hover { background: rgba(242,239,233,.04); padding-left: 26px !important; }
+.srow { border-top: 1px solid var(--line); transition: background .5s, padding-left .5s; }
+.srow:hover { background: rgba(var(--ink-rgb),.04); padding-left: 26px !important; }
 .srow:hover .srow-arrow { transform: translateX(0); opacity: 1; }
 .srow-arrow { transform: translateX(-16px); opacity: 0; transition: transform .5s cubic-bezier(.16,1,.3,1), opacity .5s; }
 .tw .twc { visibility: hidden; }
@@ -32,6 +63,8 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
 .tw .twcaret { display: none; }
 .tw.typing .twcaret { display: inline-block; animation: caret .7s step-end infinite; }
 [data-tilt3d] { transform-style: preserve-3d; will-change: transform; transition: transform .4s cubic-bezier(.16,1,.3,1); }
+/* Markøren bruker difference-blanding og snur seg derfor selv mot underlaget,
+   både på papiret og inne i båndene. */
 #cursor { position: fixed; top: 0; left: 0; width: 10px; height: 10px; border-radius: 50%; background: #f2efe9; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); mix-blend-mode: difference; }
 #cursor-ring { position: fixed; top: 0; left: 0; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(242,239,233,.5); pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .35s, height .35s, border-color .35s, background .35s; mix-blend-mode: difference; }
 #cursor-ring.big { width: 90px; height: 90px; background: rgba(242,239,233,.12); border-color: transparent; }
@@ -41,11 +74,11 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
 @keyframes tItem { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: none; } }
 #techoverlay .titem, #serviceoverlay .titem { opacity: 0; }
 #techoverlay.open .titem, #serviceoverlay.open .titem { animation: tItem .9s cubic-bezier(.16,1,.3,1) forwards; }
-.trow { border-top: 1px solid rgba(242,239,233,.12); transition: background .4s, padding-left .4s; }
-.trow:hover { background: rgba(143,184,224,.07); padding-left: 18px !important; }
-#dotnav .dot { display: block; width: 8px; height: 8px; border-radius: 50%; background: rgba(242,239,233,.35); transition: transform .3s, background .3s; }
-#dotnav .dot.on { background: #8fb8e0; transform: scale(1.6); }
-#dotnav a:hover .dot { background: #f2efe9; }
+.trow { border-top: 1px solid rgba(var(--ink-rgb),.12); transition: background .4s, padding-left .4s; }
+.trow:hover { background: rgba(var(--accent-rgb),.07); padding-left: 18px !important; }
+#dotnav .dot { display: block; width: 8px; height: 8px; border-radius: 50%; background: rgba(var(--ink-rgb),.35); transition: transform .3s, background .3s; }
+#dotnav .dot.on { background: var(--accent); transform: scale(1.6); }
+#dotnav a:hover .dot { background: var(--ink); }
 
 /* Modellen: kurve som tegner seg ved scroll */
 .growpath { stroke-dasharray: 1; stroke-dashoffset: 1; }
@@ -60,14 +93,14 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
 [data-reveal].in .growpulse { animation: growpulse 2.4s ease-out 2.8s infinite; }
 @keyframes growpulse { 0% { transform: scale(1); opacity: .8; } 70% { transform: scale(3); opacity: 0; } 100% { transform: scale(3); opacity: 0; } }
 
-/* Hover styles (style-hover in the prototype; !important beats the inline base styles) */
-.hov-nl:hover { color: #ffffff !important; }
-.hov-fill:hover { background: #ffffff !important; color: #0a0f16 !important; }
-.hov-circle:hover { border-color: #ffffff !important; background: rgba(242,239,233,.1) !important; color: #ffffff !important; }
-.hov-navy:hover { background: #2f5d8a !important; color: #ffffff !important; }
-.hov-tech:hover { border-color: #8fb8e0 !important; background: rgba(143,184,224,.1) !important; color: #ffffff !important; }
-.hov-outline:hover { border-color: #8fb8e0 !important; color: #ffffff !important; }
-.hov-link:hover { color: #ffffff !important; }
+/* Hover (style-hover i prototypen; !important slår de innebygde stilene) */
+.hov-nl:hover { color: var(--hi) !important; }
+.hov-fill:hover { background: var(--hi) !important; color: var(--ground) !important; }
+.hov-circle:hover { border-color: var(--hi) !important; background: rgba(var(--ink-rgb),.1) !important; color: var(--hi) !important; }
+.hov-navy:hover { background: var(--accent) !important; color: var(--ground) !important; }
+.hov-tech:hover { border-color: var(--accent) !important; background: rgba(var(--accent-rgb),.1) !important; color: var(--hi) !important; }
+.hov-outline:hover { border-color: var(--accent) !important; color: var(--hi) !important; }
+.hov-link:hover { color: var(--hi) !important; }
 
 /* Mobilnettlesere: la heroen følge synlig viewport (adresselinjen) */
 @supports (height: 100svh) {
@@ -95,7 +128,6 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
   .logo-lockup { font-size: 13px !important; letter-spacing: .13em !important; gap: 7px !important; }
   .logo-lockup img { height: 13px !important; }
   nav { padding: 16px 20px !important; }
-  #preloader { padding: 24px !important; }
   #heroinner { padding: 90px 20px 32px !important; }
   .scwrap { padding: 90px 20px !important; }
   #teknologi { padding: 90px 0 !important; }

@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 // Alle scroll-/muse-effektene fra prototypen, portert 1:1:
-// preloader, reveals, typewriter, count-up, egendefinert markør, spotlight,
+// reveals, typewriter, count-up, egendefinert markør, spotlight,
 // magnetknapper, 3D-tilt, nav-scramble, video-restart ved inview,
 // parallax, hero-skalering, horisontalt produktspor og bakgrunnsbytte.
 export function useSiteEffects({
@@ -12,47 +12,10 @@ export function useSiteEffects({
   onOystrVisible: (visible: boolean) => void;
 }) {
   useEffect(() => {
-    // Preloader
-    const pre = document.getElementById("preloader");
-    const num = document.getElementById("preload-num");
-    const fill = document.getElementById("prefill");
-    const line = document.getElementById("preline");
-    const word = document.getElementById("preword");
-    const GL = "#/\\%&@$§01";
-    let p = 0;
-    let preT: ReturnType<typeof setTimeout> | undefined;
-    const tick = () => {
-      p = Math.min(100, p + Math.random() * 13 + 3);
-      const pi = Math.floor(p);
-      if (num)
-        num.textContent =
-          (p < 100 && Math.random() < 0.3
-            ? GL[Math.floor(Math.random() * GL.length)]
-            : "") +
-          pi +
-          "%";
-      if (fill) fill.style.clipPath = `inset(${100 - pi}% 0 0 0)`;
-      if (line) line.style.width = pi + "%";
-      if (p < 100) {
-        preT = setTimeout(tick, 90);
-      } else {
-        if (num) num.textContent = "100%";
-        if (word)
-          word.style.animation =
-            "prePop .5s cubic-bezier(.16,1,.3,1), preGlitch .25s steps(2) 2";
-        setTimeout(() => {
-          if (pre) {
-            pre.style.transform = "translateY(-100%)";
-            pre.style.pointerEvents = "none";
-          }
-          document.body.classList.add("loaded");
-          setTimeout(() => {
-            if (pre) pre.style.display = "none";
-          }, 1100);
-        }, 620);
-      }
-    };
-    tick();
+    // Ingen innlastingsskjerm lenger. «loaded» settes med én gang, fordi
+    // ordanimasjonen i heroen og fadeIn henger på den klassen.
+    document.body.classList.add("loaded");
+
     // Reveals
     const io = new IntersectionObserver(
       (entries) => {
@@ -337,7 +300,6 @@ export function useSiteEffects({
     return () => {
       [io, ioT, ioC, ioV].forEach((o) => o.disconnect());
       clearInterval(obsInterval);
-      clearTimeout(preT);
       window.removeEventListener("mousemove", mm);
       window.removeEventListener("keydown", esc);
       document.documentElement.style.overflow = "";

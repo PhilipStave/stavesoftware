@@ -40,7 +40,7 @@ export default function JuridiskSide({
             fontSize: 12,
             letterSpacing: ".2em",
             textTransform: "uppercase",
-            color: "rgba(242,239,233,.45)",
+            color: "rgba(var(--ink-rgb),.45)",
             marginBottom: 20,
           }}
         >
@@ -55,19 +55,19 @@ export default function JuridiskSide({
             lineHeight: 1.02,
             margin: "0 0 26px",
             textTransform: "uppercase",
-            color: "#f2efe9",
+            color: "var(--ink)",
           }}
         >
           {tittel}
         </h1>
         <p
           style={{
-            color: "rgba(242,239,233,.75)",
+            color: "rgba(var(--ink-rgb),.75)",
             fontSize: 20,
             lineHeight: 1.65,
             margin: "0 0 50px",
             paddingBottom: 40,
-            borderBottom: "1px solid rgba(242,239,233,.14)",
+            borderBottom: "1px solid rgba(var(--ink-rgb),.14)",
           }}
         >
           {ingress}
@@ -80,24 +80,24 @@ export default function JuridiskSide({
           style={{
             marginTop: 70,
             paddingTop: 40,
-            borderTop: "1px solid rgba(242,239,233,.14)",
+            borderTop: "1px solid rgba(var(--ink-rgb),.14)",
             display: "flex",
             gap: 28,
             flexWrap: "wrap",
             fontSize: 14,
           }}
         >
-          <Link href="/vilkar" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
+          <Link href="/vilkar" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
             Vilkår
           </Link>
-          <Link href="/personvern" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
+          <Link href="/personvern" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
             Personvern
           </Link>
           <a
             href={`mailto:${selskap.epost}`}
             data-hover=""
             className="hov-link"
-            style={{ color: "rgba(242,239,233,.6)" }}
+            style={{ color: "rgba(var(--ink-rgb),.6)" }}
           >
             {selskap.epost}
           </a>

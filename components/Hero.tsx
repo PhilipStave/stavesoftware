@@ -3,8 +3,9 @@ import { mute } from "./mute";
 export default function Hero() {
   return (
     <header
+      className="band"
       id="topp"
-      style={{ position: "relative", height: "100vh", overflow: "hidden", background: "#0a0f16" }}
+      style={{ position: "relative", height: "100vh", overflow: "hidden", background: "var(--ground)" }}
     >
       <video
         src="/uploads/Hero_video_Veo_-_sek_.mp4"
@@ -28,7 +29,7 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(180deg, rgba(10,15,22,.5) 0%, rgba(10,15,22,.1) 45%, rgba(10,15,22,.92) 100%)",
+            "linear-gradient(180deg, rgba(var(--ground-rgb),.5) 0%, rgba(var(--ground-rgb),.1) 45%, rgba(var(--ground-rgb),.92) 100%)",
         }}
       ></div>
       <div
@@ -57,7 +58,7 @@ export default function Hero() {
             fontSize: 12,
             letterSpacing: ".3em",
             textTransform: "uppercase",
-            color: "rgba(242,239,233,.75)",
+            color: "rgba(var(--ink-rgb),.75)",
             animationDelay: ".2s",
           }}
         >
@@ -66,7 +67,7 @@ export default function Hero() {
               display: "inline-block",
               width: 44,
               height: 1,
-              background: "rgba(242,239,233,.5)",
+              background: "rgba(var(--ink-rgb),.5)",
             }}
           ></span>
           Programvarestudio · Norge
@@ -99,7 +100,7 @@ export default function Hero() {
               style={{
                 animationDelay: ".49s",
                 color: "transparent",
-                WebkitTextStroke: "1.5px #f2efe9",
+                WebkitTextStroke: "1.5px var(--ink)",
               }}
             >
               betalt
@@ -113,7 +114,7 @@ export default function Hero() {
             <span style={{ animationDelay: ".65s" }}>å</span>
           </span>{" "}
           <span className="wordmask">
-            <span style={{ animationDelay: ".73s", color: "#8fb8e0" }}>bygge.</span>
+            <span style={{ animationDelay: ".73s", color: "var(--accent)" }}>bygge.</span>
           </span>
         </h1>
         <div
@@ -133,7 +134,7 @@ export default function Hero() {
               maxWidth: 460,
               fontSize: 17,
               lineHeight: 1.65,
-              color: "rgba(242,239,233,.8)",
+              color: "rgba(var(--ink-rgb),.8)",
               margin: 0,
             }}
           >
@@ -151,8 +152,8 @@ export default function Hero() {
                 alignItems: "center",
                 gap: 12,
                 padding: "18px 36px",
-                background: "#f2efe9",
-                color: "#0a0f16",
+                background: "var(--ink)",
+                color: "var(--ground)",
                 fontWeight: 600,
                 fontSize: 15,
                 borderRadius: 999,
@@ -172,9 +173,9 @@ export default function Hero() {
                 justifyContent: "center",
                 width: 56,
                 height: 56,
-                border: "1px solid rgba(242,239,233,.4)",
+                border: "1px solid rgba(var(--ink-rgb),.4)",
                 borderRadius: "50%",
-                color: "#f2efe9",
+                color: "var(--ink)",
                 fontSize: 18,
               }}
             >
@@ -186,7 +187,7 @@ export default function Hero() {
           id="herostats"
           className="heroFade"
           style={{
-            borderTop: "1px solid rgba(242,239,233,.15)",
+            borderTop: "1px solid rgba(var(--ink-rgb),.15)",
             marginTop: 50,
             animationDelay: "1.1s",
             display: "grid",
@@ -207,7 +208,7 @@ export default function Hero() {
                 fontSize: 13,
                 letterSpacing: ".14em",
                 textTransform: "uppercase",
-                color: "rgba(242,239,233,.6)",
+                color: "rgba(var(--ink-rgb),.6)",
               }}
             >
               Egne produkter i drift
@@ -219,7 +220,7 @@ export default function Hero() {
               display: "flex",
               alignItems: "baseline",
               gap: 14,
-              borderLeft: "1px solid rgba(242,239,233,.15)",
+              borderLeft: "1px solid rgba(var(--ink-rgb),.15)",
               paddingLeft: 40,
             }}
           >
@@ -235,7 +236,7 @@ export default function Hero() {
                 fontSize: 13,
                 letterSpacing: ".14em",
                 textTransform: "uppercase",
-                color: "rgba(242,239,233,.6)",
+                color: "rgba(var(--ink-rgb),.6)",
               }}
             >
               I timepris, alltid
@@ -247,19 +248,19 @@ export default function Hero() {
               display: "flex",
               alignItems: "baseline",
               gap: 14,
-              borderLeft: "1px solid rgba(242,239,233,.15)",
+              borderLeft: "1px solid rgba(var(--ink-rgb),.15)",
               paddingLeft: 40,
             }}
           >
             <span style={{ fontFamily: "var(--font-archivo), sans-serif", fontWeight: 800, fontSize: 30 }}>
-              Idé<span style={{ color: "#8fb8e0" }}>→</span>Drift
+              Idé<span style={{ color: "var(--accent)" }}>→</span>Drift
             </span>
             <span
               style={{
                 fontSize: 13,
                 letterSpacing: ".14em",
                 textTransform: "uppercase",
-                color: "rgba(242,239,233,.6)",
+                color: "rgba(var(--ink-rgb),.6)",
               }}
             >
               Hele løpet, ett team

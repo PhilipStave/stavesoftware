@@ -61,7 +61,7 @@ export default function Site() {
       style={{
         minHeight: "100vh",
         position: "relative",
-        background: "#0a0f16",
+        background: "var(--ground)",
         transition: "background 1s cubic-bezier(.4,0,.2,1)",
       }}
     >

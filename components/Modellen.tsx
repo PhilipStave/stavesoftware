@@ -8,7 +8,7 @@ export default function Modellen() {
       style={{
         position: "relative",
         overflow: "hidden",
-        borderTop: "1px solid rgba(242,239,233,.08)",
+        borderTop: "1px solid rgba(var(--ink-rgb),.08)",
       }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -30,7 +30,7 @@ export default function Modellen() {
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(180deg, #0a0f16 0%, rgba(10,15,22,.55) 50%, #0a0f16 100%)",
+            "linear-gradient(180deg, var(--ground) 0%, rgba(var(--ground-rgb),.55) 50%, var(--ground) 100%)",
         }}
       ></div>
       <div
@@ -66,15 +66,15 @@ export default function Modellen() {
             }}
           >
             Vi vinner når{" "}
-            <span style={{ color: "transparent", WebkitTextStroke: "1.5px #f2efe9" }}>du</span>{" "}
-            <span style={{ color: "#8fb8e0" }}>vinner.</span>
-            <span className="twcaret" style={{ color: "#8fb8e0" }}>_</span>
+            <span style={{ color: "transparent", WebkitTextStroke: "1.5px var(--ink)" }}>du</span>{" "}
+            <span style={{ color: "var(--accent)" }}>vinner.</span>
+            <span className="twcaret" style={{ color: "var(--accent)" }}>_</span>
           </h2>
           <span
             style={{
               fontSize: 12,
               letterSpacing: ".26em",
-              color: "rgba(242,239,233,.55)",
+              color: "rgba(var(--ink-rgb),.55)",
               textTransform: "uppercase",
             }}
           >
@@ -84,7 +84,7 @@ export default function Modellen() {
         <p
           data-reveal=""
           style={{
-            color: "rgba(242,239,233,.75)",
+            color: "rgba(var(--ink-rgb),.75)",
             fontSize: 18,
             lineHeight: 1.7,
             maxWidth: 600,
@@ -105,12 +105,12 @@ export default function Modellen() {
           >
             <defs>
               <linearGradient id="mfill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#8fb8e0" stopOpacity=".22" />
-                <stop offset="100%" stopColor="#8fb8e0" stopOpacity="0" />
+                <stop offset="0%" stopColor="var(--accent)" stopOpacity=".22" />
+                <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
               </linearGradient>
               <linearGradient id="mline" x1="0" y1="1" x2="1" y2="0">
-                <stop offset="0%" stopColor="rgba(242,239,233,.55)" />
-                <stop offset="100%" stopColor="#8fb8e0" />
+                <stop offset="0%" stopColor="rgba(var(--ink-rgb),.55)" />
+                <stop offset="100%" stopColor="var(--accent)" />
               </linearGradient>
             </defs>
             {[80, 160, 240, 320].map((y) => (
@@ -120,7 +120,7 @@ export default function Modellen() {
                 y1={y}
                 x2="1000"
                 y2={y}
-                stroke="rgba(242,239,233,.07)"
+                stroke="rgba(var(--ink-rgb),.07)"
                 strokeWidth="1"
               />
             ))}
@@ -144,12 +144,12 @@ export default function Modellen() {
               { x: 790, y: 108, t: "Du vokser" },
             ].map((p) => (
               <g key={p.t} className="growmark">
-                <circle cx={p.x} cy={p.y} r="5" fill="#0a0f16" stroke="#8fb8e0" strokeWidth="2" />
+                <circle cx={p.x} cy={p.y} r="5" fill="var(--ground)" stroke="var(--accent)" strokeWidth="2" />
                 <text
                   x={p.x}
                   y={p.y + 34}
                   textAnchor="middle"
-                  fill="rgba(242,239,233,.55)"
+                  fill="rgba(var(--ink-rgb),.55)"
                   style={{
                     fontFamily: "var(--font-grotesk), sans-serif",
                     fontSize: 13,
@@ -162,8 +162,8 @@ export default function Modellen() {
               </g>
             ))}
             <g className="growdot">
-              <circle className="growpulse" cx="968" cy="46" r="7" fill="rgba(143,184,224,.35)" />
-              <circle cx="968" cy="46" r="6" fill="#8fb8e0" />
+              <circle className="growpulse" cx="968" cy="46" r="7" fill="rgba(var(--accent-rgb),.35)" />
+              <circle cx="968" cy="46" r="6" fill="var(--accent)" />
             </g>
           </svg>
           <p
@@ -172,11 +172,11 @@ export default function Modellen() {
               fontSize: 13,
               letterSpacing: ".2em",
               textTransform: "uppercase",
-              color: "rgba(242,239,233,.55)",
+              color: "rgba(var(--ink-rgb),.55)",
               margin: "26px 0 0",
             }}
           >
-            Din verdi og vår verdi er <span style={{ color: "#8fb8e0" }}>samme kurve</span>
+            Din verdi og vår verdi er <span style={{ color: "var(--accent)" }}>samme kurve</span>
           </p>
         </div>
 
@@ -212,14 +212,14 @@ export default function Modellen() {
             <div
               key={p.nr}
               data-reveal=""
-              style={{ borderTop: "1px solid rgba(242,239,233,.15)", paddingTop: 24 }}
+              style={{ borderTop: "1px solid rgba(var(--ink-rgb),.15)", paddingTop: 24 }}
             >
               <div
                 style={{
                   fontFamily: "var(--font-archivo), sans-serif",
                   fontWeight: 800,
                   fontSize: 15,
-                  color: "#8fb8e0",
+                  color: "var(--accent)",
                   marginBottom: 14,
                 }}
               >
@@ -239,7 +239,7 @@ export default function Modellen() {
               </h3>
               <p
                 style={{
-                  color: "rgba(242,239,233,.65)",
+                  color: "rgba(var(--ink-rgb),.65)",
                   lineHeight: 1.7,
                   fontSize: 15,
                   margin: 0,
@@ -260,8 +260,8 @@ export default function Modellen() {
             style={{
               display: "inline-block",
               padding: "20px 48px",
-              background: "#f2efe9",
-              color: "#0a0f16",
+              background: "var(--ink)",
+              color: "var(--ground)",
               fontWeight: 600,
               fontSize: 16,
               borderRadius: 999,

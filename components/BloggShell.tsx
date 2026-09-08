@@ -38,7 +38,7 @@ function useBloggEffects() {
       const t = e.target as Element | null;
       if (ring) ring.classList.toggle("big", !!(t && t.closest && t.closest("[data-hover]")));
       if (spot)
-        spot.style.background = `radial-gradient(520px at ${mx}px ${my}px, rgba(143,184,224,.075), transparent 70%)`;
+        spot.style.background = `radial-gradient(520px at ${mx}px ${my}px, rgba(var(--accent-rgb),.075), transparent 70%)`;
     };
     window.addEventListener("mousemove", mm);
 
@@ -68,7 +68,7 @@ function useBloggEffects() {
 export default function BloggShell({ children }: { children: React.ReactNode }) {
   useBloggEffects();
   return (
-    <div style={{ minHeight: "100vh", position: "relative", background: "#0a0f16" }}>
+    <div style={{ minHeight: "100vh", position: "relative", background: "var(--ground)" }}>
       <div id="cursor"></div>
       <div id="cursor-ring"></div>
       <div
@@ -79,7 +79,7 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
           left: 0,
           height: 2,
           width: "0%",
-          background: "linear-gradient(90deg, #8fb8e0, #f2efe9)",
+          background: "linear-gradient(90deg, var(--accent), var(--ink))",
           zIndex: 100,
         }}
       ></div>
@@ -109,7 +109,7 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
           alignItems: "center",
           justifyContent: "space-between",
           padding: "20px 48px",
-          background: "linear-gradient(180deg, rgba(10,15,22,.85), rgba(10,15,22,0))",
+          background: "linear-gradient(180deg, rgba(var(--ground-rgb),.85), rgba(var(--ground-rgb),0))",
         }}
       >
         <Link
@@ -126,7 +126,7 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
             fontSize: 19,
             letterSpacing: ".2em",
             whiteSpace: "nowrap",
-            color: "#f2efe9",
+            color: "var(--ink)",
           }}
         >
           <img
@@ -139,13 +139,13 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
           />
           <span>
             CREST HOLDING
-            <span style={{ color: "#8fb8e0", fontSize: "0.58em", verticalAlign: "0.42em", letterSpacing: 0 }}>
+            <span style={{ color: "var(--accent)", fontSize: "0.58em", verticalAlign: "0.42em", letterSpacing: 0 }}>
               ®
             </span>
           </span>
         </Link>
         <div style={{ display: "flex", gap: 30, alignItems: "center", fontSize: 13, letterSpacing: ".1em", textTransform: "uppercase" }}>
-          <Link href="/" data-hover="" className="hov-nl bnav-back" style={{ color: "rgba(242,239,233,.7)" }}>
+          <Link href="/" data-hover="" className="hov-nl bnav-back" style={{ color: "rgba(var(--ink-rgb),.7)" }}>
             ← Forsiden
           </Link>
           <Link
@@ -155,8 +155,8 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
             style={{
               display: "inline-block",
               padding: "12px 26px",
-              background: "#f2efe9",
-              color: "#0a0f16",
+              background: "var(--ink)",
+              color: "var(--ground)",
               fontWeight: 600,
               borderRadius: 999,
               letterSpacing: ".06em",
@@ -173,7 +173,7 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
         className="bfoot"
         style={{
           position: "relative",
-          borderTop: "1px solid rgba(242,239,233,.1)",
+          borderTop: "1px solid rgba(var(--ink-rgb),.1)",
           marginTop: 40,
           padding: "40px 48px",
           display: "flex",
@@ -187,13 +187,13 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
         }}
       >
         <div style={{ display: "flex", gap: 28, fontSize: 14, flexWrap: "wrap" }}>
-          <Link href="/" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
+          <Link href="/" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
             Crest Holding
           </Link>
-          <Link href="/vilkar" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
+          <Link href="/vilkar" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
             Vilkår
           </Link>
-          <Link href="/personvern" data-hover="" className="hov-link" style={{ color: "rgba(242,239,233,.6)" }}>
+          <Link href="/personvern" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
             Personvern
           </Link>
           <a
@@ -201,7 +201,7 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
             target="_blank"
             data-hover=""
             className="hov-link"
-            style={{ color: "rgba(242,239,233,.6)" }}
+            style={{ color: "rgba(var(--ink-rgb),.6)" }}
           >
             oystr.no ↗
           </a>
@@ -210,12 +210,12 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
             target="_blank"
             data-hover=""
             className="hov-link"
-            style={{ color: "rgba(242,239,233,.6)" }}
+            style={{ color: "rgba(var(--ink-rgb),.6)" }}
           >
             altiv.no ↗
           </a>
         </div>
-        <span style={{ color: "rgba(242,239,233,.4)", fontSize: 13 }}>
+        <span style={{ color: "rgba(var(--ink-rgb),.4)", fontSize: 13 }}>
           {selskapslinje}
         </span>
       </footer>

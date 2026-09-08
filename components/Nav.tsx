@@ -21,7 +21,14 @@ export default function Nav({
         alignItems: "center",
         justifyContent: "space-between",
         padding: "20px 48px",
-        background: "linear-gradient(180deg, rgba(10,15,22,.75), rgba(10,15,22,0))",
+        // Menyen ligger fast over heroen, som er et mørkt bånd. En gradient
+        // ut i ingenting virket da alt var mørkt, men på en lys side ville
+        // blekket blitt usynlig mot filmen. Derfor en solid lys linje med
+        // hårfin kant — lesbar over både video og papir.
+        background: "rgba(var(--ground-rgb),.92)",
+        backdropFilter: "saturate(1.6) blur(14px)",
+        WebkitBackdropFilter: "saturate(1.6) blur(14px)",
+        borderBottom: "1px solid var(--line)",
       }}
     >
       <a
@@ -39,7 +46,7 @@ export default function Nav({
           fontSize: 19,
           letterSpacing: ".2em",
           whiteSpace: "nowrap",
-          color: "#f2efe9",
+          color: "var(--ink)",
         }}
       >
         <img
@@ -52,7 +59,7 @@ export default function Nav({
         />
         <span>
           CREST HOLDING
-            <span style={{ color: "#8fb8e0", fontSize: "0.58em", verticalAlign: "0.42em", letterSpacing: 0 }}>
+            <span style={{ color: "var(--accent)", fontSize: "0.58em", verticalAlign: "0.42em", letterSpacing: 0 }}>
               ®
             </span>
         </span>
@@ -73,7 +80,7 @@ export default function Nav({
           className="nl hov-nl"
           data-scramble=""
           data-hover=""
-          style={{ color: "rgba(242,239,233,.7)" }}
+          style={{ color: "rgba(var(--ink-rgb),.7)" }}
         >
           Produkter
         </a>
@@ -82,7 +89,7 @@ export default function Nav({
           className="nl hov-nl"
           data-scramble=""
           data-hover=""
-          style={{ color: "rgba(242,239,233,.7)" }}
+          style={{ color: "rgba(var(--ink-rgb),.7)" }}
         >
           Hva du får
         </a>
@@ -91,7 +98,7 @@ export default function Nav({
           className="nl hov-nl"
           data-scramble=""
           data-hover=""
-          style={{ color: "rgba(242,239,233,.7)" }}
+          style={{ color: "rgba(var(--ink-rgb),.7)" }}
         >
           Teknologi
         </a>
@@ -100,7 +107,7 @@ export default function Nav({
           className="nl hov-nl"
           data-scramble=""
           data-hover=""
-          style={{ color: "rgba(242,239,233,.7)" }}
+          style={{ color: "rgba(var(--ink-rgb),.7)" }}
         >
           Modellen
         </a>
@@ -109,7 +116,7 @@ export default function Nav({
           className="nl hov-nl"
           data-scramble=""
           data-hover=""
-          style={{ color: "rgba(242,239,233,.7)" }}
+          style={{ color: "rgba(var(--ink-rgb),.7)" }}
         >
           Blogg
         </Link>
@@ -123,9 +130,9 @@ export default function Nav({
             gap: 10,
             padding: "10px 18px",
             background: "transparent",
-            border: "1px solid rgba(242,239,233,.3)",
+            border: "1px solid rgba(var(--ink-rgb),.3)",
             borderRadius: 999,
-            color: "rgba(242,239,233,.8)",
+            color: "rgba(var(--ink-rgb),.8)",
             fontFamily: "var(--font-grotesk), sans-serif",
             fontSize: 12,
             letterSpacing: ".14em",
@@ -147,8 +154,8 @@ export default function Nav({
           style={{
             display: "inline-block",
             padding: "12px 26px",
-            background: "#f2efe9",
-            color: "#0a0f16",
+            background: "var(--ink)",
+            color: "var(--ground)",
             fontWeight: 600,
             borderRadius: 999,
             letterSpacing: ".06em",

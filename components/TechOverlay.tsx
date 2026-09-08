@@ -5,13 +5,14 @@ import { tekGrupper } from "@/lib/data";
 export default function TechOverlay({ closeTech }: { closeTech: () => void }) {
   return (
     <div
+      className="band"
       id="techoverlay"
       style={{
         position: "fixed",
         inset: 0,
         zIndex: 200,
-        background: "#0d1420",
-        color: "#f2efe9",
+        background: "var(--sunk)",
+        color: "var(--ink)",
         overflowY: "auto",
       }}
     >
@@ -21,7 +22,7 @@ export default function TechOverlay({ closeTech }: { closeTech: () => void }) {
           inset: 0,
           pointerEvents: "none",
           backgroundImage:
-            "linear-gradient(rgba(143,184,224,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(143,184,224,.05) 1px, transparent 1px)",
+            "linear-gradient(rgba(var(--accent-rgb),.05) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--accent-rgb),.05) 1px, transparent 1px)",
           backgroundSize: "72px 72px",
         }}
       ></div>
@@ -35,7 +36,7 @@ export default function TechOverlay({ closeTech }: { closeTech: () => void }) {
           justifyContent: "space-between",
           alignItems: "center",
           padding: "22px 48px",
-          background: "linear-gradient(180deg, #0d1420 55%, rgba(13,20,32,0))",
+          background: "linear-gradient(180deg, var(--sunk) 55%, rgba(var(--ground-rgb),0))",
         }}
       >
         <span
@@ -46,7 +47,7 @@ export default function TechOverlay({ closeTech }: { closeTech: () => void }) {
             letterSpacing: ".14em",
           }}
         >
-          STACKEN<span style={{ color: "#8fb8e0" }}>/</span>ALTIV &amp; OYSTR
+          STACKEN<span style={{ color: "var(--accent)" }}>/</span>ALTIV &amp; OYSTR
         </span>
         <button
           data-hover=""
@@ -58,8 +59,8 @@ export default function TechOverlay({ closeTech }: { closeTech: () => void }) {
             alignItems: "center",
             gap: 10,
             padding: "12px 26px",
-            background: "#f2efe9",
-            color: "#0a0f16",
+            background: "var(--ink)",
+            color: "var(--ground)",
             border: "none",
             borderRadius: 999,
             fontFamily: "var(--font-grotesk), sans-serif",
@@ -89,7 +90,7 @@ export default function TechOverlay({ closeTech }: { closeTech: () => void }) {
             fontSize: 12,
             letterSpacing: ".3em",
             textTransform: "uppercase",
-            color: "#8fb8e0",
+            color: "var(--accent)",
             marginBottom: 18,
           }}
         >
@@ -109,13 +110,13 @@ export default function TechOverlay({ closeTech }: { closeTech: () => void }) {
           }}
         >
           Alt vi bygger{" "}
-          <span style={{ color: "transparent", WebkitTextStroke: "1.5px #f2efe9" }}>med.</span>
+          <span style={{ color: "transparent", WebkitTextStroke: "1.5px var(--ink)" }}>med.</span>
         </h2>
         <p
           className="titem"
           style={{
             animationDelay: ".55s",
-            color: "rgba(242,239,233,.65)",
+            color: "rgba(var(--ink-rgb),.65)",
             fontSize: 17,
             maxWidth: 520,
             lineHeight: 1.65,
@@ -133,7 +134,7 @@ export default function TechOverlay({ closeTech }: { closeTech: () => void }) {
                   fontFamily: "var(--font-archivo), sans-serif",
                   fontWeight: 900,
                   fontSize: 15,
-                  color: "#8fb8e0",
+                  color: "var(--accent)",
                 }}
               >
                 {g.nr}
@@ -173,7 +174,7 @@ export default function TechOverlay({ closeTech }: { closeTech: () => void }) {
                 >
                   {r.navn}
                 </span>
-                <span style={{ color: "rgba(242,239,233,.65)", fontSize: 15, lineHeight: 1.6 }}>
+                <span style={{ color: "rgba(var(--ink-rgb),.65)", fontSize: 15, lineHeight: 1.6 }}>
                   {r.tekst}
                 </span>
               </div>
@@ -190,9 +191,9 @@ export default function TechOverlay({ closeTech }: { closeTech: () => void }) {
               display: "inline-block",
               padding: "18px 44px",
               background: "transparent",
-              border: "1px solid rgba(242,239,233,.35)",
+              border: "1px solid rgba(var(--ink-rgb),.35)",
               borderRadius: 999,
-              color: "#f2efe9",
+              color: "var(--ink)",
               fontFamily: "var(--font-grotesk), sans-serif",
               fontWeight: 600,
               fontSize: 15,

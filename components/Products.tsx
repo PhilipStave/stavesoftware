@@ -24,13 +24,13 @@ export default function Products() {
             willChange: "transform",
           }}
         >
-          <div style={{ flex: "0 0 auto", width: "34vw", minWidth: 340, color: "#10161f" }}>
+          <div style={{ flex: "0 0 auto", width: "34vw", minWidth: 340, color: "var(--ink)" }}>
             <div
               style={{
                 fontSize: 12,
                 letterSpacing: ".26em",
                 textTransform: "uppercase",
-                color: "#2f5d8a",
+                color: "var(--accent)",
                 marginBottom: 24,
               }}
             >
@@ -48,11 +48,11 @@ export default function Products() {
                 lineHeight: 0.98,
               }}
             >
-              Hva vi har bygget<span className="twcaret" style={{ color: "#2f5d8a" }}>_</span>
+              Hva vi har bygget<span className="twcaret" style={{ color: "var(--accent)" }}>_</span>
             </h2>
             <p
               style={{
-                color: "#3d4550",
+                color: "rgba(var(--ink-rgb),.72)",
                 lineHeight: 1.7,
                 fontSize: 16,
                 margin: "26px 0 0",
@@ -68,7 +68,7 @@ export default function Products() {
                 fontWeight: 800,
                 fontSize: 15,
                 letterSpacing: ".1em",
-                color: "#2f5d8a",
+                color: "var(--accent)",
                 marginTop: 30,
               }}
             >
@@ -83,11 +83,11 @@ export default function Products() {
                 display: "grid",
                 gridTemplateColumns: "1.15fr 1fr",
                 gap: 0,
-                background: "#ffffff",
-                color: "#10161f",
+                background: "var(--surface)",
+                color: "var(--ink)",
                 borderRadius: 10,
                 overflow: "hidden",
-                boxShadow: "0 60px 120px -40px rgba(16,22,31,.55)",
+                boxShadow: "0 60px 120px -40px rgba(var(--ground-rgb),.55)",
               }}
             >
               <a
@@ -129,7 +129,7 @@ export default function Products() {
                     fontSize: 12,
                     letterSpacing: ".26em",
                     textTransform: "uppercase",
-                    color: "#2f5d8a",
+                    color: "var(--accent)",
                     marginBottom: 18,
                   }}
                 >
@@ -138,11 +138,11 @@ export default function Products() {
                 <h3 style={{ margin: "0 0 18px" }}>
                   <OystrLogo size={44} />
                 </h3>
-                <p style={{ color: "#3d4550", lineHeight: 1.7, fontSize: 16, margin: "0 0 12px" }}>
+                <p style={{ color: "rgba(var(--ink-rgb),.72)", lineHeight: 1.7, fontSize: 16, margin: "0 0 12px" }}>
                   Sjøkart og navigasjon for hele norskekysten, bygget for fritidsbåt. Sjøveisruting
                   rundt land og grunner, offline-kart, AIS, vannstand og vær — rett i lomma.
                 </p>
-                <p style={{ color: "#3d4550", lineHeight: 1.7, fontSize: 16, margin: "0 0 28px" }}>
+                <p style={{ color: "rgba(var(--ink-rgb),.72)", lineHeight: 1.7, fontSize: 16, margin: "0 0 28px" }}>
                   Kartdata fra Kartverket og Kystverket, vær fra Meteorologisk institutt.
                 </p>
                 <a
@@ -155,8 +155,8 @@ export default function Products() {
                     display: "inline-block",
                     alignSelf: "flex-start",
                     padding: "14px 32px",
-                    background: "#10161f",
-                    color: "#f2efe9",
+                    background: "var(--ink)",
+                    color: "var(--ground)",
                     fontWeight: 600,
                     fontSize: 15,
                     borderRadius: 999,
@@ -175,11 +175,11 @@ export default function Products() {
                 display: "grid",
                 gridTemplateColumns: "1fr 1.15fr",
                 gap: 0,
-                background: "#ffffff",
-                color: "#10161f",
+                background: "var(--surface)",
+                color: "var(--ink)",
                 borderRadius: 10,
                 overflow: "hidden",
-                boxShadow: "0 60px 120px -40px rgba(16,22,31,.55)",
+                boxShadow: "0 60px 120px -40px rgba(var(--ground-rgb),.55)",
               }}
             >
               <div
@@ -196,7 +196,7 @@ export default function Products() {
                     fontSize: 12,
                     letterSpacing: ".26em",
                     textTransform: "uppercase",
-                    color: "#2f5d8a",
+                    color: "var(--accent)",
                     marginBottom: 18,
                   }}
                 >
@@ -205,11 +205,11 @@ export default function Products() {
                 <h3 style={{ margin: "0 0 18px" }}>
                   <AltivLogo size={44} />
                 </h3>
-                <p style={{ color: "#3d4550", lineHeight: 1.7, fontSize: 16, margin: "0 0 12px" }}>
+                <p style={{ color: "rgba(var(--ink-rgb),.72)", lineHeight: 1.7, fontSize: 16, margin: "0 0 12px" }}>
                   Norsk CRM for salgsoppfølging i B2B. Pipeline på tvers av avdelinger, automatisk
                   e-postlogging, oppfølginger i kalenderen og omsetning og margin per selger.
                 </p>
-                <p style={{ color: "#3d4550", lineHeight: 1.7, fontSize: 16, margin: "0 0 28px" }}>
+                <p style={{ color: "rgba(var(--ink-rgb),.72)", lineHeight: 1.7, fontSize: 16, margin: "0 0 28px" }}>
                   Ingen installasjon — fungerer i nettleseren, klart på minutter.
                 </p>
                 <a
@@ -222,8 +222,8 @@ export default function Products() {
                     display: "inline-block",
                     alignSelf: "flex-start",
                     padding: "14px 32px",
-                    background: "#10161f",
-                    color: "#f2efe9",
+                    background: "var(--ink)",
+                    color: "var(--ground)",
                     fontWeight: 600,
                     fontSize: 15,
                     borderRadius: 999,
@@ -266,7 +266,7 @@ export default function Products() {
                     bottom: "6%",
                     width: "62%",
                     borderRadius: 8,
-                    boxShadow: "0 24px 60px -18px rgba(10,15,22,.65)",
+                    boxShadow: "0 24px 60px -18px rgba(var(--ground-rgb),.65)",
                     border: "1px solid rgba(255,255,255,.25)",
                   }}
                 />

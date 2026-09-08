@@ -12,7 +12,7 @@ export default function Services({
     <section
       id="tjenester"
       data-skew=""
-      style={{ position: "relative", color: "#f2efe9", overflow: "hidden" }}
+      style={{ position: "relative", color: "var(--ink)", overflow: "hidden" }}
     >
       <video
         src="/uploads/hva-vi-kan-bygge-bakgrunn.mp4"
@@ -37,7 +37,7 @@ export default function Services({
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(180deg, #0a0f16 0%, rgba(10,15,22,.45) 50%, #0a0f16 100%)",
+            "linear-gradient(180deg, var(--ground) 0%, rgba(var(--ground-rgb),.45) 50%, var(--ground) 100%)",
         }}
       ></div>
       <div
@@ -72,20 +72,20 @@ export default function Services({
               textTransform: "uppercase",
             }}
           >
-            Hva du får<span className="twcaret" style={{ color: "#8fb8e0" }}>_</span>
+            Hva du får<span className="twcaret" style={{ color: "var(--accent)" }}>_</span>
           </h2>
           <span
             style={{
               fontSize: 12,
               letterSpacing: ".26em",
-              color: "rgba(242,239,233,.55)",
+              color: "rgba(var(--ink-rgb),.55)",
               textTransform: "uppercase",
             }}
           >
             (Uten faktura)
           </span>
         </div>
-        <div style={{ borderBottom: "1px solid rgba(242,239,233,.14)" }}>
+        <div style={{ borderBottom: "1px solid rgba(var(--ink-rgb),.14)" }}>
           {tjenester.map((t, i) => (
             <div
               key={t.nr}
@@ -106,7 +106,7 @@ export default function Services({
                   fontFamily: "var(--font-archivo), sans-serif",
                   fontWeight: 800,
                   fontSize: 16,
-                  color: "#8fb8e0",
+                  color: "var(--accent)",
                 }}
               >
                 {t.nr}
@@ -125,7 +125,7 @@ export default function Services({
               </h3>
               <p
                 style={{
-                  color: "rgba(242,239,233,.65)",
+                  color: "rgba(var(--ink-rgb),.65)",
                   lineHeight: 1.6,
                   fontSize: 15,
                   margin: 0,
@@ -135,7 +135,7 @@ export default function Services({
               </p>
               <span
                 className="srow-arrow"
-                style={{ fontSize: 26, color: "#8fb8e0", textAlign: "right" }}
+                style={{ fontSize: 26, color: "var(--accent)", textAlign: "right" }}
               >
                 →
               </span>

@@ -3,10 +3,11 @@ const ITEMS = ["Salg", "Produkt", "Teknologi", "Design", "Vekst", "Eierandel"];
 export default function MarqueeBand() {
   return (
     <div
+      className="band"
       style={{
         position: "relative",
-        borderTop: "1px solid rgba(242,239,233,.1)",
-        borderBottom: "1px solid rgba(242,239,233,.1)",
+        borderTop: "1px solid rgba(var(--ink-rgb),.1)",
+        borderBottom: "1px solid rgba(var(--ink-rgb),.1)",
         overflow: "hidden",
         padding: "22px 0",
       }}
@@ -22,14 +23,14 @@ export default function MarqueeBand() {
           letterSpacing: ".12em",
           textTransform: "uppercase",
           whiteSpace: "nowrap",
-          color: "rgba(242,239,233,.85)",
+          color: "rgba(var(--ink-rgb),.85)",
         }}
       >
         {[0, 1].map((rep) =>
           ITEMS.map((item, i) => (
             <span key={`${rep}-${i}`} style={{ display: "contents" }}>
               <span style={{ padding: "0 40px" }}>{item}</span>
-              <span style={{ color: "#8fb8e0" }}>✦</span>
+              <span style={{ color: "var(--accent)" }}>✦</span>
             </span>
           ))
         )}
