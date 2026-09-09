@@ -226,11 +226,9 @@ export default function Hero() {
             }}
           >
             <span
-              data-count="0"
-              data-suffix=" kr"
               style={{ fontFamily: "var(--font-archivo), sans-serif", fontWeight: 800, fontSize: 30 }}
             >
-              0 kr
+              Andel
             </span>
             <span
               style={{
@@ -240,7 +238,7 @@ export default function Hero() {
                 color: "rgba(var(--ink-rgb),.6)",
               }}
             >
-              I timepris, alltid
+              Eller fast pris — du velger
             </span>
           </div>
           <div

@@ -59,8 +59,8 @@ export default function Products() {
                 maxWidth: 380,
               }}
             >
-              Vi ber deg gi fra deg en eierandel. Da bør du vite hva vi kan. Dette har vi bygget,
-              lansert og driftet helt selv.
+              Enten du betaler med penger eller med en andel, bør du vite hva vi kan. Dette har vi
+              bygget, lansert og driftet helt selv.
             </p>
             <div
               style={{

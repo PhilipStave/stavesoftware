@@ -1,4 +1,4 @@
-const ITEMS = ["Salg", "Produkt", "Teknologi", "Design", "Vekst", "Eierandel"];
+const ITEMS = ["Salg", "Produkt", "Teknologi", "Design", "Vekst", "Drift"];
 
 export default function MarqueeBand() {
   return (

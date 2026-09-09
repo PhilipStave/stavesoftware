@@ -195,7 +195,7 @@ export const vilkar: Blokk[] = [
   },
   {
     type: "avsnitt",
-    tekst: `${selskap.navn} hjelper tidligfaseselskaper med salg, produkt, teknologi og drift, og tar eierandel i stedet for honorar. Nettstedet er en presentasjon av dette arbeidet. Her finnes ingen brukerkontoer, ingen betaling og ingen tjeneste du logger inn på — bare innhold du kan lese.`,
+    tekst: `${selskap.navn} lager og drifter nettsider og apper, og hjelper tidligfaseselskaper med salg, produkt og teknologi. Betaling avtales som fast pris eller som eierandel. Nettstedet er en presentasjon av dette arbeidet. Her finnes ingen brukerkontoer, ingen betaling og ingen tjeneste du logger inn på — bare innhold du kan lese.`,
   },
 
   { type: "mellomtittel", tekst: "Når vilkårene gjelder" },
@@ -254,13 +254,13 @@ export const vilkar: Blokk[] = [
   {
     type: "avsnitt",
     tekst:
-      "Dette punktet er viktigere hos oss enn på de fleste andre nettsider, fordi modellen vår handler om eierandel. Beskrivelsene av hvordan vi jobber — hva vi gjør, hva vi tar, hvordan et samarbeid ser ut — er markedsføring og en invitasjon til å ta kontakt. De er ikke et tilbud du kan akseptere, og de kan ikke leses som et løfte om hva vi vil gjøre for deg eller på hvilke betingelser.",
+      "Dette punktet er viktigere hos oss enn på de fleste andre nettsider, fordi betaling hos oss kan avtales som eierandel. Beskrivelsene av hvordan vi jobber — hva vi gjør, hva vi tar, hvordan et samarbeid ser ut — er markedsføring og en invitasjon til å ta kontakt. De er ikke et tilbud du kan akseptere, og de kan ikke leses som et løfte om hva vi vil gjøre for deg eller på hvilke betingelser.",
   },
   {
     type: "punktliste",
     punkter: [
       "Et samarbeid oppstår først når begge parter har signert en skriftlig avtale. Før det finnes ingen forpliktelser i noen retning.",
-      "Omfang, varighet, eierandelens størrelse og alt annet avtales individuelt i hvert enkelt tilfelle. Ingen tall eller vilkår på nettsiden er standard eller gitt på forhånd.",
+      "Omfang, varighet, pris eller eierandelens størrelse, og alt annet, avtales individuelt i hvert enkelt tilfelle. Ingen tall eller vilkår på nettsiden er standard eller gitt på forhånd.",
       "At du tar kontakt, gir ingen rett til et samarbeid. Vi sier nei til det meste, og vi skylder ingen begrunnelse.",
       "En e-post, en samtale eller et møte er ikke i seg selv en avtale, uansett hva som blir sagt underveis.",
     ],

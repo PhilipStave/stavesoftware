@@ -495,11 +495,11 @@ export const artikler: Artikkel[] = [
   },
   {
     slug: "derfor-tar-vi-eierandel",
-    tittel: "Derfor tar vi eierandel i stedet for timepris",
+    tittel: "Derfor kan du betale oss med eierandel",
     ingress:
-      "Vi sender ikke faktura. Vi går inn i selskapet og tjener først når du gjør det. Her er hvorfor vi endte der, hva det koster begge parter — og hvem det er en dårlig idé for.",
+      "Du kan betale fast pris, eller du kan gi oss en eierandel og la oss tjene først når du gjør det. Her er hvorfor vi tilbyr det andre alternativet, hva det koster begge parter — og hvem det er en dårlig idé for.",
     metaBeskrivelse:
-      "Vi fakturerer ikke timer, men går inn som partner mot eierandel. Her er hvorfor vi valgte det, hva risikoen er for begge parter, og hvem det ikke passer for.",
+      "Fast pris eller eierandel: to måter å betale oss på. Her er hvorfor vi tilbyr andelen, hva risikoen er for begge parter, og hvem det ikke passer for.",
     publisert: "2026-09-01",
     lesetid: 6,
     kategori: "Modellen",

@@ -50,19 +50,19 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL(selskap.url),
-  title: `${selskap.fulltNavn} — Vi bygger startups mot eierandel, ikke faktura`,
+  title: `${selskap.fulltNavn} — Vi bygger nettsider og apper, og drifter dem`,
   description:
-    "Vi hjelper startups med salg, produkt og teknologi — uten å fakturere. I stedet tar vi en eierandel, så vi tjener først når du gjør det.",
+    "Vi lager nettsiden eller appen, drifter den, og du får én fast person som gjør endringene du trenger. Fast pris eller eierandel — du velger.",
   keywords:
-    "startup Norge, hjelp til startup, salg og teknologi, utvikling mot eierandel, venture studio Norge, Oystr, Altiv",
+    "nettside Norge, drift av nettside, apputvikling Norge, SEO, fast kontaktperson, utvikling mot eierandel, Oystr, Altiv",
   robots: "index, follow",
   alternates: { canonical: `${selskap.url}/` },
   openGraph: {
     type: "website",
     siteName: selskap.fulltNavn,
-    title: `${selskap.fulltNavn} — Vi bygger startups mot eierandel, ikke faktura`,
+    title: `${selskap.fulltNavn} — Vi bygger nettsider og apper, og drifter dem`,
     description:
-      "Vi hjelper startups med salg, produkt og teknologi — uten å fakturere. I stedet tar vi en eierandel, så vi tjener først når du gjør det.",
+      "Vi lager nettsiden eller appen, drifter den, og du får én fast person som gjør endringene du trenger. Fast pris eller eierandel — du velger.",
     url: `${selskap.url}/`,
     locale: "nb_NO",
     images: [
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: `${selskap.fulltNavn} — Vi tar ikke betalt for å bygge`,
+        alt: `${selskap.fulltNavn} — Vi bygger den, drifter den og svarer`,
       },
     ],
   },
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: selskap.fulltNavn,
     description:
-      "Vi hjelper startups med salg, produkt og teknologi mot eierandel — ikke mot faktura.",
+      "Vi bygger nettsider og apper, drifter dem, og du får én fast person. Fast pris eller eierandel.",
     images: ["/og-image.jpg"],
   },
 };
@@ -108,14 +108,16 @@ const jsonLd = {
   image: `${selskap.url}/logo/crest-logo-512.png`,
   email: selskap.epost,
   description:
-    "Norsk studio som hjelper startups med salg, produkt og teknologi mot eierandel i stedet for honorar.",
+    "Norsk studio som lager og drifter nettsider og apper, med fast kontaktperson. Betales med fast pris eller eierandel.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Oslo",
     addressCountry: "NO",
   },
   makesOffer: [
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Salg og forretningsutvikling for startups" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Utvikling av nettside og app" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Drift og løpende endringer, med fast kontaktperson" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Søkemotoroptimalisering" } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Produkt- og teknologiutvikling" } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Design og merkevare" } },
   ],

@@ -1,4 +1,4 @@
-// Pitch-seksjonen for eierandelsmodellen. Kjernen er én animert kurve som
+// Pitch-seksjonen for betalingsmodellen. Kjernen er én animert kurve som
 // tegner seg selv ved scroll — din verdi og vår verdi er samme linje.
 export default function Modellen() {
   return (
@@ -91,9 +91,9 @@ export default function Modellen() {
             margin: "0 0 60px",
           }}
         >
-          Ingen faktura å betale. Ingen timer å telle. Vi gjør jobben, tar en eierandel — og
-          tjener først den dagen selskapet ditt er verdt mer. Det er hele forretningsmodellen
-          vår, og den får oss til å oppføre oss deretter.
+          Du velger hvordan du betaler: en fast pris i måneden, eller en eierandel. Velger du
+          andel, tjener vi først den dagen selskapet ditt er verdt mer. Velger du pris, vet du
+          nøyaktig hva det koster. Det vi ikke gjør, er å telle timer.
         </p>
 
         <div data-reveal="" style={{ position: "relative" }}>
@@ -206,7 +206,7 @@ export default function Modellen() {
               nr: "/03",
               tittel: "Risikoen er vår også",
               tekst:
-                "Leverer vi dårlig, er eierandelen vår verdiløs. Ingen leverandør som fakturerer deg har det insentivet. Derfor sier vi også nei til det vi ikke tror på.",
+                "Velger du andel, er den verdiløs hvis vi leverer dårlig. Velger du fast pris, kan du gå etter tolv måneder og ta siden med deg. Ingen av delene lar oss lene oss tilbake.",
             },
           ].map((p) => (
             <div
