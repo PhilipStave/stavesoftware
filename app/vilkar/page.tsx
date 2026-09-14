@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     locale: "nb_NO",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.jpg?v=2",
         width: 1200,
         height: 630,
         alt: selskap.fulltNavn,

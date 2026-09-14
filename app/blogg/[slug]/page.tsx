@@ -33,7 +33,7 @@ export async function generateMetadata({
       publishedTime: a.publisert,
       images: [
         {
-          url: '/og-image.jpg',
+          url: '/og-image.jpg?v=2',
           width: 1200,
           height: 630,
           alt: `${selskap.fulltNavn} — Vi bygger digitale produkter folk faktisk bruker`,
@@ -44,7 +44,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: a.tittel,
       description: a.metaBeskrivelse,
-      images: ["/og-image.jpg"],
+      images: ["/og-image.jpg?v=2"],
     },
   };
 }

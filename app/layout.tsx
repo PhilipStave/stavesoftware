@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     locale: "nb_NO",
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.jpg?v=2',
         width: 1200,
         height: 630,
         alt: `${selskap.fulltNavn} — Vi bygger den, drifter den og svarer`,
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     title: selskap.fulltNavn,
     description:
       "Vi bygger nettsider og apper, drifter dem, og du får én fast person. Fast pris eller eierandel.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.jpg?v=2"],
   },
 };
 
