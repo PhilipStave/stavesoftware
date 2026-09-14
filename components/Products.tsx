@@ -87,7 +87,7 @@ export default function Products() {
                 color: "var(--ink)",
                 borderRadius: 10,
                 overflow: "hidden",
-                boxShadow: "0 60px 120px -40px rgba(var(--ground-rgb),.55)",
+                boxShadow: "0 60px 120px -40px rgba(var(--shadow-rgb),.55)",
               }}
             >
               <a
@@ -179,7 +179,7 @@ export default function Products() {
                 color: "var(--ink)",
                 borderRadius: 10,
                 overflow: "hidden",
-                boxShadow: "0 60px 120px -40px rgba(var(--ground-rgb),.55)",
+                boxShadow: "0 60px 120px -40px rgba(var(--shadow-rgb),.55)",
               }}
             >
               <div
@@ -266,7 +266,7 @@ export default function Products() {
                     bottom: "6%",
                     width: "62%",
                     borderRadius: 8,
-                    boxShadow: "0 24px 60px -18px rgba(var(--ground-rgb),.65)",
+                    boxShadow: "0 24px 60px -18px rgba(var(--shadow-rgb),.65)",
                     border: "1px solid rgba(255,255,255,.25)",
                   }}
                 />

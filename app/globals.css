@@ -1,9 +1,8 @@
 /* Fargesystem.
-   Siden er lys. Seksjonene som ligger over video — hero, teknologi, kontakt og
-   bunnen — beholder det mørke uttrykket, og får klassen .band. Den redefinerer
-   de samme tokenene lokalt, slik at all CSS under virker i begge kontekster
-   uten egne regler. Legg aldri inn en literal farge i en komponent: da slutter
-   den å følge båndet den står i. */
+   Alle farger ligger her som tokens. Siden er mørk; lyse flater midt i det
+   mørke (produktkortene) får .oncard, som snur tokenene lokalt slik at samme
+   komponent-CSS virker på begge underlag. Legg aldri inn en literal farge i en
+   komponent: da slutter den å følge flaten den står på. */
 :root {
   --ground: #0a0f16;         /* bunnen */
   --ground-rgb: 10,15,22;
@@ -15,6 +14,9 @@
   --accent-rgb: 143,184,224;
   --hi: #ffffff;             /* hover, sterkeste kontrast */
   --line: rgba(242,239,233,.14);
+  /* Skygger er alltid mørke, uansett hvilken flate de kastes fra. Egen token
+     fordi --ground snus inne i lyse kort, og da ville skyggene blitt lyse. */
+  --shadow-rgb: 10,15,22;
 }
 /* Seksjonene over video arvet et eget sett den gangen siden var lys. Nå er
    hele siden mørk, så .band setter de samme verdiene som :root — klassen står
@@ -26,6 +28,10 @@
 /* Produktkortene er lyse flater midt i det mørke. Innholdet i dem må derfor
    snu blekket, ellers blir krem på krem. */
 .oncard {
+  /* Bunnen snus også: knappene i kortet bruker var(--ground) som tekstfarge
+     for å kontrastere mot sin mørke flate. */
+  --ground: #f2efe9;
+  --ground-rgb: 242,239,233;
   --ink: #141c24;
   --ink-rgb: 20,28,36;
   --accent: #2c6390;
