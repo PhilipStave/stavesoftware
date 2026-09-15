@@ -82,7 +82,7 @@ export default function Services({
               textTransform: "uppercase",
             }}
           >
-            (Uten faktura)
+            (Fast pris eller andel)
           </span>
         </div>
         <div style={{ borderBottom: "1px solid rgba(var(--ink-rgb),.14)" }}>

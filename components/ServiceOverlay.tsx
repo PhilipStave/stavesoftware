@@ -264,7 +264,7 @@ export default function ServiceOverlay({
               borderRadius: 999,
             }}
           >
-            Snakk med oss om {t.tittel.toLowerCase()}
+            Snakk med oss om {t.ctaTema ?? t.tittel.toLowerCase()}
           </a>
           <button
             data-hover=""

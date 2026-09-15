@@ -705,7 +705,7 @@ export const artikler: Artikkel[] = [
       {
         type: "avsnitt",
         tekst:
-          "Produktene er de samme. Oystr er Oystr, Altiv er Altiv, og de eies av samme selskap som før. Modellen er også den samme: vi hjelper tidligfaseselskaper med salg, produkt, teknologi og drift, og tar eierandel i stedet for å sende faktura. Hvorfor vi gjør det slik, hva det koster begge parter, og hvem det er en dårlig idé for, har vi skrevet om tidligere.",
+          "Produktene er de samme. Oystr er Oystr, Altiv er Altiv, og de eies av samme selskap som før. Modellen er også den samme: vi hjelper tidligfaseselskaper med salg, produkt, teknologi og drift, og kan ta eierandel i stedet for å sende faktura. Hvorfor vi gjør det slik, hva det koster begge parter, og hvem det er en dårlig idé for, har vi skrevet om tidligere.",
       },
       {
         type: "avsnitt",

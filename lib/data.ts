@@ -6,6 +6,8 @@ export type Tjeneste = {
   lead: string;
   media: string;
   punkter: { navn: string; tekst: string }[];
+  // Når tittelen ikke kan stå i «Snakk med oss om …» (egennavn, hel setning)
+  ctaTema?: string;
   caseNavn?: string;
   caseTekst?: string;
   caseUrl?: string;
@@ -99,6 +101,35 @@ export const tjenester: Tjeneste[] = [
   },
   {
     nr: "/03",
+    // Tittelen sier retningen, ikke et resultat: plassering hos Google kan
+    // ingen love, og et løfte om førsteplass ville vært villedende.
+    tittel: "Mot toppen av Google",
+    ctaTema: "synlighet på Google",
+    tekst:
+      "De fleste går inn på et av de første treffene, og det er der salget havner. Vi jobber løpende med SEO for at det treffet skal være ditt. Ingen kan love plassen, men innsatsen kan vi love.",
+    lead:
+      "En nettside ingen finner, selger ingenting. Målet er at det er din side folk går inn på når de søker etter det du tilbyr — på Google og i AI-svarene.",
+    media: "/uploads/tjeneste-web-saas.jpg",
+    punkter: [
+      {
+        navn: "Bygget for å bli funnet",
+        tekst:
+          "Rask side, ryddig struktur og data Google kan lese. Det er grunnmuren alt annet står på, og den legger vi fra første dag.",
+      },
+      {
+        navn: "Svar på det folk søker etter",
+        tekst:
+          "Vi finner ut hva kundene dine faktisk skriver inn, og lager sidene og tekstene som svarer på det.",
+      },
+      {
+        navn: "Også når folk spør en AI",
+        tekst:
+          "Flere spør ChatGPT og lignende i stedet for å søke. Vi bygger siden slik at den kan forstås og siteres der også — det kalles AEO.",
+      },
+    ],
+  },
+  {
+    nr: "/04",
     tittel: "Design & merkevare",
     tekst:
       "Navn, identitet og grensesnitt. Produkter som ser like bra ut som de virker — fordi førsteinntrykket avgjør om noen prøver i det hele tatt.",
@@ -124,10 +155,10 @@ export const tjenester: Tjeneste[] = [
     ],
   },
   {
-    nr: "/04",
+    nr: "/05",
     tittel: "Alt det andre",
     tekst:
-      "Domener, drift, betaling, e-post, søkemotorer og regnearkene ingen vil ta. Du skal bygge selskapet, ikke sette opp DNS.",
+      "Domener, drift, betaling, e-post og regnearkene ingen vil ta. Du skal bygge selskapet, ikke sette opp DNS.",
     lead:
       "Den usynlige halvdelen av å drive et selskap. Vi tar den, slik at du kan bruke tiden på det bare du kan gjøre.",
     media: "/uploads/tjeneste-kart-data.jpg",
