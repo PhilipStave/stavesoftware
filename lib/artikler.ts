@@ -714,6 +714,119 @@ export const artikler: Artikkel[] = [
       },
     ],
   },
+  {
+    slug: "hva-koster-en-nettside",
+    tittel: "Hva koster en nettside for en bedrift?",
+    ingress:
+      "Det finnes ingen prislapp, men det finnes en anatomi. Her er hva du faktisk betaler for når du kjøper en nettside — og hvilken del av regningen som ikke slutter ved lansering.",
+    metaBeskrivelse:
+      "Prisen på en nettside består av et engangsarbeid og noe som fortsetter å koste. Her er hva som ligger i hver av delene, og hva du bør spørre om før du signerer.",
+    publisert: "2026-09-23",
+    lesetid: 7,
+    kategori: "Nettside",
+    innhold: [
+      {
+        type: "avsnitt",
+        tekst:
+          "«Hva koster en nettside» er et spørsmål med to svar, fordi det selges to ganske forskjellige ting under samme navn. Det ene er en jobb som blir ferdig: noen tegner, skriver og bygger, leverer, og er ferdig. Det andre er en tjeneste: noen holder siden i live, retter det som ryker og endrer det som må endres, så lenge avtalen løper.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Begge deler er legitime kjøp. Rotet oppstår når du legger et tilbud av den første typen ved siden av et av den andre og tror at forskjellen mellom dem er pris.",
+      },
+      { type: "mellomtittel", tekst: "Engangsarbeidet er mest avgjørelser" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Design, tekst og utvikling ser ut som tre produksjonsoppgaver, men mesteparten av timene går ikke med til å produsere. De går med til å bestemme: hvem siden snakker til, hva den skal få dem til å gjøre, hva som skal stå øverst, og hva som ikke skal være der i det hele tatt. Selve utførelsen er den raske delen når de spørsmålene er avklart, og den dyre delen når de ikke er det.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Teksten er posten folk regner som gratis, fordi alle kan skrive. Å skrive er heller ikke problemet. Å bestemme hva som ikke skal stå der, er det — og det krever at noen kjenner bedriften godt nok til å tørre å stryke.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det som driver engangsarbeidet opp, er hvor mye av siden som er ditt eget. En ferdig mal med bedriftens farger og bilder er et helt legitimt valg for mange, og den koster en brøkdel. Er hver seksjon tegnet for din bedrift, betaler du for tegningen. Videre teller antall sidetyper mer enn antall sider — femti produktsider bygget over samme mal er én jobb, mens fem sider som ser helt forskjellige ut er fem. Og skal siden snakke med noe annet, som en booking, en betaling eller et register, er hver slik forbindelse en egen liten jobb som må feilhåndteres og holdes i live etterpå.",
+      },
+      { type: "mellomtittel", tekst: "Det som ikke slutter ved lansering" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Drift høres ut som «at siden er oppe», og det er den minste delen av det. Selve hostingen av en vanlig bedriftsside koster nesten ingenting. Det som koster, er rekken av små forpliktelser som hver for seg tar minutter, og som til sammen krever at noen faktisk følger med.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Da vi flyttet denne siden fra stavesoftware.no til crestholding.no, var rekkefølgen hele jobben — den har vi skrevet om for seg. Det som hører hjemme i et kostnadsregnskap, er det som ble igjen etterpå. Det gamle domenet ligger fortsatt der og videresender varig, med stien i behold, slik at gamle dyplenker lander på riktig side og ikke på forsiden. Slik skal det være så lenge det finnes lenker til det, altså på ubestemt tid. Der ligger en kostnad ingen setter opp i et tilbud: et domene du skal fornye hvert år i mange år framover, for en adresse ingen lenger skriver inn med vilje.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Retningen mellom www og apex satte vi i koden i stedet for å klikke den på plass hos leverandøren, fordi dialogen der som standard foreslår å snu den motsatt vei — og det ville brutt både de kanoniske adressene og sitemapen, som alle peker på apex. Et kvarters arbeid, og deretter usynlig for alltid. Det er en ganske presis beskrivelse av hva drift er.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det finnes fortsatt ett sted i dette prosjektet der domenet må rettes for hånd: skriptet som varsler søkemotorene om nye sider, er ren JavaScript og kan ikke lese TypeScript-fila der resten av selskapsinformasjonen står. Vi har ikke løst det. Vi har skrevet det i klartekst øverst i fila, fordi alternativet er å stole på at noen husker det om to år. Den slags gjeld har enhver nettside, og den koster ikke noe før den gjør det.",
+      },
+      { type: "mellomtittel", tekst: "Å bli funnet er ikke et tillegg" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Selskapsinformasjonen på denne siden er merket opp slik at Google kan lese den maskinelt: navn, organisasjonsnummer, sted, hva vi tilbyr, og en lenke til oppslaget i Enhetsregisteret. Det høres ut som en engangsjobb, og er det ikke. Det formelle navnet i oppmerkingen skal stemme med Foretaksregisteret, som fortsatt viser det gamle navnet vårt til navneendringen er registrert. Vi la det derfor på én bryter i koden, som snur både oppmerkingen og teksten på de juridiske sidene samtidig — og skrev ned den ene setningen bryteren ikke styrer. Å late som automatikken dekker alt, er verre enn å notere hva den ikke dekker.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Logoen Google viser ved siden av treffet, er et eget lite kapittel. Den må ligge på en absolutt adresse, være indekserbar og kvadratisk, og minst 112 piksler. Vi måtte lage en egen fil med merket på merkevarens mørkeblå, fordi den gjennomsiktige varianten — et utskåret merke i krem — forsvinner mot Googles hvite flater. Ingen kunde kommer noen gang til å se den fila, og den er likevel en del av prisen.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Den billige varianten av drift er den som gjør seg selv. Skriptet som melder inn nye sider til søkemotorene, leser den publiserte sitemapen i stedet for en liste noen må vedlikeholde, så en ny artikkel melder seg selv inn. Slikt arbeid koster én gang og betaler tilbake hver gang noe endres. Det er verdt å spørre en leverandør hvor mye av driften deres som er av den typen, og hvor mye som er noen som forhåpentligvis husker.",
+      },
+      {
+        type: "faktaboks",
+        tittel: "Målt mot å drifte egne produkter",
+        tekst:
+          "Altiv, CRM-systemet vårt, henger sammen med fire eksterne parter bare for å fungere som produkt: Stripe for abonnement, Resend for e-post, Supabase for database og Vercel for drift. Oystr må følge Apples årlige iOS-runde, og kartdataene kommer fra Kartverket, Kystverket og Meteorologisk institutt, som endrer på ting uten å spørre oss. En nettside er en mindre utgave av den samme forpliktelsen — men den er ikke en annen type forpliktelse. Regnestykket for en app har vi skrevet om for seg.",
+      },
+      { type: "mellomtittel", tekst: "Kjøpe én gang, eller betale hver måned" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Et engangskjøp gir deg en side og ingenting etterpå. Det kan være helt riktig hvis du har noen internt som kan ta over, eller hvis siden er så enkel at den tåler å stå stille. En månedspris er ikke leie av den samme siden — det du kjøper, er at noen har siden din på listen sin. Spørsmålet er derfor ikke hva måneden koster, men hva som ligger inni den.",
+      },
+      {
+        type: "punktliste",
+        punkter: [
+          "Hvem står som eier av domenet? Det skal være bedriften din, ikke leverandøren. Dette er det enkleste punktet å sjekke og det dyreste å ha oversett.",
+          "Er endringer inkludert, eller bare at siden er oppe? Det er to helt forskjellige tjenester, og de blandes ofte sammen med vilje.",
+          "Hva skjer når avtalen tar slutt? Får du med deg siden, og i hvilken form? En eksport du ikke kan bruke noe sted, er ikke det samme som å eie den.",
+          "Hvem svarer når noe er galt, og hvor fort? Et navn er verdt mer enn en støtteadresse, særlig hvis siden tar imot bestillinger.",
+        ],
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Våre egne svar er korte: du eier domenet og siden, avtalen løper tolv måneder om gangen, og vil du videre alene, overfører vi siden til deg. Poenget her er ikke hvem du velger, men at du får svarene skriftlig av den du velger.",
+      },
+      { type: "mellomtittel", tekst: "Den dyreste siden er den ingen eier" },
+      {
+        type: "avsnitt",
+        tekst:
+          "En nettside ingen passer på, krasjer sjelden. Den slutter bare gradvis å være sann. Det står en pris fra et år som var, en ansatt som sluttet i fjor, en tjeneste dere ikke lenger leverer. Ingenting varsler deg om noe av det. Du finner det ut den dagen en kunde nevner det i forbifarten, og da har det stått der lenge.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det er den egentlige kostnaden ved en billig nettside: ikke at den var dårlig da den ble laget, men at det aldri ble bestemt hvem som skulle eie den etterpå. Bygger du noe nå og lurer på hva det faktisk krever å holde det i live, fortell oss hva du holder på med — så sier vi hva vi ville gjort.",
+      },
+    ],
+  },
 ];
 
 export function finnArtikkel(slug: string): Artikkel | undefined {
