@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { mute } from "./mute";
 import { selskapslinje } from "@/lib/selskap";
+import { tjenesteLenker } from "@/lib/tjenester-lenker";
 
 export default function Footer() {
   return (
@@ -53,6 +54,11 @@ export default function Footer() {
         }}
       >
         <div style={{ display: "flex", gap: 28, fontSize: 14, flexWrap: "wrap" }}>
+          {tjenesteLenker.map((l) => (
+            <Link key={l.slug} href={l.href} data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
+              {l.navn}
+            </Link>
+          ))}
           <Link href="/blogg" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
             Blogg
           </Link>
@@ -63,7 +69,7 @@ export default function Footer() {
             Personvern
           </Link>
           <a
-            href="https://www.oystr.no"
+            href="https://oystr.no"
             target="_blank"
             data-hover=""
             className="hov-link"

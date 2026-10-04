@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg?v=2',
         width: 1200,
         height: 630,
-        alt: `${selskap.fulltNavn} — Vi bygger digitale produkter folk faktisk bruker`,
+        alt: `${selskap.fulltNavn} — Vi bygger den, drifter den og svarer`,
       },
     ],
   },

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo, Cormorant_Garamond, Instrument_Serif, Michroma, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { selskap, NAVN_REGISTRERT } from "@/lib/selskap";
+import { tjenesteSider } from "@/lib/tjenestesider";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -50,11 +51,13 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL(selskap.url),
-  title: `${selskap.fulltNavn} — Vi bygger nettsider og apper, og drifter dem`,
+  // Søkeordene først og navnet sist: tittelen er det Google viser som overskrift
+  // i treffet, og den kuttes bakfra.
+  title: `Nettsider og apper i Oslo, laget og driftet — ${selskap.fulltNavn}`,
   description:
-    "Vi lager nettsiden eller appen, drifter den, og du får én fast person som gjør endringene du trenger. Fast pris eller eierandel — du velger.",
+    "Vi lager nettsiden eller appen, drifter den og jobber for at den blir funnet på Google. Én fast kontaktperson, og du betaler med fast pris eller eierandel.",
   keywords:
-    "nettside Norge, drift av nettside, apputvikling Norge, SEO, fast kontaktperson, utvikling mot eierandel, Oystr, Altiv",
+    "nettside til bedrift, lage nettside, drift av nettside, apputvikling, SEO, AEO, fast kontaktperson, Oslo, Oystr, Altiv",
   robots: "index, follow",
   alternates: { canonical: `${selskap.url}/` },
   openGraph: {
@@ -86,6 +89,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  // Tjenestesidene peker hit som leverandør i stedet for å gjenta selskapet
+  "@id": `${selskap.url}/#organisasjon`,
   name: selskap.fulltNavn,
   // Foretaksregisteret er fasit for legalName. Til navneendringen er registrert
   // er det gamle navnet fortsatt det registrerte; da meldes det nye som
@@ -95,6 +100,9 @@ const jsonLd = {
   identifier: selskap.orgnrKompakt,
   foundingDate: "2026-08-19",
   url: selskap.url,
+  // Oppslaget i Enhetsregisteret er den offentlige bekreftelsen på at selskapet
+  // finnes, og knytter org.nr. til nettstedet
+  sameAs: [`https://virksomhet.brreg.no/nb/oppslag/enheter/${selskap.orgnrKompakt}`],
   // Logoen Google viser i søkeresultater og kunnskapspanelet. Den må være
   // absolutt, indekserbar og minst 112 piksler — derfor en egen kvadratisk
   // fil med løven på merkevarens navy, ikke den gjennomsiktige varianten:
@@ -114,14 +122,30 @@ const jsonLd = {
     addressLocality: "Oslo",
     addressCountry: "NO",
   },
+  areaServed: { "@type": "Country", name: "Norge" },
   makesOffer: [
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Utvikling av nettside og app" } },
+    ...tjenesteSider.map((s) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        "@id": `${selskap.url}/${s.slug}#tjeneste`,
+        name: s.tittel,
+        url: `${selskap.url}/${s.slug}`,
+      },
+    })),
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Drift og løpende endringer, med fast kontaktperson" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Søkemotoroptimalisering" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Produkt- og teknologiutvikling" } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Design og merkevare" } },
   ],
-  knowsAbout: ["Programvareutvikling", "Salg og forretningsutvikling", "Startups", "iOS-apper", "SaaS", "CRM"],
+  knowsAbout: [
+    "Nettsider",
+    "Apputvikling",
+    "iOS-apper",
+    "Søkemotoroptimalisering",
+    "AEO",
+    "Drift av nettsider og apper",
+    "SaaS",
+    "CRM",
+  ],
 };
 
 export default function RootLayout({

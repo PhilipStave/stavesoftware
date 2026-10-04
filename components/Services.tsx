@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { tjenester } from "@/lib/data";
+import { tjenesteLenker } from "@/lib/tjenester-lenker";
 import { mute } from "./mute";
 
 export default function Services({
@@ -142,6 +144,29 @@ export default function Services({
             </div>
           ))}
         </div>
+        {/* Panelene over rendres først ved klikk, så Google ser dem aldri. Disse
+            lenkene er veien inn til tjenestesidene, der det samme står i HTML. */}
+        <nav
+          aria-label="Tjenestesider"
+          data-reveal=""
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "baseline",
+            gap: "14px 34px",
+            marginTop: 36,
+            fontSize: 13,
+            letterSpacing: ".16em",
+            textTransform: "uppercase",
+          }}
+        >
+          <span style={{ color: "rgba(var(--ink-rgb),.5)" }}>Les mer om</span>
+          {tjenesteLenker.map((l) => (
+            <Link key={l.slug} href={l.href} data-hover="" className="hov-link" style={{ color: "var(--ink)", fontWeight: 600 }}>
+              {l.navn} <span style={{ color: "var(--accent)" }}>→</span>
+            </Link>
+          ))}
+        </nav>
       </div>
     </section>
   );

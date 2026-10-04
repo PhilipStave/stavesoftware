@@ -49,20 +49,27 @@ export default function Hero() {
           willChange: "transform, opacity",
         }}
       >
-        <div
+        {/* Sidens egentlige overskrift er den lille linjen, ikke slagordet: for
+            Google er h1 svaret på hva siden handler om, og «Vi bygger den,
+            drifter den og svarer» sier ingenting om nettsider, apper eller sted.
+            Slagordet ser likt ut som før, men er et avsnitt. */}
+        <h1
           className="heroFade"
           style={{
             display: "flex",
             alignItems: "center",
             gap: 14,
             fontSize: 12,
+            fontWeight: 400,
             letterSpacing: ".3em",
             textTransform: "uppercase",
             color: "rgba(var(--ink-rgb),.75)",
+            margin: 0,
             animationDelay: ".2s",
           }}
         >
           <span
+            aria-hidden="true"
             style={{
               display: "inline-block",
               width: 44,
@@ -70,9 +77,9 @@ export default function Hero() {
               background: "rgba(var(--ink-rgb),.5)",
             }}
           ></span>
-          Programvarestudio · Norge
-        </div>
-        <h1
+          Nettsider og apper i Oslo
+        </h1>
+        <p
           id="herotitle"
           style={{
             fontFamily: "var(--font-archivo), sans-serif",
@@ -116,7 +123,7 @@ export default function Hero() {
           <span className="wordmask">
             <span style={{ animationDelay: ".73s", color: "var(--accent)" }}>svarer.</span>
           </span>
-        </h1>
+        </p>
         <div
           className="heroFade"
           style={{

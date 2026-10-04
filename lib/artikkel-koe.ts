@@ -7,12 +7,21 @@
 // masseprodusert: når køen er tom, stopper publiseringen og du får beskjed om
 // å fylle på. Legg gjerne til egne emner — det viktigste kriteriet er at
 // artikkelen må kunne inneholde noe bare Crest Holding kan skrive, hentet fra
-// reell erfaring med Oystr og Altiv.
+// reell erfaring med Oystr, Altiv og crestholding.no.
+//
+// Rekkefølgen er publiseringsrekkefølgen. Emnene øverst skrives for dem som
+// kjøper tjenestene — bedriftseiere som trenger nettside, app eller synlighet —
+// fordi det er det de søker etter. De tekniske emnene lenger ned er fortsatt
+// gode, men leses mest av andre utviklere.
+
+import type { TjenesteSlug } from "./tjenester-lenker";
 
 export type Emne = {
   tittel: string;
   vinkel: string; // hva artikkelen konkret skal handle om
   kategori: string;
+  // Tjenestesiden artikkelen skal lenke til; kopieres til artikkelen
+  tjeneste?: TjenesteSlug;
   brukt: boolean;
 };
 
@@ -23,6 +32,46 @@ export const emnekoe: Emne[] = [
       "Ærlig gjennomgang av modellen vår: hvorfor vi valgte den, hva den gjør med insentivene, hva risikoen er for begge parter, og hvem den ikke passer for.",
     kategori: "Modellen",
     brukt: true,
+  },
+  {
+    tittel: "Hva koster en nettside for en bedrift?",
+    vinkel:
+      "Hva prisen på en nettside faktisk består av — design, tekst, utvikling, drift og arbeidet med å bli funnet — og forskjellen på å kjøpe en side én gang og å betale fast i måneden for at noen holder den ved like. Ingen kronebeløp: forklar hva som driver kostnaden opp og ned. Bruk konkrete eksempler på hva driften av crestholding.no, altiv.no og oystr.no faktisk innebærer, som sertifikater, domener, videresendinger og strukturerte data.",
+    kategori: "Nettside",
+    tjeneste: "nettside",
+    brukt: true,
+  },
+  {
+    tittel: "Hvordan kommer bedriften høyere på Google?",
+    vinkel:
+      "Det som faktisk flytter plasseringen for en liten bedrift: teknisk grunnmur, innhold som svarer på det folk søker etter, lenker fra steder som betyr noe, og bedriftsprofilen på Google for lokale søk. Vær tydelig på hva ingen kan love, og på hvorfor mange katalogoppføringer ikke teller. Bruk konkrete detaljer fra flyttingen fra stavesoftware.no til crestholding.no.",
+    kategori: "SEO",
+    tjeneste: "seo",
+    brukt: false,
+  },
+  {
+    tittel: "Hva skjer med nettsiden når avtalen med byrået slutter?",
+    vinkel:
+      "Hvem som eier domenet, innholdet og koden, hvor siden driftes, og hva du bør sikre deg i avtalen før du signerer. Forklar hvordan vi gjør det — kunden beholder siden etter tolv måneder og får den overført hvis de vil — uten å gjøre artikkelen til reklame.",
+    kategori: "Nettside",
+    tjeneste: "nettside",
+    brukt: false,
+  },
+  {
+    tittel: "AEO: slik blir bedriften brukt som kilde i AI-svar",
+    vinkel:
+      "Hva AEO er, hva som er kjent om hvordan ChatGPT og Googles egne AI-svar velger kilder, og hva en bedrift konkret kan gjøre: tydelige svar på det kundene spør om, strukturerte data og sider som sier klart hvem, hva og hvor. Vær ærlig om hva som er usikkert og i endring, og ikke lov synlighet. Bruk tjenestesidene og llms.txt på crestholding.no som eksempel.",
+    kategori: "SEO",
+    tjeneste: "seo",
+    brukt: false,
+  },
+  {
+    tittel: "Å flytte nettsiden til et nytt domene uten å miste plasseringen",
+    vinkel:
+      "Rekkefølgen da stavesoftware.no ble til crestholding.no: domene og sertifikat først, varige videresendinger fra hver gamle adresse, og kanoniske adresser byttet først da det nye domenet svarte. Forklar hva som går galt når rekkefølgen snus, og hvorfor adresseendringen i Search Console hører med. Påstå ikke at noe er gjort som ikke står i koden.",
+    kategori: "SEO",
+    tjeneste: "seo",
+    brukt: false,
   },
   {
     tittel: "De første femti salgssamtalene",

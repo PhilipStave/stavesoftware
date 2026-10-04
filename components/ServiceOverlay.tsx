@@ -1,6 +1,7 @@
 "use client";
 
 import { tjenester } from "@/lib/data";
+import { finnTjenesteLenke } from "@/lib/tjenester-lenker";
 import { AltivLogo, OystrLogo } from "./BrandLogos";
 
 import { selskap } from "@/lib/selskap";
@@ -266,6 +267,26 @@ export default function ServiceOverlay({
           >
             Snakk med oss om {t.ctaTema ?? t.tittel.toLowerCase()}
           </a>
+          {/* Vanlig lenke, ikke next/link: panelet låser rullingen på <html>, og
+              en klientnavigering ville tatt med låsen til neste side. */}
+          {t.side && (
+            <a
+              href={finnTjenesteLenke(t.side).href}
+              data-hover=""
+              className="hov-outline"
+              style={{
+                display: "inline-block",
+                padding: "18px 44px",
+                border: "1px solid rgba(var(--ink-rgb),.35)",
+                borderRadius: 999,
+                color: "var(--ink)",
+                fontWeight: 600,
+                fontSize: 15,
+              }}
+            >
+              {finnTjenesteLenke(t.side).lenketekst} →
+            </a>
+          )}
           <button
             data-hover=""
             className="hov-outline"

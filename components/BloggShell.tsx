@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { selskapslinje } from "@/lib/selskap";
+import { tjenesteLenker } from "@/lib/tjenester-lenker";
 
 const GRAIN_BG =
   "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%22240%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22/><feColorMatrix type=%22saturate%22 values=%220%22/><feComponentTransfer><feFuncA type=%22linear%22 slope=%220.14%22/></feComponentTransfer></filter><rect width=%22240%22 height=%22240%22 filter=%22url(%23n)%22/></svg>')";
@@ -190,6 +191,14 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
           <Link href="/" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
             Crest Holding
           </Link>
+          {tjenesteLenker.map((l) => (
+            <Link key={l.slug} href={l.href} data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
+              {l.navn}
+            </Link>
+          ))}
+          <Link href="/blogg" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
+            Blogg
+          </Link>
           <Link href="/vilkar" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
             Vilkår
           </Link>
@@ -197,7 +206,7 @@ export default function BloggShell({ children }: { children: React.ReactNode }) 
             Personvern
           </Link>
           <a
-            href="https://www.oystr.no"
+            href="https://oystr.no"
             target="_blank"
             data-hover=""
             className="hov-link"

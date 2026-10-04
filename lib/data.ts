@@ -1,3 +1,5 @@
+import type { TjenesteSlug } from "./tjenester-lenker";
+
 export type TekItem = { navn: string; rolle: string };
 export type Tjeneste = {
   nr: string;
@@ -8,6 +10,8 @@ export type Tjeneste = {
   punkter: { navn: string; tekst: string }[];
   // Når tittelen ikke kan stå i «Snakk med oss om …» (egennavn, hel setning)
   ctaTema?: string;
+  // Tjenestesiden panelet lenker videre til
+  side?: TjenesteSlug;
   caseNavn?: string;
   caseTekst?: string;
   caseUrl?: string;
@@ -95,9 +99,10 @@ export const tjenester: Tjeneste[] = [
           "Hosting, oppdateringer, sikkerhetsfikser og det som knekker klokka to om natten. Det følger med.",
       },
     ],
+    side: "app",
     caseNavn: "Oystr",
     caseTekst: "Sjøkart og navigasjon for hele norskekysten.",
-    caseUrl: "https://www.oystr.no",
+    caseUrl: "https://oystr.no",
   },
   {
     nr: "/03",
@@ -105,6 +110,7 @@ export const tjenester: Tjeneste[] = [
     // ingen love, og et løfte om førsteplass ville vært villedende.
     tittel: "Mot toppen av Google",
     ctaTema: "synlighet på Google",
+    side: "seo",
     tekst:
       "De fleste går inn på et av de første treffene, og det er der salget havner. Vi jobber løpende med SEO for at det treffet skal være ditt. Ingen kan love plassen, men innsatsen kan vi love.",
     lead:
@@ -162,6 +168,7 @@ export const tjenester: Tjeneste[] = [
     lead:
       "Den usynlige halvdelen av å drive et selskap. Vi tar den, slik at du kan bruke tiden på det bare du kan gjøre.",
     media: "/uploads/tjeneste-kart-data.jpg",
+    side: "nettside",
     punkter: [
       {
         navn: "Infrastrukturen",

@@ -1,5 +1,7 @@
 // Innholdet i bloggen. Artiklene skrives som strukturerte blokker i stedet for
 // markdown, slik at hver blokktype kan styles nøyaktig som resten av siden.
+import type { TjenesteSlug } from "./tjenester-lenker";
+
 export type Blokk =
   | { type: "avsnitt"; tekst: string }
   | { type: "mellomtittel"; tekst: string }
@@ -15,6 +17,8 @@ export type Artikkel = {
   publisert: string; // ISO-dato
   lesetid: number; // minutter
   kategori: string;
+  // Tjenestesiden artikkelen lenker videre til, når det finnes en naturlig
+  tjeneste?: TjenesteSlug;
   innhold: Blokk[];
 };
 
@@ -29,6 +33,7 @@ export const artikler: Artikkel[] = [
     publisert: "2026-08-24",
     lesetid: 7,
     kategori: "Apputvikling",
+    tjeneste: "app",
     innhold: [
       {
         type: "avsnitt",
@@ -113,12 +118,12 @@ export const artikler: Artikkel[] = [
       {
         type: "avsnitt",
         tekst:
-          "Vi har bygget og driftet våre egne produkter i årevis, og levd med hver eneste snarvei vi tok. Det former hvordan vi bygger for andre: kjedelig og holdbart fremfor imponerende og skjørt, fordi vi vet hvem som får telefonen når noe knekker. Og siden vi tar eierandel i stedet for honorar, er det vår egen framtid som står på spill hvis vi bygger noe skjørt.",
+          "Vi har bygget og driftet våre egne produkter i årevis, og levd med hver eneste snarvei vi tok. Det former hvordan vi bygger for andre: kjedelig og holdbart fremfor imponerende og skjørt, fordi vi vet hvem som får telefonen når noe knekker.",
       },
       {
         type: "avsnitt",
         tekst:
-          "Vi fakturerer ikke selv — vi går inn som partner mot en eierandel. Men tallene over er verdt å kjenne uansett hvem du bygger med, og lurer du på hva ideen din faktisk krever, er det bare å ta kontakt.",
+          "Hos oss betaler du enten en fast pris i måneden eller med en eierandel. Men poengene over er verdt å kjenne uansett hvem du bygger med, og lurer du på hva ideen din faktisk krever, er det bare å ta kontakt.",
       },
     ],
   },
@@ -132,6 +137,7 @@ export const artikler: Artikkel[] = [
     publisert: "2026-08-24",
     lesetid: 8,
     kategori: "Kart & data",
+    tjeneste: "app",
     innhold: [
       {
         type: "avsnitt",
@@ -229,6 +235,7 @@ export const artikler: Artikkel[] = [
     publisert: "2026-08-24",
     lesetid: 7,
     kategori: "Web & SaaS",
+    tjeneste: "app",
     innhold: [
       {
         type: "avsnitt",
@@ -326,6 +333,7 @@ export const artikler: Artikkel[] = [
     publisert: "2026-08-24",
     lesetid: 6,
     kategori: "Kart & data",
+    tjeneste: "app",
     innhold: [
       {
         type: "avsnitt",
@@ -412,6 +420,7 @@ export const artikler: Artikkel[] = [
     publisert: "2026-08-24",
     lesetid: 7,
     kategori: "Web & SaaS",
+    tjeneste: "app",
     innhold: [
       {
         type: "avsnitt",
@@ -598,6 +607,7 @@ export const artikler: Artikkel[] = [
     publisert: "2026-09-03",
     lesetid: 6,
     kategori: "Modellen",
+    tjeneste: "seo",
     innhold: [
       {
         type: "avsnitt",
@@ -724,6 +734,7 @@ export const artikler: Artikkel[] = [
     publisert: "2026-09-23",
     lesetid: 7,
     kategori: "Nettside",
+    tjeneste: "nettside",
     innhold: [
       {
         type: "avsnitt",

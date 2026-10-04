@@ -5,6 +5,7 @@ import BloggShell from "@/components/BloggShell";
 import ArtikkelInnhold from "@/components/ArtikkelInnhold";
 import { artikler, artiklerSortert, finnArtikkel } from "@/lib/artikler";
 import { selskap } from "@/lib/selskap";
+import { finnTjenesteLenke } from "@/lib/tjenester-lenker";
 
 export function generateStaticParams() {
   return artikler.map((a) => ({ slug: a.slug }));
@@ -36,7 +37,7 @@ export async function generateMetadata({
           url: '/og-image.jpg?v=2',
           width: 1200,
           height: 630,
-          alt: `${selskap.fulltNavn} — Vi bygger digitale produkter folk faktisk bruker`,
+          alt: `${selskap.fulltNavn} — Vi bygger den, drifter den og svarer`,
         },
       ],
     },
@@ -65,6 +66,7 @@ export default async function ArtikkelSide({
   if (!a) notFound();
 
   const andre = artiklerSortert.filter((x) => x.slug !== a.slug).slice(0, 2);
+  const tjeneste = a.tjeneste ? finnTjenesteLenke(a.tjeneste) : undefined;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -175,22 +177,42 @@ export default async function ArtikkelSide({
           >
             Har du et prosjekt du lurer på? Vi svarer ærlig.
           </p>
-          <Link
-            href="/#kontakt"
-            data-hover=""
-            className="hov-fill"
-            style={{
-              display: "inline-block",
-              padding: "18px 44px",
-              background: "var(--ink)",
-              color: "var(--ground)",
-              fontWeight: 600,
-              fontSize: 16,
-              borderRadius: 999,
-            }}
-          >
-            Ta kontakt
-          </Link>
+          <div style={{ display: "flex", gap: 16, justifyContent: "center", alignItems: "center", flexWrap: "wrap" }}>
+            <Link
+              href="/#kontakt"
+              data-hover=""
+              className="hov-fill"
+              style={{
+                display: "inline-block",
+                padding: "18px 44px",
+                background: "var(--ink)",
+                color: "var(--ground)",
+                fontWeight: 600,
+                fontSize: 16,
+                borderRadius: 999,
+              }}
+            >
+              Ta kontakt
+            </Link>
+            {tjeneste && (
+              <Link
+                href={tjeneste.href}
+                data-hover=""
+                className="hov-outline"
+                style={{
+                  display: "inline-block",
+                  padding: "18px 44px",
+                  border: "1px solid rgba(var(--ink-rgb),.35)",
+                  borderRadius: 999,
+                  color: "var(--ink)",
+                  fontWeight: 600,
+                  fontSize: 16,
+                }}
+              >
+                {tjeneste.lenketekst} →
+              </Link>
+            )}
+          </div>
         </div>
       </article>
 
