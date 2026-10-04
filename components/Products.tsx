@@ -18,13 +18,18 @@ export default function Products() {
           id="htrack"
           style={{
             display: "flex",
-            alignItems: "center",
+            // Kortene strekkes til samme høyde: det høyeste bestemmer, slik at
+            // rutene står like uansett hvor mye tekst hvert kort har.
+            alignItems: "stretch",
             gap: "6vw",
             padding: "0 48px",
             willChange: "transform",
           }}
         >
-          <div className="pintro" style={{ flex: "0 0 auto", width: "34vw", minWidth: 340, color: "var(--ink)" }}>
+          <div
+            className="pintro"
+            style={{ flex: "0 0 auto", alignSelf: "center", width: "34vw", minWidth: 340, color: "var(--ink)" }}
+          >
             <div
               style={{
                 fontSize: 12,
@@ -82,6 +87,7 @@ export default function Products() {
               className="pcard oncard"
               style={{
                 display: "grid",
+                height: "100%",
                 gridTemplateColumns: "1.15fr 1fr",
                 gap: 0,
                 background: "var(--surface)",
@@ -175,6 +181,7 @@ export default function Products() {
               className="pcard oncard"
               style={{
                 display: "grid",
+                height: "100%",
                 gridTemplateColumns: "1fr 1.15fr",
                 gap: 0,
                 background: "var(--surface)",
@@ -282,6 +289,7 @@ export default function Products() {
               className="pcard oncard"
               style={{
                 display: "grid",
+                height: "100%",
                 gridTemplateColumns: "1.15fr 1fr",
                 gap: 0,
                 background: "var(--surface)",
@@ -300,6 +308,7 @@ export default function Products() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
+                  id="oesabilde"
                   src="/uploads/oesa-kort.jpg"
                   alt="Analysesiden til OESA med kart over norsk sokkel, felt, rørledninger og aksjekurser"
                   width={1200}
