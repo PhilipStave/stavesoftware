@@ -86,6 +86,15 @@ export default function Footer() {
           >
             altiv.no ↗
           </a>
+          <a
+            href="https://oesa-global.com"
+            target="_blank"
+            data-hover=""
+            className="hov-link"
+            style={{ color: "rgba(var(--ink-rgb),.6)" }}
+          >
+            oesa-global.com ↗
+          </a>
         </div>
         <span style={{ color: "rgba(var(--ink-rgb),.4)", fontSize: 13 }}>
           {selskapslinje}
