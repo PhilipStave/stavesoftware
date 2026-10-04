@@ -108,6 +108,9 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
 .hov-fill:hover { background: var(--hi) !important; color: var(--ground) !important; }
 .hov-circle:hover { border-color: var(--hi) !important; background: rgba(var(--ink-rgb),.1) !important; color: var(--hi) !important; }
 .hov-navy:hover { background: var(--accent) !important; color: var(--ground) !important; }
+/* Knappene i produktkortene er blå, ikke nesten svarte: en mørk flate midt i det
+   lyse kortet ble for tung. Hover lysner fargen i stedet for å bytte den ut. */
+.hov-accent:hover { filter: brightness(1.18); }
 .hov-tech:hover { border-color: var(--accent) !important; background: rgba(var(--accent-rgb),.1) !important; color: var(--hi) !important; }
 .hov-outline:hover { border-color: var(--accent) !important; color: var(--hi) !important; }
 .hov-link:hover { color: var(--hi) !important; }

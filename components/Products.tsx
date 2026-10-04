@@ -3,7 +3,7 @@ import { AltivLogo, OystrLogo } from "./BrandLogos";
 
 export default function Products() {
   return (
-    <section id="produkter" style={{ position: "relative", height: "340vh" }}>
+    <section id="produkter" style={{ position: "relative", height: "520vh" }}>
       <div
         style={{
           position: "sticky",
@@ -59,8 +59,9 @@ export default function Products() {
                 maxWidth: 380,
               }}
             >
-              Enten du betaler med penger eller med en andel, bør du vite hva vi kan. Dette har vi
-              bygget, lansert og driftet helt selv.
+              Enten du betaler med penger eller med en andel, bør du vite hva vi kan. To egne
+              produkter vi har bygget, lansert og driftet selv — og en nettside vi har laget for
+              andre.
             </p>
             <div
               style={{
@@ -93,7 +94,7 @@ export default function Products() {
               <a
                 data-zoom=""
                 data-hover=""
-                href="https://www.oystr.no"
+                href="https://oystr.no"
                 target="_blank"
                 style={{ display: "block" }}
               >
@@ -146,16 +147,16 @@ export default function Products() {
                   Kartdata fra Kartverket og Kystverket, vær fra Meteorologisk institutt.
                 </p>
                 <a
-                  href="https://www.oystr.no"
+                  href="https://oystr.no"
                   target="_blank"
                   data-hover=""
                   data-magnet=""
-                  className="hov-navy"
+                  className="hov-accent"
                   style={{
                     display: "inline-block",
                     alignSelf: "flex-start",
                     padding: "14px 32px",
-                    background: "var(--ink)",
+                    background: "var(--accent)",
                     color: "var(--ground)",
                     fontWeight: 600,
                     fontSize: 15,
@@ -217,12 +218,12 @@ export default function Products() {
                   target="_blank"
                   data-hover=""
                   data-magnet=""
-                  className="hov-navy"
+                  className="hov-accent"
                   style={{
                     display: "inline-block",
                     alignSelf: "flex-start",
                     padding: "14px 32px",
-                    background: "var(--ink)",
+                    background: "var(--accent)",
                     color: "var(--ground)",
                     fontWeight: 600,
                     fontSize: 15,
@@ -271,6 +272,103 @@ export default function Products() {
                   }}
                 />
               </a>
+            </div>
+          </article>
+          <article style={{ flex: "0 0 auto", width: "66vw", minWidth: 620, perspective: 1200 }}>
+            <div
+              data-tilt3d=""
+              className="pcard oncard"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1.15fr 1fr",
+                gap: 0,
+                background: "var(--surface)",
+                color: "var(--ink)",
+                borderRadius: 10,
+                overflow: "hidden",
+                boxShadow: "0 60px 120px -40px rgba(var(--shadow-rgb),.55)",
+              }}
+            >
+              <a
+                data-zoom=""
+                data-hover=""
+                href="https://oesa-global.com"
+                target="_blank"
+                style={{ display: "block" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/uploads/oesa-kort.jpg"
+                  alt="Analysesiden til OESA med kart over norsk sokkel, felt, rørledninger og aksjekurser"
+                  width={1200}
+                  height={1100}
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    height: "100%",
+                    minHeight: 460,
+                    objectFit: "cover",
+                  }}
+                />
+              </a>
+              <div
+                className="ptxt"
+                style={{
+                  padding: "50px 44px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 12,
+                    letterSpacing: ".26em",
+                    textTransform: "uppercase",
+                    color: "var(--accent)",
+                    marginBottom: 18,
+                  }}
+                >
+                  03 / Nettside · Studentforening
+                </div>
+                <h3 style={{ margin: "0 0 18px" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/logo/oesa-logo.png"
+                    alt="OESA"
+                    width={1200}
+                    height={333}
+                    style={{ display: "block", height: 38, width: "auto" }}
+                  />
+                </h3>
+                <p style={{ color: "rgba(var(--ink-rgb),.72)", lineHeight: 1.7, fontSize: 16, margin: "0 0 12px" }}>
+                  Nettsiden til studentforeningen OESA, med påmelding, arrangementer og et eget
+                  analysestudio der medlemmene publiserer analyser av energiaksjer og norsk sokkel.
+                </p>
+                <p style={{ color: "rgba(var(--ink-rgb),.72)", lineHeight: 1.7, fontSize: 16, margin: "0 0 28px" }}>
+                  Kartet henter felt, rørledninger og innretninger fra Sokkeldirektoratet, vær fra
+                  Meteorologisk institutt og skipstrafikk fra Kystverket. Norsk og engelsk.
+                </p>
+                <a
+                  href="https://oesa-global.com"
+                  target="_blank"
+                  data-hover=""
+                  data-magnet=""
+                  className="hov-accent"
+                  style={{
+                    display: "inline-block",
+                    alignSelf: "flex-start",
+                    padding: "14px 32px",
+                    background: "var(--accent)",
+                    color: "var(--ground)",
+                    fontWeight: 600,
+                    fontSize: 15,
+                    borderRadius: 999,
+                  }}
+                >
+                  Besøk oesa-global.com →
+                </a>
+              </div>
             </div>
           </article>
           <div style={{ flex: "0 0 auto", width: "10vw" }}></div>
