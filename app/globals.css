@@ -42,6 +42,13 @@
 }
 
 html { scroll-behavior: smooth; }
+/* Rullefeltet er skjult etter ønske. Siden rulles som før med hjul, tastatur,
+   berøring og dotnav-lenkene i menyen; fremdriftslinjen øverst viser hvor langt
+   ned du er. Gjelder også panelene, som har sin egen rulling. */
+html { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
+#techoverlay, #serviceoverlay { scrollbar-width: none; }
+#techoverlay::-webkit-scrollbar, #serviceoverlay::-webkit-scrollbar { width: 0; height: 0; display: none; }
 body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--font-grotesk), 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; cursor: none; }
 a, button { cursor: none; }
 button { font-family: inherit; }
