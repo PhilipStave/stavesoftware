@@ -86,9 +86,6 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
 #techoverlay.open .titem, #serviceoverlay.open .titem { animation: tItem .9s cubic-bezier(.16,1,.3,1) forwards; }
 .trow { border-top: 1px solid rgba(var(--ink-rgb),.12); transition: background .4s, padding-left .4s; }
 .trow:hover { background: rgba(var(--accent-rgb),.07); padding-left: 18px !important; }
-#dotnav .dot { display: block; width: 8px; height: 8px; border-radius: 50%; background: rgba(var(--ink-rgb),.35); transition: transform .3s, background .3s; }
-#dotnav .dot.on { background: var(--accent); transform: scale(1.6); }
-#dotnav a:hover .dot { background: var(--ink); }
 
 /* Modellen: kurve som tegner seg ved scroll */
 .growpath { stroke-dasharray: 1; stroke-dashoffset: 1; }
@@ -108,9 +105,17 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
 .hov-fill:hover { background: var(--hi) !important; color: var(--ground) !important; }
 .hov-circle:hover { border-color: var(--hi) !important; background: rgba(var(--ink-rgb),.1) !important; color: var(--hi) !important; }
 .hov-navy:hover { background: var(--accent) !important; color: var(--ground) !important; }
-/* Knappene i produktkortene er blå, ikke nesten svarte: en mørk flate midt i det
-   lyse kortet ble for tung. Hover lysner fargen i stedet for å bytte den ut. */
-.hov-accent:hover { filter: brightness(1.18); }
+/* Knappene i produktkortene: hvit flate med sort ring. Fargene står som faste
+   verdier fordi knappen alltid ligger på et lyst kort. Hover legger på en ring
+   til i stedet for å fylle knappen svart. */
+.btn-hvit { background: #ffffff; color: #0b1219; border: 1px solid #0b1219; }
+.btn-hvit:hover { box-shadow: 0 0 0 4px rgba(11,18,25,.12); }
+
+/* Produktseksjonen bytter til lys bakgrunn mens kortene står på skjermen.
+   Introkolonnen må snu blekket samtidig, ellers blir kremfarget tekst stående
+   usynlig mot kremfarget bakgrunn. Klassen .oncard settes fra useSiteEffects,
+   samtidig som bakgrunnen byttes, og fargen følger samme overgang. */
+.pintro, .pintro * { transition: color 1s cubic-bezier(.4,0,.2,1); }
 .hov-tech:hover { border-color: var(--accent) !important; background: rgba(var(--accent-rgb),.1) !important; color: var(--hi) !important; }
 .hov-outline:hover { border-color: var(--accent) !important; color: var(--hi) !important; }
 .hov-link:hover { color: var(--hi) !important; }
@@ -121,7 +126,7 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
 }
 
 @media (max-width: 900px) {
-  #navlinks a.nl, #soundbtn, #dotnav { display: none !important; }
+  #navlinks a.nl, #soundbtn { display: none !important; }
   #herostats { grid-template-columns: 1fr !important; gap: 0 !important; }
   #herostats > div { border-left: none !important; padding-left: 0 !important; padding-top: 12px !important; padding-bottom: 12px !important; }
   #produkter { height: auto !important; }

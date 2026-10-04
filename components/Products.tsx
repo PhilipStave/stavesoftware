@@ -24,7 +24,7 @@ export default function Products() {
             willChange: "transform",
           }}
         >
-          <div style={{ flex: "0 0 auto", width: "34vw", minWidth: 340, color: "var(--ink)" }}>
+          <div className="pintro" style={{ flex: "0 0 auto", width: "34vw", minWidth: 340, color: "var(--ink)" }}>
             <div
               style={{
                 fontSize: 12,
@@ -151,13 +151,14 @@ export default function Products() {
                   target="_blank"
                   data-hover=""
                   data-magnet=""
-                  className="hov-accent"
+                  className="btn-hvit"
                   style={{
                     display: "inline-block",
                     alignSelf: "flex-start",
                     padding: "14px 32px",
-                    background: "var(--accent)",
-                    color: "var(--ground)",
+                    background: "#ffffff",
+                    color: "#0b1219",
+                    border: "1px solid #0b1219",
                     fontWeight: 600,
                     fontSize: 15,
                     borderRadius: 999,
@@ -218,13 +219,14 @@ export default function Products() {
                   target="_blank"
                   data-hover=""
                   data-magnet=""
-                  className="hov-accent"
+                  className="btn-hvit"
                   style={{
                     display: "inline-block",
                     alignSelf: "flex-start",
                     padding: "14px 32px",
-                    background: "var(--accent)",
-                    color: "var(--ground)",
+                    background: "#ffffff",
+                    color: "#0b1219",
+                    border: "1px solid #0b1219",
                     fontWeight: 600,
                     fontSize: 15,
                     borderRadius: 999,
@@ -342,25 +344,26 @@ export default function Products() {
                   />
                 </h3>
                 <p style={{ color: "rgba(var(--ink-rgb),.72)", lineHeight: 1.7, fontSize: 16, margin: "0 0 12px" }}>
-                  Nettsiden til studentforeningen OESA, med påmelding, arrangementer og et eget
-                  analysestudio der medlemmene publiserer analyser av energiaksjer og norsk sokkel.
+                  Nettside, påmelding og analysestudio for studentforeningen OESA, med et
+                  interaktivt kart over norsk sokkel.
                 </p>
                 <p style={{ color: "rgba(var(--ink-rgb),.72)", lineHeight: 1.7, fontSize: 16, margin: "0 0 28px" }}>
-                  Kartet henter felt, rørledninger og innretninger fra Sokkeldirektoratet, vær fra
-                  Meteorologisk institutt og skipstrafikk fra Kystverket. Norsk og engelsk.
+                  Data fra Sokkeldirektoratet, Meteorologisk institutt og Kystverket. Norsk og
+                  engelsk.
                 </p>
                 <a
                   href="https://oesa-global.com"
                   target="_blank"
                   data-hover=""
                   data-magnet=""
-                  className="hov-accent"
+                  className="btn-hvit"
                   style={{
                     display: "inline-block",
                     alignSelf: "flex-start",
                     padding: "14px 32px",
-                    background: "var(--accent)",
-                    color: "var(--ground)",
+                    background: "#ffffff",
+                    color: "#0b1219",
+                    border: "1px solid #0b1219",
                     fontWeight: 600,
                     fontSize: 15,
                     borderRadius: 999,

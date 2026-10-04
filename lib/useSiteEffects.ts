@@ -269,17 +269,6 @@ export function useSiteEffects({
       }
       const grain = document.getElementById("grain");
       if (grain) grain.style.opacity = h.scrollTop > vh * 0.85 ? ".55" : "0";
-      let active = "topp";
-      ["topp", "produkter", "tjenester", "modellen", "teknologi", "kontakt"].forEach(
-        (id) => {
-          const s = document.getElementById(id);
-          if (s && s.getBoundingClientRect().top <= vh * 0.5) active = id;
-        }
-      );
-      document.querySelectorAll("#dotnav a").forEach((a) => {
-        const d = a.querySelector(".dot");
-        if (d) d.classList.toggle("on", a.getAttribute("data-sect") === active);
-      });
       if (prodSec && track) {
         const r = prodSec.getBoundingClientRect();
         const total = r.height - vh;
@@ -291,6 +280,8 @@ export function useSiteEffects({
           light = wantLight;
           if (pagebg)
             pagebg.style.background = light ? "#f2efe9" : "#0a0f16";
+          // Teksten til venstre for kortene står på den samme flaten
+          document.querySelector(".pintro")?.classList.toggle("oncard", light);
         }
       }
       raf2 = requestAnimationFrame(loop);

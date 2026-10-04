@@ -7,38 +7,6 @@ export default function Chrome() {
       <div id="cursor"></div>
       <div id="cursor-ring"></div>
       <div
-        id="dotnav"
-        style={{
-          position: "fixed",
-          right: 26,
-          top: "50%",
-          transform: "translateY(-50%)",
-          zIndex: 60,
-          display: "flex",
-          flexDirection: "column",
-          gap: 16,
-        }}
-      >
-        <a href="#topp" data-hover="" data-sect="topp" title="Topp">
-          <span className="dot"></span>
-        </a>
-        <a href="#produkter" data-hover="" data-sect="produkter" title="Produkter">
-          <span className="dot"></span>
-        </a>
-        <a href="#tjenester" data-hover="" data-sect="tjenester" title="Hva du får">
-          <span className="dot"></span>
-        </a>
-        <a href="#modellen" data-hover="" data-sect="modellen" title="Modellen">
-          <span className="dot"></span>
-        </a>
-        <a href="#teknologi" data-hover="" data-sect="teknologi" title="Teknologi">
-          <span className="dot"></span>
-        </a>
-        <a href="#kontakt" data-hover="" data-sect="kontakt" title="Kontakt">
-          <span className="dot"></span>
-        </a>
-      </div>
-      <div
         id="grain"
         style={{
           position: "fixed",
