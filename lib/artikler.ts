@@ -838,6 +838,91 @@ export const artikler: Artikkel[] = [
       },
     ],
   },
+  {
+    slug: "slik-bygde-vi-oesa-siden",
+    tittel: "Slik bygde vi OESA-siden: kart over norsk sokkel i nettleseren",
+    ingress:
+      "En studentforening trengte mer enn en forside. De trengte et kart over norsk sokkel, et analysestudio medlemmene kan publisere i, og sider Google kan finne. Her er de tre tingene som faktisk tok tid.",
+    metaBeskrivelse:
+      "Vi bygde nettsiden til studentforeningen OESA: interaktivt kart over norsk sokkel, analysestudio for medlemmene og 390 adresser på to språk. Slik ble den til.",
+    publisert: "2026-10-05",
+    lesetid: 7,
+    kategori: "Nettside",
+    tjeneste: "nettside",
+    innhold: [
+      {
+        type: "avsnitt",
+        tekst:
+          "Nettsiden til en forening er som regel en forside, en om-side og et kontaktskjema. [OESA](https://oesa-global.com) — Offshore & Energy Student Association — hadde et annet utgangspunkt: medlemmene analyserer norsk sokkel, og en side som bare forteller at de gjør det, er ikke verdt å besøke to ganger.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Så vi bygde verktøyet i stedet for brosjyren. Tre ting tok tid, og alle tre er like aktuelle for en bedrift som skal ha noe mer enn en forside.",
+      },
+      { type: "mellomtittel", tekst: "Kartet er en datajobb, ikke en designjobb" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Kartet henter felt, funn, rørledninger og innretninger fra Sokkeldirektoratets åpne karttjeneste, vær og bølgevarsler fra Meteorologisk institutt, skipstrafikk fra Kystverkets åpne AIS-strøm og gasstrømmene ut av Norge fra ENTSOG. Grensene for sokkelområdene kommer fra Marine Regions.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Ingen av kildene er laget for å tegnes rett inn i en nettleser. De kommer i hvert sitt format, med hvert sitt koordinatsystem, hver sin oppdateringstakt og hver sin lisens. Mesteparten av arbeidet er å gjøre dem til ett datasett som kan tegnes mens noen drar i kloden — og å holde det i live når kildene endrer seg, for det gjør de.",
+      },
+      {
+        type: "faktaboks",
+        tittel: "Lisensene må leses",
+        tekst:
+          "Dataene fra Sokkeldirektoratet og Meteorologisk institutt ligger under Norsk lisens for offentlige data, som tillater kommersiell bruk mot at kilden oppgis. Grensene fra Marine Regions krever navngivelse etter CC BY 4.0. Krediteringen står nederst i selve kartet, der den hører hjemme — ikke gjemt i en personvernerklæring.",
+      },
+      { type: "mellomtittel", tekst: "Det som koster ytelse, er ikke det du tror" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Den første versjonen tegnet hele verdenskartet på nytt for hver musebevegelse. Det ser upåklagelig ut på en utviklermaskin og elendig ut på en telefon. Løsningen var å skille mellom to tilstander: mens kloden er i bevegelse, tegnes et grovere kart uten skravur; når den står stille, tegnes den detaljerte utgaven én gang. Resten av tiden tegnes ingenting i det hele tatt.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det samme gjelder lagene. Felt, rørledninger, lisenser, brønner og skip ligger i hvert sitt lag som kan slås av, og bare det som faktisk er innenfor utsnittet regnes ut. Uten den silingen blir kartet tregt lenge før det blir uoversiktlig.",
+      },
+      { type: "mellomtittel", tekst: "Et kart er usynlig for Google" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Alt det fine i kartet finnes bare mens noen har siden åpen. Søkemotorer ser ingenting. Derfor lager byggeprosessen en egen side for hvert felt og hvert selskap — i skrivende stund 142 feltsider og 21 selskapssider — med tallene og teksten i HTML-en. Til sammen ligger det 390 adresser i nettstedskartet, på norsk og engelsk.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det er nøyaktig den samme øvelsen vi gjør for en bedrift: finn det folk faktisk søker etter, og gi hver ting sin egen adresse i stedet for å gjemme alt bak et grensesnitt. Forskjellen er at tingene her heter Johan Sverdrup og Aasta Hansteen.",
+      },
+      { type: "mellomtittel", tekst: "Medlemmene skriver selv" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Analysestudioet er delen som gjør siden levende: medlemmene skriver analyser av energiaksjer og publiserer dem selv. Det krever innlogging, roller og at styret bestemmer hvem som får skrive. Tilgangsreglene ligger i databasen, ikke i koden foran — samme prinsipp som i Altiv, og av samme grunn: koden foran kan omgås, databasen kommer ingen utenom.",
+      },
+      { type: "mellomtittel", tekst: "Hva en forening kan lære en bedrift" },
+      {
+        type: "avsnitt",
+        tekst:
+          "OESA drives av studenter ved siden av studiene. Det tvang fram de riktige valgene: ingenting som må vedlikeholdes for hånd hver uke, ingen funksjoner som bare ser bra ut i en demo, og åpne datakilder i stedet for abonnementer noen må huske å betale.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det er den samme målestokken vi bruker på en bedriftsside. Spørsmålet er sjelden hvor mye som kan bygges, men hvor mye som kan driftes uten at noen må passe på det hver dag.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Siden ligger på [oesa-global.com](https://oesa-global.com), og vi drifter den videre. Lurer du på hva din egen side burde gjort, er det bare å ta kontakt.",
+      },
+    ],
+  },
 ];
 
 export function finnArtikkel(slug: string): Artikkel | undefined {

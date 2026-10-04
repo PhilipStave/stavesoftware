@@ -3,6 +3,7 @@ import Link from "next/link";
 import BloggShell from "./BloggShell";
 import { artikler } from "@/lib/artikler";
 import { selskap } from "@/lib/selskap";
+import { medLenker, utenLenker } from "@/lib/tekst";
 import { finnTjenesteLenke, tjenesteLenker } from "@/lib/tjenester-lenker";
 import type { Seksjon, TjenesteSide as Side } from "@/lib/tjenestesider";
 
@@ -71,7 +72,7 @@ function jsonLd(side: Side) {
         mainEntity: side.faq.map((f) => ({
           "@type": "Question",
           name: f.sporsmal,
-          acceptedAnswer: { "@type": "Answer", text: f.svar },
+          acceptedAnswer: { "@type": "Answer", text: utenLenker(f.svar) },
         })),
       },
     ],
@@ -110,7 +111,7 @@ function SeksjonBlokk({ s }: { s: Seksjon }) {
       </h2>
       {s.avsnitt?.map((a, i) => (
         <p key={i} data-reveal="" style={{ ...brodtekst, maxWidth: 700 }}>
-          {a}
+          {medLenker(a)}
         </p>
       ))}
       {s.punkter && (
@@ -272,7 +273,7 @@ export default function TjenesteSide({ side }: { side: Side }) {
                   {f.sporsmal}
                 </h3>
                 <p style={{ color: "rgba(var(--ink-rgb),.72)", fontSize: 16, lineHeight: 1.75, margin: 0, maxWidth: 700 }}>
-                  {f.svar}
+                  {medLenker(f.svar)}
                 </p>
               </div>
             ))}

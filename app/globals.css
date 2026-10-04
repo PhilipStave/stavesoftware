@@ -54,6 +54,8 @@ a, button { cursor: none; }
 button { font-family: inherit; }
 ::selection { background: var(--ink); color: var(--ground); }
 a { color: var(--accent); text-decoration: none; }
+/* Lenker inne i brødtekst skal synes som lenker, ikke bare som en annen farge. */
+.tekstlenke { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 a:hover { color: var(--hi); }
 @keyframes wordUp { from { transform: translateY(110%); } to { transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }

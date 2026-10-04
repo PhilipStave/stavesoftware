@@ -121,8 +121,8 @@ export const tjenesteSider: TjenesteSide[] = [
       {
         tittel: "Sist vi laget en nettside for andre",
         avsnitt: [
-          "Studentforeningen OESA fikk nettside, medlemspåmelding og et eget analysestudio på oesa-global.com. Den tyngste delen er kartet over norsk sokkel: felt, rørledninger og innretninger fra Sokkeldirektoratet, vær fra Meteorologisk institutt og skipstrafikk fra Kystverket, tegnet om til noe en student kan klikke seg gjennom.",
-          "Siden finnes på norsk og engelsk, den er meldt inn til Google og Bing, og vi drifter den videre. Det er den samme jobben vi gjør for en bedrift — bare med andre data.",
+          "Studentforeningen OESA fikk nettside, medlemspåmelding og et eget analysestudio på [oesa-global.com](https://oesa-global.com). Den tyngste delen er kartet over norsk sokkel: felt, rørledninger og innretninger fra Sokkeldirektoratet, vær fra Meteorologisk institutt og skipstrafikk fra Kystverket, tegnet om til noe en student kan klikke seg gjennom.",
+          "Siden finnes på norsk og engelsk, den er meldt inn til Google og Bing, og vi drifter den videre. Det er den samme jobben vi gjør for en bedrift — bare med andre data. Vi har skrevet om hvordan den ble bygget i [en egen artikkel](/blogg/slik-bygde-vi-oesa-siden).",
         ],
       },
     ],

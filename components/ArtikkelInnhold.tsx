@@ -1,4 +1,5 @@
 import type { Blokk } from "@/lib/artikler";
+import { medLenker } from "@/lib/tekst";
 
 // Rendrer innholdsblokkene i en artikkel. Hver blokktype har sin egen styling,
 // hentet fra de samme verdiene som resten av siden bruker.
@@ -55,7 +56,7 @@ export default function ArtikkelInnhold({ innhold }: { innhold: Blokk[] }) {
                       background: "var(--accent)",
                     }}
                   ></span>
-                  {p}
+                  {medLenker(p)}
                 </li>
               ))}
             </ul>
@@ -93,7 +94,7 @@ export default function ArtikkelInnhold({ innhold }: { innhold: Blokk[] }) {
                   lineHeight: 1.7,
                 }}
               >
-                {b.tekst}
+                {medLenker(b.tekst)}
               </p>
             </aside>
           );
@@ -109,7 +110,7 @@ export default function ArtikkelInnhold({ innhold }: { innhold: Blokk[] }) {
               margin: "0 0 24px",
             }}
           >
-            {b.tekst}
+            {medLenker(b.tekst)}
           </p>
         );
       })}
