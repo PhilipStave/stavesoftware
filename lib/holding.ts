@@ -4,23 +4,16 @@
 // the legal pages stay in Norwegian. The wrapper element carries lang="en" so
 // the mix is declared, not guessed.
 //
-// Wording rule: "businesses", never "portfolio companies" or "the companies we
-// own". Everything sits inside Crest Holding AS today, and nothing on the page
-// may suggest subsidiaries that do not exist. No figures for revenue, returns
-// or headcount — we have none to show yet, and invented numbers are the fastest
-// way to lose a reader who checks.
+// What the page deliberately does NOT say (Philip, 14 October 2026): when the
+// company was founded, how many businesses it runs, or which ones. The page is
+// about what the company is and how it works — the names live in the footer, in
+// llms.txt and on /crest-software. Keep it that way unless he says otherwise.
+//
+// And never any figures for revenue, returns or headcount: there are none to
+// show yet, and invented numbers are the fastest way to lose a reader who
+// checks.
 
 import { selskap } from "./selskap";
-
-export type Virksomhet = {
-  navn: string;
-  rolle: string;
-  tekst: string;
-  href: string;
-  lenketekst: string;
-  ekstern: boolean;
-  merknad?: string;
-};
 
 export const foto = {
   tekst: "Oslo at night",
@@ -35,13 +28,13 @@ export const hero = {
   tittel: "We build businesses and stay to run them.",
   ingress:
     "We start businesses we would want to be customers of ourselves, build them properly, and remain the ones who operate them. No fund with an end date, no outside investors.",
-  knappPortefolje: "The businesses",
   knappKontakt: "Get in touch",
+  knappArbeid: "How we work",
 };
 
 export const meny = {
-  virksomheter: "Businesses",
   slikJobberVi: "How we work",
+  hvaViSerEtter: "What we look for",
   kontakt: "Contact",
   hjem: `${selskap.fulltNavn} — home`,
 };
@@ -49,15 +42,14 @@ export const meny = {
 export const omOss = {
   tittel: "Who we are",
   avsnitt: [
-    `${selskap.fulltNavn} is a Norwegian company based in Oslo. We own and run our businesses ourselves: we write the code, talk to the customers, and answer the phone when something stops working.`,
-    `The company was previously named ${selskap.tidligereNavn}. The name changed when the work grew beyond software — and the software side was given a name of its own, Crest Software.`,
+    `${selskap.fulltNavn} is a Norwegian company based in Oslo. We own and run what we build: we write the code, talk to the customers, and answer the phone when something stops working.`,
+    "We are deliberately small and deliberately slow. Fewer things, built properly, kept running — and a name we intend to still be using in twenty years.",
   ],
-  fakta: [
-    { merkelapp: "Founded", verdi: "19 August 2026" },
-    { merkelapp: "Registered office", verdi: "Oslo, Norway" },
-    { merkelapp: "Company number", verdi: selskap.orgnr },
-    { merkelapp: "Businesses operating", verdi: "Three" },
-  ],
+};
+
+export const uttalelse = {
+  tekst: "We would rather own one business for ten years than ten businesses for one.",
+  kilde: "The whole model, in one sentence.",
 };
 
 export const prinsipper = {
@@ -83,40 +75,6 @@ export const prinsipper = {
     },
   ],
 };
-
-export const virksomheter: Virksomhet[] = [
-  {
-    navn: "Crest Software",
-    rolle: "Websites, apps and operations",
-    tekst:
-      "Builds the website or app for a business, keeps running it, and gives the customer one named contact. Being found on Google and in AI answers is part of the job, not an add-on.",
-    href: "/crest-software",
-    lenketekst: "See what they do",
-    ekstern: false,
-    merknad: "Site in Norwegian.",
-  },
-  {
-    navn: "Altiv",
-    rolle: "CRM for sales",
-    tekst:
-      "Norwegian CRM for B2B sales follow-up. Pipeline across departments, automatic email logging, follow-ups in the calendar, and revenue and margin per salesperson.",
-    href: "https://altiv.no",
-    lenketekst: "altiv.no",
-    ekstern: true,
-  },
-  {
-    navn: "Oystr",
-    rolle: "Sea charts for iPhone",
-    tekst:
-      "Sea charts and navigation for leisure boats along the Norwegian coast. Offline charts, routing around land and shallows, AIS, tide and weather.",
-    href: "https://oystr.no",
-    lenketekst: "oystr.no",
-    ekstern: true,
-    merknad: "Built and operated together with Embretr.",
-  },
-];
-
-export const portefoljeMerknad = `Owned and operated by ${selskap.fulltNavn}`;
 
 export const kriterier = {
   tittel: "What we look for",

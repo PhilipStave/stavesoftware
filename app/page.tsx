@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import HoldingSide from "@/components/HoldingSide";
 import { selskap } from "@/lib/selskap";
-import { virksomheter } from "@/lib/holding";
 
 const beskrivelse =
-  "Crest Holding AS is a Norwegian company in Oslo that starts, runs and grows its own businesses: Crest Software, Altiv and Oystr.";
+  "Crest Holding AS is a Norwegian company in Oslo. We start businesses, build them properly, and stay on as the ones who run them.";
 
 export const metadata: Metadata = {
   title: `${selskap.fulltNavn} — we build businesses and stay to run them`,
@@ -53,12 +52,6 @@ const jsonLd = {
   mainEntity: {
     "@id": `${selskap.url}/#organisasjon`,
   },
-  mentions: virksomheter.map((v) => ({
-    "@type": "Brand",
-    name: v.navn,
-    description: v.rolle,
-    url: v.ekstern ? v.href : `${selskap.url}${v.href}`,
-  })),
 };
 
 export default function Home() {

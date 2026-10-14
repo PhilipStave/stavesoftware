@@ -1,17 +1,6 @@
 import Link from "next/link";
 import { selskap } from "@/lib/selskap";
-import {
-  bunntekst,
-  foto,
-  hero,
-  kontakt,
-  kriterier,
-  meny,
-  omOss,
-  portefoljeMerknad,
-  prinsipper,
-  virksomheter,
-} from "@/lib/holding";
+import { bunntekst, foto, hero, kontakt, kriterier, meny, omOss, prinsipper, uttalelse } from "@/lib/holding";
 
 // The holding company's front page.
 //
@@ -129,11 +118,11 @@ export default function HoldingSide() {
             textTransform: "uppercase",
           }}
         >
-          <a href="#businesses" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
-            {meny.virksomheter}
-          </a>
           <a href="#how-we-work" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
             {meny.slikJobberVi}
+          </a>
+          <a href="#what-we-look-for" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
+            {meny.hvaViSerEtter}
           </a>
           <a
             href="#contact"
@@ -199,15 +188,15 @@ export default function HoldingSide() {
             {hero.ingress}
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-            <a href="#businesses" className="hov-fill" style={{ ...KNAPP, background: "var(--ink)", color: "var(--ground)" }}>
-              {hero.knappPortefolje}
+            <a href="#contact" className="hov-fill" style={{ ...KNAPP, background: "var(--ink)", color: "var(--ground)" }}>
+              {hero.knappKontakt}
             </a>
             <a
-              href="#contact"
+              href="#how-we-work"
               className="hov-outline"
               style={{ ...KNAPP, border: "1px solid rgba(var(--ink-rgb),.4)", color: "var(--ink)" }}
             >
-              {hero.knappKontakt}
+              {hero.knappArbeid}
             </a>
           </div>
         </div>
@@ -248,39 +237,37 @@ export default function HoldingSide() {
             ))}
           </div>
         </div>
-        <dl
-          className="hfakta"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 30,
-            margin: "70px 0 0",
-            borderTop: "1px solid rgba(var(--ink-rgb),.14)",
-            paddingTop: 28,
-          }}
-        >
-          {omOss.fakta.map((f) => (
-            <div key={f.merkelapp}>
-              <dt style={{ ...MERKELAPP, color: "rgba(var(--ink-rgb),.5)", fontSize: 11, marginBottom: 10 }}>
-                {f.merkelapp}
-              </dt>
-              <dd
-                style={{
-                  margin: 0,
-                  fontFamily: "var(--font-garamond), Georgia, serif",
-                  fontWeight: 600,
-                  fontSize: 24,
-                  color: "var(--ink)",
-                }}
-              >
-                {f.verdi}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </section>
 
-      <section id="how-we-work" className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
+      <section className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
+        <blockquote
+          style={{
+            margin: 0,
+            borderTop: "1px solid rgba(var(--ink-rgb),.16)",
+            borderBottom: "1px solid rgba(var(--ink-rgb),.16)",
+            padding: "70px 0",
+            textAlign: "center",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "var(--font-garamond), Georgia, serif",
+              fontWeight: 600,
+              fontSize: "clamp(28px, 3.6vw, 48px)",
+              lineHeight: 1.18,
+              letterSpacing: "-.01em",
+              margin: "0 auto 22px",
+              maxWidth: "22ch",
+              color: "var(--ink)",
+            }}
+          >
+            {uttalelse.tekst}
+          </p>
+          <footer style={{ ...MERKELAPP, color: "rgba(var(--ink-rgb),.45)" }}>{uttalelse.kilde}</footer>
+        </blockquote>
+      </section>
+
+      <section id="how-we-work" className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
         <h2 style={{ ...OVERSKRIFT, marginBottom: 54 }}>{prinsipper.tittel}</h2>
         <div className="hgrid3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 48 }}>
           {prinsipper.punkter.map((p) => (
@@ -303,74 +290,7 @@ export default function HoldingSide() {
         </div>
       </section>
 
-      <section id="businesses" className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "baseline",
-            justifyContent: "space-between",
-            gap: 24,
-            flexWrap: "wrap",
-            marginBottom: 54,
-          }}
-        >
-          <h2 style={OVERSKRIFT}>The businesses</h2>
-          <span style={{ ...MERKELAPP, color: "rgba(var(--ink-rgb),.5)" }}>{portefoljeMerknad}</span>
-        </div>
-        <div className="hgrid3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28 }}>
-          {virksomheter.map((v) => (
-            <article
-              key={v.navn}
-              className="oncard"
-              style={{
-                background: "var(--surface)",
-                borderRadius: 10,
-                padding: "38px 34px",
-                display: "flex",
-                flexDirection: "column",
-                gap: 16,
-              }}
-            >
-              <div style={{ ...MERKELAPP, fontSize: 11 }}>{v.rolle}</div>
-              <h3
-                style={{
-                  fontFamily: "var(--font-garamond), Georgia, serif",
-                  fontWeight: 700,
-                  fontSize: 34,
-                  letterSpacing: "-.01em",
-                  margin: 0,
-                  color: "var(--ink)",
-                }}
-              >
-                {v.navn}
-              </h3>
-              <p style={{ ...BRODTEKST, fontSize: 16, margin: 0, flex: 1 }}>{v.tekst}</p>
-              {v.merknad && <p style={{ margin: 0, fontSize: 14, color: "rgba(var(--ink-rgb),.55)" }}>{v.merknad}</p>}
-              {v.ekstern ? (
-                <a
-                  href={v.href}
-                  target="_blank"
-                  rel="noopener"
-                  className="btn-hvit"
-                  style={{ alignSelf: "flex-start", padding: "13px 28px", borderRadius: 999, fontWeight: 600, fontSize: 15 }}
-                >
-                  {v.lenketekst} ↗
-                </a>
-              ) : (
-                <Link
-                  href={v.href}
-                  className="btn-hvit"
-                  style={{ alignSelf: "flex-start", padding: "13px 28px", borderRadius: 999, fontWeight: 600, fontSize: 15 }}
-                >
-                  {v.lenketekst} →
-                </Link>
-              )}
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
+      <section id="what-we-look-for" className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
         <div
           className="hsplit"
           style={{ display: "grid", gridTemplateColumns: "minmax(220px, 340px) 1fr", gap: 60, alignItems: "start" }}
