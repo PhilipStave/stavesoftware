@@ -49,8 +49,12 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
 #techoverlay, #serviceoverlay { scrollbar-width: none; }
 #techoverlay::-webkit-scrollbar, #serviceoverlay::-webkit-scrollbar { width: 0; height: 0; display: none; }
-body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--font-grotesk), 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; cursor: none; }
-a, button { cursor: none; }
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--font-grotesk), 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
+/* Musepekeren skjules bare på sidene som faktisk tegner sin egen markør (#cursor
+   finnes der). Holdingforsiden har ingen, og der skal pekeren være som vanlig —
+   uten dette forsvant den helt. */
+body:has(#cursor) { cursor: none; }
+body:has(#cursor) a, body:has(#cursor) button { cursor: none; }
 button { font-family: inherit; }
 ::selection { background: var(--ink); color: var(--ground); }
 a { color: var(--accent); text-decoration: none; }
@@ -87,7 +91,7 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
 #cursor { position: fixed; top: 0; left: 0; width: 10px; height: 10px; border-radius: 50%; background: #f2efe9; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); mix-blend-mode: difference; }
 #cursor-ring { position: fixed; top: 0; left: 0; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(242,239,233,.5); pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .35s, height .35s, border-color .35s, background .35s; mix-blend-mode: difference; }
 #cursor-ring.big { width: 90px; height: 90px; background: rgba(242,239,233,.12); border-color: transparent; }
-@media (hover: none) { #cursor, #cursor-ring { display: none; } body, a, button { cursor: auto; } }
+@media (hover: none) { #cursor, #cursor-ring { display: none; } body:has(#cursor), body:has(#cursor) a, body:has(#cursor) button { cursor: auto; } }
 #techoverlay, #serviceoverlay { clip-path: circle(0% at var(--cx, 50%) var(--cy, 50%)); transition: clip-path 1s cubic-bezier(.76,0,.24,1); pointer-events: none; visibility: hidden; }
 #techoverlay.open, #serviceoverlay.open { clip-path: circle(160% at var(--cx, 50%) var(--cy, 50%)); pointer-events: auto; visibility: visible; }
 @keyframes tItem { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: none; } }
