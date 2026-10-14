@@ -344,7 +344,7 @@ export default function HoldingSide() {
               className="hov-fill"
               style={{ ...KNAPP, padding: "18px 40px", background: "var(--ink)", color: "var(--ground)", fontSize: 16 }}
             >
-              {selskap.epost}
+              {kontakt.knapp}
             </a>
           </div>
         </div>

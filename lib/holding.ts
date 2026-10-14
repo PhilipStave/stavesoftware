@@ -92,6 +92,9 @@ export const kontakt = {
   tittel: "Get in touch",
   tekst:
     "Have something you want built, or a business you think belongs here? Write to us. We answer honestly, including when the answer is no.",
+  // Adressen står ikke på siden: den ligger fortsatt på det gamle domenet, og
+  // hører ikke hjemme på merkevaresiden. Knappen åpner e-posten som før.
+  knapp: "Write to us",
 };
 
 export const bunntekst = {
