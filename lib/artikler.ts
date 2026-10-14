@@ -929,7 +929,7 @@ export const artikler: Artikkel[] = [
     ingress:
       "Det finnes ingen knapp, men det finnes en rekkefølge. Fire ting flytter en liten bedrift oppover i søk — og det er sjelden de tingene man får tilbud om på telefon.",
     metaBeskrivelse:
-      "Teknisk grunnmur, én side per tjeneste, lenker fra steder som betyr noe og en riktig bedriftsprofil: dette flytter en liten bedrift i søk, og dette kan ingen love.",
+      "Teknisk grunnmur, én side per tjeneste, lenker fra steder som betyr noe og riktig bedriftsprofil: dette flytter en liten bedrift i søk, og det kan ingen love.",
     publisert: "2026-10-14",
     lesetid: 6,
     kategori: "SEO",
