@@ -923,6 +923,121 @@ export const artikler: Artikkel[] = [
       },
     ],
   },
+  {
+    slug: "hoyere-pa-google",
+    tittel: "Hvordan kommer bedriften høyere på Google?",
+    ingress:
+      "Det finnes ingen knapp, men det finnes en rekkefølge. Fire ting flytter en liten bedrift oppover i søk — og det er sjelden de tingene man får tilbud om på telefon.",
+    metaBeskrivelse:
+      "Teknisk grunnmur, én side per tjeneste, lenker fra steder som betyr noe og en riktig bedriftsprofil: dette flytter en liten bedrift i søk, og dette kan ingen love.",
+    publisert: "2026-10-14",
+    lesetid: 6,
+    kategori: "SEO",
+    tjeneste: "seo",
+    innhold: [
+      {
+        type: "avsnitt",
+        tekst:
+          "De fleste som stiller dette spørsmålet, har allerede fått et svar de ikke stoler på. Det kom på telefon og lovet førsteplass innen en viss frist, eller det kom som en pakke med femti katalogoppføringer. Begge tilbudene selger noe som kan telles. Ingen av dem selger det som faktisk flytter en liten bedrift.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det som flytter, er mindre spennende og kommer i en bestemt rekkefølge. Vi går gjennom den med eksempler fra vår egen side, fordi det er den vi kan vise innsiden av.",
+      },
+      { type: "mellomtittel", tekst: "Først må Google forstå hva siden er" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Teknisk SEO har et rykte for å være trolldom. Det meste av det er å fjerne hindringer: at hver side har én adresse, at siden er rask på mobil, og at det Google leser, er det samme som det kunden ser.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Da vi flyttet fra stavesoftware.no til crestholding.no, var det første vi måtte avgjøre hva det gamle domenet skulle svare. Uten en videresending ville begge domenene servert de samme sidene, og Google måtte gjettet hvilken som var den ekte. Kommentaren over videresendingen i koden vår sier det kortere enn vi klarer her: canonical-taggen er et hint, en 308 er et svar. Hele flyttingen fortjener en egen gjennomgang, men poenget for en bedrift er enkelt — finnes siden din på to adresser, konkurrerer den med seg selv.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det neste er tittelen, den blå overskriften Google viser i treffet. Den kuttes bakfra når den blir for lang, så vi la det vi gjør først og selskapsnavnet sist. For en bedrift som ennå ikke er kjent nok til at folk søker på navnet, er navnet det minst nyttige ordet i tittelen. Det føles feil, og det er riktig.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Til slutt de strukturerte dataene: en maskinlesbar beskrivelse av hvem bedriften er. Vår inneholder navn, organisasjonsnummer, sted og en lenke til oppslaget i Enhetsregisteret, og det juridiske navnet i den skal stemme med det Foretaksregisteret viser. Det løfter ingen forbi en konkurrent alene. Det fjerner tvil om hvem du er, og tvil er noe Google ikke belønner.",
+      },
+      { type: "mellomtittel", tekst: "Så: én side for hver ting folk skriver inn" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Dette er punktet som oftest flytter mest, og som oftest blir oversett. Forsiden vår forteller hele historien — nettside, app og arbeidet med å bli funnet — og detaljene ligger i paneler som åpner seg når noen klikker. For en besøkende var alt der. For Google finnes det ikke, fordi teksten i panelene ikke ligger i sidens HTML før noen trykker på dem.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Og selv om den hadde ligget der: én side kan bare rangere godt på én ting. Derfor fikk vi egne sider for nettside, app og SEO, der hver av dem svarer på det noen som søker etter akkurat den tingen lurer på — hva det er, hvordan det foregår, hvem som eier resultatet, og hva vi ikke kan love.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "For en regnskapsfører, en rørlegger eller et verksted er øvelsen den samme. En «Tjenester»-side med ti linjer i en liste konkurrerer dårlig mot en konkurrent som har én side per tjeneste, der kunden får svar på det de faktisk lurer på: hva som inngår, hva som påvirker prisen, hvor lang tid det tar, og hva de må ha klart. Vi gjorde det samme i stor skala for studentforeningen OESA, der alt i kartet over norsk sokkel også finnes som vanlige sider med tekst, fordi et kart er usynlig for en søkemotor. Det har vi skrevet om i [artikkelen om OESA-siden](/blogg/slik-bygde-vi-oesa-siden).",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Skriv sidene for den som leser, ikke for søkeordet. En tekst som gjentar «rørlegger i Drammen» i hvert avsnitt, leses som det den er — av kunden, og i økende grad av Google.",
+      },
+      { type: "mellomtittel", tekst: "Lenker: få, og fra steder som betyr noe" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Google stoler mer på sider som andre viser til. Men ikke all viser-til teller, og det er her de fleste pengene brukes feil.",
+      },
+      {
+        type: "faktaboks",
+        tittel: "Hvorfor katalogpakken ikke hjelper",
+        tekst:
+          "De store opplysningstjenestene merker som regel lenkene sine slik at Google ikke regner dem som en anbefaling. Det er ikke noe galt i å stå der — kunder slår deg opp, og opplysningene bør være riktige. Men en pakke med femti slike oppføringer er ikke lenkebygging, uansett hva tilbudet kaller det.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Lenkene som teller for en liten bedrift, er nesten alltid de som har en ekte relasjon bak seg: bransjeforeningen du er medlem i, produsenten eller grossisten du selger for, lokalavisa som skrev om dere, en samarbeidspartner som nevner dere på sin egen side. Det er få av dem, og hver av dem krever en e-post eller en telefon. Det er derfor de virker — de er vanskelige å kjøpe.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Her skal vi være ærlige om oss selv: crestholding.no er et nytt domene, og et nytt domene starter uten historikk. Den teknisk riktige siden og tjenestesidene rår vi over selv. Lenkene og tilliten gjør vi ikke, og de bygges over måneder, også for oss.",
+      },
+      { type: "mellomtittel", tekst: "Lokale søk avgjøres et annet sted" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Søk som slutter med et stedsnavn, eller som Google tolker som lokale, får ofte et kart med noen få bedrifter over de vanlige treffene. Den listen hentes i stor grad fra bedriftsprofilen på Google, ikke fra nettsiden. For mange småbedrifter er det den viktigste flaten de har, og den koster ingenting å sette opp.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det som avgjør der, er kjedelig og presist: riktig kategori, riktige åpningstider, og at navn, adresse og telefonnummer er skrevet nøyaktig likt i profilen, på nettsiden og i Brønnøysund. Vi kjenner den øvelsen fra innsiden — i perioden der det nye foretaksnavnet vårt var vedtatt, men ikke registrert, måtte nettsiden si begge deler, og koden har én bryter som snur alt samtidig den dagen registeret er oppdatert. Uoverensstemmelser er ikke farlige hver for seg. Til sammen gjør de deg til en bedrift Google er usikker på.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Anmeldelser hører med. Be fornøyde kunder om dem, svar på alle — også de dårlige — og kjøp dem aldri.",
+      },
+      { type: "mellomtittel", tekst: "Det ingen kan love" },
+      {
+        type: "avsnitt",
+        tekst:
+          "Det er Google som bestemmer rekkefølgen. Den som garanterer deg førsteplass, lover noe de ikke rår over, eller snakker om et søkeord ingen bruker. Det som kan loves, er arbeidet: at siden er laget riktig, at innholdet svarer på det kundene spør om, og at noen følger med på hvilke søk siden faktisk dukker opp på og justerer etter det. Tekniske feil kan rettes på dager. Plasseringer bygges over måneder.",
+      },
+      {
+        type: "avsnitt",
+        tekst:
+          "Lurer du på hvor din egen side står, fortell oss hva bedriften gjør og hvem som skal finne den. Så ser vi på det sammen, og sier ærlig hvilken av de fire tingene vi ville begynt med.",
+      },
+    ],
+  },
 ];
 
 export function finnArtikkel(slug: string): Artikkel | undefined {

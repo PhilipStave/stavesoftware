@@ -47,7 +47,7 @@ export const emnekoe: Emne[] = [
       "Det som faktisk flytter plasseringen for en liten bedrift: teknisk grunnmur, innhold som svarer på det folk søker etter, lenker fra steder som betyr noe, og bedriftsprofilen på Google for lokale søk. Vær tydelig på hva ingen kan love, og på hvorfor mange katalogoppføringer ikke teller. Bruk konkrete detaljer fra flyttingen fra stavesoftware.no til crestholding.no.",
     kategori: "SEO",
     tjeneste: "seo",
-    brukt: false,
+    brukt: true,
   },
   {
     tittel: "Hva skjer med nettsiden når avtalen med byrået slutter?",
