@@ -959,7 +959,7 @@ export const artikler: Artikkel[] = [
       {
         type: "avsnitt",
         tekst:
-          "Det neste er tittelen, den blå overskriften Google viser i treffet. Den kuttes bakfra når den blir for lang, så vi la det vi gjør først og selskapsnavnet sist. For en bedrift som ennå ikke er kjent nok til at folk søker på navnet, er navnet det minst nyttige ordet i tittelen. Det føles feil, og det er riktig.",
+          "Det neste er tittelen, den blå overskriften Google viser i treffet. Den kuttes bakfra når den blir for lang, og kommentaren over standardtittelen i koden vår sier konsekvensen rett ut: søkeordene først og navnet sist. For en bedrift som ennå ikke er kjent nok til at folk søker på navnet, er navnet det minst nyttige ordet i tittelen. Det føles feil, og det er riktig.",
       },
       {
         type: "avsnitt",
@@ -970,7 +970,7 @@ export const artikler: Artikkel[] = [
       {
         type: "avsnitt",
         tekst:
-          "Dette er punktet som oftest flytter mest, og som oftest blir oversett. Forsiden vår forteller hele historien — nettside, app og arbeidet med å bli funnet — og detaljene ligger i paneler som åpner seg når noen klikker. For en besøkende var alt der. For Google finnes det ikke, fordi teksten i panelene ikke ligger i sidens HTML før noen trykker på dem.",
+          "Dette er punktet som oftest flytter mest, og som oftest blir oversett. Oversiktssiden for tjenestene våre forteller hele historien — nettside, app og arbeidet med å bli funnet — og detaljene ligger i paneler som åpner seg når noen klikker. For en besøkende var alt der. For Google finnes det ikke, fordi teksten i panelene ikke ligger i sidens HTML før noen trykker på dem.",
       },
       {
         type: "avsnitt",
