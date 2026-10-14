@@ -42,9 +42,10 @@ export default function Nav({
         transition: "background .45s ease, border-color .45s ease, backdrop-filter .45s ease",
       }}
     >
-      <a
-        href="#topp"
+      <Link
+        href="/"
         data-hover=""
+        title="Til Crest Holding"
         className="logo-lockup"
         style={{
           // Grunnlinje, ikke senter: da hviler løvens poter på samme linje som
@@ -69,12 +70,12 @@ export default function Nav({
           style={{ height: 17, width: "auto", display: "block" }}
         />
         <span>
-          CREST HOLDING
+          CREST SOFTWARE
             <span style={{ color: "var(--accent)", fontSize: "0.58em", verticalAlign: "0.42em", letterSpacing: 0 }}>
               ®
             </span>
         </span>
-      </a>
+      </Link>
       <div
         id="navlinks"
         style={{

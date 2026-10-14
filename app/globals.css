@@ -140,6 +140,12 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
 }
 
 @media (max-width: 900px) {
+  /* Holdingsiden: to kolonner blir til én, og menyen beholder bare kontakt */
+  .hsplit, .hgrid3 { grid-template-columns: 1fr !important; gap: 30px !important; }
+  .hfakta { grid-template-columns: repeat(2, 1fr) !important; }
+  .hnav-lenker a.hov-nl { display: none !important; }
+  .hsek { padding-left: 28px !important; padding-right: 28px !important; }
+
   #navlinks a.nl, #soundbtn, #dotnav { display: none !important; }
   #herostats { grid-template-columns: 1fr !important; gap: 0 !important; }
   #herostats > div { border-left: none !important; padding-left: 0 !important; padding-top: 12px !important; padding-bottom: 12px !important; }
@@ -155,6 +161,17 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
 
 /* Telefon: strammere paddinger og stablede rader */
 @media (max-width: 640px) {
+  .hnav { padding: 18px 20px !important; }
+  /* Teksten dekker mer av bildet på telefon, så sløret må være kraftigere.
+     Målt kontrast mot det lyseste punktet bak overskriften: 2,8:1 uten, 4,8:1 med. */
+  .hslor { background:
+    linear-gradient(180deg, rgba(var(--ground-rgb),.88) 0%, rgba(var(--ground-rgb),.66) 40%, rgba(var(--ground-rgb),.96) 100%) !important; }
+  .hhero { min-height: 78vh !important; }
+  .hhero > div { padding: 130px 20px 56px !important; }
+  .hsek { padding-left: 20px !important; padding-right: 20px !important; padding-top: 86px !important; }
+  .hfakta { grid-template-columns: 1fr !important; gap: 22px !important; }
+  .hfoot > div, .hfoot > p { padding-left: 20px !important; padding-right: 20px !important; }
+
   /* Logo-lockupen: serif med vid sperring blir for bred på telefon, og
      ordmerket brakk over to linjer rett inn i kontaktknappen. */
   .logo-lockup { font-size: 13px !important; letter-spacing: .13em !important; gap: 7px !important; }

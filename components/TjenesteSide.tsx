@@ -64,7 +64,8 @@ function jsonLd(side: Side) {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: selskap.navn, item: `${selskap.url}/` },
-          { "@type": "ListItem", position: 2, name: lenke.navn, item: url },
+          { "@type": "ListItem", position: 2, name: "Crest Software", item: `${selskap.url}/crest-software` },
+          { "@type": "ListItem", position: 3, name: lenke.navn, item: url },
         ],
       },
       {
@@ -174,6 +175,12 @@ export default function TjenesteSide({ side }: { side: Side }) {
         >
           <Link href="/" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.55)" }}>
             {selskap.navn}
+          </Link>
+          <span aria-hidden="true" style={{ margin: "0 10px" }}>
+            /
+          </span>
+          <Link href="/crest-software" data-hover="" className="hov-link" style={{ color: "rgba(var(--ink-rgb),.55)" }}>
+            Crest Software
           </Link>
           <span aria-hidden="true" style={{ margin: "0 10px" }}>
             /
