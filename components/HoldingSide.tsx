@@ -346,6 +346,16 @@ export default function HoldingSide() {
             >
               {kontakt.knapp}
             </a>
+            <p style={{ margin: "26px 0 0", fontSize: 15, color: "rgba(var(--ink-rgb),.6)" }}>
+              {kontakt.adresser.map((e, i) => (
+                <span key={e}>
+                  {i > 0 && <span aria-hidden="true"> · </span>}
+                  <a href={`mailto:${e}`} className="tekstlenke" style={{ color: "rgba(var(--ink-rgb),.72)" }}>
+                    {e}
+                  </a>
+                </span>
+              ))}
+            </p>
           </div>
         </div>
       </section>

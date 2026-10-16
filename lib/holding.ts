@@ -95,6 +95,10 @@ export const kontakt = {
   // Adressen står ikke på siden: den ligger fortsatt på det gamle domenet, og
   // hører ikke hjemme på merkevaresiden. Knappen åpner e-posten som før.
   knapp: "Write to us",
+  // Lagt til 16. oktober etter ønske. Dette er private adresser på outlook og
+  // gmail, og de blir plukket opp av søppelpost-roboter så snart siden
+  // indekseres. Bytt dem ut den dagen crestholding.no har egne postkasser.
+  adresser: ["philipstave@outlook.com", "erikmoepost@gmail.com"],
 };
 
 export const bunntekst = {
