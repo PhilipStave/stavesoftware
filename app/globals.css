@@ -41,6 +41,24 @@
   color: var(--ink);
 }
 
+/* Lyst tema for holdingsiden. Settes på ytterste element, og alt innenfor
+   følger med fordi fargene i komponentene er tokens, ikke faste verdier.
+   --shadow-rgb står med vilje igjen som mørk: skygger skal være mørke uansett. */
+.lys {
+  --ground: #f4f2ed;
+  --ground-rgb: 244,242,237;
+  --surface: #ffffff;
+  --sunk: #eae7e0;
+  --ink: #161d26;
+  --ink-rgb: 22,29,38;
+  --accent: #2c6390;
+  --accent-rgb: 44,99,144;
+  --hi: #0b1219;
+  --line: rgba(22,29,38,.14);
+  background: var(--ground);
+  color: var(--ink);
+}
+
 html { scroll-behavior: smooth; }
 /* Rullefeltet er skjult etter ønske. Siden rulles som før med hjul, tastatur,
    berøring og dotnav-lenkene i menyen; fremdriftslinjen øverst viser hvor langt

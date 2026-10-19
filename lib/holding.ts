@@ -27,12 +27,18 @@ export type Virksomhet = {
   merknad?: string;
 };
 
+// vis: false gir en ren typografisk topp uten bilde. Bytt fil og kreditering
+// samlet her — fotografen og lisensen må alltid følge bildet.
 export const foto = {
-  tekst: "Oslo at night",
-  fotograf: "Jørn Eriksson",
+  vis: true,
+  fil: "/uploads/oslo-opera.jpg",
+  filMobil: "/uploads/oslo-opera-mobil.jpg",
+  alt: "The marble roof of the Oslo Opera House, with people walking up the slope",
+  fotograf: "Jorge Láscar",
   lisens: "CC BY 2.0",
   lisensUrl: "https://creativecommons.org/licenses/by/2.0/",
-  kilde: "https://commons.wikimedia.org/wiki/File:Oslo_at_night.jpg",
+  kilde:
+    "https://commons.wikimedia.org/wiki/File:Climbing_the_Oslo_Opera_House_(Operahuset)_(29796497621).jpg",
 };
 
 export const hero = {

@@ -82,7 +82,7 @@ function Lockup() {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/logo/crest-symbol.png"
+        src="/logo/crest-symbol-mork.png"
         alt=""
         aria-hidden="true"
         width={869}
@@ -99,7 +99,7 @@ function Lockup() {
 
 export default function HoldingSide() {
   return (
-    <div lang="en" style={{ background: "var(--ground)", color: "var(--ink)", minHeight: "100vh" }}>
+    <div lang="en" className="lys" style={{ minHeight: "100vh" }}>
       <nav
         className="hnav"
         style={{
@@ -156,16 +156,18 @@ export default function HoldingSide() {
         className="hhero"
         style={{ position: "relative", minHeight: "min(94vh, 980px)", display: "flex", alignItems: "flex-end" }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/uploads/oslo-hero.jpg"
-          srcSet="/uploads/oslo-hero-mobil.jpg 900w, /uploads/oslo-hero.jpg 2000w"
-          sizes="100vw"
-          width={2000}
-          height={1414}
-          alt="Office buildings in Bjørvika, Oslo, at blue hour, mirrored in the fjord"
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
-        />
+        {foto.vis && (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            src={foto.fil}
+            srcSet={`${foto.filMobil} 900w, ${foto.fil} 2000w`}
+            sizes="100vw"
+            width={2000}
+            height={1333}
+            alt={foto.alt}
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        )}
         {/* Two layers: one down the page to tie the photo to the site, and one in
             from the left so the text always has a dark surface to sit on, however
             bright the buildings behind it are. The mobile rule in globals.css
@@ -178,7 +180,7 @@ export default function HoldingSide() {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(100deg, rgba(var(--ground-rgb),.92) 0%, rgba(var(--ground-rgb),.72) 38%, rgba(var(--ground-rgb),.12) 78%), linear-gradient(180deg, rgba(var(--ground-rgb),.78) 0%, rgba(var(--ground-rgb),.22) 45%, rgba(var(--ground-rgb),.94) 100%)",
+              "linear-gradient(100deg, rgba(var(--ground-rgb),.97) 0%, rgba(var(--ground-rgb),.88) 40%, rgba(var(--ground-rgb),.42) 80%), linear-gradient(180deg, rgba(var(--ground-rgb),.6) 0%, rgba(var(--ground-rgb),.3) 45%, var(--ground) 100%)",
           }}
         ></div>
         <div style={{ ...WRAP, position: "relative", width: "100%", padding: "160px 48px 72px" }}>
@@ -212,6 +214,7 @@ export default function HoldingSide() {
             </a>
           </div>
         </div>
+        {foto.vis && (
         <p
           className="hfoto"
           style={{
@@ -233,6 +236,7 @@ export default function HoldingSide() {
             {foto.lisens}
           </a>
         </p>
+        )}
       </header>
 
       <section className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
@@ -320,9 +324,9 @@ export default function HoldingSide() {
           {virksomheter.map((v) => (
             <article
               key={v.navn}
-              className="oncard"
               style={{
                 background: "var(--surface)",
+                border: "1px solid var(--line)",
                 borderRadius: 10,
                 padding: "38px 34px",
                 display: "flex",
