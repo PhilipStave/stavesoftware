@@ -1,6 +1,18 @@
 import Link from "next/link";
 import { selskap } from "@/lib/selskap";
-import { bunntekst, foto, hero, kontakt, kriterier, meny, omOss, prinsipper, uttalelse } from "@/lib/holding";
+import {
+  bunntekst,
+  foto,
+  hero,
+  kontakt,
+  kriterier,
+  meny,
+  omOss,
+  portefoljeMerknad,
+  prinsipper,
+  uttalelse,
+  virksomheter,
+} from "@/lib/holding";
 
 // The holding company's front page.
 //
@@ -118,11 +130,11 @@ export default function HoldingSide() {
             textTransform: "uppercase",
           }}
         >
-          <a href="#how-we-work" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
+          <a href="#what-we-do" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
             {meny.slikJobberVi}
           </a>
-          <a href="#what-we-look-for" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
-            {meny.hvaViSerEtter}
+          <a href="#what-we-own" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
+            {meny.portefolje}
           </a>
           <a
             href="#contact"
@@ -192,7 +204,7 @@ export default function HoldingSide() {
               {hero.knappKontakt}
             </a>
             <a
-              href="#how-we-work"
+              href="#what-we-do"
               className="hov-outline"
               style={{ ...KNAPP, border: "1px solid rgba(var(--ink-rgb),.4)", color: "var(--ink)" }}
             >
@@ -267,7 +279,7 @@ export default function HoldingSide() {
         </blockquote>
       </section>
 
-      <section id="how-we-work" className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
+      <section id="what-we-do" className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
         <h2 style={{ ...OVERSKRIFT, marginBottom: 54 }}>{prinsipper.tittel}</h2>
         <div className="hgrid3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 48 }}>
           {prinsipper.punkter.map((p) => (
@@ -286,6 +298,74 @@ export default function HoldingSide() {
               </h3>
               <p style={{ ...BRODTEKST, fontSize: 16, margin: 0 }}>{p.tekst}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="what-we-own" className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "baseline",
+            justifyContent: "space-between",
+            gap: 24,
+            flexWrap: "wrap",
+            marginBottom: 54,
+          }}
+        >
+          <h2 style={OVERSKRIFT}>{meny.portefolje}</h2>
+          <span style={{ ...MERKELAPP, color: "rgba(var(--ink-rgb),.5)" }}>{portefoljeMerknad}</span>
+        </div>
+        <div className="hgrid2" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 28 }}>
+          {virksomheter.map((v) => (
+            <article
+              key={v.navn}
+              className="oncard"
+              style={{
+                background: "var(--surface)",
+                borderRadius: 10,
+                padding: "38px 34px",
+                display: "flex",
+                flexDirection: "column",
+                gap: 16,
+              }}
+            >
+              <div style={{ ...MERKELAPP, fontSize: 11 }}>{v.rolle}</div>
+              <h3
+                style={{
+                  fontFamily: "var(--font-garamond), Georgia, serif",
+                  fontWeight: 700,
+                  fontSize: 34,
+                  letterSpacing: "-.01em",
+                  margin: 0,
+                  color: "var(--ink)",
+                }}
+              >
+                {v.navn}
+              </h3>
+              <p style={{ ...BRODTEKST, fontSize: 16, margin: 0, flex: 1 }}>{v.tekst}</p>
+              {v.merknad && <p style={{ margin: 0, fontSize: 14, color: "rgba(var(--ink-rgb),.55)" }}>{v.merknad}</p>}
+              {v.href && v.ekstern && (
+                <a
+                  href={v.href}
+                  target="_blank"
+                  rel="noopener"
+                  className="btn-hvit"
+                  style={{ alignSelf: "flex-start", padding: "13px 28px", borderRadius: 999, fontWeight: 600, fontSize: 15 }}
+                >
+                  {v.lenketekst} ↗
+                </a>
+              )}
+              {v.href && !v.ekstern && (
+                <Link
+                  href={v.href}
+                  className="btn-hvit"
+                  style={{ alignSelf: "flex-start", padding: "13px 28px", borderRadius: 999, fontWeight: 600, fontSize: 15 }}
+                >
+                  {v.lenketekst} →
+                </Link>
+              )}
+            </article>
           ))}
         </div>
       </section>
