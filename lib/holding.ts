@@ -65,11 +65,6 @@ export const omOss = {
   ],
 };
 
-export const uttalelse = {
-  tekst: "We would rather own one company for ten years than ten companies for one.",
-  kilde: "No fund, no end date, no clock.",
-};
-
 export const prinsipper = {
   tittel: "What we do",
   punkter: [

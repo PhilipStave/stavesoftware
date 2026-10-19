@@ -10,7 +10,6 @@ import {
   omOss,
   portefoljeMerknad,
   prinsipper,
-  uttalelse,
   virksomheter,
 } from "@/lib/holding";
 
@@ -253,34 +252,6 @@ export default function HoldingSide() {
             ))}
           </div>
         </div>
-      </section>
-
-      <section className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
-        <blockquote
-          style={{
-            margin: 0,
-            borderTop: "1px solid rgba(var(--ink-rgb),.16)",
-            borderBottom: "1px solid rgba(var(--ink-rgb),.16)",
-            padding: "70px 0",
-            textAlign: "center",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "var(--font-garamond), Georgia, serif",
-              fontWeight: 600,
-              fontSize: "clamp(28px, 3.6vw, 48px)",
-              lineHeight: 1.18,
-              letterSpacing: "-.01em",
-              margin: "0 auto 22px",
-              maxWidth: "22ch",
-              color: "var(--ink)",
-            }}
-          >
-            {uttalelse.tekst}
-          </p>
-          <footer style={{ ...MERKELAPP, color: "rgba(var(--ink-rgb),.45)" }}>{uttalelse.kilde}</footer>
-        </blockquote>
       </section>
 
       <section id="what-we-do" className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
