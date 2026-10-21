@@ -89,6 +89,7 @@ export const prinsipper = {
 // same people also take work for companies outside the group.
 export type Virksomhet = {
   navn: string;
+  logo: "hel" | "altiv" | "oystr";
   rolle?: string;
   tekst: string;
   href: string;
@@ -102,6 +103,8 @@ export type Virksomhet = {
 export const virksomheter: Virksomhet[] = [
   {
     navn: "HEL Performance Norge",
+    logo: "hel",
+    rolle: "Retail · Motorsport parts",
     tekst:
       "Official Norwegian dealer for HEL, the English maker of braided brake lines and calipers used in British Superbike. Lines are built to order, in any length, for most motorcycles.",
     href: "https://helperformance.no",
@@ -109,6 +112,7 @@ export const virksomheter: Virksomhet[] = [
   },
   {
     navn: "Altiv",
+    logo: "altiv",
     rolle: "SaaS · CRM for sales",
     tekst:
       "Norwegian CRM for B2B sales follow-up. Pipeline across departments, automatic email logging, follow-ups in the calendar, and revenue and margin per salesperson.",
@@ -117,6 +121,7 @@ export const virksomheter: Virksomhet[] = [
   },
   {
     navn: "Oystr",
+    logo: "oystr",
     rolle: "App · Sea charts",
     tekst:
       "Sea charts and navigation for leisure boats along the Norwegian coast. Offline charts, routing around land and shallows, AIS, tide and weather.",
