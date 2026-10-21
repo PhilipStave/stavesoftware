@@ -3,7 +3,7 @@ import { AltivLogo, OystrLogo } from "./BrandLogos";
 
 export default function Products() {
   return (
-    <section id="produkter" style={{ position: "relative", height: "520vh" }}>
+    <section id="produkter" style={{ position: "relative", height: "700vh" }}>
       <div
         style={{
           position: "sticky",
@@ -65,8 +65,8 @@ export default function Products() {
               }}
             >
               Enten du betaler med penger eller med en andel, bør du vite hva vi kan. To egne
-              produkter vi har bygget, lansert og driftet selv — og en nettside vi har laget for
-              andre.
+              produkter vi har bygget, lansert og driftet selv — og to nettsider: en for vår egen
+              virksomhet og en vi har laget for andre.
             </p>
             <div
               style={{
@@ -381,6 +381,108 @@ export default function Products() {
                   Besøk oesa-global.com →
                 </a>
               </div>
+            </div>
+          </article>
+          <article style={{ flex: "0 0 auto", width: "66vw", minWidth: 620, perspective: 1200 }}>
+            <div
+              data-tilt3d=""
+              className="pcard oncard"
+              style={{
+                display: "grid",
+                height: "100%",
+                gridTemplateColumns: "1fr 1.15fr",
+                gap: 0,
+                background: "var(--surface)",
+                color: "var(--ink)",
+                borderRadius: 10,
+                overflow: "hidden",
+                boxShadow: "0 60px 120px -40px rgba(var(--shadow-rgb),.55)",
+              }}
+            >
+              <div
+                className="ptxt"
+                style={{
+                  padding: "50px 44px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 12,
+                    letterSpacing: ".26em",
+                    textTransform: "uppercase",
+                    color: "var(--accent)",
+                    marginBottom: 18,
+                  }}
+                >
+                  04 / Nettside · Motorsykkeldeler
+                </div>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-archivo), sans-serif",
+                    fontWeight: 900,
+                    fontSize: 34,
+                    letterSpacing: "-.02em",
+                    lineHeight: 1,
+                    textTransform: "uppercase",
+                    margin: "0 0 18px",
+                  }}
+                >
+                  HEL Performance Norge
+                </h3>
+                <p style={{ color: "rgba(var(--ink-rgb),.72)", lineHeight: 1.7, fontSize: 16, margin: "0 0 12px" }}>
+                  Nettsiden til HEL Performance Norge, offisiell norsk forhandler av HEL-bremseslanger
+                  og kalipere. Delesøk på merke og modell, guider, og sider bygget for å bli funnet
+                  i søk.
+                </p>
+                <p style={{ color: "rgba(var(--ink-rgb),.72)", lineHeight: 1.7, fontSize: 16, margin: "0 0 28px" }}>
+                  Delene lages av HEL i England. Nettsiden er bygget og driftet av oss.
+                </p>
+                <a
+                  href="https://helperformance.no"
+                  target="_blank"
+                  data-hover=""
+                  data-magnet=""
+                  className="btn-hvit"
+                  style={{
+                    display: "inline-block",
+                    alignSelf: "flex-start",
+                    padding: "14px 32px",
+                    background: "#ffffff",
+                    color: "#0b1219",
+                    border: "1px solid #0b1219",
+                    fontWeight: 600,
+                    fontSize: 15,
+                    borderRadius: 999,
+                  }}
+                >
+                  Besøk helperformance.no →
+                </a>
+              </div>
+              <a
+                data-zoom=""
+                data-hover=""
+                href="https://helperformance.no"
+                target="_blank"
+                style={{ display: "block" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/uploads/hel-kort.jpg"
+                  alt="Forsiden til HEL Performance Norge med bremseslanger og kalipere til motorsykkel"
+                  width={1200}
+                  height={1100}
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    height: "100%",
+                    minHeight: 460,
+                    objectFit: "cover",
+                  }}
+                />
+              </a>
             </div>
           </article>
           <div style={{ flex: "0 0 auto", width: "10vw" }}></div>
