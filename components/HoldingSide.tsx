@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { selskap } from "@/lib/selskap";
 import {
+  andreAvdelinger,
   avdeling,
   bunntekst,
   foto,
@@ -313,6 +314,35 @@ export default function HoldingSide() {
         >
           {avdeling.lenke.tekst} →
         </Link>
+      </section>
+
+      <section className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
+        <div
+          className="hsplit"
+          style={{ display: "grid", gridTemplateColumns: "minmax(220px, 340px) 1fr", gap: 60, alignItems: "start", marginBottom: 50 }}
+        >
+          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{andreAvdelinger.tittel}</h2>
+          <p style={{ ...BRODTEKST, fontSize: 18, margin: 0, maxWidth: 680 }}>{andreAvdelinger.ingress}</p>
+        </div>
+        <div className="hgrid3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 36 }}>
+          {andreAvdelinger.punkter.map((a) => (
+            <div key={a.navn} style={{ borderTop: "1px solid rgba(var(--ink-rgb),.2)", paddingTop: 24 }}>
+              <div style={{ ...MERKELAPP, fontSize: 11, marginBottom: 12 }}>{a.rolle}</div>
+              <h3
+                style={{
+                  fontFamily: "var(--font-garamond), Georgia, serif",
+                  fontWeight: 600,
+                  fontSize: 28,
+                  margin: "0 0 12px",
+                  color: "var(--ink)",
+                }}
+              >
+                {a.navn}
+              </h3>
+              <p style={{ ...BRODTEKST, fontSize: 16, margin: 0 }}>{a.tekst}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section id="what-we-look-for" className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>

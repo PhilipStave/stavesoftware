@@ -123,6 +123,32 @@ export const avdeling = {
   lenke: { tekst: "See what Crest Software does", href: "/crest-software" },
 };
 
+export const andreAvdelinger = {
+  tittel: "The other departments",
+  ingress:
+    "Three more functions the group runs for the companies it owns, for the same reason as the software: they cost less done once than done in every company.",
+  punkter: [
+    {
+      navn: "Crest Commerce",
+      rolle: "Brings brands to Norway",
+      tekst:
+        "Takes a brand with no Norwegian dealer, builds the shop, runs the advertising and ships the goods. HEL Performance Norge is the first one.",
+    },
+    {
+      navn: "Crest Services",
+      rolle: "Runs the back office",
+      tekst:
+        "Accounting, invoicing, purchasing agreements and systems — done once for the group instead of once inside every company.",
+    },
+    {
+      navn: "Crest Growth",
+      rolle: "Finds the customers",
+      tekst:
+        "Pricing, sales follow-up and being found: search, AI answers and the CRM the companies sell from. Most of what we buy has never done any of it.",
+    },
+  ],
+};
+
 export const kriterier = {
   tittel: "What we look for",
   ingress:
