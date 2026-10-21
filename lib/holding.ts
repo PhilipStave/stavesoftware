@@ -89,18 +89,10 @@ export const prinsipper = {
   ],
 };
 
-// TODO: HelPerformance mangler riktig juridisk navn, org.nr. og en setning om
-// hva de faktisk gjør. Navnet finnes ikke i Enhetsregisteret slik det er stavet
-// her (sjekket 19. oktober 2026), og eierskapet må bekreftes før siden legges
-// ut. Teksten under er en plassholder.
+// HelPerformance er tatt ut inntil juridisk navn, organisasjonsnummer og
+// eierskap er bekreftet. Ingenting skal stå her som ikke kan slås opp i
+// Enhetsregisteret.
 export const virksomheter: Virksomhet[] = [
-  {
-    navn: "HelPerformance",
-    rolle: "Operating company",
-    tekst:
-      "PLASSHOLDER — én setning om hva selskapet gjør, hvem kundene er og hvor de holder til. Skrives når Philip har bekreftet navn og eierskap.",
-    merknad: "Not published yet — awaiting confirmation.",
-  },
   {
     navn: "Altiv",
     rolle: "SaaS · CRM for sales",

@@ -291,7 +291,7 @@ export default function HoldingSide() {
           <h2 style={OVERSKRIFT}>{meny.portefolje}</h2>
           <span style={{ ...MERKELAPP, color: "rgba(var(--ink-rgb),.5)" }}>{portefoljeMerknad}</span>
         </div>
-        <div className="hgrid2" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 28 }}>
+        <div className="hgrid3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
           {virksomheter.map((v) => (
             <article
               key={v.navn}

@@ -3,10 +3,10 @@ import HoldingSide from "@/components/HoldingSide";
 import { selskap } from "@/lib/selskap";
 
 const beskrivelse =
-  "Crest Holding AS is a Norwegian company in Oslo. We start businesses, build them properly, and stay on as the ones who run them.";
+  "Crest Holding AS acquires profitable Norwegian companies. Most we keep and operate, and the annual profit is the return.";
 
 export const metadata: Metadata = {
-  title: `${selskap.fulltNavn} — we build businesses and stay to run them`,
+  title: `${selskap.fulltNavn} — we buy companies, run them, and make them grow`,
   description: beskrivelse,
   keywords:
     "Crest Holding, holding company Oslo, Norwegian holding company, Crest Software, Altiv, Oystr, build and operate businesses",
@@ -14,16 +14,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: selskap.fulltNavn,
-    title: `${selskap.fulltNavn} — we build businesses and stay to run them`,
+    title: `${selskap.fulltNavn} — we buy companies, run them, and make them grow`,
     description: beskrivelse,
     url: `${selskap.url}/`,
     locale: "en_GB",
     images: [
       {
-        url: "/og-holding.jpg?v=1",
+        url: "/og-holding.jpg?v=2",
         width: 1200,
         height: 630,
-        alt: `${selskap.fulltNavn} — we build businesses and stay to run them`,
+        alt: `${selskap.fulltNavn} — we buy companies, run them, and make them grow`,
       },
     ],
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: selskap.fulltNavn,
     description: beskrivelse,
-    images: ["/og-holding.jpg?v=1"],
+    images: ["/og-holding.jpg?v=2"],
   },
 };
 
