@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { selskap } from "@/lib/selskap";
 import {
+  avdeling,
   bunntekst,
   foto,
   hero,
@@ -8,9 +9,7 @@ import {
   kriterier,
   meny,
   omOss,
-  portefoljeMerknad,
   prinsipper,
-  virksomheter,
 } from "@/lib/holding";
 
 // The holding company's front page.
@@ -132,8 +131,8 @@ export default function HoldingSide() {
           <a href="#what-we-do" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
             {meny.slikJobberVi}
           </a>
-          <a href="#what-we-own" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
-            {meny.portefolje}
+          <a href="#crest-software" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
+            {meny.avdeling}
           </a>
           <a
             href="#contact"
@@ -277,72 +276,43 @@ export default function HoldingSide() {
         </div>
       </section>
 
-      <section id="what-we-own" className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "baseline",
-            justifyContent: "space-between",
-            gap: 24,
-            flexWrap: "wrap",
-            marginBottom: 54,
-          }}
-        >
-          <h2 style={OVERSKRIFT}>{meny.portefolje}</h2>
-          <span style={{ ...MERKELAPP, color: "rgba(var(--ink-rgb),.5)" }}>{portefoljeMerknad}</span>
-        </div>
-        <div className="hgrid2" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 26 }}>
-          {virksomheter.map((v) => (
+      <section id="crest-software" className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
+        <div style={{ ...MERKELAPP, marginBottom: 18 }}>{avdeling.merkelapp}</div>
+        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{avdeling.tittel}</h2>
+        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 54px", maxWidth: 720 }}>{avdeling.ingress}</p>
+        <div className="hgrid3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 26 }}>
+          {avdeling.tjenester.map((t) => (
             <article
-              key={v.navn}
+              key={t.navn}
               style={{
                 background: "var(--surface)",
                 border: "1px solid var(--line)",
                 borderRadius: 10,
-                padding: "38px 34px",
-                display: "flex",
-                flexDirection: "column",
-                gap: 16,
+                padding: "32px 30px",
               }}
             >
-              <div style={{ ...MERKELAPP, fontSize: 11 }}>{v.rolle}</div>
               <h3
                 style={{
                   fontFamily: "var(--font-garamond), Georgia, serif",
-                  fontWeight: 700,
-                  fontSize: 34,
-                  letterSpacing: "-.01em",
-                  margin: 0,
+                  fontWeight: 600,
+                  fontSize: 26,
+                  margin: "0 0 12px",
                   color: "var(--ink)",
                 }}
               >
-                {v.navn}
+                {t.navn}
               </h3>
-              <p style={{ ...BRODTEKST, fontSize: 16, margin: 0, flex: 1 }}>{v.tekst}</p>
-              {v.merknad && <p style={{ margin: 0, fontSize: 14, color: "rgba(var(--ink-rgb),.55)" }}>{v.merknad}</p>}
-              {v.href && v.ekstern && (
-                <a
-                  href={v.href}
-                  target="_blank"
-                  rel="noopener"
-                  className="btn-hvit"
-                  style={{ alignSelf: "flex-start", padding: "13px 28px", borderRadius: 999, fontWeight: 600, fontSize: 15 }}
-                >
-                  {v.lenketekst} ↗
-                </a>
-              )}
-              {v.href && !v.ekstern && (
-                <Link
-                  href={v.href}
-                  className="btn-hvit"
-                  style={{ alignSelf: "flex-start", padding: "13px 28px", borderRadius: 999, fontWeight: 600, fontSize: 15 }}
-                >
-                  {v.lenketekst} →
-                </Link>
-              )}
+              <p style={{ ...BRODTEKST, fontSize: 16, margin: 0 }}>{t.tekst}</p>
             </article>
           ))}
         </div>
+        <Link
+          href={avdeling.lenke.href}
+          className="btn-hvit"
+          style={{ display: "inline-block", marginTop: 40, padding: "13px 28px", borderRadius: 999, fontWeight: 600, fontSize: 15 }}
+        >
+          {avdeling.lenke.tekst} →
+        </Link>
       </section>
 
       <section id="what-we-look-for" className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
