@@ -89,10 +89,18 @@ export const prinsipper = {
   ],
 };
 
-// HelPerformance er tatt ut inntil juridisk navn, organisasjonsnummer og
-// eierskap er bekreftet. Ingenting skal stå her som ikke kan slås opp i
-// Enhetsregisteret.
+// Teksten under beskriver bare det nettsiden selv sier: offisiell HEL-forhandler
+// i Norge. Ingen påstand om at vi eier merket HEL — det lages i England.
 export const virksomheter: Virksomhet[] = [
+  {
+    navn: "HEL Performance Norge",
+    rolle: "E-commerce · Motorcycle brakes",
+    tekst:
+      "Official Norwegian dealer for HEL, the English maker of braided brake lines and calipers used in British Superbike. Lines are built to order, in any length, for most motorcycles.",
+    href: "https://helperformance.no",
+    lenketekst: "helperformance.no",
+    ekstern: true,
+  },
   {
     navn: "Altiv",
     rolle: "SaaS · CRM for sales",
