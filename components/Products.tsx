@@ -419,18 +419,29 @@ export default function Products() {
                 >
                   04 / Nettside · Motorsykkeldeler
                 </div>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-archivo), sans-serif",
-                    fontWeight: 900,
-                    fontSize: 34,
-                    letterSpacing: "-.02em",
-                    lineHeight: 1,
-                    textTransform: "uppercase",
-                    margin: "0 0 18px",
-                  }}
-                >
-                  HEL Performance Norge
+                <h3 style={{ margin: "0 0 18px", display: "flex", alignItems: "center", gap: 14 }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/logo/hel-logo.png"
+                    alt="HEL"
+                    width={505}
+                    height={245}
+                    style={{ display: "block", height: 46, width: "auto" }}
+                  />
+                  <span
+                    style={{
+                      fontFamily: "var(--font-archivo), sans-serif",
+                      fontWeight: 900,
+                      fontSize: 19,
+                      letterSpacing: ".06em",
+                      lineHeight: 1.1,
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    Performance
+                    <br />
+                    Norge
+                  </span>
                 </h3>
                 <p style={{ color: "rgba(var(--ink-rgb),.72)", lineHeight: 1.7, fontSize: 16, margin: "0 0 12px" }}>
                   Nettsiden til HEL Performance Norge, offisiell norsk forhandler av HEL-bremseslanger
