@@ -4,7 +4,7 @@ import { selskap } from "@/lib/selskap";
 import { tjenesteSider } from "@/lib/tjenestesider";
 
 const beskrivelse =
-  "Crest Software lager nettsiden eller appen, drifter den og gir deg én fast kontaktperson. SEO og AEO er en del av jobben. En virksomhet i Crest Holding AS.";
+  "Crest Software lager nettsiden eller appen, drifter den og gir deg én fast kontaktperson. SEO og AEO er en del av jobben. En avdeling i Crest Holding AS.";
 
 export const metadata: Metadata = {
   title: `Crest Software — nettsider og apper, bygget og driftet`,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Crest Software er en virksomhet i selskapet, ikke et eget rettssubjekt:
+// Crest Software er en avdeling i selskapet, ikke et eget rettssubjekt:
 // derfor Brand med Crest Holding som eier, og tjenestene som tilbud.
 const jsonLd = {
   "@context": "https://schema.org",

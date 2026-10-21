@@ -14,18 +14,9 @@
 //    a reader who checks the register.
 //  - Everything is inside Crest Holding AS today, so "businesses", not
 //    "portfolio companies", unless a company really is a separate AS.
+//  - No list of what we own on the front page (removed 21 October 2026).
 
 import { selskap } from "./selskap";
-
-export type Virksomhet = {
-  navn: string;
-  rolle: string;
-  tekst: string;
-  href?: string;
-  lenketekst?: string;
-  ekstern?: boolean;
-  merknad?: string;
-};
 
 // vis: false gir en ren typografisk topp uten bilde. Bytt fil og kreditering
 // samlet her — fotografen og lisensen må alltid følge bildet.
@@ -52,7 +43,7 @@ export const hero = {
 
 export const meny = {
   slikJobberVi: "What we do",
-  portefolje: "What we own",
+  avdeling: "Crest Software",
   kontakt: "Contact",
   hjem: `${selskap.fulltNavn} — home`,
 };
@@ -84,54 +75,53 @@ export const prinsipper = {
       nr: "03",
       navn: "Grow",
       tekst:
-        "Our own software and sales people work inside the companies: quoting that takes minutes instead of days, follow-up that does not fall between chairs, and being found by the customers already looking for what they sell.",
+        "Our own software department, Crest Software, and our sales people work inside the companies: quoting that takes minutes instead of days, follow-up that does not fall between chairs, and being found by the customers already looking for what they sell.",
     },
   ],
 };
 
-// Teksten under beskriver bare det nettsiden selv sier: offisiell HEL-forhandler
-// i Norge. Ingen påstand om at vi eier merket HEL — det lages i England.
-export const virksomheter: Virksomhet[] = [
-  {
-    navn: "HEL Performance Norge",
-    rolle: "E-commerce · Motorcycle brakes",
-    tekst:
-      "Official Norwegian dealer for HEL, the English maker of braided brake lines and calipers used in British Superbike. Lines are built to order, in any length, for most motorcycles.",
-    href: "https://helperformance.no",
-    lenketekst: "helperformance.no",
-    ekstern: true,
-  },
-  {
-    navn: "Altiv",
-    rolle: "SaaS · CRM for sales",
-    tekst:
-      "Norwegian CRM for B2B sales follow-up. Pipeline across departments, automatic email logging, follow-ups in the calendar, and revenue and margin per salesperson.",
-    href: "https://altiv.no",
-    lenketekst: "altiv.no",
-    ekstern: true,
-  },
-  {
-    navn: "Oystr",
-    rolle: "App · Sea charts",
-    tekst:
-      "Sea charts and navigation for leisure boats along the Norwegian coast. Offline charts, routing around land and shallows, AIS, tide and weather.",
-    href: "https://oystr.no",
-    lenketekst: "oystr.no",
-    ekstern: true,
-    merknad: "Built and operated together with Embretr.",
-  },
-  {
-    navn: "Crest Software",
-    rolle: "Software development",
-    tekst:
-      "Builds and runs the software: the systems inside the companies we own, and websites and apps for customers outside the group.",
-    href: "/crest-software",
-    lenketekst: "See what they do",
-    ekstern: false,
-  },
-];
-
-export const portefoljeMerknad = `Owned and operated by ${selskap.fulltNavn}`;
+// Crest Software is a department inside Crest Holding AS, not a business we
+// own on the side: it is one of the ways the group makes companies grow. The
+// same people also take work for companies outside the group.
+export const avdeling = {
+  merkelapp: "A department of Crest Holding",
+  tittel: "Crest Software",
+  ingress:
+    "Crest Software is the department that handles the software side of a business. It is one of the main ways we make companies grow: we go in, find the hours lost to manual work, and build what removes them. The same team works for companies outside the group.",
+  tjenester: [
+    {
+      navn: "Efficiency and automation",
+      tekst:
+        "Quoting, invoicing, reporting and follow-up that run by themselves instead of by hand. We map where the hours go and remove them one by one.",
+    },
+    {
+      navn: "New websites",
+      tekst:
+        "Fast websites and web shops that are found on Google and in AI answers, and that turn visitors into enquiries and orders.",
+    },
+    {
+      navn: "Internal tools",
+      tekst:
+        "Order systems, planning boards, customer portals and dashboards built around how the company actually works, not the other way round.",
+    },
+    {
+      navn: "Integrations",
+      tekst:
+        "Accounting, CRM, web shop, suppliers and payment connected, so the same number is never typed twice.",
+    },
+    {
+      navn: "AI automation",
+      tekst:
+        "AI that sorts email, drafts quotes, answers customers and reads documents, with a person checking where it matters.",
+    },
+    {
+      navn: "IT and digital operations",
+      tekst:
+        "Hosting, domains, email, backups, security and accounts looked after, with one person to call when something stops working.",
+    },
+  ],
+  lenke: { tekst: "See what Crest Software does", href: "/crest-software" },
+};
 
 export const kriterier = {
   tittel: "What we look for",
