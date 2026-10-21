@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AltivLogo, OystrLogo } from "@/components/BrandLogos";
 import { selskap } from "@/lib/selskap";
 import {
   avdelinger,
@@ -23,6 +24,33 @@ import { BRODTEKST, HoldingBunn, KNAPP, Lockup, MERKELAPP, OVERSKRIFT, WRAP } fr
 //
 // The page is in English while the rest of the site is Norwegian, so the
 // wrapper carries lang="en" — the root layout still declares nb.
+
+// The businesses' own logos, as they use them on their own sites. HEL's is the
+// lockup the dealer site uses: the oval with "Performance Norge" beside it.
+function BedriftLogo({ logo }: { logo: "hel" | "altiv" | "oystr" }) {
+  if (logo === "altiv") return <AltivLogo size={36} />;
+  if (logo === "oystr") return <OystrLogo size={32} />;
+  return (
+    <span aria-hidden="true" style={{ display: "flex", alignItems: "center", gap: 12 }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/logo/hel-logo.png" alt="" width={505} height={245} style={{ display: "block", height: 42, width: "auto" }} />
+      <span
+        style={{
+          fontFamily: "var(--font-archivo), sans-serif",
+          fontWeight: 900,
+          fontSize: 16,
+          letterSpacing: ".06em",
+          lineHeight: 1.1,
+          textTransform: "uppercase",
+        }}
+      >
+        Performance
+        <br />
+        Norge
+      </span>
+    </span>
+  );
+}
 
 export default function HoldingSide() {
   return (
@@ -233,16 +261,8 @@ export default function HoldingSide() {
               }}
             >
               {v.rolle && <div style={{ ...MERKELAPP, fontSize: 11 }}>{v.rolle}</div>}
-              <h3
-                style={{
-                  fontFamily: "var(--font-garamond), Georgia, serif",
-                  fontWeight: 600,
-                  fontSize: 30,
-                  margin: 0,
-                  color: "var(--ink)",
-                }}
-              >
-                {v.navn}
+              <h3 aria-label={v.navn} style={{ margin: 0, minHeight: 46, display: "flex", alignItems: "center", color: "var(--ink)" }}>
+                <BedriftLogo logo={v.logo} />
               </h3>
               <p style={{ ...BRODTEKST, fontSize: 16, margin: 0, flex: 1 }}>{v.tekst}</p>
               {v.merknad && (
