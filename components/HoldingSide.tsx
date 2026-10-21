@@ -2,7 +2,6 @@ import Link from "next/link";
 import { selskap } from "@/lib/selskap";
 import {
   avdelinger,
-  bunntekst,
   foto,
   hero,
   kontakt,
@@ -11,6 +10,7 @@ import {
   omOss,
   prinsipper,
 } from "@/lib/holding";
+import { BRODTEKST, HoldingBunn, KNAPP, Lockup, MERKELAPP, OVERSKRIFT, WRAP } from "@/components/holding-stil";
 
 // The holding company's front page.
 //
@@ -21,79 +21,6 @@ import {
 //
 // The page is in English while the rest of the site is Norwegian, so the
 // wrapper carries lang="en" — the root layout still declares nb.
-
-const WRAP = {
-  maxWidth: 1240,
-  margin: "0 auto",
-  padding: "0 48px",
-  boxSizing: "border-box" as const,
-};
-
-const MERKELAPP = {
-  fontFamily: "var(--font-archivo), sans-serif",
-  fontSize: 12,
-  fontWeight: 600,
-  letterSpacing: ".26em",
-  textTransform: "uppercase" as const,
-  color: "var(--accent)",
-};
-
-const OVERSKRIFT = {
-  fontFamily: "var(--font-garamond), Georgia, serif",
-  fontWeight: 600,
-  fontSize: "clamp(34px, 4.4vw, 60px)",
-  lineHeight: 1.08,
-  letterSpacing: "-.01em",
-  margin: 0,
-  color: "var(--ink)",
-};
-
-const BRODTEKST = {
-  color: "rgba(var(--ink-rgb),.72)",
-  fontSize: 17,
-  lineHeight: 1.75,
-};
-
-const KNAPP = {
-  display: "inline-block",
-  padding: "17px 38px",
-  fontWeight: 600,
-  fontSize: 15,
-  borderRadius: 999,
-};
-
-function Lockup() {
-  return (
-    <span
-      className="logo-lockup"
-      style={{
-        display: "flex",
-        alignItems: "baseline",
-        gap: 10,
-        fontFamily: "var(--font-garamond), Georgia, serif",
-        fontWeight: 700,
-        fontSize: 19,
-        letterSpacing: ".2em",
-        whiteSpace: "nowrap",
-        color: "var(--ink)",
-      }}
-    >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/logo/crest-symbol-mork.png"
-        alt=""
-        aria-hidden="true"
-        width={869}
-        height={662}
-        style={{ height: 17, width: "auto", display: "block" }}
-      />
-      <span>
-        CREST HOLDING
-        <span style={{ color: "var(--accent)", fontSize: "0.58em", verticalAlign: "0.42em", letterSpacing: 0 }}>®</span>
-      </span>
-    </span>
-  );
-}
 
 export default function HoldingSide() {
   return (
@@ -134,6 +61,9 @@ export default function HoldingSide() {
           <a href="#departments" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
             {meny.avdelinger}
           </a>
+          <Link href="/investors" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
+            {meny.investorer}
+          </Link>
           <a
             href="#contact"
             className="hov-fill"
@@ -395,52 +325,7 @@ export default function HoldingSide() {
         </div>
       </section>
 
-      <footer className="hfoot" style={{ borderTop: "1px solid rgba(var(--ink-rgb),.1)", padding: "40px 0 54px" }}>
-        <div
-          style={{
-            ...WRAP,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: 20,
-            flexWrap: "wrap",
-          }}
-        >
-          <div style={{ display: "flex", gap: 26, flexWrap: "wrap", fontSize: 14 }}>
-            {bunntekst.lenker.map((l) =>
-              l.ekstern ? (
-                <a
-                  key={l.navn}
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener"
-                  className="hov-link"
-                  style={{ color: "rgba(var(--ink-rgb),.6)" }}
-                >
-                  {l.navn}
-                </a>
-              ) : (
-                <Link key={l.navn} href={l.href} className="hov-link" style={{ color: "rgba(var(--ink-rgb),.6)" }}>
-                  {l.navn}
-                </Link>
-              )
-            )}
-          </div>
-          <span style={{ color: "rgba(var(--ink-rgb),.4)", fontSize: 13 }}>{bunntekst.linje}</span>
-        </div>
-        <p
-          style={{
-            ...WRAP,
-            margin: "26px auto 0",
-            fontSize: 12.5,
-            lineHeight: 1.7,
-            color: "rgba(var(--ink-rgb),.38)",
-            maxWidth: 1240,
-          }}
-        >
-          {bunntekst.juridisk} {bunntekst.norskeSider}
-        </p>
-      </footer>
+      <HoldingBunn />
     </div>
   );
 }

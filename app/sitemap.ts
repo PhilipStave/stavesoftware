@@ -13,6 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${selskap.url}/investors`,
+      lastModified: new Date("2026-10-21"),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
       url: `${selskap.url}/crest-software`,
       lastModified: new Date(TJENESTESIDER_OPPDATERT),
       changeFrequency: "monthly" as const,

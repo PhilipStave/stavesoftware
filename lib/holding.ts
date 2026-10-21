@@ -44,6 +44,7 @@ export const hero = {
 export const meny = {
   slikJobberVi: "What we do",
   avdelinger: "Departments",
+  investorer: "Investors",
   kontakt: "Contact",
   hjem: `${selskap.fulltNavn} — home`,
 };
@@ -148,6 +149,7 @@ export const kontakt = {
 
 export const bunntekst = {
   lenker: [
+    { navn: "For investors", href: "/investors", ekstern: false },
     { navn: "Crest Software", href: "/crest-software", ekstern: false },
     { navn: "Journal", href: "/blogg", ekstern: false },
     { navn: "Terms", href: "/vilkar", ekstern: false },
