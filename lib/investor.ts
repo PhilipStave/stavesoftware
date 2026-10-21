@@ -53,7 +53,6 @@ export const investor = {
       { merkelapp: "Legal name", verdi: selskap.fulltNavn },
       { merkelapp: "Company number", verdi: selskap.orgnr },
       { merkelapp: "Registered office", verdi: "Oslo, Norway" },
-      { merkelapp: "Outside investors", verdi: "None today" },
     ],
     avsnitt: [
       `Everything sits inside ${selskap.fulltNavn} today — the businesses are not separate limited companies. The accounts are filed and public, so anyone can read them in the Norwegian Register of Business Enterprises before the first meeting.`,

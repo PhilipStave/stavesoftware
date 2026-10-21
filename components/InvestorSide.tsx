@@ -175,7 +175,7 @@ export default function InvestorSide() {
           className="hfakta"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
+            gridTemplateColumns: `repeat(${investor.selskapet.fakta.length}, 1fr)`,
             gap: 30,
             margin: "0 0 44px",
             borderTop: "1px solid rgba(var(--ink-rgb),.14)",
