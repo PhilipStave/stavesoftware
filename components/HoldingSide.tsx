@@ -9,6 +9,8 @@ import {
   meny,
   omOss,
   prinsipper,
+  virksomheter,
+  virksomhetene,
 } from "@/lib/holding";
 import { BRODTEKST, HoldingBunn, KNAPP, Lockup, MERKELAPP, OVERSKRIFT, WRAP } from "@/components/holding-stil";
 
@@ -57,6 +59,9 @@ export default function HoldingSide() {
         >
           <a href="#what-we-do" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
             {meny.slikJobberVi}
+          </a>
+          <a href="#businesses" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
+            {meny.virksomheter}
           </a>
           <a href="#departments" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
             {meny.avdelinger}
@@ -202,6 +207,57 @@ export default function HoldingSide() {
               </h3>
               <p style={{ ...BRODTEKST, fontSize: 16, margin: 0 }}>{p.tekst}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="businesses" className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
+        <div style={{ ...MERKELAPP, marginBottom: 18 }}>{virksomhetene.merkelapp}</div>
+        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{virksomhetene.tittel}</h2>
+        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 54px", maxWidth: 720 }}>{virksomhetene.ingress}</p>
+        <div
+          className="hgrid3"
+          style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridAutoRows: "1fr", gap: 26 }}
+        >
+          {virksomheter.map((v) => (
+            <article
+              key={v.navn}
+              style={{
+                background: "var(--surface)",
+                border: "1px solid var(--line)",
+                borderRadius: 10,
+                padding: "34px 32px",
+                display: "flex",
+                flexDirection: "column",
+                gap: 14,
+              }}
+            >
+              <div style={{ ...MERKELAPP, fontSize: 11 }}>{v.rolle}</div>
+              <h3
+                style={{
+                  fontFamily: "var(--font-garamond), Georgia, serif",
+                  fontWeight: 600,
+                  fontSize: 30,
+                  margin: 0,
+                  color: "var(--ink)",
+                }}
+              >
+                {v.navn}
+              </h3>
+              <p style={{ ...BRODTEKST, fontSize: 16, margin: 0, flex: 1 }}>{v.tekst}</p>
+              {v.merknad && (
+                <p style={{ margin: 0, fontSize: 14, color: "rgba(var(--ink-rgb),.55)" }}>{v.merknad}</p>
+              )}
+              <a
+                href={v.href}
+                target="_blank"
+                rel="noopener"
+                className="hov-link"
+                style={{ alignSelf: "flex-start", color: "var(--accent)", fontWeight: 600, fontSize: 15 }}
+              >
+                {v.lenketekst} ↗
+              </a>
+            </article>
           ))}
         </div>
       </section>

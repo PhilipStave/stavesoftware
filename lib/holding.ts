@@ -14,7 +14,9 @@
 //    a reader who checks the register.
 //  - Everything is inside Crest Holding AS today, so "businesses", not
 //    "portfolio companies", unless a company really is a separate AS.
-//  - No list of what we own on the front page (removed 21 October 2026).
+//  - Businesses are listed on the front page again (21 October 2026), but
+//    only the ones we actually own and run. Crest Software is a department
+//    and belongs in the departments section, not among them.
 
 import { selskap } from "./selskap";
 
@@ -43,6 +45,7 @@ export const hero = {
 
 export const meny = {
   slikJobberVi: "What we do",
+  virksomheter: "Businesses",
   avdelinger: "Departments",
   investorer: "Investors",
   kontakt: "Contact",
@@ -84,6 +87,53 @@ export const prinsipper = {
 // Crest Software is a department inside Crest Holding AS, not a business we
 // own on the side: it is one of the ways the group makes companies grow. The
 // same people also take work for companies outside the group.
+export type Virksomhet = {
+  navn: string;
+  rolle: string;
+  tekst: string;
+  href: string;
+  lenketekst: string;
+  merknad?: string;
+};
+
+// Teksten om HEL beskriver bare det nettsiden selv sier: offisiell
+// HEL-forhandler i Norge. Ingen påstand om at vi eier merket HEL — det lages
+// i England.
+export const virksomheter: Virksomhet[] = [
+  {
+    navn: "HEL Performance Norge",
+    rolle: "E-commerce · Motorcycle brakes",
+    tekst:
+      "Official Norwegian dealer for HEL, the English maker of braided brake lines and calipers used in British Superbike. Lines are built to order, in any length, for most motorcycles.",
+    href: "https://helperformance.no",
+    lenketekst: "helperformance.no",
+  },
+  {
+    navn: "Altiv",
+    rolle: "SaaS · CRM for sales",
+    tekst:
+      "Norwegian CRM for B2B sales follow-up. Pipeline across departments, automatic email logging, follow-ups in the calendar, and revenue and margin per salesperson.",
+    href: "https://altiv.no",
+    lenketekst: "altiv.no",
+  },
+  {
+    navn: "Oystr",
+    rolle: "App · Sea charts",
+    tekst:
+      "Sea charts and navigation for leisure boats along the Norwegian coast. Offline charts, routing around land and shallows, AIS, tide and weather.",
+    href: "https://oystr.no",
+    lenketekst: "oystr.no",
+    merknad: "Built and operated together with Embretr.",
+  },
+];
+
+export const virksomhetene = {
+  merkelapp: `Owned and operated by ${selskap.fulltNavn}`,
+  tittel: "Our businesses",
+  ingress:
+    "They are not separate limited companies — everything sits inside Crest Holding AS. The departments work inside them the same way they work inside anything we buy.",
+};
+
 export const avdelinger = {
   merkelapp: "Departments of Crest Holding",
   tittel: "The departments",
