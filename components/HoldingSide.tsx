@@ -232,7 +232,7 @@ export default function HoldingSide() {
                 gap: 14,
               }}
             >
-              <div style={{ ...MERKELAPP, fontSize: 11 }}>{v.rolle}</div>
+              {v.rolle && <div style={{ ...MERKELAPP, fontSize: 11 }}>{v.rolle}</div>}
               <h3
                 style={{
                   fontFamily: "var(--font-garamond), Georgia, serif",

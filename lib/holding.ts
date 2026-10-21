@@ -89,7 +89,7 @@ export const prinsipper = {
 // same people also take work for companies outside the group.
 export type Virksomhet = {
   navn: string;
-  rolle: string;
+  rolle?: string;
   tekst: string;
   href: string;
   lenketekst: string;
@@ -102,7 +102,6 @@ export type Virksomhet = {
 export const virksomheter: Virksomhet[] = [
   {
     navn: "HEL Performance Norge",
-    rolle: "Motorcycle brakes",
     tekst:
       "Official Norwegian dealer for HEL, the English maker of braided brake lines and calipers used in British Superbike. Lines are built to order, in any length, for most motorcycles.",
     href: "https://helperformance.no",
