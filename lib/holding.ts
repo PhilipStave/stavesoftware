@@ -102,7 +102,7 @@ export type Virksomhet = {
 export const virksomheter: Virksomhet[] = [
   {
     navn: "HEL Performance Norge",
-    rolle: "E-commerce · Motorcycle brakes",
+    rolle: "Motorcycle brakes",
     tekst:
       "Official Norwegian dealer for HEL, the English maker of braided brake lines and calipers used in British Superbike. Lines are built to order, in any length, for most motorcycles.",
     href: "https://helperformance.no",

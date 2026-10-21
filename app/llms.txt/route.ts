@@ -24,7 +24,7 @@ export function GET() {
     "## Virksomheter",
     "",
     `- [Crest Software](${selskap.url}/crest-software): Nettsider og apper for bedrifter, driftet videre med én fast kontaktperson.`,
-    "- [HEL Performance Norge](https://helperformance.no): Nettbutikk og offisiell norsk forhandler av HEL-bremseslanger og kalipere til motorsykkel.",
+    "- [HEL Performance Norge](https://helperformance.no): Offisiell norsk forhandler av HEL-bremseslanger og kalipere til motorsykkel.",
     "- [Altiv](https://altiv.no): Norsk CRM for salgsoppfølging i B2B.",
     "- [Oystr](https://oystr.no): Sjøkart og navigasjon for fritidsbåt langs norskekysten, for iPhone. Utviklet og driftet sammen med Embretr.",
     "",
