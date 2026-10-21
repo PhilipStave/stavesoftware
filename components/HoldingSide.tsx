@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { selskap } from "@/lib/selskap";
 import {
-  andreAvdelinger,
-  avdeling,
+  avdelinger,
   bunntekst,
   foto,
   hero,
@@ -132,8 +131,8 @@ export default function HoldingSide() {
           <a href="#what-we-do" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
             {meny.slikJobberVi}
           </a>
-          <a href="#crest-software" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
-            {meny.avdeling}
+          <a href="#departments" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
+            {meny.avdelinger}
           </a>
           <a
             href="#contact"
@@ -277,70 +276,51 @@ export default function HoldingSide() {
         </div>
       </section>
 
-      <section id="crest-software" className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
-        <div style={{ ...MERKELAPP, marginBottom: 18 }}>{avdeling.merkelapp}</div>
-        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{avdeling.tittel}</h2>
-        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 54px", maxWidth: 720 }}>{avdeling.ingress}</p>
-        <div className="hgrid3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 26 }}>
-          {avdeling.tjenester.map((t) => (
+      <section id="departments" className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
+        <div style={{ ...MERKELAPP, marginBottom: 18 }}>{avdelinger.merkelapp}</div>
+        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{avdelinger.tittel}</h2>
+        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 54px", maxWidth: 720 }}>{avdelinger.ingress}</p>
+        <div
+          className="hgrid2"
+          style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gridAutoRows: "1fr", gap: 26 }}
+        >
+          {avdelinger.punkter.map((a) => (
             <article
-              key={t.navn}
+              key={a.navn}
               style={{
                 background: "var(--surface)",
                 border: "1px solid var(--line)",
                 borderRadius: 10,
-                padding: "32px 30px",
+                padding: "34px 32px",
+                display: "flex",
+                flexDirection: "column",
+                gap: 14,
               }}
             >
+              <div style={{ ...MERKELAPP, fontSize: 11 }}>{a.rolle}</div>
               <h3
                 style={{
                   fontFamily: "var(--font-garamond), Georgia, serif",
                   fontWeight: 600,
-                  fontSize: 26,
-                  margin: "0 0 12px",
-                  color: "var(--ink)",
-                }}
-              >
-                {t.navn}
-              </h3>
-              <p style={{ ...BRODTEKST, fontSize: 16, margin: 0 }}>{t.tekst}</p>
-            </article>
-          ))}
-        </div>
-        <Link
-          href={avdeling.lenke.href}
-          className="btn-hvit"
-          style={{ display: "inline-block", marginTop: 40, padding: "13px 28px", borderRadius: 999, fontWeight: 600, fontSize: 15 }}
-        >
-          {avdeling.lenke.tekst} →
-        </Link>
-      </section>
-
-      <section className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
-        <div
-          className="hsplit"
-          style={{ display: "grid", gridTemplateColumns: "minmax(220px, 340px) 1fr", gap: 60, alignItems: "start", marginBottom: 50 }}
-        >
-          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{andreAvdelinger.tittel}</h2>
-          <p style={{ ...BRODTEKST, fontSize: 18, margin: 0, maxWidth: 680 }}>{andreAvdelinger.ingress}</p>
-        </div>
-        <div className="hgrid3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 36 }}>
-          {andreAvdelinger.punkter.map((a) => (
-            <div key={a.navn} style={{ borderTop: "1px solid rgba(var(--ink-rgb),.2)", paddingTop: 24 }}>
-              <div style={{ ...MERKELAPP, fontSize: 11, marginBottom: 12 }}>{a.rolle}</div>
-              <h3
-                style={{
-                  fontFamily: "var(--font-garamond), Georgia, serif",
-                  fontWeight: 600,
-                  fontSize: 28,
-                  margin: "0 0 12px",
+                  fontSize: 30,
+                  margin: 0,
                   color: "var(--ink)",
                 }}
               >
                 {a.navn}
               </h3>
-              <p style={{ ...BRODTEKST, fontSize: 16, margin: 0 }}>{a.tekst}</p>
-            </div>
+              <p style={{ ...BRODTEKST, fontSize: 16, margin: 0, flex: 1 }}>{a.tekst}</p>
+              <p style={{ margin: 0, fontSize: 14, color: "rgba(var(--ink-rgb),.55)" }}>{a.stikkord.join(" · ")}</p>
+              {a.href && (
+                <Link
+                  href={a.href}
+                  className="hov-link"
+                  style={{ alignSelf: "flex-start", color: "var(--accent)", fontWeight: 600, fontSize: 15 }}
+                >
+                  {a.lenketekst} →
+                </Link>
+              )}
+            </article>
           ))}
         </div>
       </section>

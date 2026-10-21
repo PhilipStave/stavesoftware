@@ -43,7 +43,7 @@ export const hero = {
 
 export const meny = {
   slikJobberVi: "What we do",
-  avdeling: "Crest Software",
+  avdelinger: "Departments",
   kontakt: "Contact",
   hjem: `${selskap.fulltNavn} — home`,
 };
@@ -83,68 +83,41 @@ export const prinsipper = {
 // Crest Software is a department inside Crest Holding AS, not a business we
 // own on the side: it is one of the ways the group makes companies grow. The
 // same people also take work for companies outside the group.
-export const avdeling = {
-  merkelapp: "A department of Crest Holding",
-  tittel: "Crest Software",
+export const avdelinger = {
+  merkelapp: "Departments of Crest Holding",
+  tittel: "The departments",
   ingress:
-    "Crest Software is the department that handles the software side of a business. It is one of the main ways we make companies grow: we go in, find the hours lost to manual work, and build what removes them. The same team works for companies outside the group.",
-  tjenester: [
-    {
-      navn: "Efficiency and automation",
-      tekst:
-        "Quoting, invoicing, reporting and follow-up that run by themselves instead of by hand. We map where the hours go and remove them one by one.",
-    },
-    {
-      navn: "New websites",
-      tekst:
-        "Fast websites and web shops that are found on Google and in AI answers, and that turn visitors into enquiries and orders.",
-    },
-    {
-      navn: "Internal tools",
-      tekst:
-        "Order systems, planning boards, customer portals and dashboards built around how the company actually works, not the other way round.",
-    },
-    {
-      navn: "Integrations",
-      tekst:
-        "Accounting, CRM, web shop, suppliers and payment connected, so the same number is never typed twice.",
-    },
-    {
-      navn: "AI automation",
-      tekst:
-        "AI that sorts email, drafts quotes, answers customers and reads documents, with a person checking where it matters.",
-    },
-    {
-      navn: "IT and digital operations",
-      tekst:
-        "Hosting, domains, email, backups, security and accounts looked after, with one person to call when something stops working.",
-    },
-  ],
-  lenke: { tekst: "See what Crest Software does", href: "/crest-software" },
-};
-
-export const andreAvdelinger = {
-  tittel: "The other departments",
-  ingress:
-    "Three more functions the group runs for the companies it owns, for the same reason as the software: they cost less done once than done in every company.",
+    "Four functions the group runs for the companies it owns — and for customers outside it. They cost less done once than done inside every company.",
   punkter: [
+    {
+      navn: "Crest Software",
+      rolle: "Builds the systems",
+      tekst:
+        "Goes in, finds the hours lost to manual work, and builds what removes them: quoting and invoicing that run by themselves, internal tools, integrations and websites that are found on Google and in AI answers.",
+      stikkord: ["Automation", "Websites", "Internal tools", "Integrations", "AI", "IT operations"],
+      href: "/crest-software",
+      lenketekst: "See what Crest Software does",
+    },
     {
       navn: "Crest Commerce",
       rolle: "Brings brands to Norway",
       tekst:
         "Takes a brand with no Norwegian dealer, builds the shop, runs the advertising and ships the goods. HEL Performance Norge is the first one.",
+      stikkord: ["Agencies", "Web shop", "Advertising", "Logistics"],
     },
     {
       navn: "Crest Services",
       rolle: "Runs the back office",
       tekst:
         "Accounting, invoicing, purchasing agreements and systems — done once for the group instead of once inside every company.",
+      stikkord: ["Accounting", "Invoicing", "Purchasing", "Systems"],
     },
     {
       navn: "Crest Growth",
       rolle: "Finds the customers",
       tekst:
         "Pricing, sales follow-up and being found: search, AI answers and the CRM the companies sell from. Most of what we buy has never done any of it.",
+      stikkord: ["Pricing", "Search", "AI answers", "CRM"],
     },
   ],
 };
