@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     description: beskrivelse,
     url: `${selskap.url}/verdivurdering`,
     locale: "nb_NO",
-    images: [{ url: "/og-holding.jpg?v=2", width: 1200, height: 630, alt: "Verdivurdering av bedrift" }],
+    images: [{ url: "/og/verdivurdering.jpg?v=1", width: 1200, height: 630, alt: "Verdivurdering av bedrift" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Hva er bedriften verdt?",
     description: beskrivelse,
-    images: ["/og-holding.jpg?v=2"],
+    images: ["/og/verdivurdering.jpg?v=1"],
   },
 };
 

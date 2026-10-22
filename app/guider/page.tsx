@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: beskrivelse,
     url: `${selskap.url}/guider`,
     locale: "nb_NO",
-    images: [{ url: "/og-holding.jpg?v=2", width: 1200, height: 630, alt: "Guider om salg av bedrift" }],
+    images: [{ url: "/og/guider.jpg?v=1", width: 1200, height: 630, alt: "Guider om salg av bedrift" }],
   },
 };
 

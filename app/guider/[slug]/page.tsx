@@ -14,6 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const guide = finnGuide(slug);
   if (!guide) return {};
   const url = `${selskap.url}/guider/${guide.slug}`;
+  const bilde = `/og/guide-${guide.slug}.jpg?v=1`;
   return {
     title: `${guide.tittel} — ${selskap.navn}`,
     description: guide.metaBeskrivelse,
@@ -25,13 +26,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: guide.metaBeskrivelse,
       url,
       locale: "nb_NO",
-      images: [{ url: "/og-holding.jpg?v=2", width: 1200, height: 630, alt: guide.tittel }],
+      images: [{ url: bilde, width: 1200, height: 630, alt: guide.tittel }],
     },
     twitter: {
       card: "summary_large_image",
       title: guide.tittel,
       description: guide.metaBeskrivelse,
-      images: ["/og-holding.jpg?v=2"],
+      images: [bilde],
     },
   };
 }
