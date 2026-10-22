@@ -2,7 +2,8 @@ import Link from "next/link";
 import { avdelinger, kontakt, meny } from "@/lib/holding";
 import { investor } from "@/lib/investor";
 import { selskap } from "@/lib/selskap";
-import { BRODTEKST, HoldingBunn, KNAPP, Lockup, MERKELAPP, OVERSKRIFT, WRAP } from "@/components/holding-stil";
+import { BRODTEKST, HoldingBunn, KNAPP, MERKELAPP, OVERSKRIFT, WRAP } from "@/components/holding-stil";
+import HoldingNav from "@/components/HoldingNav";
 
 // Investorsiden. Samme lyse tema og samme typografi som forsiden, men uten
 // bilde: toppen er ren tekst, fordi en side som ber om penger ikke skal
@@ -15,54 +16,17 @@ import { BRODTEKST, HoldingBunn, KNAPP, Lockup, MERKELAPP, OVERSKRIFT, WRAP } fr
 export default function InvestorSide() {
   return (
     <div lang="en" className="lys" style={{ minHeight: "100vh" }}>
-      <nav
-        className="hnav"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 20,
-          padding: "26px 48px",
-          borderBottom: "1px solid rgba(var(--ink-rgb),.1)",
-        }}
-      >
-        <Link href="/" aria-label={meny.hjem}>
-          <Lockup />
-        </Link>
-        <div
-          className="hnav-lenker"
-          style={{
-            display: "flex",
-            gap: 34,
-            alignItems: "center",
-            fontSize: 13,
-            letterSpacing: ".14em",
-            textTransform: "uppercase",
-          }}
-        >
-          <Link href="/#what-we-do" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
-            {meny.slikJobberVi}
-          </Link>
-          <Link href="/#departments" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
-            {meny.avdelinger}
-          </Link>
-          <a
-            href="#contact"
-            className="hov-fill"
-            style={{
-              padding: "12px 26px",
-              border: "1px solid rgba(var(--ink-rgb),.35)",
-              borderRadius: 999,
-              color: "var(--ink)",
-              letterSpacing: ".1em",
-            }}
-          >
-            {meny.kontakt}
-          </a>
-        </div>
-      </nav>
+      <HoldingNav
+        hjem={meny.hjem}
+        lenker={[
+          { navn: meny.slikJobberVi, href: "/#what-we-do" },
+          { navn: meny.virksomheter, href: "/#businesses" },
+          { navn: meny.avdelinger, href: "/#departments" },
+        ]}
+        knapp={{ navn: meny.kontakt, href: "#contact" }}
+      />
 
-      <header className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
+      <header className="hsek" style={{ ...WRAP, padding: "150px 48px 0" }}>
         <div style={{ ...MERKELAPP, marginBottom: 26 }}>{investor.overtittel}</div>
         <h1
           style={{

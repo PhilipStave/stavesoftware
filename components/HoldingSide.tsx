@@ -13,7 +13,8 @@ import {
   virksomheter,
   virksomhetene,
 } from "@/lib/holding";
-import { BRODTEKST, HoldingBunn, KNAPP, Lockup, MERKELAPP, OVERSKRIFT, WRAP } from "@/components/holding-stil";
+import { BRODTEKST, HoldingBunn, KNAPP, MERKELAPP, OVERSKRIFT, WRAP } from "@/components/holding-stil";
+import HoldingNav from "@/components/HoldingNav";
 
 // The holding company's front page.
 //
@@ -55,63 +56,17 @@ function BedriftLogo({ logo }: { logo: "hel" | "altiv" | "oystr" }) {
 export default function HoldingSide() {
   return (
     <div lang="en" className="lys" style={{ minHeight: "100vh" }}>
-      <nav
-        className="hnav"
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 10,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 20,
-          padding: "26px 48px",
-          background: "linear-gradient(180deg, rgba(var(--ground-rgb),.75), rgba(var(--ground-rgb),0))",
-        }}
-      >
-        <Link href="/" aria-label={meny.hjem}>
-          <Lockup />
-        </Link>
-        <div
-          className="hnav-lenker"
-          style={{
-            display: "flex",
-            gap: 34,
-            alignItems: "center",
-            fontSize: 13,
-            letterSpacing: ".14em",
-            textTransform: "uppercase",
-          }}
-        >
-          <a href="#what-we-do" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
-            {meny.slikJobberVi}
-          </a>
-          <a href="#businesses" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
-            {meny.virksomheter}
-          </a>
-          <a href="#departments" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
-            {meny.avdelinger}
-          </a>
-          <Link href="/investors" className="hov-nl" style={{ color: "rgba(var(--ink-rgb),.75)" }}>
-            {meny.investorer}
-          </Link>
-          <a
-            href="#contact"
-            className="hov-fill"
-            style={{
-              padding: "12px 26px",
-              border: "1px solid rgba(var(--ink-rgb),.35)",
-              borderRadius: 999,
-              color: "var(--ink)",
-              letterSpacing: ".1em",
-            }}
-          >
-            {meny.kontakt}
-          </a>
-        </div>
-      </nav>
+      <HoldingNav
+        hjem={meny.hjem}
+        overBilde
+        lenker={[
+          { navn: meny.slikJobberVi, href: "#what-we-do" },
+          { navn: meny.virksomheter, href: "#businesses" },
+          { navn: meny.avdelinger, href: "#departments" },
+          { navn: meny.investorer, href: "/investors" },
+        ]}
+        knapp={{ navn: meny.kontakt, href: "#contact" }}
+      />
 
       <header
         className="hhero"
