@@ -165,7 +165,7 @@ export const avdelinger = {
       rolle: "Runs the back office",
       tekst:
         "Accounting, invoicing, purchasing and the paperwork that follows owning companies: contracts, filings and the agreements that decide what happens at a change of ownership. Done once for the group instead of once inside every company.",
-      stikkord: ["Accounting", "Invoicing", "Purchasing", "Contracts", "Compliance"],
+      stikkord: ["Accounting", "Invoicing", "Purchasing", "Legal", "Compliance"],
     },
     {
       navn: "Crest Growth",
