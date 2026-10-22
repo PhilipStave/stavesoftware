@@ -5,6 +5,7 @@ import Link from "next/link";
 import { BRODTEKST, MERKELAPP, OVERSKRIFT, WRAP } from "@/components/holding-stil";
 import { kr, mill, pst, rensOrgnr, vurder, type Selskapstall, type Vurdering } from "@/lib/verdi";
 import { guider } from "@/lib/guider";
+import { kontakt } from "@/lib/holding";
 
 // Verdivurderingen. Du skriver inn navn eller organisasjonsnummer, vi henter
 // de tre siste innsendte årsregnskapene fra Brønnøysund og viser et spenn.
@@ -437,7 +438,7 @@ function Resultat({ tall, svar }: { tall: Selskapstall; svar: Vurdering }) {
 
         <div style={{ marginTop: 36, display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center" }}>
           <a
-            href={`mailto:philipstave@crestholding.no?subject=${emne}&body=${brodtekst}`}
+            href={`mailto:${kontakt.adresser.join(",")}?subject=${emne}&body=${brodtekst}`}
             className="hov-fill"
             style={{
               display: "inline-block",
