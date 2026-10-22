@@ -3,6 +3,7 @@ import { Archivo, Cormorant_Garamond, Instrument_Serif, Michroma, Space_Grotesk 
 import "./globals.css";
 import { selskap, NAVN_REGISTRERT } from "@/lib/selskap";
 import { tjenesteSider } from "@/lib/tjenestesider";
+import Rullefelt from "@/components/Rullefelt";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -158,6 +159,7 @@ export default function RootLayout({
     >
       <body>
         {children}
+        <Rullefelt />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

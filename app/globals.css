@@ -65,6 +65,20 @@ html { scroll-behavior: smooth; }
    ned du er. Gjelder også panelene, som har sin egen rulling. */
 html { scrollbar-width: none; -ms-overflow-style: none; }
 html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
+/* ...og erstattes av vårt eget langs høyre kant, tegnet av components/
+   Rullefelt.tsx. Samme mål og farger som på helperformance.no. Sporet tar
+   ikke mot klikk, bare tommelen gjør det. */
+.rullefelt { position: fixed; top: 4px; right: calc(3px + env(safe-area-inset-right, 0px)); bottom: 4px; width: 10px; z-index: 90; pointer-events: none; }
+.rullefelt-tommel {
+  position: absolute; top: 0; right: 0;
+  width: 7px; min-height: 36px; border-radius: 8px;
+  background: rgba(120,126,135,.5);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.18);
+  pointer-events: auto; cursor: default; will-change: transform;
+  transition: width .15s, background-color .15s;
+}
+.rullefelt-tommel:hover, .rullefelt.drar .rullefelt-tommel { width: 10px; background: rgba(120,126,135,.8); }
+.rullefelt[hidden] { display: none; }
 #techoverlay, #serviceoverlay { scrollbar-width: none; }
 #techoverlay::-webkit-scrollbar, #serviceoverlay::-webkit-scrollbar { width: 0; height: 0; display: none; }
 body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--font-grotesk), 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
