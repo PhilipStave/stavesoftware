@@ -432,11 +432,29 @@ export default function InvestorSide() {
             alignItems: "start",
           }}
         >
-          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{investor.kontakt.tittel}</h2>
           <div>
-            <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 30px", maxWidth: 620 }}>{investor.kontakt.tekst}</p>
+            <div style={{ ...MERKELAPP, marginBottom: 16 }}>{investor.kontakt.merkelapp}</div>
+            <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{investor.kontakt.tittel}</h2>
+          </div>
+          <div>
+            <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 26px", maxWidth: 620 }}>{investor.kontakt.tekst}</p>
+            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 30px" }}>
+              {investor.kontakt.punkter.map((p) => (
+                <li
+                  key={p}
+                  style={{ position: "relative", paddingLeft: 30, marginBottom: 14, ...BRODTEKST, fontSize: 17, maxWidth: 640 }}
+                >
+                  <span
+                    aria-hidden="true"
+                    style={{ position: "absolute", left: 0, top: "0.78em", width: 14, height: 1, background: "var(--accent)" }}
+                  ></span>
+                  {p}
+                </li>
+              ))}
+            </ul>
+            <p style={{ ...BRODTEKST, fontSize: 17, margin: "0 0 30px", maxWidth: 620 }}>{investor.kontakt.sporsmaal}</p>
             <a
-              href={`mailto:${selskap.epost}`}
+              href={`mailto:${selskap.epost}?subject=${encodeURIComponent(`Investor — ${selskap.fulltNavn}`)}`}
               className="hov-fill"
               style={{ ...KNAPP, padding: "18px 40px", background: "var(--ink)", color: "var(--ground)", fontSize: 16 }}
             >

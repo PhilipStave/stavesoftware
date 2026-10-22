@@ -175,10 +175,18 @@ export const investor = {
   },
 
   kontakt: {
-    tittel: "Talk to us",
+    merkelapp: "Invest with us",
+    tittel: "Come in on the next purchase",
     tekst:
-      "Both addresses below reach a person, not a form. Tell us who you are, what kind of exposure you are looking for, and roughly what you would put to work.",
-    knapp: "Write to us",
+      "We speak with a small number of people who want to own Norwegian companies that already make money, and who are in no hurry to sell them again.",
+    punkter: [
+      "You see the company, the accounts and the price before anything is decided. Nothing goes into a blind pool.",
+      "We operate it afterwards. The departments do the work, and you do not end up with a second job.",
+      "The return is the annual profit from companies we keep. A sale can happen, but nothing in the model depends on one.",
+    ],
+    sporsmaal:
+      "Write one line about who you are and roughly what you would put to work. You get the figures the same week — and the next one we are looking at when there is one.",
+    knapp: "Invest with us",
   },
 
   forbehold:

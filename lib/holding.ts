@@ -164,8 +164,8 @@ export const avdelinger = {
       navn: "Crest Services",
       rolle: "Runs the back office",
       tekst:
-        "Accounting, invoicing, purchasing agreements and systems — done once for the group instead of once inside every company.",
-      stikkord: ["Accounting", "Invoicing", "Purchasing", "Systems"],
+        "Accounting, invoicing, purchasing and the paperwork that follows owning companies: contracts, filings and the agreements that decide what happens at a change of ownership. Done once for the group instead of once inside every company.",
+      stikkord: ["Accounting", "Invoicing", "Purchasing", "Contracts", "Compliance"],
     },
     {
       navn: "Crest Growth",
