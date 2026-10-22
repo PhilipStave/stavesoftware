@@ -205,6 +205,8 @@ export const kontakt = {
 export const bunntekst = {
   lenker: [
     { navn: "For investors", href: "/investors", ekstern: false },
+    { navn: "Valuation", href: "/verdivurdering", ekstern: false },
+    { navn: "Guides", href: "/guider", ekstern: false },
     { navn: "Crest Software", href: "/crest-software", ekstern: false },
     { navn: "Journal", href: "/blogg", ekstern: false },
     { navn: "Terms", href: "/vilkar", ekstern: false },

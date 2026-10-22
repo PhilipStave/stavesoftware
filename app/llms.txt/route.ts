@@ -1,4 +1,5 @@
 import { artiklerSortert } from "@/lib/artikler";
+import { guider } from "@/lib/guider";
 import { NAVN_REGISTRERT, selskap } from "@/lib/selskap";
 import { tjenesteSider } from "@/lib/tjenestesider";
 import { finnTjenesteLenke } from "@/lib/tjenester-lenker";
@@ -35,6 +36,11 @@ export function GET() {
     "## Laget for andre",
     "",
     "- [OESA](https://oesa-global.com): Nettside, medlemspåmelding og analysestudio for studentforeningen OESA, med interaktivt kart over norsk sokkel. Laget og driftet av oss.",
+    "",
+    "## For deg som vurderer å selge bedriften",
+    "",
+    `- [Verdivurdering](${selskap.url}/verdivurdering): Verktøy som henter de tre siste innsendte årsregnskapene fra Brønnøysund og regner ut et indikativt verdispenn. Metoden står på siden.`,
+    ...guider.map((g) => `- [${g.tittel}](${selskap.url}/guider/${g.slug}): ${g.metaBeskrivelse}`),
     "",
     "## Artikler",
     "",

@@ -3,6 +3,7 @@ import { artikler } from "@/lib/artikler";
 import { JURIDISK_OPPDATERT } from "@/lib/juridisk";
 import { tjenesteSider, TJENESTESIDER_OPPDATERT } from "@/lib/tjenestesider";
 
+import { guider, GUIDER_OPPDATERT } from "@/lib/guider";
 import { selskap } from "@/lib/selskap";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -12,6 +13,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${selskap.url}/verdivurdering`,
+      lastModified: new Date(GUIDER_OPPDATERT),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${selskap.url}/guider`,
+      lastModified: new Date(GUIDER_OPPDATERT),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    ...guider.map((g) => ({
+      url: `${selskap.url}/guider/${g.slug}`,
+      lastModified: new Date(g.oppdatert),
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
+    })),
     {
       url: `${selskap.url}/investors`,
       lastModified: new Date("2026-10-21"),

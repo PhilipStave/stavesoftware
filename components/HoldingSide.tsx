@@ -316,6 +316,13 @@ export default function HoldingSide() {
               ))}
             </ul>
             <p style={{ ...BRODTEKST, fontSize: 17, margin: 0, color: "rgba(var(--ink-rgb),.6)" }}>{kriterier.etterord}</p>
+            <Link
+              href="/verdivurdering"
+              className="hov-link"
+              style={{ display: "inline-block", marginTop: 22, color: "var(--accent)", fontWeight: 600, fontSize: 15 }}
+            >
+              Wondering what yours is worth? Try our valuation (in Norwegian) →
+            </Link>
           </div>
         </div>
       </section>
