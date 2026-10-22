@@ -22,6 +22,7 @@ export default function InvestorSide() {
           { navn: meny.slikJobberVi, href: "/#what-we-do" },
           { navn: meny.virksomheter, href: "/#businesses" },
           { navn: meny.avdelinger, href: "/#departments" },
+          { navn: meny.verdi, href: "/verdivurdering" },
         ]}
         knapp={{ navn: meny.kontakt, href: "#contact" }}
       />

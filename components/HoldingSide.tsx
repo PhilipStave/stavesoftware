@@ -12,6 +12,7 @@ import {
   prinsipper,
   virksomheter,
   virksomhetene,
+  verktoy,
 } from "@/lib/holding";
 import { BRODTEKST, HoldingBunn, KNAPP, MERKELAPP, OVERSKRIFT, WRAP } from "@/components/holding-stil";
 import HoldingNav from "@/components/HoldingNav";
@@ -63,6 +64,7 @@ export default function HoldingSide() {
           { navn: meny.slikJobberVi, href: "#what-we-do" },
           { navn: meny.virksomheter, href: "#businesses" },
           { navn: meny.avdelinger, href: "#departments" },
+          { navn: meny.verdi, href: "/verdivurdering" },
           { navn: meny.investorer, href: "/investors" },
         ]}
         knapp={{ navn: meny.kontakt, href: "#contact" }}
@@ -316,12 +318,39 @@ export default function HoldingSide() {
               ))}
             </ul>
             <p style={{ ...BRODTEKST, fontSize: 17, margin: 0, color: "rgba(var(--ink-rgb),.6)" }}>{kriterier.etterord}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
+        <div
+          style={{
+            background: "var(--surface)",
+            border: "1px solid var(--line)",
+            borderRadius: 10,
+            padding: "46px 48px",
+          }}
+        >
+          <div className="hsplit" style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 50, alignItems: "center" }}>
+            <div>
+              <div style={{ ...MERKELAPP, fontSize: 11, marginBottom: 14 }}>{verktoy.merkelapp}</div>
+              <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3.2vw, 44px)", marginBottom: 18 }}>{verktoy.tittel}</h2>
+              <p style={{ ...BRODTEKST, fontSize: 17, margin: "0 0 10px", maxWidth: 640 }}>{verktoy.tekst}</p>
+              <p style={{ margin: 0, fontSize: 14, color: "rgba(var(--ink-rgb),.5)" }}>{verktoy.merknad}</p>
+            </div>
             <Link
               href="/verdivurdering"
-              className="hov-link"
-              style={{ display: "inline-block", marginTop: 22, color: "var(--accent)", fontWeight: 600, fontSize: 15 }}
+              className="hov-fill"
+              style={{
+                ...KNAPP,
+                padding: "18px 40px",
+                background: "var(--ink)",
+                color: "var(--ground)",
+                fontSize: 16,
+                whiteSpace: "nowrap",
+              }}
             >
-              Wondering what yours is worth? Try our valuation (in Norwegian) →
+              {verktoy.knapp}
             </Link>
           </div>
         </div>

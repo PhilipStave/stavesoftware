@@ -48,6 +48,7 @@ export const meny = {
   virksomheter: "Businesses",
   avdelinger: "Departments",
   investorer: "Investors",
+  verdi: "Valuation",
   kontakt: "Contact",
   hjem: `${selskap.fulltNavn} — home`,
 };
@@ -175,6 +176,15 @@ export const avdelinger = {
       stikkord: ["Pricing", "Search", "AI answers", "CRM"],
     },
   ],
+};
+
+export const verktoy = {
+  merkelapp: "Free, no sign-up",
+  tittel: "What is your company worth?",
+  tekst:
+    "Type in a Norwegian company number and we pull the last three filed sets of accounts from the register and work out a range — with the arithmetic on screen, every adjustment shown. It is the same calculation we run before we make an offer.",
+  knapp: "Try the valuation",
+  merknad: "The tool is in Norwegian. Nothing you look up is stored.",
 };
 
 export const kriterier = {
