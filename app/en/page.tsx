@@ -9,7 +9,7 @@ import { alternativer, sprakvalg } from "@/lib/sprak";
 const beskrivelse =
   "Crest Holding AS acquires profitable Norwegian companies. Most we keep and operate, and the annual profit is the return.";
 
-const tittel = `${selskap.fulltNavn} — we buy companies, run them, and make them grow`;
+const tittel = `${selskap.fulltNavn} — we buy Norwegian companies and keep them`;
 
 export const metadata: Metadata = {
   title: tittel,

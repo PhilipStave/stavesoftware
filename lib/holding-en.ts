@@ -41,9 +41,9 @@ export const foto = {
 
 export const hero = {
   overtittel: `${selskap.fulltNavn} · Oslo, Norway`,
-  tittel: "We buy companies, run them, and make them grow.",
+  tittel: "We buy companies — and keep them.",
   ingress:
-    "Crest Holding acquires profitable Norwegian companies. A few are sold on. Most we keep and operate, and the annual profit is the return — we do not need an exit to make an investment work.",
+    "Crest Holding acquires profitable Norwegian companies. A few are sold on, but most we keep and run ourselves — the return is the annual profit, not an exit.",
   knappKontakt: "Get in touch",
   knappArbeid: "What we do",
 };
