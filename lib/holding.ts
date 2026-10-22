@@ -171,10 +171,10 @@ export const avdelinger = {
     },
     {
       navn: "Crest Growth",
-      rolle: "Finner kundene",
+      rolle: "Markedsfører og selger",
       tekst:
-        "Pris, salgsoppfølging og å bli funnet: søk, KI-svar og CRM-et bedriftene selger fra. Det meste av det vi kjøper, har aldri gjort noe av det.",
-      stikkord: ["Pris", "Søk", "KI-svar", "CRM"],
+        "Vi begynner med prislisten og kundelisten, for der ligger pengene nærmest. Så henter vi nye forespørsler med annonsering, søk og KI-svar — og setter opp et CRM som gjør at ingen av dem blir liggende ubesvart. Det meste av det vi kjøper, har aldri gjort noe av det.",
+      stikkord: ["Annonsering", "Søk og KI-svar", "Prising", "CRM", "Tilbudsoppfølging", "Gjenkjøp"],
     },
   ],
 };

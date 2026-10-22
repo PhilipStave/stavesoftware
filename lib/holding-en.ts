@@ -175,10 +175,10 @@ export const avdelinger = {
     },
     {
       navn: "Crest Growth",
-      rolle: "Finds the customers",
+      rolle: "Markets and sells",
       tekst:
-        "Pricing, sales follow-up and being found: search, AI answers and the CRM the companies sell from. Most of what we buy has never done any of it.",
-      stikkord: ["Pricing", "Search", "AI answers", "CRM"],
+        "We start with the price list and the customer list, because that is where the money sits closest. Then we bring in new enquiries through advertising, search and AI answers — and put in a CRM so none of them are left unanswered. Most of what we buy has never done any of it.",
+      stikkord: ["Advertising", "Search and AI answers", "Pricing", "CRM", "Follow-up", "Repeat business"],
     },
   ],
 };
