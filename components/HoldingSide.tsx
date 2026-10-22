@@ -1,19 +1,7 @@
 import Link from "next/link";
 import { AltivLogo, OystrLogo } from "@/components/BrandLogos";
+import type { HoldingInnhold } from "@/lib/holding";
 import { selskap } from "@/lib/selskap";
-import {
-  avdelinger,
-  foto,
-  hero,
-  kontakt,
-  kriterier,
-  meny,
-  omOss,
-  prinsipper,
-  virksomheter,
-  virksomhetene,
-  verktoy,
-} from "@/lib/holding";
 import { BRODTEKST, HoldingBunn, KNAPP, MERKELAPP, OVERSKRIFT, WRAP } from "@/components/holding-stil";
 import HoldingNav from "@/components/HoldingNav";
 
@@ -54,35 +42,44 @@ function BedriftLogo({ logo }: { logo: "hel" | "altiv" | "oystr" }) {
   );
 }
 
-export default function HoldingSide() {
+export default function HoldingSide({
+  i,
+  sprak,
+}: {
+  i: HoldingInnhold;
+  /** Hvilket språk siden tegnes på, og hvor den andre utgaven ligger. */
+  sprak: { kode: "nb" | "en"; navn: string; href: string };
+}) {
   return (
-    <div lang="en" className="lys" style={{ minHeight: "100vh" }}>
+    <div lang={sprak.kode === "en" ? "nb" : "en"} className="lys" style={{ minHeight: "100vh" }}>
       <HoldingNav
-        hjem={meny.hjem}
+        sprak={sprak}
+        hjemHref={i.stier.hjem}
+        hjem={i.meny.hjem}
         overBilde
         lenker={[
-          { navn: meny.slikJobberVi, href: "#what-we-do" },
-          { navn: meny.virksomheter, href: "#businesses" },
-          { navn: meny.avdelinger, href: "#departments" },
-          { navn: meny.verdi, href: "/verdivurdering" },
-          { navn: meny.investorer, href: "/investors" },
+          { navn: i.meny.slikJobberVi, href: "#what-we-do" },
+          { navn: i.meny.virksomheter, href: "#businesses" },
+          { navn: i.meny.avdelinger, href: "#departments" },
+          { navn: i.meny.verdi, href: i.stier.verdi },
+          { navn: i.meny.investorer, href: i.stier.investorer },
         ]}
-        knapp={{ navn: meny.kontakt, href: "#contact" }}
+        knapp={{ navn: i.meny.kontakt, href: "#contact" }}
       />
 
       <header
         className="hhero"
         style={{ position: "relative", minHeight: "min(94vh, 980px)", display: "flex", alignItems: "flex-end" }}
       >
-        {foto.vis && (
+        {i.foto.vis && (
           /* eslint-disable-next-line @next/next/no-img-element */
           <img
-            src={foto.fil}
-            srcSet={`${foto.filMobil} 900w, ${foto.fil} 2000w`}
+            src={i.foto.fil}
+            srcSet={`${i.foto.filMobil} 900w, ${i.foto.fil} 2000w`}
             sizes="100vw"
             width={2000}
             height={1333}
-            alt={foto.alt}
+            alt={i.foto.alt}
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
           />
         )}
@@ -102,7 +99,7 @@ export default function HoldingSide() {
           }}
         ></div>
         <div style={{ ...WRAP, position: "relative", width: "100%", padding: "160px 48px 72px" }}>
-          <div style={{ ...MERKELAPP, color: "rgba(var(--ink-rgb),.8)", marginBottom: 26 }}>{hero.overtittel}</div>
+          <div style={{ ...MERKELAPP, color: "rgba(var(--ink-rgb),.8)", marginBottom: 26 }}>{i.hero.overtittel}</div>
           <h1
             style={{
               fontFamily: "var(--font-garamond), Georgia, serif",
@@ -114,25 +111,25 @@ export default function HoldingSide() {
               maxWidth: "16ch",
             }}
           >
-            {hero.tittel}
+            {i.hero.tittel}
           </h1>
           <p style={{ ...BRODTEKST, color: "rgba(var(--ink-rgb),.85)", fontSize: 19, maxWidth: 620, margin: "0 0 40px" }}>
-            {hero.ingress}
+            {i.hero.ingress}
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <a href="#contact" className="hov-fill" style={{ ...KNAPP, background: "var(--ink)", color: "var(--ground)" }}>
-              {hero.knappKontakt}
+              {i.hero.knappKontakt}
             </a>
             <a
               href="#what-we-do"
               className="hov-outline"
               style={{ ...KNAPP, border: "1px solid rgba(var(--ink-rgb),.4)", color: "var(--ink)" }}
             >
-              {hero.knappArbeid}
+              {i.hero.knappArbeid}
             </a>
           </div>
         </div>
-        {foto.vis && (
+        {i.foto.vis && (
         <p
           className="hfoto"
           style={{
@@ -145,13 +142,13 @@ export default function HoldingSide() {
             color: "rgba(var(--ink-rgb),.45)",
           }}
         >
-          Photo:{" "}
-          <a href={foto.kilde} target="_blank" rel="noopener" style={{ color: "inherit", textDecoration: "underline" }}>
-            {foto.fotograf}
+          {i.foto.fotoOrd}{" "}
+          <a href={i.foto.kilde} target="_blank" rel="noopener" style={{ color: "inherit", textDecoration: "underline" }}>
+            {i.foto.fotograf}
           </a>{" "}
           ·{" "}
-          <a href={foto.lisensUrl} target="_blank" rel="noopener" style={{ color: "inherit", textDecoration: "underline" }}>
-            {foto.lisens}
+          <a href={i.foto.lisensUrl} target="_blank" rel="noopener" style={{ color: "inherit", textDecoration: "underline" }}>
+            {i.foto.lisens}
           </a>
         </p>
         )}
@@ -162,9 +159,9 @@ export default function HoldingSide() {
           className="hsplit"
           style={{ display: "grid", gridTemplateColumns: "minmax(220px, 340px) 1fr", gap: 60, alignItems: "start" }}
         >
-          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{omOss.tittel}</h2>
+          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{i.omOss.tittel}</h2>
           <div>
-            {omOss.avsnitt.map((a, i) => (
+            {i.omOss.avsnitt.map((a, i) => (
               <p key={i} style={{ ...BRODTEKST, fontSize: 18, margin: i ? "22px 0 0" : 0, maxWidth: 680 }}>
                 {a}
               </p>
@@ -174,9 +171,9 @@ export default function HoldingSide() {
       </section>
 
       <section id="what-we-do" className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
-        <h2 style={{ ...OVERSKRIFT, marginBottom: 54 }}>{prinsipper.tittel}</h2>
+        <h2 style={{ ...OVERSKRIFT, marginBottom: 54 }}>{i.prinsipper.tittel}</h2>
         <div className="hgrid3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 48 }}>
-          {prinsipper.punkter.map((p) => (
+          {i.prinsipper.punkter.map((p) => (
             <div key={p.nr} style={{ borderTop: "1px solid rgba(var(--ink-rgb),.2)", paddingTop: 24 }}>
               <div style={{ ...MERKELAPP, marginBottom: 14 }}>{p.nr}</div>
               <h3
@@ -197,14 +194,14 @@ export default function HoldingSide() {
       </section>
 
       <section id="businesses" className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
-        <div style={{ ...MERKELAPP, marginBottom: 18 }}>{virksomhetene.merkelapp}</div>
-        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{virksomhetene.tittel}</h2>
-        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 54px", maxWidth: 720 }}>{virksomhetene.ingress}</p>
+        <div style={{ ...MERKELAPP, marginBottom: 18 }}>{i.virksomhetene.merkelapp}</div>
+        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{i.virksomhetene.tittel}</h2>
+        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 54px", maxWidth: 720 }}>{i.virksomhetene.ingress}</p>
         <div
           className="hgrid3"
           style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridAutoRows: "1fr", gap: 26 }}
         >
-          {virksomheter.map((v) => (
+          {i.virksomheter.map((v) => (
             <article
               key={v.navn}
               style={{
@@ -240,14 +237,14 @@ export default function HoldingSide() {
       </section>
 
       <section id="departments" className="hsek" style={{ ...WRAP, padding: "120px 48px 0" }}>
-        <div style={{ ...MERKELAPP, marginBottom: 18 }}>{avdelinger.merkelapp}</div>
-        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{avdelinger.tittel}</h2>
-        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 54px", maxWidth: 720 }}>{avdelinger.ingress}</p>
+        <div style={{ ...MERKELAPP, marginBottom: 18 }}>{i.avdelinger.merkelapp}</div>
+        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{i.avdelinger.tittel}</h2>
+        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 54px", maxWidth: 720 }}>{i.avdelinger.ingress}</p>
         <div
           className="hgrid2"
           style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gridAutoRows: "1fr", gap: 26 }}
         >
-          {avdelinger.punkter.map((a) => (
+          {i.avdelinger.punkter.map((a) => (
             <article
               key={a.navn}
               style={{
@@ -293,11 +290,11 @@ export default function HoldingSide() {
           className="hsplit"
           style={{ display: "grid", gridTemplateColumns: "minmax(220px, 340px) 1fr", gap: 60, alignItems: "start" }}
         >
-          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{kriterier.tittel}</h2>
+          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{i.kriterier.tittel}</h2>
           <div>
-            <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 26px", maxWidth: 680 }}>{kriterier.ingress}</p>
+            <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 26px", maxWidth: 680 }}>{i.kriterier.ingress}</p>
             <ul style={{ listStyle: "none", padding: 0, margin: "0 0 26px" }}>
-              {kriterier.punkter.map((p) => (
+              {i.kriterier.punkter.map((p) => (
                 <li
                   key={p}
                   style={{
@@ -317,7 +314,7 @@ export default function HoldingSide() {
                 </li>
               ))}
             </ul>
-            <p style={{ ...BRODTEKST, fontSize: 17, margin: 0, color: "rgba(var(--ink-rgb),.6)" }}>{kriterier.etterord}</p>
+            <p style={{ ...BRODTEKST, fontSize: 17, margin: 0, color: "rgba(var(--ink-rgb),.6)" }}>{i.kriterier.etterord}</p>
           </div>
         </div>
       </section>
@@ -333,13 +330,13 @@ export default function HoldingSide() {
         >
           <div className="hsplit" style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 50, alignItems: "center" }}>
             <div>
-              <div style={{ ...MERKELAPP, fontSize: 11, marginBottom: 14 }}>{verktoy.merkelapp}</div>
-              <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3.2vw, 44px)", marginBottom: 18 }}>{verktoy.tittel}</h2>
-              <p style={{ ...BRODTEKST, fontSize: 17, margin: "0 0 10px", maxWidth: 640 }}>{verktoy.tekst}</p>
-              <p style={{ margin: 0, fontSize: 14, color: "rgba(var(--ink-rgb),.5)" }}>{verktoy.merknad}</p>
+              <div style={{ ...MERKELAPP, fontSize: 11, marginBottom: 14 }}>{i.verktoy.merkelapp}</div>
+              <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3.2vw, 44px)", marginBottom: 18 }}>{i.verktoy.tittel}</h2>
+              <p style={{ ...BRODTEKST, fontSize: 17, margin: "0 0 10px", maxWidth: 640 }}>{i.verktoy.tekst}</p>
+              <p style={{ margin: 0, fontSize: 14, color: "rgba(var(--ink-rgb),.5)" }}>{i.verktoy.merknad}</p>
             </div>
             <Link
-              href="/verdivurdering"
+              href={i.stier.verdi}
               className="hov-fill"
               style={{
                 ...KNAPP,
@@ -350,7 +347,7 @@ export default function HoldingSide() {
                 whiteSpace: "nowrap",
               }}
             >
-              {verktoy.knapp}
+              {i.verktoy.knapp}
             </Link>
           </div>
         </div>
@@ -368,18 +365,18 @@ export default function HoldingSide() {
             alignItems: "start",
           }}
         >
-          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{kontakt.tittel}</h2>
+          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{i.kontakt.tittel}</h2>
           <div>
-            <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 30px", maxWidth: 620 }}>{kontakt.tekst}</p>
+            <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 30px", maxWidth: 620 }}>{i.kontakt.tekst}</p>
             <a
               href={`mailto:${selskap.epost}`}
               className="hov-fill"
               style={{ ...KNAPP, padding: "18px 40px", background: "var(--ink)", color: "var(--ground)", fontSize: 16 }}
             >
-              {kontakt.knapp}
+              {i.kontakt.knapp}
             </a>
             <p style={{ margin: "26px 0 0", fontSize: 15, color: "rgba(var(--ink-rgb),.6)" }}>
-              {kontakt.adresser.map((e, i) => (
+              {i.kontakt.adresser.map((e, i) => (
                 <span key={e}>
                   {i > 0 && <span aria-hidden="true"> · </span>}
                   <a href={`mailto:${e}`} className="tekstlenke" style={{ color: "rgba(var(--ink-rgb),.72)" }}>
@@ -392,7 +389,7 @@ export default function HoldingSide() {
         </div>
       </section>
 
-      <HoldingBunn />
+      <HoldingBunn bunntekst={i.bunntekst} />
     </div>
   );
 }

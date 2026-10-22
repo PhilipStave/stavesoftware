@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { avdelinger, kontakt, meny } from "@/lib/holding";
-import { investor } from "@/lib/investor";
+import type { HoldingInnhold } from "@/lib/holding";
+import type { investor as InvestorInnhold } from "@/lib/investor";
 import { selskap } from "@/lib/selskap";
 import { BRODTEKST, HoldingBunn, KNAPP, MERKELAPP, OVERSKRIFT, WRAP } from "@/components/holding-stil";
 import HoldingNav from "@/components/HoldingNav";
@@ -10,25 +10,35 @@ import HoldingNav from "@/components/HoldingNav";
 // begynne med et postkort.
 //
 // Det som bevisst IKKE står her: verdsettelse, eierandel, prognoser og
-// avkastningstall. Begrunnelsen står i lib/investor.ts. Avdelingene gjentas i
+// avkastningstall. Begrunnelsen står i lib/i.ts. Avdelingene gjentas i
 // kort form fra forsidens innhold — én kilde, så de ikke kan si to ting.
 
-export default function InvestorSide() {
+export default function InvestorSide({
+  i,
+  h,
+  sprak,
+}: {
+  i: typeof InvestorInnhold;
+  h: HoldingInnhold;
+  sprak: { kode: "nb" | "en"; navn: string; href: string };
+}) {
   return (
-    <div lang="en" className="lys" style={{ minHeight: "100vh" }}>
+    <div lang={sprak.kode === "en" ? "nb" : "en"} className="lys" style={{ minHeight: "100vh" }}>
       <HoldingNav
-        hjem={meny.hjem}
+        sprak={sprak}
+        hjemHref={h.stier.hjem}
+        hjem={h.meny.hjem}
         lenker={[
-          { navn: meny.slikJobberVi, href: "/#what-we-do" },
-          { navn: meny.virksomheter, href: "/#businesses" },
-          { navn: meny.avdelinger, href: "/#departments" },
-          { navn: meny.verdi, href: "/verdivurdering" },
+          { navn: h.meny.slikJobberVi, href: `${h.stier.forside}#what-we-do` },
+          { navn: h.meny.virksomheter, href: `${h.stier.forside}#businesses` },
+          { navn: h.meny.avdelinger, href: `${h.stier.forside}#departments` },
+          { navn: h.meny.verdi, href: h.stier.verdi },
         ]}
-        knapp={{ navn: meny.kontakt, href: "#contact" }}
+        knapp={{ navn: h.meny.kontakt, href: "#contact" }}
       />
 
       <header className="hsek" style={{ ...WRAP, padding: "150px 48px 0" }}>
-        <div style={{ ...MERKELAPP, marginBottom: 26 }}>{investor.overtittel}</div>
+        <div style={{ ...MERKELAPP, marginBottom: 26 }}>{i.overtittel}</div>
         <h1
           style={{
             fontFamily: "var(--font-garamond), Georgia, serif",
@@ -41,9 +51,9 @@ export default function InvestorSide() {
             color: "var(--ink)",
           }}
         >
-          {investor.tittel}
+          {i.tittel}
         </h1>
-        <p style={{ ...BRODTEKST, fontSize: 19, maxWidth: 680, margin: 0 }}>{investor.ingress}</p>
+        <p style={{ ...BRODTEKST, fontSize: 19, maxWidth: 680, margin: 0 }}>{i.ingress}</p>
       </header>
 
       <section className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
@@ -51,9 +61,9 @@ export default function InvestorSide() {
           className="hsplit"
           style={{ display: "grid", gridTemplateColumns: "minmax(220px, 340px) 1fr", gap: 60, alignItems: "start" }}
         >
-          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{investor.tese.tittel}</h2>
+          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{i.tese.tittel}</h2>
           <div>
-            {investor.tese.avsnitt.map((a, i) => (
+            {i.tese.avsnitt.map((a, i) => (
               <p key={i} style={{ ...BRODTEKST, fontSize: 18, margin: i ? "22px 0 0" : 0, maxWidth: 680 }}>
                 {a}
               </p>
@@ -65,10 +75,10 @@ export default function InvestorSide() {
       {/* Avdelingene i kort form: rollen og stikkordene, ikke hele teksten.
           Den som vil ha mer, går til forsiden. */}
       <section className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
-        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{investor.mekanisme.tittel}</h2>
-        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 54px", maxWidth: 720 }}>{investor.mekanisme.ingress}</p>
+        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{i.mekanisme.tittel}</h2>
+        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 54px", maxWidth: 720 }}>{i.mekanisme.ingress}</p>
         <div className="hgrid2" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 40 }}>
-          {avdelinger.punkter.map((a) => (
+          {h.avdelinger.punkter.map((a) => (
             <div key={a.navn} style={{ borderTop: "1px solid rgba(var(--ink-rgb),.2)", paddingTop: 22 }}>
               <div style={{ ...MERKELAPP, fontSize: 11, marginBottom: 12 }}>{a.rolle}</div>
               <h3
@@ -89,23 +99,23 @@ export default function InvestorSide() {
           ))}
         </div>
         <Link
-          href="/#departments"
+          href={`${h.stier.forside}#departments`}
           className="hov-link"
           style={{ display: "inline-block", marginTop: 40, color: "var(--accent)", fontWeight: 600, fontSize: 15 }}
         >
-          {investor.mekanisme.lenketekst} →
+          {i.mekanisme.lenketekst} →
         </Link>
       </section>
 
       <section id="example" className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
-        <div style={{ ...MERKELAPP, marginBottom: 18 }}>{investor.eksempel.merkelapp}</div>
-        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{investor.eksempel.tittel}</h2>
-        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 50px", maxWidth: 720 }}>{investor.eksempel.ingress}</p>
+        <div style={{ ...MERKELAPP, marginBottom: 18 }}>{i.eksempel.merkelapp}</div>
+        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{i.eksempel.tittel}</h2>
+        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 50px", maxWidth: 720 }}>{i.eksempel.ingress}</p>
 
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={investor.eksempel.foto.fil}
-          alt={investor.eksempel.foto.alt}
+          src={i.eksempel.foto.fil}
+          alt={i.eksempel.foto.alt}
           width={2000}
           height={560}
           style={{
@@ -118,23 +128,23 @@ export default function InvestorSide() {
           }}
         />
         <p style={{ margin: "12px 0 44px", fontSize: 13, color: "rgba(var(--ink-rgb),.45)" }}>
-          {investor.eksempel.foto.bildetekst} Photo:{" "}
+          {i.eksempel.foto.bildetekst} {i.eksempel.foto.fotoOrd}{" "}
           <a
-            href={investor.eksempel.foto.kilde}
+            href={i.eksempel.foto.kilde}
             target="_blank"
             rel="noopener"
             style={{ color: "inherit", textDecoration: "underline" }}
           >
-            {investor.eksempel.foto.fotograf}
+            {i.eksempel.foto.fotograf}
           </a>{" "}
           ·{" "}
           <a
-            href={investor.eksempel.foto.lisensUrl}
+            href={i.eksempel.foto.lisensUrl}
             target="_blank"
             rel="noopener"
             style={{ color: "inherit", textDecoration: "underline" }}
           >
-            {investor.eksempel.foto.lisens}
+            {i.eksempel.foto.lisens}
           </a>
         </p>
 
@@ -147,12 +157,12 @@ export default function InvestorSide() {
             marginBottom: 54,
           }}
         >
-          <div style={{ ...MERKELAPP, fontSize: 11, marginBottom: 20 }}>{investor.eksempel.oppsett.tittel}</div>
+          <div style={{ ...MERKELAPP, fontSize: 11, marginBottom: 20 }}>{i.eksempel.oppsett.tittel}</div>
           <dl
             className="hfakta"
             style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 26, margin: "0 0 26px" }}
           >
-            {investor.eksempel.oppsett.punkter.map((p) => (
+            {i.eksempel.oppsett.punkter.map((p) => (
               <div key={p.merkelapp}>
                 <dt style={{ ...MERKELAPP, fontSize: 11, marginBottom: 8 }}>{p.merkelapp}</dt>
                 <dd
@@ -169,17 +179,17 @@ export default function InvestorSide() {
             ))}
           </dl>
           <p style={{ ...BRODTEKST, fontSize: 16.5, margin: "0 0 14px", maxWidth: 720 }}>
-            {investor.eksempel.oppsett.tekst}
+            {i.eksempel.oppsett.tekst}
           </p>
           <p style={{ ...BRODTEKST, fontSize: 16.5, margin: 0, maxWidth: 720, color: "rgba(var(--ink-rgb),.6)" }}>
-            {investor.eksempel.oppsett.pris}
+            {i.eksempel.oppsett.pris}
           </p>
         </div>
 
         {/* Tidslinjen: året til venstre, arbeidet i midten, virkningen på
             driftsresultatet til høyre. Streken er det eneste pyntet. */}
         <div style={{ borderLeft: "1px solid rgba(var(--ink-rgb),.2)", paddingLeft: 0 }}>
-          {investor.eksempel.faser.map((f) => (
+          {i.eksempel.faser.map((f) => (
             <div
               key={f.naar}
               className="hfase"
@@ -233,7 +243,7 @@ export default function InvestorSide() {
           ))}
         </div>
         <p style={{ margin: "14px 0 0", fontSize: 13.5, color: "rgba(var(--ink-rgb),.5)" }}>
-          Figures on the right are the effect on annual operating profit, in millions of kroner.
+          {i.eksempel.tallforklaring}
         </p>
 
         <div
@@ -246,10 +256,10 @@ export default function InvestorSide() {
             marginTop: 70,
           }}
         >
-          <h3 style={{ ...OVERSKRIFT, fontSize: "clamp(24px, 2.6vw, 32px)" }}>{investor.eksempel.resultat.tittel}</h3>
+          <h3 style={{ ...OVERSKRIFT, fontSize: "clamp(24px, 2.6vw, 32px)" }}>{i.eksempel.resultat.tittel}</h3>
           <div>
             <div style={{ maxWidth: 520, marginBottom: 26 }}>
-              {investor.eksempel.resultat.rader.map((r) => (
+              {i.eksempel.resultat.rader.map((r) => (
                 <div
                   key={r.merkelapp}
                   style={{
@@ -266,10 +276,10 @@ export default function InvestorSide() {
               ))}
             </div>
             <p style={{ ...BRODTEKST, fontSize: 17, margin: "0 0 18px", maxWidth: 680 }}>
-              {investor.eksempel.resultat.tekst}
+              {i.eksempel.resultat.tekst}
             </p>
             <p style={{ ...BRODTEKST, fontSize: 17, margin: 0, maxWidth: 680 }}>
-              {investor.eksempel.resultat.etterord}
+              {i.eksempel.resultat.etterord}
             </p>
           </div>
         </div>
@@ -284,9 +294,9 @@ export default function InvestorSide() {
             marginTop: 70,
           }}
         >
-          <h3 style={{ ...OVERSKRIFT, fontSize: "clamp(24px, 2.6vw, 32px)" }}>{investor.eksempel.risiko.tittel}</h3>
+          <h3 style={{ ...OVERSKRIFT, fontSize: "clamp(24px, 2.6vw, 32px)" }}>{i.eksempel.risiko.tittel}</h3>
           <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-            {investor.eksempel.risiko.punkter.map((p) => (
+            {i.eksempel.risiko.punkter.map((p) => (
               <li
                 key={p}
                 style={{ position: "relative", paddingLeft: 30, marginBottom: 16, ...BRODTEKST, fontSize: 17, maxWidth: 680 }}
@@ -307,10 +317,10 @@ export default function InvestorSide() {
           className="hsplit"
           style={{ display: "grid", gridTemplateColumns: "minmax(220px, 340px) 1fr", gap: 60, alignItems: "start" }}
         >
-          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{investor.kapital.tittel}</h2>
+          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{i.kapital.tittel}</h2>
           <div>
             <ul style={{ listStyle: "none", padding: 0, margin: "0 0 26px" }}>
-              {investor.kapital.punkter.map((p) => (
+              {i.kapital.punkter.map((p) => (
                 <li
                   key={p}
                   style={{
@@ -331,7 +341,7 @@ export default function InvestorSide() {
               ))}
             </ul>
             <p style={{ ...BRODTEKST, fontSize: 17, margin: 0, color: "rgba(var(--ink-rgb),.6)" }}>
-              {investor.kapital.etterord}
+              {i.kapital.etterord}
             </p>
           </div>
         </div>
@@ -339,20 +349,20 @@ export default function InvestorSide() {
 
       <section className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
         <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)", marginBottom: 46 }}>
-          {investor.selskapet.tittel}
+          {i.selskapet.tittel}
         </h2>
         <dl
           className="hfakta"
           style={{
             display: "grid",
-            gridTemplateColumns: `repeat(${investor.selskapet.fakta.length}, 1fr)`,
+            gridTemplateColumns: `repeat(${i.selskapet.fakta.length}, 1fr)`,
             gap: 30,
             margin: "0 0 44px",
             borderTop: "1px solid rgba(var(--ink-rgb),.14)",
             paddingTop: 26,
           }}
         >
-          {investor.selskapet.fakta.map((f) => (
+          {i.selskapet.fakta.map((f) => (
             <div key={f.merkelapp}>
               <dt style={{ ...MERKELAPP, fontSize: 11, marginBottom: 10 }}>{f.merkelapp}</dt>
               <dd
@@ -369,19 +379,19 @@ export default function InvestorSide() {
           ))}
         </dl>
         <div style={{ maxWidth: 700 }}>
-          {investor.selskapet.avsnitt.map((a, i) => (
+          {i.selskapet.avsnitt.map((a, i) => (
             <p key={i} style={{ ...BRODTEKST, fontSize: 17, margin: i ? "18px 0 0" : 0 }}>
               {a}
             </p>
           ))}
           <a
-            href={investor.selskapet.lenke.href}
+            href={i.selskapet.lenke.href}
             target="_blank"
             rel="noopener"
             className="hov-link"
             style={{ display: "inline-block", marginTop: 22, color: "var(--accent)", fontWeight: 600, fontSize: 15 }}
           >
-            {investor.selskapet.lenke.tekst} ↗
+            {i.selskapet.lenke.tekst} ↗
           </a>
         </div>
       </section>
@@ -391,10 +401,10 @@ export default function InvestorSide() {
           className="hsplit"
           style={{ display: "grid", gridTemplateColumns: "minmax(220px, 340px) 1fr", gap: 60, alignItems: "start" }}
         >
-          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{investor.materiale.tittel}</h2>
+          <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{i.materiale.tittel}</h2>
           <div>
             <ul style={{ listStyle: "none", padding: 0, margin: "0 0 26px" }}>
-              {investor.materiale.punkter.map((p) => (
+              {i.materiale.punkter.map((p) => (
                 <li
                   key={p}
                   style={{
@@ -415,7 +425,7 @@ export default function InvestorSide() {
               ))}
             </ul>
             <p style={{ ...BRODTEKST, fontSize: 17, margin: 0, color: "rgba(var(--ink-rgb),.6)" }}>
-              {investor.materiale.etterord}
+              {i.materiale.etterord}
             </p>
           </div>
         </div>
@@ -434,13 +444,13 @@ export default function InvestorSide() {
           }}
         >
           <div>
-            <div style={{ ...MERKELAPP, marginBottom: 16 }}>{investor.kontakt.merkelapp}</div>
-            <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{investor.kontakt.tittel}</h2>
+            <div style={{ ...MERKELAPP, marginBottom: 16 }}>{i.kontakt.merkelapp}</div>
+            <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{i.kontakt.tittel}</h2>
           </div>
           <div>
-            <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 26px", maxWidth: 620 }}>{investor.kontakt.tekst}</p>
+            <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 26px", maxWidth: 620 }}>{i.kontakt.tekst}</p>
             <ul style={{ listStyle: "none", padding: 0, margin: "0 0 30px" }}>
-              {investor.kontakt.punkter.map((p) => (
+              {i.kontakt.punkter.map((p) => (
                 <li
                   key={p}
                   style={{ position: "relative", paddingLeft: 30, marginBottom: 14, ...BRODTEKST, fontSize: 17, maxWidth: 640 }}
@@ -453,16 +463,16 @@ export default function InvestorSide() {
                 </li>
               ))}
             </ul>
-            <p style={{ ...BRODTEKST, fontSize: 17, margin: "0 0 30px", maxWidth: 620 }}>{investor.kontakt.sporsmaal}</p>
+            <p style={{ ...BRODTEKST, fontSize: 17, margin: "0 0 30px", maxWidth: 620 }}>{i.kontakt.sporsmaal}</p>
             <a
               href={`mailto:${selskap.epost}?subject=${encodeURIComponent(`Investor — ${selskap.fulltNavn}`)}`}
               className="hov-fill"
               style={{ ...KNAPP, padding: "18px 40px", background: "var(--ink)", color: "var(--ground)", fontSize: 16 }}
             >
-              {investor.kontakt.knapp}
+              {i.kontakt.knapp}
             </a>
             <p style={{ margin: "26px 0 0", fontSize: 15, color: "rgba(var(--ink-rgb),.6)" }}>
-              {kontakt.adresser.map((e, i) => (
+              {h.kontakt.adresser.map((e, i) => (
                 <span key={e}>
                   {i > 0 && <span aria-hidden="true"> · </span>}
                   <a href={`mailto:${e}`} className="tekstlenke" style={{ color: "rgba(var(--ink-rgb),.72)" }}>
@@ -472,13 +482,13 @@ export default function InvestorSide() {
               ))}
             </p>
             <p style={{ margin: "34px 0 0", fontSize: 12.5, lineHeight: 1.7, color: "rgba(var(--ink-rgb),.45)", maxWidth: 620 }}>
-              {investor.forbehold}
+              {i.forbehold}
             </p>
           </div>
         </div>
       </section>
 
-      <HoldingBunn />
+      <HoldingBunn bunntekst={h.bunntekst} />
     </div>
   );
 }

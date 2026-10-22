@@ -54,19 +54,18 @@ export const metadata: Metadata = {
   metadataBase: new URL(selskap.url),
   // Søkeordene først og navnet sist: tittelen er det Google viser som overskrift
   // i treffet, og den kuttes bakfra.
-  title: `Nettsider og apper i Oslo, laget og driftet — ${selskap.fulltNavn}`,
+  title: `${selskap.fulltNavn} — vi kjøper bedrifter, driver dem og får dem til å vokse`,
   description:
-    "Vi lager nettsiden eller appen, drifter den og jobber for at den blir funnet på Google. Én fast kontaktperson, og du betaler med fast pris eller eierandel.",
+    "Crest Holding AS kjøper lønnsomme norske bedrifter. De fleste beholder vi og driver videre, og det årlige overskuddet er avkastningen.",
   keywords:
-    "nettside til bedrift, lage nettside, drift av nettside, apputvikling, SEO, AEO, fast kontaktperson, Oslo, Oystr, Altiv",
+    "oppkjøp av bedrifter, kjøpe bedrift, selge bedrift, generasjonsskifte, holdingselskap Oslo, Crest Software, Altiv, Oystr",
   robots: "index, follow",
-  alternates: { canonical: `${selskap.url}/` },
   openGraph: {
     type: "website",
     siteName: selskap.fulltNavn,
-    title: `${selskap.fulltNavn} — Vi bygger nettsider og apper, og drifter dem`,
+    title: `${selskap.fulltNavn} — vi kjøper bedrifter, driver dem og får dem til å vokse`,
     description:
-      "Vi lager nettsiden eller appen, drifter den, og du får én fast person som gjør endringene du trenger. Fast pris eller eierandel — du velger.",
+      "Crest Holding AS kjøper lønnsomme norske bedrifter, beholder dem og forbedrer dem med sine egne avdelinger.",
     url: `${selskap.url}/`,
     locale: "nb_NO",
     images: [
@@ -82,7 +81,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: selskap.fulltNavn,
     description:
-      "Vi bygger nettsider og apper, drifter dem, og du får én fast person. Fast pris eller eierandel.",
+      "Vi kjøper lønnsomme norske bedrifter, driver dem videre og får dem til å vokse.",
     images: ["/og-image.jpg?v=2"],
   },
 };

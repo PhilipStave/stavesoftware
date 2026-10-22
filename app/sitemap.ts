@@ -32,10 +32,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     })),
     {
-      url: `${selskap.url}/investors`,
-      lastModified: new Date("2026-10-21"),
+      url: `${selskap.url}/investor`,
+      lastModified: new Date("2026-10-22"),
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    },
+    {
+      url: `${selskap.url}/en`,
+      lastModified: new Date("2026-10-22"),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${selskap.url}/en/investors`,
+      lastModified: new Date("2026-10-22"),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     },
     {
       url: `${selskap.url}/crest-software`,

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import InvestorSide from "@/components/InvestorSide";
-import { investor } from "@/lib/investor";
+import { investor } from "@/lib/investor-en";
+import { innhold } from "@/lib/holding-en";
+import { sprakvalg, alternativer } from "@/lib/sprak";
 import { selskap } from "@/lib/selskap";
 
 const beskrivelse =
@@ -11,13 +13,13 @@ export const metadata: Metadata = {
   description: beskrivelse,
   keywords:
     "Crest Holding investors, invest in Norwegian holding company, acquire Norwegian companies, buy and hold, Oslo",
-  alternates: { canonical: `${selskap.url}/investors` },
+  alternates: { ...alternativer("/investor"), canonical: `${selskap.url}/en/investors` },
   openGraph: {
     type: "website",
     siteName: selskap.fulltNavn,
     title: `For investors — ${selskap.fulltNavn}`,
     description: beskrivelse,
-    url: `${selskap.url}/investors`,
+    url: `${selskap.url}/en/investors`,
     locale: "en_GB",
     images: [
       {
@@ -44,8 +46,8 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": `${selskap.url}/investors#siden`,
-      url: `${selskap.url}/investors`,
+      "@id": `${selskap.url}/en/investors#siden`,
+      url: `${selskap.url}/en/investors`,
       name: `For investors — ${selskap.fulltNavn}`,
       description: beskrivelse,
       inLanguage: "en",
@@ -57,16 +59,16 @@ const jsonLd = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: selskap.navn, item: `${selskap.url}/` },
-        { "@type": "ListItem", position: 2, name: "For investors", item: `${selskap.url}/investors` },
+        { "@type": "ListItem", position: 2, name: "For investors", item: `${selskap.url}/en/investors` },
       ],
     },
   ],
 };
 
-export default function Investors() {
+export default function InvestorsEn() {
   return (
     <>
-      <InvestorSide />
+      <InvestorSide i={investor} h={innhold} sprak={sprakvalg("en", "/en/investors")} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>
   );

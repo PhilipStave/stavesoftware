@@ -51,6 +51,7 @@ export function GET() {
     `- [For investorer](${selskap.url}/investors): Hva kapitalen går til, hvordan avdelingene hever verdien etter et kjøp, og hva vi sender på forespørsel. Siden har ingen verdsettelse eller avkastningstall.`,
     `- [Vilkår](${selskap.url}/vilkar)`,
     `- [Personvern](${selskap.url}/personvern)`,
+    `- [English](${selskap.url}/en): Forsiden og investorsiden finnes på engelsk under /en. Resten av nettstedet er på norsk.`,
     "",
   ];
 

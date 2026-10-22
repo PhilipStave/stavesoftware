@@ -1,24 +1,27 @@
-// Content for the holding company's front page.
+// Innhold til forsiden for holdingselskapet — NORSK hovedutgave.
 //
-// Language: English. The rest of the site (Crest Software, the journal, the
-// legal pages) is Norwegian, so the wrapper carries lang="en".
+// Språk: norsk er hovedspråket på hele nettstedet fra 22. oktober 2026.
+// Den engelske tvillingen ligger i lib/holding-en.ts og vises under /en.
+// Samme form og samme rekkefølge i begge; endrer du den ene, endrer du den
+// andre, ellers slutter språkbytteren å peke på det samme innholdet.
 //
-// Positioning from 19 October 2026: Crest buys companies. Some are sold on,
-// most are kept and operated for the annual profit, and the group's own
-// software and sales people work inside them to make them grow.
+// Posisjonering fra 19. oktober 2026: Crest kjøper bedrifter. Noen selges
+// videre, de fleste beholdes og driftes for det årlige overskuddet, og
+// konsernets egne folk innen programvare og salg jobber inne i dem.
 //
-// Rules that still hold:
-//  - No founding date, no "new company", no count of how young anything is.
-//  - No figures for revenue, profit, returns or headcount until Philip says
-//    which ones may be published. Invented numbers are the fastest way to lose
-//    a reader who checks the register.
-//  - Everything is inside Crest Holding AS today, so "businesses", not
-//    "portfolio companies", unless a company really is a separate AS.
-//  - Businesses are listed on the front page again (21 October 2026), but
-//    only the ones we actually own and run. Crest Software is a department
-//    and belongs in the departments section, not among them.
+// Regler som fortsatt gjelder:
+//  - Ingen stiftelsesdato, ingen «nytt selskap», ingen opptelling av hvor
+//    ferskt noe er.
+//  - Ingen tall for omsetning, avkastning eller ansatte før Philip sier
+//    hvilke som kan publiseres. Oppdiktede tall er den raskeste måten å
+//    miste en leser som slår opp i registeret.
+//  - Alt ligger inne i Crest Holding AS, så «virksomheter», ikke
+//    «porteføljeselskaper», med mindre noe faktisk er et eget AS.
+//  - Virksomhetene står på forsiden igjen (21. oktober 2026), men bare de vi
+//    eier og driver. Crest Software er en avdeling og hører hjemme blant
+//    avdelingene, ikke blant dem.
 
-import { selskap } from "./selskap";
+import { selskap, selskapsangivelse } from "./selskap";
 
 // vis: false gir en ren typografisk topp uten bilde. Bytt fil og kreditering
 // samlet her — fotografen og lisensen må alltid følge bildet.
@@ -26,7 +29,8 @@ export const foto = {
   vis: true,
   fil: "/uploads/oslo-opera.jpg",
   filMobil: "/uploads/oslo-opera-mobil.jpg",
-  alt: "The marble roof of the Oslo Opera House, with people walking up the slope",
+  alt: "Marmortaket på Operaen i Oslo, med folk som går opp skråningen",
+  fotoOrd: "Foto:",
   fotograf: "Jorge Láscar",
   lisens: "CC BY 2.0",
   lisensUrl: "https://creativecommons.org/licenses/by/2.0/",
@@ -35,59 +39,56 @@ export const foto = {
 };
 
 export const hero = {
-  overtittel: `${selskap.fulltNavn} · Oslo, Norway`,
-  tittel: "We buy companies, run them, and make them grow.",
+  overtittel: `${selskap.fulltNavn} · Oslo`,
+  tittel: "Vi kjøper bedrifter, driver dem og får dem til å vokse.",
   ingress:
-    "Crest Holding acquires profitable Norwegian companies. A few are sold on. Most we keep and operate, and the annual profit is the return — we do not need an exit to make an investment work.",
-  knappKontakt: "Get in touch",
-  knappArbeid: "What we do",
+    "Crest Holding kjøper lønnsomme norske bedrifter. Noen selges videre. De fleste beholder vi og driver, og det årlige overskuddet er avkastningen — vi trenger ikke et salg for at et kjøp skal være riktig.",
+  knappKontakt: "Ta kontakt",
+  knappArbeid: "Slik jobber vi",
 };
 
 export const meny = {
-  slikJobberVi: "What we do",
-  virksomheter: "Businesses",
-  avdelinger: "Departments",
-  investorer: "Investors",
-  verdi: "Valuation",
-  kontakt: "Contact",
-  hjem: `${selskap.fulltNavn} — home`,
+  slikJobberVi: "Slik jobber vi",
+  virksomheter: "Virksomheter",
+  avdelinger: "Avdelinger",
+  investorer: "Investorer",
+  verdi: "Verdivurdering",
+  kontakt: "Kontakt",
+  hjem: `${selskap.fulltNavn} — forsiden`,
 };
 
 export const omOss = {
-  tittel: "Who we are",
+  tittel: "Hvem vi er",
   avsnitt: [
-    `${selskap.fulltNavn} is a Norwegian company based in Oslo. We buy, own and run companies — and we do the work ourselves rather than send in consultants.`,
-    "That is the whole difference. An owner who writes the code, sits in the sales meetings and answers the phone when something stops working makes different decisions than one who reads a quarterly report.",
+    `${selskap.fulltNavn} er et norsk selskap i Oslo. Vi kjøper, eier og driver bedrifter — og vi gjør arbeidet selv i stedet for å sende inn konsulenter.`,
+    "Det er hele forskjellen. En eier som skriver koden, sitter i salgsmøtene og tar telefonen når noe slutter å virke, tar andre beslutninger enn en som leser et kvartalsregnskap.",
   ],
 };
 
 export const prinsipper = {
-  tittel: "What we do",
+  tittel: "Slik jobber vi",
   punkter: [
     {
       nr: "01",
-      navn: "Acquire",
+      navn: "Kjøper",
       tekst:
-        "We buy profitable companies that are too small for the funds and too large to run as a hobby. The money is our own, so the decision is ours — and it is made in weeks, not quarters.",
+        "Vi kjøper lønnsomme bedrifter som er for små for fondene og for store til å drives som hobby. Pengene er våre egne, så beslutningen er vår — og den tas på uker, ikke kvartaler.",
     },
     {
       nr: "02",
-      navn: "Operate",
+      navn: "Driver",
       tekst:
-        "Most of what we buy, we keep. The annual profit is the return, and nobody is waiting for a sale. If selling is right for a company, we sell — but it is a choice, never a deadline.",
+        "Det meste av det vi kjøper, beholder vi. Det årlige overskuddet er avkastningen, og ingen venter på et salg. Er salg riktig for en bedrift, selger vi — men det er et valg, aldri en frist.",
     },
     {
       nr: "03",
-      navn: "Grow",
+      navn: "Vokser",
       tekst:
-        "Our own software department, Crest Software, and our sales people work inside the companies: quoting that takes minutes instead of days, follow-up that does not fall between chairs, and being found by the customers already looking for what they sell.",
+        "Vår egen programvareavdeling, Crest Software, og selgerne våre jobber inne i bedriftene: tilbud som tar minutter i stedet for dager, oppfølging som ikke faller mellom stoler, og å bli funnet av kundene som allerede leter etter det de selger.",
     },
   ],
 };
 
-// Crest Software is a department inside Crest Holding AS, not a business we
-// own on the side: it is one of the ways the group makes companies grow. The
-// same people also take work for companies outside the group.
 export type Virksomhet = {
   navn: string;
   logo: "hel" | "altiv" | "oystr";
@@ -105,106 +106,106 @@ export const virksomheter: Virksomhet[] = [
   {
     navn: "HEL Performance Norge",
     logo: "hel",
-    rolle: "Retail · Motorsport parts",
+    rolle: "Handel · Motorsykkeldeler",
     tekst:
-      "Official Norwegian dealer for HEL, the English maker of braided brake lines and calipers used in British Superbike. Lines are built to order, in any length, for most motorcycles.",
+      "Offisiell norsk forhandler av HEL, den engelske produsenten av flettede bremseslanger og kalipere som brukes i britisk superbike. Slangene bygges på bestilling, i alle lengder, til de fleste motorsykler.",
     href: "https://helperformance.no",
     lenketekst: "helperformance.no",
   },
   {
     navn: "Altiv",
     logo: "altiv",
-    rolle: "SaaS · CRM for sales",
+    rolle: "SaaS · CRM for salg",
     tekst:
-      "Norwegian CRM for B2B sales follow-up. Pipeline across departments, automatic email logging, follow-ups in the calendar, and revenue and margin per salesperson.",
+      "Norsk CRM for salgsoppfølging i B2B. Pipeline på tvers av avdelinger, automatisk e-postlogging, oppfølginger i kalenderen, og omsetning og margin per selger.",
     href: "https://altiv.no",
     lenketekst: "altiv.no",
   },
   {
     navn: "Oystr",
     logo: "oystr",
-    rolle: "App · Sea charts",
+    rolle: "App · Sjøkart",
     tekst:
-      "Sea charts and navigation for leisure boats along the Norwegian coast. Offline charts, routing around land and shallows, AIS, tide and weather.",
+      "Sjøkart og navigasjon for fritidsbåt langs norskekysten. Offline-kart, ruting rundt land og grunner, AIS, vannstand og vær.",
     href: "https://oystr.no",
     lenketekst: "oystr.no",
-    merknad: "Built and operated together with Embretr.",
+    merknad: "Bygget og driftet sammen med Embretr.",
   },
 ];
 
 export const virksomhetene = {
-  merkelapp: `Owned and operated by ${selskap.fulltNavn}`,
-  tittel: "Our businesses",
+  merkelapp: `Eid og drevet av ${selskap.fulltNavn}`,
+  tittel: "Våre virksomheter",
   ingress:
-    "They are not separate limited companies — everything sits inside Crest Holding AS. The departments work inside them the same way they work inside anything we buy.",
+    "De er ikke egne aksjeselskaper — alt ligger inne i Crest Holding AS. Avdelingene jobber inne i dem på samme måte som de jobber inne i alt vi kjøper.",
 };
 
 export const avdelinger = {
-  merkelapp: "Departments of Crest Holding",
-  tittel: "The departments",
+  merkelapp: "Avdelinger i Crest Holding",
+  tittel: "Avdelingene",
   ingress:
-    "Four functions the group runs for the companies it owns — and for customers outside it. They cost less done once than done inside every company.",
+    "Fire funksjoner konsernet driver for bedriftene det eier — og for kunder utenfor. De koster mindre gjort én gang enn gjort inne i hver enkelt bedrift.",
   punkter: [
     {
       navn: "Crest Software",
-      rolle: "Builds the systems",
+      rolle: "Bygger systemene",
       tekst:
-        "Goes in, finds the hours lost to manual work, and builds what removes them: quoting and invoicing that run by themselves, internal tools, integrations and websites that are found on Google and in AI answers.",
-      stikkord: ["Automation", "Websites", "Internal tools", "Integrations", "AI", "IT operations"],
+        "Går inn, finner timene som forsvinner i manuelt arbeid, og bygger det som fjerner dem: tilbud og fakturering som går av seg selv, interne verktøy, integrasjoner og nettsider som blir funnet på Google og i KI-svar.",
+      stikkord: ["Automatisering", "Nettsider", "Interne verktøy", "Integrasjoner", "KI", "IT-drift"],
       href: "/crest-software",
-      lenketekst: "See what Crest Software does",
+      lenketekst: "Se hva Crest Software gjør",
     },
     {
       navn: "Crest Commerce",
-      rolle: "Brings brands to Norway",
+      rolle: "Henter merker til Norge",
       tekst:
-        "Takes a brand with no Norwegian dealer, builds the shop, runs the advertising and ships the goods. HEL Performance Norge is the first one.",
-      stikkord: ["Agencies", "Web shop", "Advertising", "Logistics"],
+        "Tar et merke uten norsk forhandler, bygger butikken, kjører annonseringen og sender varene. HEL Performance Norge er den første.",
+      stikkord: ["Agenturer", "Nettbutikk", "Annonsering", "Logistikk"],
     },
     {
       navn: "Crest Services",
-      rolle: "Runs the back office",
+      rolle: "Driver ryggraden",
       tekst:
-        "Accounting, invoicing, purchasing and the paperwork that follows owning companies: contracts, filings and the agreements that decide what happens at a change of ownership. Done once for the group instead of once inside every company.",
-      stikkord: ["Accounting", "Invoicing", "Purchasing", "Legal", "Compliance"],
+        "Regnskap, fakturering, innkjøp og papirarbeidet som følger med å eie bedrifter: kontrakter, meldinger og avtalene som avgjør hva som skjer ved et eierskifte. Gjort én gang for konsernet i stedet for én gang i hver bedrift.",
+      stikkord: ["Regnskap", "Fakturering", "Innkjøp", "Juridisk", "Etterlevelse"],
     },
     {
       navn: "Crest Growth",
-      rolle: "Finds the customers",
+      rolle: "Finner kundene",
       tekst:
-        "Pricing, sales follow-up and being found: search, AI answers and the CRM the companies sell from. Most of what we buy has never done any of it.",
-      stikkord: ["Pricing", "Search", "AI answers", "CRM"],
+        "Pris, salgsoppfølging og å bli funnet: søk, KI-svar og CRM-et bedriftene selger fra. Det meste av det vi kjøper, har aldri gjort noe av det.",
+      stikkord: ["Pris", "Søk", "KI-svar", "CRM"],
     },
   ],
 };
 
 export const verktoy = {
-  merkelapp: "Free, no sign-up",
-  tittel: "What is your company worth?",
+  merkelapp: "Gratis, uten pålogging",
+  tittel: "Hva er bedriften verdt?",
   tekst:
-    "Type in a Norwegian company number and we pull the last three filed sets of accounts from the register and work out a range — with the arithmetic on screen, every adjustment shown. It is the same calculation we run before we make an offer.",
-  knapp: "Try the valuation",
-  merknad: "The tool is in Norwegian. Nothing you look up is stored.",
+    "Skriv inn et organisasjonsnummer, så henter vi de tre siste innsendte årsregnskapene fra registeret og regner ut et spenn — med regnestykket på skjermen og hver justering synlig. Det er den samme utregningen vi gjør før vi gir et bud.",
+  knapp: "Prøv verdivurderingen",
+  merknad: "Ingenting du slår opp blir lagret.",
 };
 
 export const kriterier = {
-  tittel: "What we look for",
+  tittel: "Hva vi ser etter",
   ingress:
-    "We do not buy something because it is for sale. Four things have to be in place before we spend years on a company:",
+    "Vi kjøper ikke noe fordi det er til salgs. Fire ting må være på plass før vi bruker år på en bedrift:",
   punkter: [
-    "It makes money, from customers who come back.",
-    "It does not stand or fall with one person.",
-    "There is an obvious digital gap: quoting by hand, no visibility, planning on paper.",
-    "It is small enough that we can be in it ourselves.",
+    "Den tjener penger, på kunder som kommer tilbake.",
+    "Den står og faller ikke med én person.",
+    "Det finnes et åpenbart digitalt etterslep: tilbud for hånd, ingen oversikt, planlegging på papir.",
+    "Den er liten nok til at vi kan være inne i den selv.",
   ],
-  etterord: "If one of them is missing, we leave it alone — and we say so the same week.",
+  etterord: "Mangler én av dem, lar vi den være — og vi sier fra samme uke.",
 };
 
 export const kontakt = {
-  tittel: "Get in touch",
+  tittel: "Ta kontakt",
   tekst:
-    "Selling a company, or sitting on one that should be growing faster than it is? Write to us. We answer honestly, including when the answer is no.",
-  knapp: "Write to us",
+    "Skal du selge en bedrift, eller sitter du på en som burde vokst raskere enn den gjør? Skriv til oss. Vi svarer ærlig, også når svaret er nei.",
+  knapp: "Skriv til oss",
   // Byttet fra private outlook- og gmail-adresser til egne postkasser på
   // domenet 22. oktober 2026. Hovedadressen i lib/selskap.ts står fortsatt på
   // det gamle domenet og byttes for seg — den bryteren forutsetter at
@@ -214,20 +215,48 @@ export const kontakt = {
 
 export const bunntekst = {
   lenker: [
-    { navn: "For investors", href: "/investors", ekstern: false },
-    { navn: "Valuation", href: "/verdivurdering", ekstern: false },
-    { navn: "Guides", href: "/guider", ekstern: false },
+    { navn: "For investorer", href: "/investor", ekstern: false },
+    { navn: "Verdivurdering", href: "/verdivurdering", ekstern: false },
+    { navn: "Guider", href: "/guider", ekstern: false },
     { navn: "Crest Software", href: "/crest-software", ekstern: false },
-    { navn: "Journal", href: "/blogg", ekstern: false },
-    { navn: "Terms", href: "/vilkar", ekstern: false },
-    { navn: "Privacy", href: "/personvern", ekstern: false },
+    { navn: "Artikler", href: "/blogg", ekstern: false },
+    { navn: "Vilkår", href: "/vilkar", ekstern: false },
+    { navn: "Personvern", href: "/personvern", ekstern: false },
     { navn: "altiv.no ↗", href: "https://altiv.no", ekstern: true },
     { navn: "oystr.no ↗", href: "https://oystr.no", ekstern: true },
   ],
-  linje: `© 2026 ${selskap.fulltNavn} · Company no. ${selskap.orgnr} · Oslo, Norway`,
-  // Samme opplysning som selskapsangivelse() på de norske sidene, men på engelsk.
-  // Teksten følger NAVN_REGISTRERT-flagget i lib/selskap.ts og må rettes der
-  // samtidig som den norske når Foretaksregisteret har registrert navnebyttet.
-  juridisk: `${selskap.fulltNavn}, company registration number ${selskap.orgnr}, registered office in Oslo, Norway. The company is listed in the Norwegian Register of Business Enterprises under its former name ${selskap.tidligereNavn}; the change of name was resolved on 3 September 2026 and has been filed with the register.`,
-  norskeSider: "Crest Software, the journal and the legal pages are in Norwegian.",
+  linje: `© 2026 ${selskap.fulltNavn} · Org.nr. ${selskap.orgnr} · Oslo`,
+  // Samme opplysning som på de juridiske sidene, og den følger
+  // NAVN_REGISTRERT-flagget i lib/selskap.ts.
+  juridisk: selskapsangivelse(),
+  norskeSider: "",
 };
+
+export const stier = {
+  hjem: "/",
+  investorer: "/investor",
+  verdi: "/verdivurdering",
+  guider: "/guider",
+  programvare: "/crest-software",
+  /** Ankerne ligger på forsiden, så undersider må ta med stien dit. */
+  forside: "/",
+};
+
+// Samlet, så sidene kan sende ett objekt videre til komponenten.
+export const innhold = {
+  stier,
+  foto,
+  hero,
+  meny,
+  omOss,
+  prinsipper,
+  virksomheter,
+  virksomhetene,
+  avdelinger,
+  verktoy,
+  kriterier,
+  kontakt,
+  bunntekst,
+};
+
+export type HoldingInnhold = typeof innhold;

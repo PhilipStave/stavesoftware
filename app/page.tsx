@@ -1,31 +1,32 @@
 import type { Metadata } from "next";
 import HoldingSide from "@/components/HoldingSide";
+import { innhold } from "@/lib/holding";
 import { selskap } from "@/lib/selskap";
+import { alternativer, sprakvalg } from "@/lib/sprak";
+
+// Forsiden på norsk. Den engelske tvillingen ligger på /en og tegnes av samme
+// komponent med lib/holding-en.ts som innhold.
 
 const beskrivelse =
-  "Crest Holding AS acquires profitable Norwegian companies. Most we keep and operate, and the annual profit is the return.";
+  "Crest Holding AS kjøper lønnsomme norske bedrifter. De fleste beholder vi og driver videre, og det årlige overskuddet er avkastningen.";
+
+const tittel = `${selskap.fulltNavn} — vi kjøper bedrifter, driver dem og får dem til å vokse`;
 
 export const metadata: Metadata = {
-  title: `${selskap.fulltNavn} — we buy companies, run them, and make them grow`,
+  title: tittel,
   description: beskrivelse,
   keywords:
-    "Crest Holding, holding company Oslo, Norwegian holding company, Crest Software, Altiv, Oystr, build and operate businesses",
-  alternates: { canonical: `${selskap.url}/` },
+    "Crest Holding, oppkjøp av bedrifter, kjøpe bedrift, selge bedrift, generasjonsskifte, holdingselskap Oslo, Crest Software, Altiv, Oystr",
+  alternates: { ...alternativer("/"), canonical: `${selskap.url}/` },
   openGraph: {
     type: "website",
     siteName: selskap.fulltNavn,
-    title: `${selskap.fulltNavn} — we buy companies, run them, and make them grow`,
+    title: tittel,
     description: beskrivelse,
     url: `${selskap.url}/`,
-    locale: "en_GB",
-    images: [
-      {
-        url: "/og-holding.jpg?v=2",
-        width: 1200,
-        height: 630,
-        alt: `${selskap.fulltNavn} — we buy companies, run them, and make them grow`,
-      },
-    ],
+    locale: "nb_NO",
+    alternateLocale: ["en_GB"],
+    images: [{ url: "/og-holding.jpg?v=2", width: 1200, height: 630, alt: tittel }],
   },
   twitter: {
     card: "summary_large_image",
@@ -43,21 +44,17 @@ const jsonLd = {
   "@type": "WebPage",
   "@id": `${selskap.url}/#forsiden`,
   url: `${selskap.url}/`,
-  name: `${selskap.fulltNavn}`,
+  name: selskap.fulltNavn,
   description: beskrivelse,
-  inLanguage: "en",
-  about: {
-    "@id": `${selskap.url}/#organisasjon`,
-  },
-  mainEntity: {
-    "@id": `${selskap.url}/#organisasjon`,
-  },
+  inLanguage: "nb-NO",
+  about: { "@id": `${selskap.url}/#organisasjon` },
+  mainEntity: { "@id": `${selskap.url}/#organisasjon` },
 };
 
 export default function Home() {
   return (
     <>
-      <HoldingSide />
+      <HoldingSide i={innhold} sprak={sprakvalg("nb", "/")} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>
   );

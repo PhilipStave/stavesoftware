@@ -10,6 +10,14 @@ const nextConfig: NextConfig = {
   // tid. Dette er ikke en midlertidig ordning.
   async redirects() {
     return [
+      // Investorsiden lå på /investors da nettstedet var engelsk. Norsk er
+      // hovedspråket fra 22. oktober 2026, og siden ligger på /investor;
+      // den engelske på /en/investors.
+      {
+        source: "/investors",
+        destination: "/investor",
+        permanent: true,
+      },
       {
         source: "/:path*",
         has: [{ type: "host", value: "(www\\.)?stavesoftware\\.no" }],

@@ -38,13 +38,19 @@ export default function HoldingNav({
   lenker,
   knapp,
   hjem,
+  hjemHref = "/",
   overBilde = false,
+  sprak,
 }: {
   lenker: NavLenke[];
   knapp: NavLenke;
   hjem: string;
+  /** Logoen leder til forsiden på samme språk. */
+  hjemHref?: string;
   /** Forsiden ligger over fotografiet og trenger slør i stedet for flate. */
   overBilde?: boolean;
+  /** Lenke til den andre språkutgaven av samme side. */
+  sprak?: { kode: "nb" | "en"; navn: string; href: string };
 }) {
   const [borte, setBorte] = useState(false);
 
@@ -54,6 +60,14 @@ export default function HoldingNav({
     window.addEventListener("scroll", paa, { passive: true });
     return () => window.removeEventListener("scroll", paa);
   }, []);
+
+  const velgSprak = () => {
+    try {
+      document.cookie = `sprak=${sprak?.kode ?? "nb"};path=/;max-age=${60 * 60 * 24 * 365};samesite=lax`;
+    } catch {
+      // Blokkerte informasjonskapsler skal ikke hindre selve språkbyttet.
+    }
+  };
 
   return (
     <nav
@@ -81,7 +95,7 @@ export default function HoldingNav({
         transition: `transform .35s, opacity .35s, visibility 0s linear ${borte ? ".35s" : "0s"}`,
       }}
     >
-      <Link href="/" aria-label={hjem}>
+      <Link href={hjemHref} aria-label={hjem}>
         <Lockup />
       </Link>
       <div
@@ -98,6 +112,17 @@ export default function HoldingNav({
         {lenker.map((l) => (
           <Lenke key={l.href} {...l} />
         ))}
+        {sprak && (
+          <Link
+            href={sprak.href}
+            onClick={velgSprak}
+            hrefLang={sprak.kode}
+            className="hov-nl"
+            style={{ color: "rgba(var(--ink-rgb),.55)", letterSpacing: ".14em" }}
+          >
+            {sprak.navn}
+          </Link>
+        )}
         <a
           href={knapp.href}
           className="hov-fill"

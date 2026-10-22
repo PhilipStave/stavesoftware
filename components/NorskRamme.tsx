@@ -1,5 +1,6 @@
 import HoldingNav from "@/components/HoldingNav";
 import { HoldingBunn } from "@/components/holding-stil";
+import { bunntekst } from "@/lib/holding";
 import { selskap } from "@/lib/selskap";
 
 // Rammen rundt de norske sidene under holdingselskapet: verdivurderingen og
@@ -19,7 +20,7 @@ export default function NorskRamme({ children }: { children: React.ReactNode }) 
         knapp={{ navn: "Kontakt", href: "/#contact" }}
       />
       {children}
-      <HoldingBunn />
+      <HoldingBunn bunntekst={bunntekst} />
     </div>
   );
 }

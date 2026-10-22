@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { bunntekst } from "@/lib/holding";
+import type { HoldingInnhold } from "@/lib/holding";
 
 // Felles stil og felles bunntekst for de engelske holdingsidene — forsiden og
 // /investors. Konstantene lå inne i HoldingSide.tsx til investorsiden trengte
@@ -80,7 +80,7 @@ export function Lockup() {
   );
 }
 
-export function HoldingBunn() {
+export function HoldingBunn({ bunntekst }: { bunntekst: HoldingInnhold["bunntekst"] }) {
   return (
     <footer className="hfoot" style={{ borderTop: "1px solid rgba(var(--ink-rgb),.1)", padding: "40px 0 54px" }}>
       <div
