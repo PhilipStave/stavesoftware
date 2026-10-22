@@ -179,6 +179,9 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
   /* Holdingsiden: to kolonner blir til én, og menyen beholder bare kontakt */
   .hsplit, .hgrid3, .hgrid2 { grid-template-columns: 1fr !important; gap: 30px !important; }
   .hfakta { grid-template-columns: repeat(2, 1fr) !important; }
+  /* Tidslinjen i eksempelet: år, arbeid og virkning under hverandre */
+  .hfase { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .hfase > div:last-child { text-align: left !important; }
   .hnav-lenker a.hov-nl { display: none !important; }
   .hsek { padding-left: 28px !important; padding-right: 28px !important; }
 

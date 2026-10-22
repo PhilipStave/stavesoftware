@@ -68,6 +68,102 @@ export const investor = {
     },
   },
 
+  eksempel: {
+    foto: {
+      fil: "/uploads/eksempel-lager.jpg",
+      alt: "Pallereoler i et lager, sett nedenfra",
+      bildetekst: "Illustration. The company in this example does not exist.",
+      fotograf: "Shixart1985",
+      lisens: "CC BY 2.0",
+      lisensUrl: "https://creativecommons.org/licenses/by/2.0/",
+      kilde:
+        "https://commons.wikimedia.org/wiki/File:Warehouse_filled_with_stacked_pallets_showcasing_efficient_space_usage_during_daytime_operations.jpg",
+    },
+    merkelapp: "Worked example · not a track record",
+    tittel: "What we would do with a company like this",
+    ingress:
+      "We have not owned a company for five years yet, so we cannot show you what that looked like. What we can show you is the work, priced out on a company of the kind we buy. Every figure below is constructed. The company does not exist.",
+    oppsett: {
+      tittel: "The company",
+      punkter: [
+        { merkelapp: "Revenue", verdi: "NOK 30 million" },
+        { merkelapp: "Operating profit", verdi: "NOK 3.0 million" },
+        { merkelapp: "People", verdi: "Seven" },
+        { merkelapp: "Owner", verdi: "64, wants out" },
+      ],
+      tekst:
+        "A wholesaler an hour outside Oslo. Twenty years of repeat customers, no debt, NOK 10 million tied up in stock, and nothing has been done digitally since the website was built in 2014. The owner runs sales himself, but a foreman runs the day.",
+      pris:
+        "Price: NOK 12 million, four times operating profit. NOK 5 million of our own equity, NOK 7 million borrowed against the company's own cash flow. Thirty per cent of the price is paid over eighteen months and depends on the customers staying.",
+    },
+    faser: [
+      {
+        naar: "Month 0",
+        avdeling: "The purchase",
+        tekst:
+          "Three years of accounts, the customer list, the supplier agreements and a stock count. The manager commits for twelve months. We agree a price before we agree a handshake.",
+        effekt: null,
+      },
+      {
+        naar: "Months 1–6",
+        avdeling: "Crest Services",
+        tekst:
+          "Accounting, insurance, purchasing agreements and systems move into the group's own. Nobody inside the company notices anything except that the paperwork goes somewhere else.",
+        effekt: "+0.3",
+      },
+      {
+        naar: "Months 3–12",
+        avdeling: "Crest Software",
+        tekst:
+          "Quotes and orders that took two days take ten minutes. A website that is actually found, and a parts search by make and model. The hours come back, and so do the enquiries that used to go to someone else.",
+        effekt: "+0.4",
+      },
+      {
+        naar: "Months 6–18",
+        avdeling: "Crest Growth",
+        tekst:
+          "The price list is reviewed — most companies this size have not touched theirs in years — and quotes get followed up because something now reminds someone to do it.",
+        effekt: "+0.8",
+      },
+      {
+        naar: "Year 2",
+        avdeling: "Crest Commerce",
+        tekst:
+          "A brand with no Norwegian dealer is taken on and sold to the customer list that is already there. New revenue through a channel that costs nothing extra to run.",
+        effekt: "+0.5",
+      },
+      {
+        naar: "Years 2–3",
+        avdeling: "Service",
+        tekst:
+          "Repair and service on what the company sells, out of the group's own workshop. It is a new line of income, and it is the one that keeps a customer from shopping around.",
+        effekt: "+0.3",
+      },
+    ],
+    resultat: {
+      tittel: "Where that leaves it",
+      rader: [
+        { merkelapp: "Operating profit at purchase", verdi: "NOK 3.0 million" },
+        { merkelapp: "Operating profit in year three", verdi: "NOK 5.3 million" },
+        { merkelapp: "Value at the same multiple", verdi: "NOK 21 million" },
+        { merkelapp: "Paid", verdi: "NOK 12 million" },
+      ],
+      tekst:
+        "We use the same multiple going out as coming in. Many models take half the return from the multiple rising, and that is a bet on the market rather than on the work. The bank debt is repaid out of the company's own cash flow along the way.",
+      etterord:
+        "And then the point: a sale is optional. NOK 5.3 million a year from a company that runs without us is the return. We would rather keep it than sell it, and nothing in the model needs an exit to work.",
+    },
+    risiko: {
+      tittel: "What breaks it",
+      punkter: [
+        "The largest customer leaves. On a company this size that is NOK 0.5–1.0 million of operating profit, and it undoes two years of the work above.",
+        "A supplier terminates on change of ownership. Then we own stock and no right to replace it.",
+        "Nobody at the group owns the integration. Services and purchasing happen anyway; the growth work does not, and half the improvement never arrives.",
+        "The stock turns out to be older than the books say. That is paid for at the purchase price, not at the shelf price.",
+      ],
+    },
+  },
+
   materiale: {
     tittel: "What we send on request",
     punkter: [

@@ -96,6 +96,211 @@ export default function InvestorSide() {
         </Link>
       </section>
 
+      <section id="example" className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
+        <div style={{ ...MERKELAPP, marginBottom: 18 }}>{investor.eksempel.merkelapp}</div>
+        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{investor.eksempel.tittel}</h2>
+        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 50px", maxWidth: 720 }}>{investor.eksempel.ingress}</p>
+
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={investor.eksempel.foto.fil}
+          alt={investor.eksempel.foto.alt}
+          width={2000}
+          height={560}
+          style={{
+            display: "block",
+            width: "100%",
+            height: "clamp(180px, 22vw, 280px)",
+            objectFit: "cover",
+            borderRadius: 10,
+            border: "1px solid var(--line)",
+          }}
+        />
+        <p style={{ margin: "12px 0 44px", fontSize: 13, color: "rgba(var(--ink-rgb),.45)" }}>
+          {investor.eksempel.foto.bildetekst} Photo:{" "}
+          <a
+            href={investor.eksempel.foto.kilde}
+            target="_blank"
+            rel="noopener"
+            style={{ color: "inherit", textDecoration: "underline" }}
+          >
+            {investor.eksempel.foto.fotograf}
+          </a>{" "}
+          ·{" "}
+          <a
+            href={investor.eksempel.foto.lisensUrl}
+            target="_blank"
+            rel="noopener"
+            style={{ color: "inherit", textDecoration: "underline" }}
+          >
+            {investor.eksempel.foto.lisens}
+          </a>
+        </p>
+
+        <div
+          style={{
+            background: "var(--surface)",
+            border: "1px solid var(--line)",
+            borderRadius: 10,
+            padding: "34px 36px",
+            marginBottom: 54,
+          }}
+        >
+          <div style={{ ...MERKELAPP, fontSize: 11, marginBottom: 20 }}>{investor.eksempel.oppsett.tittel}</div>
+          <dl
+            className="hfakta"
+            style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 26, margin: "0 0 26px" }}
+          >
+            {investor.eksempel.oppsett.punkter.map((p) => (
+              <div key={p.merkelapp}>
+                <dt style={{ ...MERKELAPP, fontSize: 11, marginBottom: 8 }}>{p.merkelapp}</dt>
+                <dd
+                  style={{
+                    margin: 0,
+                    fontFamily: "var(--font-garamond), Georgia, serif",
+                    fontSize: 22,
+                    color: "var(--ink)",
+                  }}
+                >
+                  {p.verdi}
+                </dd>
+              </div>
+            ))}
+          </dl>
+          <p style={{ ...BRODTEKST, fontSize: 16.5, margin: "0 0 14px", maxWidth: 720 }}>
+            {investor.eksempel.oppsett.tekst}
+          </p>
+          <p style={{ ...BRODTEKST, fontSize: 16.5, margin: 0, maxWidth: 720, color: "rgba(var(--ink-rgb),.6)" }}>
+            {investor.eksempel.oppsett.pris}
+          </p>
+        </div>
+
+        {/* Tidslinjen: året til venstre, arbeidet i midten, virkningen på
+            driftsresultatet til høyre. Streken er det eneste pyntet. */}
+        <div style={{ borderLeft: "1px solid rgba(var(--ink-rgb),.2)", paddingLeft: 0 }}>
+          {investor.eksempel.faser.map((f) => (
+            <div
+              key={f.naar}
+              className="hfase"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "150px 1fr 120px",
+                gap: 30,
+                padding: "26px 0 26px 30px",
+                position: "relative",
+              }}
+            >
+              <span
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  left: -5,
+                  top: 34,
+                  width: 9,
+                  height: 9,
+                  borderRadius: 999,
+                  background: "var(--accent)",
+                }}
+              ></span>
+              <div>
+                <div style={{ ...MERKELAPP, fontSize: 11, marginBottom: 6 }}>{f.naar}</div>
+                <div
+                  style={{
+                    fontFamily: "var(--font-garamond), Georgia, serif",
+                    fontWeight: 600,
+                    fontSize: 21,
+                    color: "var(--ink)",
+                    lineHeight: 1.15,
+                  }}
+                >
+                  {f.avdeling}
+                </div>
+              </div>
+              <p style={{ ...BRODTEKST, fontSize: 16.5, margin: 0 }}>{f.tekst}</p>
+              <div
+                style={{
+                  fontFamily: "var(--font-garamond), Georgia, serif",
+                  fontSize: 24,
+                  color: f.effekt ? "var(--ink)" : "rgba(var(--ink-rgb),.3)",
+                  textAlign: "right",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {f.effekt ?? "—"}
+              </div>
+            </div>
+          ))}
+        </div>
+        <p style={{ margin: "14px 0 0", fontSize: 13.5, color: "rgba(var(--ink-rgb),.5)" }}>
+          Figures on the right are the effect on annual operating profit, in millions of kroner.
+        </p>
+
+        <div
+          className="hsplit"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "minmax(220px, 340px) 1fr",
+            gap: 60,
+            alignItems: "start",
+            marginTop: 70,
+          }}
+        >
+          <h3 style={{ ...OVERSKRIFT, fontSize: "clamp(24px, 2.6vw, 32px)" }}>{investor.eksempel.resultat.tittel}</h3>
+          <div>
+            <div style={{ maxWidth: 520, marginBottom: 26 }}>
+              {investor.eksempel.resultat.rader.map((r) => (
+                <div
+                  key={r.merkelapp}
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    gap: 20,
+                    padding: "12px 0",
+                    borderBottom: "1px solid rgba(var(--ink-rgb),.1)",
+                  }}
+                >
+                  <span style={{ fontSize: 16, color: "rgba(var(--ink-rgb),.65)" }}>{r.merkelapp}</span>
+                  <span style={{ fontSize: 16, fontWeight: 600, color: "var(--ink)" }}>{r.verdi}</span>
+                </div>
+              ))}
+            </div>
+            <p style={{ ...BRODTEKST, fontSize: 17, margin: "0 0 18px", maxWidth: 680 }}>
+              {investor.eksempel.resultat.tekst}
+            </p>
+            <p style={{ ...BRODTEKST, fontSize: 17, margin: 0, maxWidth: 680 }}>
+              {investor.eksempel.resultat.etterord}
+            </p>
+          </div>
+        </div>
+
+        <div
+          className="hsplit"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "minmax(220px, 340px) 1fr",
+            gap: 60,
+            alignItems: "start",
+            marginTop: 70,
+          }}
+        >
+          <h3 style={{ ...OVERSKRIFT, fontSize: "clamp(24px, 2.6vw, 32px)" }}>{investor.eksempel.risiko.tittel}</h3>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            {investor.eksempel.risiko.punkter.map((p) => (
+              <li
+                key={p}
+                style={{ position: "relative", paddingLeft: 30, marginBottom: 16, ...BRODTEKST, fontSize: 17, maxWidth: 680 }}
+              >
+                <span
+                  aria-hidden="true"
+                  style={{ position: "absolute", left: 0, top: "0.78em", width: 14, height: 1, background: "var(--accent)" }}
+                ></span>
+                {p}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
         <div
           className="hsplit"
