@@ -40,9 +40,9 @@ export const foto = {
 
 export const hero = {
   overtittel: `${selskap.fulltNavn} · Oslo`,
-  tittel: "Vi kjøper bedrifter, driver dem og får dem til å vokse.",
+  tittel: "Vi kjøper bedrifter og blir værende.",
   ingress:
-    "Crest Holding kjøper lønnsomme norske bedrifter. Noen selges videre. De fleste beholder vi og driver, og det årlige overskuddet er avkastningen — vi trenger ikke et salg for at et kjøp skal være riktig.",
+    "Crest Holding kjøper lønnsomme norske bedrifter. Noen selges videre, men de fleste beholder vi og driver selv — avkastningen er det årlige overskuddet, ikke et salg.",
   knappKontakt: "Ta kontakt",
   knappArbeid: "Slik jobber vi",
 };

@@ -117,7 +117,7 @@ export default function HoldingNav({
             href={sprak.href}
             onClick={velgSprak}
             hrefLang={sprak.kode}
-            className="hov-nl"
+            className="hov-nl hsprak"
             style={{ color: "rgba(var(--ink-rgb),.55)", letterSpacing: ".14em" }}
           >
             {sprak.navn}
