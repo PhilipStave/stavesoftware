@@ -195,10 +195,11 @@ export const kontakt = {
   tekst:
     "Selling a company, or sitting on one that should be growing faster than it is? Write to us. We answer honestly, including when the answer is no.",
   knapp: "Write to us",
-  // Lagt til 16. oktober etter ønske. Dette er private adresser på outlook og
-  // gmail, og de blir plukket opp av søppelpost-roboter så snart siden
-  // indekseres. Bytt dem ut den dagen crestholding.no har egne postkasser.
-  adresser: ["philipstave@outlook.com", "erikmoepost@gmail.com"],
+  // Byttet fra private outlook- og gmail-adresser til egne postkasser på
+  // domenet 22. oktober 2026. Hovedadressen i lib/selskap.ts står fortsatt på
+  // det gamle domenet og byttes for seg — den bryteren forutsetter at
+  // post@crestholding.no faktisk mottar.
+  adresser: ["philipstave@crestholding.no", "erikmo@crestholding.no"],
 };
 
 export const bunntekst = {
