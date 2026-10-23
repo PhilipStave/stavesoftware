@@ -98,11 +98,15 @@ const jsonLd = {
   legalName: NAVN_REGISTRERT ? selskap.juridiskNavn : selskap.tidligereNavn,
   alternateName: NAVN_REGISTRERT ? selskap.tidligereNavn : selskap.fulltNavn,
   identifier: selskap.orgnrKompakt,
-  foundingDate: "2026-08-19",
   url: selskap.url,
   // Oppslaget i Enhetsregisteret er den offentlige bekreftelsen på at selskapet
   // finnes, og knytter org.nr. til nettstedet
-  sameAs: [`https://virksomhet.brreg.no/nb/oppslag/enheter/${selskap.orgnrKompakt}`],
+  sameAs: [
+    `https://virksomhet.brreg.no/nb/oppslag/enheter/${selskap.orgnrKompakt}`,
+    "https://altiv.no",
+    "https://oystr.no",
+    "https://helperformance.no",
+  ],
   // Logoen Google viser i søkeresultater og kunnskapspanelet. Den må være
   // absolutt, indekserbar og minst 112 piksler — derfor en egen kvadratisk
   // fil med løven på merkevarens navy, ikke den gjennomsiktige varianten:
@@ -116,7 +120,7 @@ const jsonLd = {
   image: `${selskap.url}/logo/crest-logo-512.png`,
   email: selskap.epost,
   description:
-    "Norsk studio som lager og drifter nettsider og apper, med fast kontaktperson. Betales med fast pris eller eierandel.",
+    "Norsk selskap i Oslo som kjøper lønnsomme småbedrifter og driver dem videre. Fire egne avdelinger — programvare, handel, ryggrad og vekst — jobber inne i bedriftene konsernet eier.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Oslo",
@@ -135,14 +139,27 @@ const jsonLd = {
     })),
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Drift og løpende endringer, med fast kontaktperson" } },
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Design og merkevare" } },
+    {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "NOK",
+      itemOffered: {
+        "@type": "Service",
+        name: "Verdivurdering av bedrift",
+        url: `${selskap.url}/verdivurdering`,
+      },
+    },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Oppkjøp av lønnsomme norske bedrifter" } },
   ],
   knowsAbout: [
+    "Oppkjøp av bedrifter",
+    "Generasjonsskifte",
+    "Verdsettelse av bedrifter",
+    "Salg av bedrift",
     "Nettsider",
     "Apputvikling",
-    "iOS-apper",
     "Søkemotoroptimalisering",
     "AEO",
-    "Drift av nettsider og apper",
     "SaaS",
     "CRM",
   ],

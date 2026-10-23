@@ -213,6 +213,38 @@ export const kontakt = {
   adresser: ["philipstave@crestholding.no", "erikmo@crestholding.no"],
 };
 
+export const sporsmaal = {
+  merkelapp: "Spørsmål og svar",
+  tittel: "Det folk spør om",
+  punkter: [
+    {
+      spm: "Hva gjør Crest Holding?",
+      svar:
+        "Crest Holding AS er et norsk selskap i Oslo som kjøper lønnsomme småbedrifter og driver dem videre. De fleste beholder vi, og avkastningen er det årlige overskuddet — ikke et salg. Fire egne avdelinger jobber inne i bedriftene: programvare, handel, ryggrad og vekst.",
+    },
+    {
+      spm: "Hva slags bedrifter kjøper dere?",
+      svar:
+        "Lønnsomme norske bedrifter med kunder som kommer tilbake, som ikke står og faller med én person, og som har et tydelig digitalt etterslep — tilbud for hånd, ingen oversikt, planlegging på papir. De må være små nok til at vi kan være inne i dem selv.",
+    },
+    {
+      spm: "Kjøper dere bedriften min?",
+      svar:
+        "Skriv til oss, så svarer vi samme uke — også når svaret er nei. Vi ser på tre års regnskap, hvordan omsetningen fordeler seg på kunder, og avtalene, før vi sier noe om pris.",
+    },
+    {
+      spm: "Hva er bedriften min verdt?",
+      svar:
+        "Et vanlig utgangspunkt er noen få ganger driftsresultatet, justert for størrelse, margin og om omsetningen går opp eller ned. Verdivurderingen på crestholding.no henter de tre siste innsendte årsregnskapene fra Brønnøysund og regner ut et spenn gratis, med hele regnestykket synlig.",
+    },
+    {
+      spm: "Hvor lang tid tar et bedriftssalg?",
+      svar:
+        "For en liten bedrift tar det typisk tre til seks måneder fra første samtale til oppgjør, forutsatt at regnskap, kundeliste og avtaler er klare. Er de ikke klare, blir det gjerne ni.",
+    },
+  ],
+};
+
 export const bunntekst = {
   lenker: [
     { navn: "For investorer", href: "/investor", ekstern: false },
@@ -255,6 +287,7 @@ export const innhold = {
   avdelinger,
   verktoy,
   kriterier,
+  sporsmaal,
   kontakt,
   bunntekst,
 };

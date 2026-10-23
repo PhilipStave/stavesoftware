@@ -353,6 +353,26 @@ export default function HoldingSide({
         </div>
       </section>
 
+      <section id="faq" className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
+        <div
+          className="hsplit"
+          style={{ display: "grid", gridTemplateColumns: "minmax(220px, 340px) 1fr", gap: 60, alignItems: "start" }}
+        >
+          <div>
+            <div style={{ ...MERKELAPP, marginBottom: 16 }}>{i.sporsmaal.merkelapp}</div>
+            <h2 style={{ ...OVERSKRIFT, fontSize: "clamp(28px, 3vw, 40px)" }}>{i.sporsmaal.tittel}</h2>
+          </div>
+          <div>
+            {i.sporsmaal.punkter.map((p) => (
+              <div key={p.spm} style={{ borderTop: "1px solid rgba(var(--ink-rgb),.14)", padding: "22px 0" }}>
+                <h3 style={{ margin: "0 0 10px", fontSize: 18.5, fontWeight: 600, color: "var(--ink)" }}>{p.spm}</h3>
+                <p style={{ ...BRODTEKST, fontSize: 16.5, margin: 0, maxWidth: 680 }}>{p.svar}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="hsek" style={{ ...WRAP, padding: "120px 48px 110px" }}>
         <div
           className="hsplit"

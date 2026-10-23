@@ -28,4 +28,12 @@ jobs:
         run: npx tsc --noEmit
 
       - name: Bygg
-        run: npm run build
+        # Turbopack henter Google-fontene over nettet mens den bygger. Når
+        # runneren ikke får kontakt, faller byggingen med «Can't resolve
+        # @vercel/turbopack-next/internal/font/google/font». Det har skjedd to
+        # ganger, begge uten at noe var galt med koden — neste commit gikk
+        # grønn uten endringer. Ett nytt forsøk fjerner symptomet.
+        #
+        # Den ekte løsningen er å legge fontene i repoet og bruke
+        # next/font/local, så byggingen ikke trenger nett i det hele tatt.
+        run: npm run build || (echo "Byggingen feilet — prøver en gang til" && npm run build)

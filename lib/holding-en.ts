@@ -217,6 +217,38 @@ export const kontakt = {
   adresser: ["philipstave@crestholding.no", "erikmo@crestholding.no"],
 };
 
+export const sporsmaal = {
+  merkelapp: "Questions and answers",
+  tittel: "What people ask",
+  punkter: [
+    {
+      spm: "What does Crest Holding do?",
+      svar:
+        "Crest Holding AS is a Norwegian company in Oslo that buys profitable small companies and keeps running them. Most we hold, and the return is the annual profit rather than a sale. Four of its own departments work inside the companies: software, commerce, back office and growth.",
+    },
+    {
+      spm: "What kind of companies do you buy?",
+      svar:
+        "Profitable Norwegian companies with customers who come back, that do not stand or fall with one person, and that have an obvious digital gap — quoting by hand, no visibility, planning on paper. They have to be small enough that we can be in them ourselves.",
+    },
+    {
+      spm: "Would you buy my company?",
+      svar:
+        "Write to us and we answer the same week, including when the answer is no. We look at three years of accounts, how the revenue is spread across customers, and the agreements, before we say anything about price.",
+    },
+    {
+      spm: "What is my company worth?",
+      svar:
+        "A common starting point is a few times operating profit, adjusted for size, margin and whether revenue is rising or falling. The valuation tool on crestholding.no pulls the last three filed sets of accounts from the Norwegian register and works out a range for free, with the whole calculation on screen.",
+    },
+    {
+      spm: "How long does it take to sell a company?",
+      svar:
+        "For a small company, three to six months from the first conversation to settlement is normal, provided the accounts, the customer list and the agreements are ready. If they are not, it tends to take nine.",
+    },
+  ],
+};
+
 export const bunntekst = {
   lenker: [
     { navn: "For investors", href: "/en/investors", ekstern: false },
@@ -259,6 +291,7 @@ export const innhold = {
   avdelinger,
   verktoy,
   kriterier,
+  sporsmaal,
   kontakt,
   bunntekst,
 };

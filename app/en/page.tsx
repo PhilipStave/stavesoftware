@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HoldingSide from "@/components/HoldingSide";
-import { innhold } from "@/lib/holding-en";
+import { innhold, sporsmaal } from "@/lib/holding-en";
 import { selskap } from "@/lib/selskap";
 import { alternativer, sprakvalg } from "@/lib/sprak";
 
@@ -35,8 +35,7 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
+const side = {
   "@type": "WebPage",
   "@id": `${selskap.url}/en#forsiden`,
   url: `${selskap.url}/en`,
@@ -45,6 +44,23 @@ const jsonLd = {
   inLanguage: "en",
   about: { "@id": `${selskap.url}/#organisasjon` },
   mainEntity: { "@id": `${selskap.url}/#organisasjon` },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    side,
+    {
+      "@type": "FAQPage",
+      "@id": `${side.url}#faq`,
+      inLanguage: "en",
+      mainEntity: sporsmaal.punkter.map((p) => ({
+        "@type": "Question",
+        name: p.spm,
+        acceptedAnswer: { "@type": "Answer", text: p.svar },
+      })),
+    },
+  ],
 };
 
 export default function Forside() {
