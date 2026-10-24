@@ -141,7 +141,7 @@ export const virksomhetene = {
   merkelapp: `Owned and operated by ${selskap.fulltNavn}`,
   tittel: "Our businesses",
   ingress:
-    "They are not separate limited companies — everything sits inside Crest Holding AS. The departments work inside them the same way they work inside anything we buy.",
+    "We own and run them ourselves. The departments work inside them the same way they work inside anything we buy — this is where the work was tried out before we take it into a company we have bought.",
 };
 
 export const avdelinger = {

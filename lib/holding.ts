@@ -15,8 +15,12 @@
 //  - Ingen tall for omsetning, avkastning eller ansatte før Philip sier
 //    hvilke som kan publiseres. Oppdiktede tall er den raskeste måten å
 //    miste en leser som slår opp i registeret.
-//  - Alt ligger inne i Crest Holding AS, så «virksomheter», ikke
-//    «porteføljeselskaper», med mindre noe faktisk er et eget AS.
+//  - «Virksomheter», ikke «porteføljeselskaper» eller «datterselskaper»,
+//    med mindre noe faktisk er et eget AS. Men selskapsstrukturen skal
+//    ikke omtales på forsiden (24. oktober): opplysningen om at de ikke er
+//    egne aksjeselskaper leses som at noe mangler, og ingen leser spør om
+//    den. Vi påstår fortsatt ikke datterselskaper — i de strukturerte
+//    dataene står de som brand, ikke subOrganization.
 //  - Virksomhetene står på forsiden igjen (21. oktober 2026), men bare de vi
 //    eier og driver. Crest Software er en avdeling og hører hjemme blant
 //    avdelingene, ikke blant dem.
@@ -137,7 +141,7 @@ export const virksomhetene = {
   merkelapp: `Eid og drevet av ${selskap.fulltNavn}`,
   tittel: "Våre virksomheter",
   ingress:
-    "De er ikke egne aksjeselskaper — alt ligger inne i Crest Holding AS. Avdelingene jobber inne i dem på samme måte som de jobber inne i alt vi kjøper.",
+    "Vi eier og driver dem selv. Avdelingene jobber inne i dem på samme måte som de jobber inne i alt vi kjøper — det er der vi har prøvd ut arbeidet før vi tar det med inn i en bedrift vi kjøper.",
 };
 
 export const avdelinger = {
