@@ -8,16 +8,29 @@ import { selskap } from "@/lib/selskap";
 // menytekster — forsiden er på engelsk, disse sidene er for norske eiere som
 // vurderer å selge.
 
-export default function NorskRamme({ children }: { children: React.ReactNode }) {
+type Lenke = { navn: string; href: string };
+
+const STANDARD: Lenke[] = [
+  { navn: "Verdivurdering", href: "/verdivurdering" },
+  { navn: "Guider", href: "/guider" },
+];
+
+export default function NorskRamme({
+  children,
+  lenker = STANDARD,
+  knapp = { navn: "Kontakt", href: "/#contact" },
+}: {
+  children: React.ReactNode;
+  /** Menyen følger siden: selgersidene og programvaresiden har ulike lenker. */
+  lenker?: Lenke[];
+  knapp?: Lenke;
+}) {
   return (
     <div lang="nb" className="lys" style={{ minHeight: "100vh" }}>
       <HoldingNav
         hjem={`${selskap.fulltNavn} — forsiden`}
-        lenker={[
-          { navn: "Verdivurdering", href: "/verdivurdering" },
-          { navn: "Guider", href: "/guider" },
-        ]}
-        knapp={{ navn: "Kontakt", href: "/#contact" }}
+        lenker={lenker}
+        knapp={knapp}
       />
       {children}
       <HoldingBunn bunntekst={bunntekst} />
