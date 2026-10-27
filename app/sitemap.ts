@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { artikler } from "@/lib/artikler";
+import { AVDELINGER_OPPDATERT, avdelingssider } from "@/lib/avdelinger";
 import { JURIDISK_OPPDATERT } from "@/lib/juridisk";
 import { tjenesteSider, TJENESTESIDER_OPPDATERT } from "@/lib/tjenestesider";
 
@@ -55,6 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.9,
     },
+    ...avdelingssider.map((a) => ({
+      url: `${selskap.url}/${a.slug}`,
+      lastModified: new Date(AVDELINGER_OPPDATERT),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     ...tjenesteSider.map((s) => ({
       url: `${selskap.url}/${s.slug}`,
       lastModified: new Date(TJENESTESIDER_OPPDATERT),

@@ -130,6 +130,49 @@ export default function ProgramvareSide() {
         </div>
       </section>
 
+      <section id="teknologi" className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
+        <div style={{ ...MERKELAPP, marginBottom: 18 }}>{i.teknologi.merkelapp}</div>
+        <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{i.teknologi.tittel}</h2>
+        <p style={{ ...BRODTEKST, fontSize: 18, margin: "0 0 54px", maxWidth: 720 }}>{i.teknologi.ingress}</p>
+        <div
+          className="hgrid2"
+          style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 26, alignItems: "start" }}
+        >
+          {i.teknologi.grupper.map((g, nr) => (
+            <article
+              key={g.tittel}
+              style={{
+                ...KORT,
+                padding: "30px 32px",
+                /* Fem grupper i to spalter: den siste får hele bredden, slik at
+                   raden ikke ender halvtom. */
+                gridColumn: nr === i.teknologi.grupper.length - 1 && i.teknologi.grupper.length % 2 ? "1 / -1" : "auto",
+              }}
+            >
+              <h3 style={{ ...H3, fontSize: 22, marginBottom: 18 }}>{g.tittel}</h3>
+              <dl style={{ margin: 0 }}>
+                {g.rader.map((r, n) => (
+                  <div
+                    key={r.navn}
+                    style={{
+                      borderTop: n ? "1px solid rgba(var(--ink-rgb),.12)" : "none",
+                      paddingTop: n ? 14 : 0,
+                      paddingBottom: n === g.rader.length - 1 ? 0 : 14,
+                    }}
+                  >
+                    <dt style={{ fontSize: 16, fontWeight: 600, color: "var(--ink)", marginBottom: 4 }}>{r.navn}</dt>
+                    <dd style={{ ...BRODTEKST, fontSize: 15.5, margin: 0 }}>{r.tekst}</dd>
+                  </div>
+                ))}
+              </dl>
+            </article>
+          ))}
+        </div>
+        <p style={{ ...BRODTEKST, fontSize: 17, margin: "34px 0 0", maxWidth: 720, color: "rgba(var(--ink-rgb),.62)" }}>
+          {i.teknologi.etterord}
+        </p>
+      </section>
+
       <section id="bygget" className="hsek" style={{ ...WRAP, padding: "110px 48px 0" }}>
         <div style={{ ...MERKELAPP, marginBottom: 18 }}>{i.bygget.merkelapp}</div>
         <h2 style={{ ...OVERSKRIFT, marginBottom: 26 }}>{i.bygget.tittel}</h2>

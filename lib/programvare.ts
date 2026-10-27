@@ -92,6 +92,69 @@ export const programvare = {
     ],
   },
 
+  // Teknologilisten sto på den gamle programvaresiden og er hentet tilbake
+  // 27. oktober. Formuleringene som gjaldt Altiv spesielt (post@altiv.no og
+  // publisering til altiv.no) er skrevet om, siden dette er avdelingens side
+  // og ikke ett produkts side.
+  teknologi: {
+    merkelapp: "Under panseret",
+    tittel: "Hva det er bygget på",
+    ingress:
+      "Vi velger kjedelig og utbredt framfor nytt og spennende. Da finnes det andre som kan det hvis du en dag vil videre uten oss, og det finnes svar når noe knekker en fredag kveld.",
+    grupper: [
+      {
+        tittel: "Kjernen — koden",
+        rader: [
+          { navn: "Next.js 16", tekst: "Selve rammeverket — nettsiden og appen i ett og samme prosjekt." },
+          { navn: "React", tekst: "Byggeklossene i grensesnittet: knapper, tavler og skjemaer." },
+          { navn: "TypeScript", tekst: "Programmeringsspråket — JavaScript med sikkerhetsnett." },
+          { navn: "Tailwind CSS v4", tekst: "Design, farger og lys og mørk modus med CSS-variabler." },
+          { navn: "Swift og SwiftUI", tekst: "Native iOS-apper, som sjøkartappen Oystr." },
+        ],
+      },
+      {
+        tittel: "Data og innlogging",
+        rader: [
+          { navn: "Supabase", tekst: "Database (PostgreSQL), innlogging og fillagring for dokumenter." },
+          {
+            navn: "Row Level Security",
+            tekst: "Regler i selve databasen — hver bruker og hver bedrift ser kun sine egne data.",
+          },
+        ],
+      },
+      {
+        tittel: "Betaling og e-post",
+        rader: [
+          { navn: "Stripe", tekst: "Abonnement, kort, prøveperiode og fakturaer." },
+          { navn: "Resend", tekst: "E-post ut av systemene: varsler, kvitteringer og skjemaer som kommer fram." },
+        ],
+      },
+      {
+        tittel: "Drift",
+        rader: [
+          {
+            navn: "Vercel",
+            tekst: "Hosting — hver endring publiseres automatisk, med egen testadresse før den går live.",
+          },
+          { navn: "GitHub", tekst: "Kodelager og full historikk på alt vi bygger." },
+          { navn: "Domeneshop", tekst: "Domener og DNS." },
+        ],
+      },
+      {
+        tittel: "Kvalitet og innhold",
+        rader: [
+          { navn: "Playwright", tekst: "Går gjennom sidene som en bruker og tar skjermbildene automatisk." },
+          { navn: "ESLint og tsc", tekst: "Sjekker koden for feil før hver eneste publisering." },
+          { navn: "Search Console og Bing", tekst: "Registrering i søkemotorene og oppfølging av synlighet." },
+          { navn: "Google Gemini", tekst: "Illustrasjoner og video der foto ikke finnes." },
+          { navn: "Claude Code", tekst: "KI som skriver kode sammen med oss, gjennomgått hver gang." },
+        ],
+      },
+    ],
+    etterord:
+      "Alt ligger i ditt navn der det er mulig: domenet, kodelageret og kontoene. Da kan du ta med deg hele oppsettet hvis du en dag vil videre med noen andre.",
+  },
+
   bygget: {
     merkelapp: "Bevis, ikke løfter",
     tittel: "Hva vi har bygget",
@@ -146,6 +209,11 @@ export const programvare = {
         spm: "Eier vi nettsiden selv etterpå?",
         svar:
           "Ja. Avtalen går tolv måneder om gangen, og vil du videre uten oss, tar du med deg siden eller appen. Vi holder ingenting som gissel.",
+      },
+      {
+        spm: "Hvilke teknologier bygger dere på?",
+        svar:
+          "Next.js, React og TypeScript i koden, Supabase til database og innlogging, Stripe til betaling, og Vercel og GitHub til drift og historikk. Utbredte verktøy med mange utviklere, slik at du ikke blir avhengig av oss for å komme videre.",
       },
       {
         spm: "Drifter dere siden etter at den er laget?",

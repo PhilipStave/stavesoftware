@@ -105,41 +105,18 @@ a:hover { color: var(--hi); }
 .wordmask > span { display: inline-block; transform: translateY(110%); }
 body.loaded .wordmask > span { animation: wordUp 1s cubic-bezier(.16,1,.3,1) forwards; }
 .heroFade { opacity: 0; }
-body.loaded .heroFade { animation: fadeIn 1.4s both; }
-[data-zoom] { overflow: hidden; }
-[data-zoom] img, [data-zoom] video { transition: transform 1.4s cubic-bezier(.16,1,.3,1); }
-[data-zoom]:hover img, [data-zoom]:hover video { transform: scale(1.06); }
 .srow { border-top: 1px solid var(--line); transition: background .5s, padding-left .5s; }
 .srow:hover { background: rgba(var(--ink-rgb),.04); padding-left: 26px !important; }
 .srow:hover .srow-arrow { transform: translateX(0); opacity: 1; }
 .srow-arrow { transform: translateX(-16px); opacity: 0; transition: transform .5s cubic-bezier(.16,1,.3,1), opacity .5s; }
-.tw .twc { visibility: hidden; }
-.tw.done .twc, .tw .twc.on { visibility: visible; }
-.tw .twcaret { display: none; }
-.tw.typing .twcaret { display: inline-block; animation: caret .7s step-end infinite; }
-[data-tilt3d] { transform-style: preserve-3d; will-change: transform; transition: transform .4s cubic-bezier(.16,1,.3,1); }
 /* Markøren bruker difference-blanding og snur seg derfor selv mot underlaget,
    både på papiret og inne i båndene. */
 #cursor { position: fixed; top: 0; left: 0; width: 10px; height: 10px; border-radius: 50%; background: #f2efe9; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); mix-blend-mode: difference; }
 #cursor-ring { position: fixed; top: 0; left: 0; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(242,239,233,.5); pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .35s, height .35s, border-color .35s, background .35s; mix-blend-mode: difference; }
 #cursor-ring.big { width: 90px; height: 90px; background: rgba(242,239,233,.12); border-color: transparent; }
 @media (hover: none) { #cursor, #cursor-ring { display: none; } body:has(#cursor), body:has(#cursor) a, body:has(#cursor) button { cursor: auto; } }
-#techoverlay, #serviceoverlay { clip-path: circle(0% at var(--cx, 50%) var(--cy, 50%)); transition: clip-path 1s cubic-bezier(.76,0,.24,1); pointer-events: none; visibility: hidden; }
-#techoverlay.open, #serviceoverlay.open { clip-path: circle(160% at var(--cx, 50%) var(--cy, 50%)); pointer-events: auto; visibility: visible; }
-@keyframes tItem { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: none; } }
-#techoverlay .titem, #serviceoverlay .titem { opacity: 0; }
-#techoverlay.open .titem, #serviceoverlay.open .titem { animation: tItem .9s cubic-bezier(.16,1,.3,1) forwards; }
 .trow { border-top: 1px solid rgba(var(--ink-rgb),.12); transition: background .4s, padding-left .4s; }
 .trow:hover { background: rgba(var(--accent-rgb),.07); padding-left: 18px !important; }
-/* Seksjonsprikkene langs venstre kant. De ligger over både mørke og lyse
-   flater, så fargene kommer fra tokens og snus med .oncard på forsiden. */
-#dotnav .dot { display: block; width: 8px; height: 8px; border-radius: 50%; background: rgba(var(--ink-rgb),.35); transition: transform .3s, background .3s; }
-#dotnav .dot.on { background: var(--accent); transform: scale(1.6); }
-#dotnav a:hover .dot { background: var(--ink); }
-
-/* Modellen: kurve som tegner seg ved scroll */
-.growpath { stroke-dasharray: 1; stroke-dashoffset: 1; }
-[data-reveal].in .growpath { transition: stroke-dashoffset 2.4s cubic-bezier(.16,1,.3,1) .3s; stroke-dashoffset: 0; }
 .growfill { opacity: 0; }
 [data-reveal].in .growfill { transition: opacity 1.6s ease .3s; opacity: 1; }
 .growmark { opacity: 0; }
@@ -188,14 +165,6 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
   .hnav-lenker a.hov-nl.hsprak { display: inline-block !important; }
   .hsek { padding-left: 28px !important; padding-right: 28px !important; }
 
-  #navlinks a.nl, #soundbtn, #dotnav { display: none !important; }
-  #herostats { grid-template-columns: 1fr !important; gap: 0 !important; }
-  #herostats > div { border-left: none !important; padding-left: 0 !important; padding-top: 12px !important; padding-bottom: 12px !important; }
-  #produkter { height: auto !important; }
-  #produkter > div { position: static !important; height: auto !important; overflow: visible !important; }
-  #htrack { flex-direction: column !important; transform: none !important; align-items: stretch !important; gap: 40px !important; padding: 80px 22px !important; }
-  #htrack > * { width: 100% !important; min-width: 0 !important; }
-  .pcard { grid-template-columns: 1fr !important; }
   .srow { grid-template-columns: 44px 1fr !important; row-gap: 10px !important; }
   .srow p { grid-column: 1 / -1; }
   .srow-arrow { display: none; }
@@ -219,24 +188,8 @@ body.loaded .heroFade { animation: fadeIn 1.4s both; }
   .logo-lockup { font-size: 13px !important; letter-spacing: .13em !important; gap: 7px !important; }
   .logo-lockup img { height: 13px !important; }
   nav { padding: 16px 20px !important; }
-  #heroinner { padding: 90px 20px 32px !important; }
-  .scwrap { padding: 90px 20px !important; }
-  #teknologi { padding: 90px 0 !important; }
-  .tcwrap { padding: 0 20px 36px !important; }
-  .tbtnwrap { padding: 50px 20px 0 !important; }
-  #kontakt { padding: 110px 20px !important; }
-  .ovbar { padding: 14px 20px !important; }
-  .ovwrap { padding: 26px 20px 90px !important; }
   .trow { grid-template-columns: 1fr !important; gap: 6px !important; padding: 16px 6px !important; }
-  #oystrvid, #altivvid { min-height: 300px !important; }
-  #oesabilde { min-height: 0 !important; height: 300px !important; }
-  .ptxt { padding: 32px 24px !important; }
-  .ptxt h3 { font-size: 40px !important; }
   .srow { padding: 28px 6px !important; }
-  .fwrap { padding: 28px 20px 0 !important; }
-  .mwrap { padding: 90px 20px !important; }
-  #modellen svg text { font-size: 26px !important; }
-  .mgrid { grid-template-columns: 1fr !important; gap: 28px !important; }
   /* Bloggsidene */
   .bnav { padding: 14px 20px !important; }
   .bnav-back { display: none !important; }

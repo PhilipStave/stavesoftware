@@ -165,6 +165,8 @@ export const avdelinger = {
       tekst:
         "Tar et merke uten norsk forhandler, bygger butikken, kjører annonseringen og sender varene. HEL Performance Norge er den første.",
       stikkord: ["Agenturer", "Nettbutikk", "Annonsering", "Logistikk"],
+      href: "/crest-commerce",
+      lenketekst: "Se hva Crest Commerce gjør",
     },
     {
       navn: "Crest Services",
@@ -172,6 +174,8 @@ export const avdelinger = {
       tekst:
         "Regnskap, fakturering, innkjøp og papirarbeidet som følger med å eie bedrifter: kontrakter, meldinger og avtalene som avgjør hva som skjer ved et eierskifte. Gjort én gang for konsernet i stedet for én gang i hver bedrift.",
       stikkord: ["Regnskap", "Fakturering", "Innkjøp", "Juridisk", "Etterlevelse"],
+      href: "/crest-services",
+      lenketekst: "Se hva Crest Services gjør",
     },
     {
       navn: "Crest Growth",
@@ -179,6 +183,8 @@ export const avdelinger = {
       tekst:
         "Vi begynner med prislisten og kundelisten, for der ligger pengene nærmest. Så henter vi nye forespørsler med annonsering, søk og KI-svar — og setter opp et CRM som gjør at ingen av dem blir liggende ubesvart. Det meste av det vi kjøper, har aldri gjort noe av det.",
       stikkord: ["Annonsering", "Søk og KI-svar", "Prising", "CRM", "Tilbudsoppfølging", "Gjenkjøp"],
+      href: "/crest-growth",
+      lenketekst: "Se hva Crest Growth gjør",
     },
   ],
 };

@@ -157,7 +157,7 @@ export const avdelinger = {
         "Goes in, finds the hours lost to manual work, and builds what removes them: quoting and invoicing that run by themselves, internal tools, integrations and websites that are found on Google and in AI answers.",
       stikkord: ["Automation", "Websites", "Internal tools", "Integrations", "AI", "IT operations"],
       href: "/crest-software",
-      lenketekst: "See what Crest Software does",
+      lenketekst: "See what Crest Software does (in Norwegian)",
     },
     {
       navn: "Crest Commerce",
@@ -165,6 +165,8 @@ export const avdelinger = {
       tekst:
         "Takes a brand with no Norwegian dealer, builds the shop, runs the advertising and ships the goods. HEL Performance Norge is the first one.",
       stikkord: ["Agencies", "Web shop", "Advertising", "Logistics"],
+      href: "/crest-commerce",
+      lenketekst: "See what Crest Commerce does (in Norwegian)",
     },
     {
       navn: "Crest Services",
@@ -172,6 +174,8 @@ export const avdelinger = {
       tekst:
         "Accounting, invoicing, purchasing and the paperwork that follows owning companies: contracts, filings and the agreements that decide what happens at a change of ownership. Done once for the group instead of once inside every company.",
       stikkord: ["Accounting", "Invoicing", "Purchasing", "Legal", "Compliance"],
+      href: "/crest-services",
+      lenketekst: "See what Crest Services does (in Norwegian)",
     },
     {
       navn: "Crest Growth",
@@ -179,6 +183,8 @@ export const avdelinger = {
       tekst:
         "We start with the price list and the customer list, because that is where the money sits closest. Then we bring in new enquiries through advertising, search and AI answers — and put in a CRM so none of them are left unanswered. Most of what we buy has never done any of it.",
       stikkord: ["Advertising", "Search and AI answers", "Pricing", "CRM", "Follow-up", "Repeat business"],
+      href: "/crest-growth",
+      lenketekst: "See what Crest Growth does (in Norwegian)",
     },
   ],
 };

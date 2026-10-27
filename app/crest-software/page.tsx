@@ -85,6 +85,7 @@ export default function CrestSoftware() {
       lenker={[
         { navn: "Hva vi gjør", href: "#hva" },
         { navn: "Tjenester", href: "#tjenester" },
+        { navn: "Teknologi", href: "#teknologi" },
         { navn: "Hva vi har bygget", href: "#bygget" },
       ]}
       knapp={{ navn: "Kontakt", href: "#contact" }}

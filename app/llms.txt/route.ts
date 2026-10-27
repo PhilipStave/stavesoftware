@@ -1,4 +1,5 @@
 import { artiklerSortert } from "@/lib/artikler";
+import { avdelingssider } from "@/lib/avdelinger";
 import { guider } from "@/lib/guider";
 import { NAVN_REGISTRERT, selskap } from "@/lib/selskap";
 import { tjenesteSider } from "@/lib/tjenestesider";
@@ -18,14 +19,18 @@ export function GET() {
   const linjer = [
     `# ${selskap.fulltNavn}`,
     "",
-    `> Norsk selskap i ${selskap.sted} som starter, driver og utvikler egne virksomheter. Alt eies og drives av ${selskap.fulltNavn}; virksomhetene er ikke egne aksjeselskaper. Programvarevirksomheten heter Crest Software og lager og drifter nettsider og apper for bedrifter, med én fast kontaktperson, avtaler på tolv måneder om gangen, og SEO og AEO som del av jobben. Betaling: fast pris i måneden eller eierandel.`,
+    `> Norsk selskap i ${selskap.sted} som kjøper lønnsomme småbedrifter og driver dem videre. De fleste beholder vi, og avkastningen er det årlige overskuddet — ikke et salg. Fire egne avdelinger jobber inne i bedriftene, og tar arbeid for kunder utenfor konsernet: Crest Software bygger systemene, Crest Commerce henter merker til Norge, Crest Services driver ryggraden, og Crest Growth markedsfører og selger.`,
     "",
     `Org.nr. ${selskap.orgnr}. ${registrering} Kontakt: ${selskap.epost}.`,
     "",
-    "## Virksomheter",
+    "## Avdelinger",
     "",
-    `- [Crest Software](${selskap.url}/crest-software): Nettsider og apper for bedrifter, driftet videre med én fast kontaktperson.`,
-    "- [HEL Performance Norge](https://helperformance.no): Offisiell norsk forhandler av HEL-bremseslanger og kalipere til motorsykkel.",
+    `- [Crest Software](${selskap.url}/crest-software): Lager og drifter nettsider, apper og interne verktøy for norske bedrifter. Én fast kontaktperson, tolv måneder om gangen, fast pris eller eierandel. Bygget på Next.js, React, TypeScript, Supabase, Stripe og Vercel.`,
+    ...avdelingssider.map((a) => `- [${a.navn}](${selskap.url}/${a.slug}): ${a.metaBeskrivelse}`),
+    "",
+    "## Virksomheter vi eier og driver",
+    "",
+    "- [HEL Performance Norge](https://helperformance.no): Offisiell norsk forhandler av HEL-bremseslanger og kalipere til motorsykkel. Delene lages av HEL i England.",
     "- [Altiv](https://altiv.no): Norsk CRM for salgsoppfølging i B2B.",
     "- [Oystr](https://oystr.no): Sjøkart og navigasjon for fritidsbåt langs norskekysten, for iPhone. Utviklet og driftet sammen med Embretr.",
     "",
@@ -48,7 +53,7 @@ export function GET() {
     "",
     "## Om nettstedet",
     "",
-    `- [For investorer](${selskap.url}/investors): Hva kapitalen går til, hvordan avdelingene hever verdien etter et kjøp, og hva vi sender på forespørsel. Siden har ingen verdsettelse eller avkastningstall.`,
+    `- [For investorer](${selskap.url}/investor): Hva kapitalen går til, hvordan avdelingene hever verdien etter et kjøp, og hva vi sender på forespørsel. Siden har ingen verdsettelse eller avkastningstall.`,
     `- [Vilkår](${selskap.url}/vilkar)`,
     `- [Personvern](${selskap.url}/personvern)`,
     `- [English](${selskap.url}/en): Forsiden og investorsiden finnes på engelsk under /en. Resten av nettstedet er på norsk.`,
