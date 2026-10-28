@@ -4,6 +4,7 @@ import GuideSide from "@/components/GuideSide";
 import NorskRamme from "@/components/NorskRamme";
 import { finnGuide, guider } from "@/lib/guider";
 import { selskap } from "@/lib/selskap";
+import { medMerke } from "@/lib/tittel";
 
 export function generateStaticParams() {
   return guider.map((g) => ({ slug: g.slug }));
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const url = `${selskap.url}/guider/${guide.slug}`;
   const bilde = `/og/guide-${guide.slug}.jpg?v=1`;
   return {
-    title: `${guide.tittel} — ${selskap.navn}`,
+    title: medMerke(guide.tittel),
     description: guide.metaBeskrivelse,
     alternates: { canonical: url },
     openGraph: {
@@ -61,6 +62,9 @@ export default async function Guide({ params }: { params: Promise<{ slug: string
         mainEntityOfPage: url,
         author: { "@id": `${selskap.url}/#organisasjon` },
         publisher: { "@id": `${selskap.url}/#organisasjon` },
+        // Google krever bilde for artikkelresultatene, og det skal være det
+        // samme som deles.
+        image: [`${selskap.url}/og/guide-${guide.slug}.jpg`],
         articleSection: "Selge bedrift",
       },
       {

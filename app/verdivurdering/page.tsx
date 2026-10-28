@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import NorskRamme from "@/components/NorskRamme";
 import VerdiSide from "@/components/VerdiSide";
+import { medMerke } from "@/lib/tittel";
 import { selskap } from "@/lib/selskap";
 
 const beskrivelse =
   "Skriv inn organisasjonsnummeret og få et indikativt verdispenn, regnet ut fra de tre siste innsendte årsregnskapene i Brønnøysund. Hele regnestykket er synlig.";
 
 export const metadata: Metadata = {
-  title: `Hva er bedriften verdt? Gratis verdivurdering — ${selskap.navn}`,
+  title: medMerke("Hva er bedriften verdt? Gratis verdivurdering"),
   description: beskrivelse,
   keywords:
     "verdivurdering bedrift, hva er bedriften min verdt, verdsettelse AS, selge bedrift, regnskapstall Brønnøysund",

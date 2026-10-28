@@ -16,7 +16,7 @@ import type { Aar, Selskapstall } from "@/lib/verdi";
 export const revalidate = 86400;
 
 const UA = {
-  "User-Agent": "crestholding.no verdivurdering (post@stavesoftware.no)",
+  "User-Agent": "crestholding.no verdivurdering (kontakt@crestholding.no)",
   Accept: "application/json",
 };
 

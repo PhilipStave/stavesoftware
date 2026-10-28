@@ -117,7 +117,7 @@ export const avdelingssider: Avdeling[] = [
     rolle: "Driver ryggraden",
     metaTittel: "Crest Services — ryggraden i konsernet",
     metaBeskrivelse:
-      "Crest Services driver regnskap, fakturering, innkjøp, kontrakter og etterlevelse for bedriftene Crest Holding eier — gjort én gang for konsernet i stedet for én gang i hver bedrift.",
+      "Crest Services driver regnskap, fakturering, innkjøp, kontrakter og etterlevelse for bedriftene Crest Holding eier — én gang for konsernet.",
     hero: {
       tittel: "Papirarbeidet gjøres én gang, ikke i hver bedrift",
       ingress:

@@ -9,7 +9,7 @@ import { alternativer, sprakvalg } from "@/lib/sprak";
 // adressen /investors sendes hit med 308 fra next.config.ts.
 
 const beskrivelse =
-  "Crest Holding AS kjøper lønnsomme norske bedrifter og driver dem videre. Hva kapitalen skal brukes til, hvordan avdelingene endrer tallene etter et kjøp, og hva vi sender på forespørsel.";
+  "Crest Holding AS kjøper lønnsomme norske bedrifter og driver dem videre. Hva kapitalen går til, og hvordan avdelingene endrer tallene etter et kjøp.";
 
 const tittel = `For investorer — ${selskap.fulltNavn}`;
 

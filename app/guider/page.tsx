@@ -4,12 +4,13 @@ import NorskRamme from "@/components/NorskRamme";
 import { BRODTEKST, MERKELAPP, OVERSKRIFT, WRAP } from "@/components/holding-stil";
 import { guider, GUIDER_OPPDATERT } from "@/lib/guider";
 import { selskap } from "@/lib/selskap";
+import { medMerke } from "@/lib/tittel";
 
 const beskrivelse =
   "Guider for deg som vurderer å selge bedriften: hva den er verdt, hvordan et salg går, aksjesalg mot innmatsalg, og hva kjøperen ser etter i regnskapet.";
 
 export const metadata: Metadata = {
-  title: `Guider for deg som skal selge bedriften — ${selskap.navn}`,
+  title: medMerke("Guider for deg som skal selge bedriften"),
   description: beskrivelse,
   keywords:
     "selge bedrift, hva er bedriften verdt, generasjonsskifte, aksjesalg, innmatsalg, bedriftsmegler, selge AS",

@@ -36,7 +36,7 @@ export const guider: Guide[] = [
     slug: "hva-er-bedriften-min-verdt",
     tittel: "Hva er bedriften min verdt?",
     metaBeskrivelse:
-      "Slik regner en kjøper seg fram til prisen på en liten norsk bedrift: normalisert driftsresultat, multippel, kontanter og gjeld — og de fire tingene som flytter prisen mest.",
+      "Slik regner en kjøper seg fram til prisen på en liten norsk bedrift: normalisert driftsresultat, multippel, kontanter og gjeld — og hva som flytter prisen.",
     ingress:
       "Prisen settes ikke av omsetningen, og sjelden av hva du selv har lagt ned. Den settes av hva som blir igjen når du ikke lenger jobber der.",
     oppdatert: "2026-10-22",

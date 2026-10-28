@@ -5,6 +5,7 @@ import BloggShell from "@/components/BloggShell";
 import ArtikkelInnhold from "@/components/ArtikkelInnhold";
 import { artikler, artiklerSortert, finnArtikkel } from "@/lib/artikler";
 import { selskap } from "@/lib/selskap";
+import { medMerke } from "@/lib/tittel";
 import { finnTjenesteLenke } from "@/lib/tjenester-lenker";
 
 export function generateStaticParams() {
@@ -21,7 +22,7 @@ export async function generateMetadata({
   if (!a) return {};
   const url = `${selskap.url}/blogg/${a.slug}`;
   return {
-    title: `${a.tittel} — ${selskap.fulltNavn}`,
+    title: medMerke(a.metaTittel ?? a.tittel),
     description: a.metaBeskrivelse,
     alternates: { canonical: url },
     openGraph: {
@@ -34,7 +35,7 @@ export async function generateMetadata({
       publishedTime: a.publisert,
       images: [
         {
-          url: '/og-image.jpg?v=2',
+          url: `/og/artikkel-${a.slug}.jpg?v=1`,
           width: 1200,
           height: 630,
           alt: `${selskap.fulltNavn} — Vi bygger den, drifter den og svarer`,
@@ -45,7 +46,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: a.tittel,
       description: a.metaBeskrivelse,
-      images: ["/og-image.jpg?v=2"],
+      images: [`/og/artikkel-${a.slug}.jpg?v=1`],
     },
   };
 }
@@ -82,7 +83,16 @@ export default async function ArtikkelSide({
       "@type": "Organization",
       name: selskap.fulltNavn,
       url: selskap.url,
+      logo: {
+        "@type": "ImageObject",
+        url: `${selskap.url}/logo/crest-logo-512.png`,
+        width: 512,
+        height: 512,
+      },
     },
+    // Bildet er et krav for artikkelresultatene i Google, og det skal være
+    // det samme som deles: hver artikkel har sitt eget siden 28. oktober.
+    image: [`${selskap.url}/og/artikkel-${a.slug}.jpg`],
   };
 
   return (

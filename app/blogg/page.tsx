@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     locale: "nb_NO",
     images: [
       {
-        url: '/og-image.jpg?v=2',
+        url: "/og/blogg.jpg?v=1",
         width: 1200,
         height: 630,
         alt: `${selskap.fulltNavn} — Vi bygger den, drifter den og svarer`,

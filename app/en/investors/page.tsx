@@ -6,7 +6,7 @@ import { sprakvalg, alternativer } from "@/lib/sprak";
 import { selskap } from "@/lib/selskap";
 
 const beskrivelse =
-  "Crest Holding AS buys profitable Norwegian companies and operates them. What the capital is for, how the departments change the numbers after a purchase, and what we send on request.";
+  "Crest Holding AS buys profitable Norwegian companies and keeps them. What the capital is for, and how the departments change the numbers after a purchase.";
 
 export const metadata: Metadata = {
   title: `For investors — ${selskap.fulltNavn}`,

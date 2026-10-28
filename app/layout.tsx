@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, Cormorant_Garamond, Instrument_Serif, Michroma, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { avdelingssider } from "@/lib/avdelinger";
 import { selskap, NAVN_REGISTRERT } from "@/lib/selskap";
 import { tjenesteSider } from "@/lib/tjenestesider";
 import Rullefelt from "@/components/Rullefelt";
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(selskap.url),
   // Søkeordene først og navnet sist: tittelen er det Google viser som overskrift
   // i treffet, og den kuttes bakfra.
-  title: `${selskap.fulltNavn} — vi kjøper bedrifter, driver dem og får dem til å vokse`,
+  title: `${selskap.fulltNavn} — vi kjøper bedrifter og driver dem videre`,
   description:
     "Crest Holding AS kjøper lønnsomme norske bedrifter. De fleste beholder vi og driver videre, og det årlige overskuddet er avkastningen.",
   keywords:
@@ -63,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: selskap.fulltNavn,
-    title: `${selskap.fulltNavn} — vi kjøper bedrifter, driver dem og får dem til å vokse`,
+    title: `${selskap.fulltNavn} — vi kjøper bedrifter og driver dem videre`,
     description:
       "Crest Holding AS kjøper lønnsomme norske bedrifter, beholder dem og forbedrer dem med sine egne avdelinger.",
     url: `${selskap.url}/`,
@@ -127,6 +128,31 @@ const jsonLd = {
     addressCountry: "NO",
   },
   areaServed: { "@type": "Country", name: "Norge" },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    email: selskap.epost,
+    areaServed: "NO",
+    availableLanguage: ["nb", "en"],
+  },
+  // Avdelingene. schema.org/department beskriver nettopp en avdeling av en
+  // organisasjon, med egen side — ikke et eget selskap. Uten dette er de fire
+  // sidene bare løse sider for en søkemotor.
+  department: [
+    {
+      "@type": "Organization",
+      name: "Crest Software",
+      url: `${selskap.url}/crest-software`,
+      parentOrganization: { "@id": `${selskap.url}/#organisasjon` },
+    },
+    ...avdelingssider.map((a) => ({
+      "@type": "Organization",
+      name: a.navn,
+      url: `${selskap.url}/${a.slug}`,
+      description: a.rolle,
+      parentOrganization: { "@id": `${selskap.url}/#organisasjon` },
+    })),
+  ],
   makesOffer: [
     ...tjenesteSider.map((s) => ({
       "@type": "Offer",

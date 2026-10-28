@@ -3,13 +3,14 @@ import Link from "next/link";
 import BloggShell from "./BloggShell";
 import { artikler } from "@/lib/artikler";
 import { selskap } from "@/lib/selskap";
+import { medMerke } from "@/lib/tittel";
 import { medLenker, utenLenker } from "@/lib/tekst";
 import { finnTjenesteLenke, tjenesteLenker } from "@/lib/tjenester-lenker";
 import type { Seksjon, TjenesteSide as Side } from "@/lib/tjenestesider";
 
 export function tjenesteMetadata(side: Side): Metadata {
   const url = `${selskap.url}/${side.slug}`;
-  const tittel = `${side.tittel} — ${selskap.fulltNavn}`;
+  const tittel = medMerke(side.tittel);
   return {
     title: tittel,
     description: side.metaBeskrivelse,
@@ -23,10 +24,10 @@ export function tjenesteMetadata(side: Side): Metadata {
       locale: "nb_NO",
       images: [
         {
-          url: "/og-image.jpg?v=2",
+          url: `/og/tjeneste-${side.slug}.jpg?v=1`,
           width: 1200,
           height: 630,
-          alt: `${selskap.fulltNavn} — Vi bygger den, drifter den og svarer`,
+          alt: side.tittel,
         },
       ],
     },
@@ -34,7 +35,7 @@ export function tjenesteMetadata(side: Side): Metadata {
       card: "summary_large_image",
       title: tittel,
       description: side.metaBeskrivelse,
-      images: ["/og-image.jpg?v=2"],
+      images: [`/og/tjeneste-${side.slug}.jpg?v=1`],
     },
   };
 }

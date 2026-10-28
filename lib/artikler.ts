@@ -11,6 +11,10 @@ export type Blokk =
 export type Artikkel = {
   slug: string;
   tittel: string;
+  // Kortere tittel til <title>, for de overskriftene som ikke får plass i et
+  // søkeresultat (Google viser rundt 60 tegn). Overskriften på selve siden
+  // står uendret; dette er bare det som vises i Google.
+  metaTittel?: string;
   ingress: string;
   // Kort beskrivelse for søkeresultater og deling
   metaBeskrivelse: string;
@@ -326,6 +330,7 @@ export const artikler: Artikkel[] = [
   {
     slug: "apne-offentlige-data-i-norge",
     tittel: "Åpne offentlige data i Norge: hva finnes, og hva kan du bygge med det",
+    metaTittel: "Åpne offentlige data i Norge — og hva du kan bygge",
     ingress:
       "Kartverket, Kystverket og Meteorologisk institutt gir fra seg data det har tatt tiår å samle inn. Her er hva som ligger der — og hva jobben faktisk består i når du skal gjøre det om til et produkt.",
     metaBeskrivelse:
@@ -413,6 +418,7 @@ export const artikler: Artikkel[] = [
   {
     slug: "row-level-security-i-praksis",
     tittel: "Row Level Security: derfor hører sikkerheten hjemme i databasen",
+    metaTittel: "Row Level Security: sikkerhet som hører hjemme i databasen",
     ingress:
       "Det holder å glemme filteret én gang. Da lekker data mellom kunder. Her er hvordan vi flyttet tilgangsreglene ned i PostgreSQL i Altiv — og hvilke feller som ligger der.",
     metaBeskrivelse:
@@ -603,7 +609,7 @@ export const artikler: Artikkel[] = [
     ingress:
       "Vi vedtok 3. september å endre foretaksnavn fra Stave Software AS til Crest Holding AS. Samme selskap, samme organisasjonsnummer, ingenting solgt. Foretaksregisteret har ikke registrert det ennå — og den forskjellen er hele poenget med denne artikkelen.",
     metaBeskrivelse:
-      "Vi endrer foretaksnavn fra Stave Software AS til Crest Holding AS, org.nr. 938 341 788. Hva et navnebytte krever, hva som har rettsvirkning, og hva som ikke endrer seg.",
+      "Vi endrer foretaksnavn fra Stave Software AS til Crest Holding AS. Hva et navnebytte krever, hva som har rettsvirkning, og hva som ikke endrer seg.",
     publisert: "2026-09-03",
     lesetid: 6,
     kategori: "Modellen",
@@ -841,6 +847,7 @@ export const artikler: Artikkel[] = [
   {
     slug: "slik-bygde-vi-oesa-siden",
     tittel: "Slik bygde vi OESA-siden: kart over norsk sokkel i nettleseren",
+    metaTittel: "Slik bygde vi OESA-siden: sokkelkart i nettleseren",
     ingress:
       "En studentforening trengte mer enn en forside. De trengte et kart over norsk sokkel, et analysestudio medlemmene kan publisere i, og sider Google kan finne. Her er de tre tingene som faktisk tok tid.",
     metaBeskrivelse:

@@ -7,7 +7,7 @@
 import type { Blokk } from "./artikler";
 import { selskap, selskapsangivelse } from "./selskap";
 
-export const JURIDISK_OPPDATERT = "2026-09-03";
+export const JURIDISK_OPPDATERT = "2026-10-28";
 
 export const personvernIngress =
   `${selskap.domene} samler ikke inn opplysninger om deg. Det finnes ingen skjemaer, ingen innlogging, ingen informasjonskapsler, ingen analyseverktøy og ingen sporing. Det eneste som skjer automatisk, er at webserveren fører en teknisk logg over forespørsler — slik alle webservere gjør. Personopplysninger oppstår først når du selv velger å sende oss en e-post.`;
@@ -79,7 +79,7 @@ export const personvern: Blokk[] = [
   { type: "mellomtittel", tekst: "Når du sender oss e-post" },
   {
     type: "avsnitt",
-    tekst: `Kontaktlenkene på siden åpner ditt eget e-postprogram med adressen ${selskap.epost}. Nettsiden sender ingenting selv, og vi ser ingenting før du faktisk trykker send. Adressen og domenet er uendret etter at selskapet vedtok å bytte navn til ${selskap.fulltNavn}; det er samme selskap som mottar og svarer.`,
+    tekst: `Kontaktlenkene på siden åpner ditt eget e-postprogram med adressen ${selskap.epost}. Nettsiden sender ingenting selv, og vi ser ingenting før du faktisk trykker send. Den tidligere adressen på ${selskap.tidligereDomene} mottar fortsatt, og kommer fram til oss; det er samme selskap som mottar og svarer, uansett hvilken av dem du bruker.`,
   },
   {
     type: "avsnitt",
@@ -94,7 +94,7 @@ export const personvern: Blokk[] = [
   {
     type: "avsnitt",
     tekst:
-      `E-post til ${selskap.epost} mottas av Resend Inc., som er vår databehandler for e-post, og som bruker Amazon Web Services som underleverandør for selve e-postinfrastrukturen. Derfra videresendes meldingen til en postkasse hos Microsoft, der vi leser og besvarer den. Ingen av dem bruker innholdet til egne formål.`,
+      `E-post til ${selskap.epost} mottas av Domeneshop AS, som er vår databehandler for e-post, og som tar imot den i Norge. Derfra videresendes meldingen til en postkasse hos Microsoft, der vi leser og besvarer den. Ingen av dem bruker innholdet til egne formål.`,
   },
   {
     type: "avsnitt",
@@ -129,14 +129,14 @@ export const personvern: Blokk[] = [
     type: "punktliste",
     punkter: [
       "Vercel Inc. — drift og hosting av nettsiden, inkludert serverlogger. Siden serveres i dag fra Vercels datasenter i Stockholm.",
-      `Resend Inc. — mottak av e-post til ${selskap.epost}, med Amazon Web Services som underleverandør. E-posten mottas i Irland.`,
+      `Domeneshop AS — mottak av e-post til ${selskap.epost}. Norsk selskap med adresse i Oslo, og e-posten mottas i Norge.`,
       "Microsoft — postkassen der e-posten leses og besvares.",
     ],
   },
   {
     type: "avsnitt",
     tekst:
-      `Alle tre er amerikanske selskaper. Driften skjer i stor grad på servere i EU, men opplysninger kan bli tilgjengelige fra USA. Overføringen skjer på grunnlag av databehandleravtale med EUs standard personvernbestemmelser (SCC), supplert av EU–US Data Privacy Framework der leverandøren er sertifisert. Vil du se dokumentasjonen på overføringsgrunnlaget, ber du oss om det på ${selskap.epost}.`,
+      `Domeneshop er norsk og tar imot e-posten i Norge. Vercel og Microsoft er amerikanske selskaper: driften skjer i stor grad på servere i EU, men opplysninger kan bli tilgjengelige fra USA. Overføringen skjer på grunnlag av databehandleravtale med EUs standard personvernbestemmelser (SCC), supplert av EU–US Data Privacy Framework der leverandøren er sertifisert. Vil du se dokumentasjonen på overføringsgrunnlaget, ber du oss om det på ${selskap.epost}.`,
   },
   {
     type: "avsnitt",

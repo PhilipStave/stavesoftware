@@ -25,13 +25,13 @@ export function avdelingMetadata(slug: string): Metadata {
       description: a.metaBeskrivelse,
       url,
       locale: "nb_NO",
-      images: [{ url: "/og-image.jpg?v=2", width: 1200, height: 630, alt: a.navn }],
+      images: [{ url: `/og/avdeling-${a.slug}.jpg?v=1`, width: 1200, height: 630, alt: a.navn }],
     },
     twitter: {
       card: "summary_large_image",
       title: a.navn,
       description: a.metaBeskrivelse,
-      images: ["/og-image.jpg?v=2"],
+      images: [`/og/avdeling-${a.slug}.jpg?v=1`],
     },
   };
 }

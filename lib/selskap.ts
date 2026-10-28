@@ -40,10 +40,12 @@ export const selskap = {
   domene: "crestholding.no",
   url: "https://crestholding.no",
 
-  // E-POSTEN er en egen bryter, og skal byttes uavhengig av nettstedet:
-  // først når post@crestholding.no faktisk mottar. Byttes den for tidlig,
-  // slutter kontaktlenkene å virke uten at noen får beskjed.
-  epost: "post@stavesoftware.no",
+  // E-POSTEN er en egen bryter, og ble byttet 28. oktober 2026, da
+  // crestholding.no begynte å motta post (MX hos Domeneshop). Merk at
+  // mottakeren dermed er en annen enn før: den gamle adressen gikk via
+  // Resend og AWS, denne går via Domeneshop. Står i personvernerklæringen,
+  // så den må følge med hvis adressen byttes igjen.
+  epost: "kontakt@crestholding.no",
 
   // Det tidligere domenet. Beholdes så lenge det videresender og finnes
   // lenker til det.

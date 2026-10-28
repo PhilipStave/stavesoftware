@@ -79,6 +79,11 @@ export default function HoldingSide({
             sizes="100vw"
             width={2000}
             height={1333}
+            /* Bildet er det største elementet over folden, altså det Google
+               måler LCP på. Uten dette lastes det i vanlig rekkefølge, etter
+               skript og fonter. */
+            fetchPriority="high"
+            decoding="async"
             alt={i.foto.alt}
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
           />

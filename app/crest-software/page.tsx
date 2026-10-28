@@ -10,9 +10,9 @@ import { tjenesteSider } from "@/lib/tjenestesider";
 // om programvare.
 
 const beskrivelse =
-  "Crest Software lager og drifter nettsider, apper og interne verktøy for norske bedrifter. Én fast kontaktperson, tolv måneder om gangen, fast pris eller eierandel. En avdeling i Crest Holding AS.";
+  "Crest Software lager og drifter nettsider, apper og interne verktøy for norske bedrifter. Fast kontaktperson, tolv måneder, fast pris eller eierandel.";
 
-const tittel = "Crest Software — nettsider, apper og interne verktøy, laget og driftet";
+const tittel = "Crest Software — nettsider, apper og interne verktøy";
 
 export const metadata: Metadata = {
   title: tittel,
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     description: beskrivelse,
     url: `${selskap.url}/crest-software`,
     locale: "nb_NO",
-    images: [{ url: "/og-image.jpg?v=2", width: 1200, height: 630, alt: "Crest Software" }],
+    images: [{ url: "/og/avdeling-crest-software.jpg?v=1", width: 1200, height: 630, alt: "Crest Software" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Crest Software",
     description: beskrivelse,
-    images: ["/og-image.jpg?v=2"],
+    images: ["/og/avdeling-crest-software.jpg?v=1"],
   },
 };
 
